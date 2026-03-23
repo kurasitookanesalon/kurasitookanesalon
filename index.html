@@ -6,89 +6,18 @@
 <title>くらしとお金サロン</title>
 
 <style>
-body{
-    margin:0;
-    font-family:sans-serif;
-    background:#f5f7fb;
-}
-
-/* ヘッダー */
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 20px;
-    background:white;
-    position:sticky;
-    top:0;
-    z-index:10;
-}
-
-header img{
-    width:40px;
-}
-
-nav a{
-    margin-left:20px;
-    text-decoration:none;
-    color:#333;
-    font-weight:bold;
-}
-
-/* ヒーロー */
-.hero{
-    height:90vh;
-    background:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f") center/cover;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:30px;
-}
-
-.btn{
-    background:#00c853;
-    color:white;
-    padding:15px 25px;
-    border-radius:10px;
-    text-decoration:none;
-    margin-top:20px;
-}
-
-/* セクション */
-section{
-    padding:40px 20px;
-}
-
-.box{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:20px;
-}
-
-/* 講師画像 */
-.profile img{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    object-fit:cover;
-    display:block;
-    margin:0 auto 20px;
-}
-
-/* フッター */
-footer{
-    background:#163E7A;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+body{margin:0;font-family:sans-serif;background:#f5f7fb;color:#333;}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;background:white;}
+header img{width:40px;}
+nav a{margin-left:15px;text-decoration:none;color:#333;font-weight:bold;}
+.hero{background:#1E5BB8;color:white;text-align:center;padding:80px 20px;}
+.btn{background:#00c300;color:white;padding:12px 20px;border-radius:10px;text-decoration:none;}
+section{max-width:1000px;margin:auto;padding:40px 20px;}
+.box{background:white;margin-bottom:20px;padding:20px;border-radius:15px;}
+.profile{text-align:center;}
+.profile img{width:200px;height:200px;border-radius:50%;object-fit:cover;}
+.cta{background:#1E5BB8;color:white;text-align:center;padding:40px 20px;border-radius:15px;}
+footer{background:#163E7A;color:white;text-align:center;padding:20px;}
 </style>
 </head>
 
@@ -97,15 +26,14 @@ footer{
 <header>
 <img src="ロゴ浮き.png">
 <nav>
-<a href="#top">トップ</a>
-<a href="#about">サロンについて</a>
-<a href="#profile">講師</a>
-<a href="#contact">体験</a>
+<a href="#">トップ</a>
+<a href="#">サロン</a>
+<a href="#">講師</a>
+<a href="#">体験</a>
 </nav>
 </header>
 
-<!-- ヒーロー -->
-<div class="hero" id="top">
+<div class="hero">
 <h1>大切なお金を増やしながら守る</h1>
 <p>引退世代のためのお金の学校</p>
 <a href="https://lin.ee/tbqkBNF" class="btn">LINEで無料体験</a>
@@ -122,37 +50,28 @@ footer{
 </ul>
 </div>
 
-<div class="box" id="about">
-<h2>サロンについて</h2>
-<p>
-くらしとお金サロンは、引退世代のための金融教育サロンです。<br><br>
-NISA・資産運用・詐欺対策などを、わかりやすく学べます。
-</p>
-</div>
-
-<div class="box profile" id="profile">
+<div class="box profile">
 <h2>講師紹介</h2>
 
-<!-- ★ここが修正済み -->
-<img src="./名前のない.png">
+<img src="名前のない.png">
 
 <p>
 飲食業15年、約200店舗・6000人以上を見てきた経験。<br><br>
 現場で培った「伝える力」を活かし、難しい金融知識を誰でも理解できる形で提供。<br><br>
 お金の不安を「安心」に変えるサポートをしています。
 </p>
+
 </div>
 
-<div class="box" id="contact">
+<div class="cta">
 <h2>無料体験受付中</h2>
-<p>先着20名限定 / 無理な勧誘は一切ありません</p>
-<a href="https://lin.ee/tbqkBNF" class="btn">LINEで今すぐ申し込む</a>
+<a href="https://lin.ee/tbqkBNF" class="btn">LINEで申し込む</a>
 </div>
 
 </section>
 
 <footer>
-<p>くらしとお金サロン｜北九州市</p>
+<p>くらしとお金サロン</p>
 </footer>
 
 </body>
