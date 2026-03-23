@@ -4,83 +4,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>くらしとお金サロン｜引退世代のお金の学校</title>
+<title>北九州｜引退世代のお金の学校｜くらしとお金サロン</title>
 
-<meta name="description" content="北九州市で開催｜引退世代向けお金の学校。NISA・資産運用・詐欺対策を学べる少人数サロン。無料体験受付中。">
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<meta name="description" content="老後のお金・NISA・詐欺対策を学べる北九州の金融教育サロン。無料体験受付中。">
 
 <style>
 
-body {
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 0;
-    background: #f5f7fb;
-    color: #333;
+body{
+margin:0;
+font-family:sans-serif;
+background:#f5f7fb;
+color:#333;
 }
 
-/* ヘッダー */
-.hero {
-    background: linear-gradient(135deg, #1E5BB8, #163E7A);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
+/* トップ */
+.hero{
+position:relative;
+background:url("bg.jpg") center/cover no-repeat;
+color:white;
+text-align:center;
+padding:120px 20px;
 }
 
-/* タイトル */
-.hero h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
 }
 
-.hero p {
-    opacity: 0.9;
+.hero *{
+position:relative;
+z-index:1;
 }
 
-/* CTA */
-.cta {
-    margin-top: 30px;
+.hero img{
+width:120px;
+margin-bottom:20px;
 }
 
-.button {
-    display: inline-block;
-    background: #D4AF37;
-    color: black;
-    padding: 16px 28px;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 18px;
+.hero h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
 }
 
 /* セクション */
-section {
-    max-width: 800px;
-    margin: auto;
-    padding: 30px 20px;
+.section{
+max-width:900px;
+margin:50px auto;
+padding:0 20px;
 }
 
-/* カード */
-.card {
-    background: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.box{
+background:white;
+padding:30px;
+border-radius:12px;
+margin-bottom:25px;
+}
+
+/* 講師 */
+.profile{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.profile img{
+width:140px;
+border-radius:12px;
+}
+
+/* ボタン */
+.button{
+display:block;
+background:#06C755;
+color:white;
+text-align:center;
+padding:18px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin-top:20px;
 }
 
 /* 強調 */
-.notice {
-    color: red;
-    font-weight: bold;
+.red{
+color:red;
+font-weight:bold;
 }
 
 /* フッター */
-footer {
-    background: #163E7A;
-    color: white;
-    text-align: center;
-    padding: 20px;
+footer{
+background:#163E7A;
+color:white;
+text-align:center;
+padding:30px;
 }
 
 </style>
@@ -88,79 +113,94 @@ footer {
 
 <body>
 
-<!-- ヘッダー -->
+<!-- トップ -->
 <div class="hero">
-    <h1>大切なお金を増やしながら守る</h1>
-    <p>引退世代のためのお金の学校</p>
+<img src="logo.png">
+<h1>大切なお金を増やしながら守る</h1>
+<p>引退世代のためのお金の学校</p>
+<p class="red">※知らないと損する時代です</p>
 
-    <div class="cta">
-        <a href="https://lin.ee/tbqkBNf" class="button">
-            LINEで無料体験を申し込む
-        </a>
-        <p class="notice">※先着20名限定</p>
-        <p>※無理な勧誘は一切ありません</p>
-    </div>
+<a href="https://lin.ee/tbqkBNf" class="button">
+LINEで無料体験を申し込む
+</a>
 </div>
 
-<section>
+<div class="section">
 
-<!-- 悩み -->
-<div class="card">
-    <h2>こんなお悩みありませんか？</h2>
-    <p>
-    ・老後のお金が不安<br>
-    ・投資って怖い<br>
-    ・詐欺が増えていて心配
-    </p>
+<!-- 共感 -->
+<div class="box">
+<h2>こんなお悩みありませんか？</h2>
+<ul>
+<li>老後のお金が不安</li>
+<li>投資が怖い</li>
+<li>詐欺に騙されそうで怖い</li>
+<li>何をしたらいいか分からない</li>
+</ul>
 </div>
 
 <!-- 危機感 -->
-<div class="card">
-    <h2>知らないと損する時代です</h2>
-    <p>
-    インフレによりお金の価値は年々下がっています。<br>
-    正しい知識がないと、大切な資産は守れません。
-    </p>
+<div class="box">
+<h2>今の時代、知らない人から損をします</h2>
+<p>
+インフレにより、お金の価値は年々下がっています。<br><br>
+
+さらに、SNS投資詐欺なども増えており、<br>
+知識がない人ほど狙われる時代です。
+</p>
 </div>
 
-<!-- サロン -->
-<div class="card">
-    <h2>サロンについて</h2>
-    <p>
-    日々のくらしに関わるお金の知識を<br>
-    わかりやすく学べる少人数サロンです。
-    </p>
-    <p>※金融商品の販売・勧誘は一切ありません</p>
+<!-- 解決 -->
+<div class="box">
+<h2>くらしとお金サロンとは</h2>
+<p>
+金融商品を売ることは一切せず、<br>
+お金の知識だけを学べる場所です。<br><br>
+
+・NISAの基礎<br>
+・資産の増やし方<br>
+・詐欺対策<br><br>
+
+を初心者でも分かる形で学べます。
+</p>
 </div>
 
-<!-- 開催 -->
-<div class="card">
-    <h2>開催情報</h2>
-    <p>週1回（120分）</p>
-    <p>小倉南生涯学習センター</p>
+<!-- 講師 -->
+<div class="box">
+<h2>講師紹介</h2>
+
+<div class="profile">
+<img src="profile.jpg">
+
+<div>
+<p>
+飲食業15年、200店舗規模を担当。<br>
+1000人以上の教育経験。<br><br>
+
+金融業界の人間ではない<br>
+「普通の目線」で教えます。
+</p>
+</div>
 </div>
 
-<!-- 料金 -->
-<div class="card">
-    <h2>料金</h2>
-    <p>月額 22,000円（税込）</p>
 </div>
 
-<!-- CTA再表示 -->
-<div class="card" style="text-align:center;">
-    <h2>無料体験受付中</h2>
-    <p class="notice">※残りわずか</p>
+<!-- CTA -->
+<div class="box">
+<h2>無料体験受付中</h2>
 
-    <a href="https://lin.ee/tbqkBNf" class="button">
-        LINEで無料体験を申し込む
-    </a>
+<p class="red">※先着20名限定</p>
+
+<a href="https://lin.ee/tbqkBNf" class="button">
+LINEで体験申込
+</a>
+
 </div>
 
-</section>
+</div>
 
 <footer>
 <p>くらしとお金サロン｜北九州市</p>
-<p>お問い合わせ：070-3538-5073</p>
+<p>070-3538-5073</p>
 </footer>
 
 </body>
