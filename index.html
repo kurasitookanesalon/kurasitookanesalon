@@ -5,107 +5,169 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>北九州｜引退世代のお金の学校｜くらしとお金サロン</title>
+<meta name="description" content="北九州市で開催。引退世代向けにNISA・資産運用・詐欺対策を基礎から学べる金融教育サロン。無料体験受付中。">
 
-<meta name="description" content="老後のお金・NISA・詐欺対策を学べる北九州の金融教育サロン。無料体験受付中。">
+<!-- フォント -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-margin:0;
-font-family:sans-serif;
-background:#f5f7fb;
-color:#333;
+:root{
+  --blue:#1E5BB8;
+  --navy:#163E7A;
+  --gold:#D4AF37;
+  --line:#06C755;
+  --text:#333;
+  --bg:#F5F7FB;
 }
 
-/* トップ */
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Noto Sans JP',sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.8;
+}
+
+/* ===== ヘッダー ===== */
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid #eee;
+  z-index:1000;
+}
+
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+}
+
+.header img{
+  height:40px;
+}
+
+.nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+
+/* ===== HERO ===== */
 .hero{
-position:relative;
-background:url("bg.jpg") center/cover no-repeat;
-color:white;
-text-align:center;
-padding:120px 20px;
+  margin-top:60px;
+  position:relative;
+  background:url("bg.jpg") center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:140px 20px;
 }
 
 .hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(30,91,184,0.85), rgba(22,62,122,0.85));
 }
 
-.hero *{
-position:relative;
-z-index:1;
-}
-
-.hero img{
-width:120px;
-margin-bottom:20px;
+.hero-inner{
+  position:relative;
+  z-index:1;
+  max-width:800px;
+  margin:auto;
 }
 
 .hero h1{
-font-size:32px;
-margin-bottom:10px;
+  font-size:34px;
+  margin-bottom:10px;
 }
 
 .hero p{
-font-size:18px;
+  font-size:18px;
+  opacity:0.95;
 }
 
-/* セクション */
+.cta{
+  margin-top:25px;
+}
+
+.button{
+  display:inline-block;
+  background:var(--line);
+  color:white;
+  padding:16px 32px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.sub{
+  font-size:13px;
+  margin-top:10px;
+}
+
+/* ===== セクション ===== */
 .section{
-max-width:900px;
-margin:50px auto;
-padding:0 20px;
+  max-width:900px;
+  margin:60px auto;
+  padding:0 20px;
 }
 
-.box{
-background:white;
-padding:30px;
-border-radius:12px;
-margin-bottom:25px;
+.card{
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  margin-bottom:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* 講師 */
+h2{
+  font-size:22px;
+  margin-bottom:15px;
+  color:var(--navy);
+}
+
+/* ===== 講師 ===== */
 .profile{
-display:flex;
-gap:20px;
-align-items:center;
+  display:flex;
+  gap:20px;
+  align-items:center;
 }
 
 .profile img{
-width:140px;
-border-radius:12px;
+  width:140px;
+  border-radius:12px;
 }
 
-/* ボタン */
-.button{
-display:block;
-background:#06C755;
-color:white;
-text-align:center;
-padding:18px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-margin-top:20px;
+/* ===== CTA強調 ===== */
+.cta-box{
+  text-align:center;
+  background:#FFF8E5;
+  border:2px solid var(--gold);
 }
 
-/* 強調 */
 .red{
-color:red;
-font-weight:bold;
+  color:red;
+  font-weight:bold;
 }
 
-/* フッター */
+/* ===== フッター ===== */
 footer{
-background:#163E7A;
-color:white;
-text-align:center;
-padding:30px;
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:40px;
+  margin-top:60px;
+  font-size:14px;
 }
 
 </style>
@@ -113,87 +175,107 @@ padding:30px;
 
 <body>
 
-<!-- トップ -->
-<div class="hero">
-<img src="logo.png">
-<h1>大切なお金を増やしながら守る</h1>
-<p>引退世代のためのお金の学校</p>
-<p class="red">※知らないと損する時代です</p>
+<!-- ヘッダー -->
+<div class="header">
+  <div class="header-inner">
+    <img src="logo.png">
+    <div class="nav">
+      <a href="#">トップ</a>
+      <a href="#">サロンについて</a>
+      <a href="#">講師</a>
+      <a href="#">体験</a>
+    </div>
+  </div>
+</div>
 
-<a href="https://lin.ee/tbqkBNf" class="button">
-LINEで無料体験を申し込む
-</a>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1>大切なお金を増やしながら守る</h1>
+    <p>引退世代のためのお金の学校</p>
+
+    <div class="cta">
+      <a href="https://lin.ee/tbqkBNf" class="button">
+        LINEで無料体験を申し込む
+      </a>
+      <div class="sub">※先着20名限定 / 無理な勧誘は一切ありません</div>
+    </div>
+  </div>
 </div>
 
 <div class="section">
 
-<!-- 共感 -->
-<div class="box">
+<div class="card">
 <h2>こんなお悩みありませんか？</h2>
 <ul>
 <li>老後のお金が不安</li>
-<li>投資が怖い</li>
-<li>詐欺に騙されそうで怖い</li>
-<li>何をしたらいいか分からない</li>
+<li>投資が怖い・よく分からない</li>
+<li>詐欺に騙されないか心配</li>
+<li>何から始めればいいか分からない</li>
 </ul>
 </div>
 
-<!-- 危機感 -->
-<div class="box">
+<div class="card">
 <h2>今の時代、知らない人から損をします</h2>
 <p>
-インフレにより、お金の価値は年々下がっています。<br><br>
-
-さらに、SNS投資詐欺なども増えており、<br>
-知識がない人ほど狙われる時代です。
+インフレにより現金の価値は年々下がっています。<br>
+さらにSNS投資詐欺など、知識がない人ほど狙われる時代です。
 </p>
 </div>
 
-<!-- 解決 -->
-<div class="box">
+<div class="card">
 <h2>くらしとお金サロンとは</h2>
 <p>
-金融商品を売ることは一切せず、<br>
-お金の知識だけを学べる場所です。<br><br>
+金融商品の販売は一切行わず、<br>
+「知識だけ」を学べる金融教育サロンです。<br><br>
 
-・NISAの基礎<br>
-・資産の増やし方<br>
-・詐欺対策<br><br>
-
-を初心者でも分かる形で学べます。
+NISA・資産運用・詐欺対策などを<br>
+初心者でも分かる形で学べます。
 </p>
 </div>
 
-<!-- 講師 -->
-<div class="box">
-<h2>講師紹介</h2>
+<div class="card">
+<h2>選ばれる理由</h2>
+<ul>
+<li>金融商品の勧誘なし</li>
+<li>少人数制で安心</li>
+<li>座談会形式で質問しやすい</li>
+<li>LINEでいつでも質問可能</li>
+</ul>
+</div>
 
+<div class="card">
+<h2>講師紹介</h2>
 <div class="profile">
 <img src="profile.jpg">
-
 <div>
 <p>
-飲食業15年、200店舗規模を担当。<br>
+飲食業15年、最大200店舗を担当。<br>
 1000人以上の教育経験。<br><br>
 
-金融業界の人間ではない<br>
-「普通の目線」で教えます。
+金融業界の人間ではなく、<br>
+一般目線で分かりやすく伝えます。
 </p>
 </div>
 </div>
-
 </div>
 
-<!-- CTA -->
-<div class="box">
-<h2>無料体験受付中</h2>
+<div class="card">
+<h2>開催情報</h2>
+<p>
+週1回（120分）<br>
+講義＋座談会<br>
+小倉南生涯学習センター
+</p>
+</div>
 
-<p class="red">※先着20名限定</p>
+<div class="card cta-box">
+<h2>無料体験受付中</h2>
+<p class="red">※残りわずか</p>
 
 <a href="https://lin.ee/tbqkBNf" class="button">
 LINEで体験申込
 </a>
-
 </div>
 
 </div>
