@@ -18,20 +18,23 @@ display:flex;
 height:100vh;
 }
 
-/* 左テキスト */
+/* 左 */
 .hero-left{
 flex:1;
-background:#ffffff;
 display:flex;
 flex-direction:column;
 justify-content:center;
+align-items:center;
+text-align:center;
 padding:60px;
+background:linear-gradient(135deg,#1E5BB8,#163E7A);
+color:#fff;
 }
 
 .hero-left h1{
-font-size:36px;
+font-size:34px;
+line-height:1.5;
 margin-bottom:20px;
-line-height:1.4;
 }
 
 .hero-left p{
@@ -40,16 +43,22 @@ line-height:1.8;
 margin-bottom:30px;
 }
 
-/* LINEボタン */
+/* 強調 */
+.gold{
+color:#D4AF37;
+font-weight:bold;
+}
+
+/* ボタン */
 .line-btn{
 background:#00c300;
 color:#fff;
-padding:18px 40px;
+padding:18px 45px;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
-display:inline-block;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+font-size:16px;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
 transition:0.3s;
 }
 
@@ -60,8 +69,17 @@ transform:translateY(-3px);
 /* 右スライド */
 .hero-right{
 flex:1;
-overflow:hidden;
 position:relative;
+overflow:hidden;
+}
+
+/* 黒＋グラデ */
+.hero-right::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+z-index:1;
 }
 
 .slider{
@@ -97,6 +115,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 text-align:center;
 margin-bottom:20px;
 font-size:28px;
+color:#1E5BB8;
 }
 
 .section p{
@@ -112,7 +131,7 @@ height:auto;
 }
 
 .hero-left{
-padding:30px;
+padding:40px 20px;
 }
 
 .hero-left h1{
@@ -133,23 +152,27 @@ height:300px;
 
 <!-- 左 -->
 <div class="hero-left">
+
 <h1>
-引退世代のお金の学校<br>
-「知らなかった」で損しないために
+<span class="gold">知らなかった</span>だけで、<br>
+大切なお金は減っていく。<br><br>
+
+<span class="gold">守る知識</span>と<br>
+<span class="gold">増やす力</span>を学ぶ場所
 </h1>
 
 <p>
-NISA・株式投資・詐欺対策まで<br>
-これからの時代に必要な知識を学べます<br><br>
+引退世代のためのお金の学校<br><br>
 
-・小倉南生涯学習センター開催<br>
-・週1回 9:00〜11:00<br>
-・定員20名
+NISA・株式投資・詐欺対策まで<br>
+これからの時代に必要な知識を<br>
+わかりやすく学べます
 </p>
 
 <a href="https://lin.ee/yxZwj10" class="line-btn">
-LINEで無料体験する
+無料体験はこちら
 </a>
+
 </div>
 
 <!-- 右 -->
@@ -184,46 +207,6 @@ document.head.appendChild(style);
 
 slider.classList.add("moving");
 </script>
-
-<!-- ================= コンテンツ ================= -->
-
-<section class="section">
-  <div class="section-inner">
-    <h2>サロン内容</h2>
-    <p>
-    引退世代向けの金融教育サロンです。<br>
-    NISA・株式投資・資産防衛・詐欺対策などを学びます。
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner">
-    <h2>サロン理念</h2>
-    <p>
-    増やす知識だけでなく、守る知恵も学び、安心して暮らせる環境を作ります。
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner">
-    <h2>自己紹介</h2>
-    <p>
-    飲食業15年、最大200店舗エリア担当。<br>
-    多くの人と関わる中で金融知識の重要性を実感し、このサロンを立ち上げました。
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner" style="text-align:center;">
-    <h2>まずは無料体験へ</h2>
-    <a href="https://lin.ee/yxZwj10" class="line-btn">
-      LINEで無料体験する
-    </a>
-  </div>
-</section>
 
 </body>
 </html>
