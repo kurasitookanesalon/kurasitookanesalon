@@ -26,15 +26,15 @@ overflow:hidden;
 display:flex;
 width:700%;
 height:100%;
-animation:slideX 50s linear infinite; /* ←修正 */
+animation:slideX 70s linear infinite; /* ←変更 */
 z-index:0;
 }
 
 .hero-slider img{
 width:100%;
 height:100%;
-object-fit:cover; /* ←維持 */
-object-position:center top; /* ←追加（ズーム軽減） */
+object-fit:contain; /* ←変更（ズームなし） */
+background:#000;
 flex-shrink:0;
 }
 
@@ -194,7 +194,26 @@ width:200px;
 
 </div>
 
-<!-- 以下は変更なし（省略せずそのまま続く） -->
+<!-- ===== LINE ===== -->
+<div class="card line-section">
+
+<h2>公式LINE</h2>
+
+<p>
+無料体験・お問い合わせは公式LINEから受け付けています。
+</p>
+
+<a href="https://lin.ee/yxZwj10" class="line-btn">
+ここをタップして友だち追加
+</a>
+
+<br><br>
+
+<img src="IMG_2124.png">
+
+<p>QRコードを読み取ってもご登録いただけます</p>
+
+</div>
 
 </div>
 
