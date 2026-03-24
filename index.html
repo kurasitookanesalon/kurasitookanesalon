@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>くらしとお金サロン</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
@@ -28,11 +27,6 @@ padding:40px 20px;
 text-align:center;
 }
 
-h2{
-font-size:28px;
-margin-bottom:18px;
-}
-
 .card{
 background:#fff;
 color:#222;
@@ -46,8 +40,6 @@ width:90%;
 color:var(--gold);
 font-weight:900;
 font-size:26px;
-display:block;
-margin-bottom:6px;
 }
 
 .cta{
@@ -61,7 +53,6 @@ border-radius:50px;
 font-weight:900;
 text-align:center;
 text-decoration:none;
-font-size:18px;
 }
 
 .floating{
@@ -76,21 +67,73 @@ z-index:999;
 .slider-wrap{overflow:hidden;}
 .slider{display:flex;}
 .slide{width:100%;flex-shrink:0;}
+
+/* 画像CTA */
+.image-cta{
+position:relative;
+}
+
+.image-cta img{
+width:100%;
+display:block;
+}
+
+.image-cta a{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:20px;
+width:90%;
+background:#00c300;
+color:#fff;
+padding:16px;
+border-radius:50px;
+font-weight:900;
+text-align:center;
+text-decoration:none;
+}
 </style>
 </head>
 
 <body>
 
-<!-- スライド -->
-<div class="slider-wrap">
-<div class="slider" id="slider">
+<!-- コンセプト -->
+<section>
 
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
-
+<div style="display:flex;justify-content:center;align-items:center;gap:10px;">
+<img src="ロゴ浮き.png" style="width:40px;">
+<div style="font-size:20px;font-weight:900;">くらしとお金サロン</div>
 </div>
+
+<div style="font-size:26px;margin-top:20px;">
+増やす知識 × 守る知恵<br>
+＋<br>
+地域の仲間
+</div>
+
+<div style="font-size:38px;color:#D4AF37;font-weight:900;margin-top:15px;">
+安心・安定のくらし
+</div>
+
+<a href="https://lin.ee/8mjr5Lan" class="cta">
+まずは無料体験の内容を確認する
+</a>
+
+<p style="font-size:12px;">
+※当サロンは販売や勧誘は一切行いません※
+</p>
+
+</section>
+
+<!-- 画像＋CTA（復活） -->
+<div class="image-cta">
+
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+
+<a href="https://lin.ee/8mjr5Lan">
+無料体験を公式LINEで受け取る
+</a>
+
 </div>
 
 <!-- 危機 -->
@@ -106,13 +149,12 @@ z-index:999;
 <div class="card">
 詐欺被害<br>
 <div class="gold">毎日 約20〜30人</div>
-<p>1日あたり約1億円以上の被害が発生しています</p>
+<p>1日あたり約1億円以上</p>
 </div>
 
 <div class="card">
 相続トラブルで裁判<br>
 <div class="gold">毎日 約30件</div>
-<p>家族間のトラブルに発展するケースも増えています</p>
 </div>
 
 </section>
@@ -124,22 +166,22 @@ z-index:999;
 
 <p>
 聞くだけのセミナーではありません。<br>
-地域に寄り添い、安心して続けられるコミュニティ型サロンです
+地域に寄り添うコミュニティ型サロンです
 </p>
 
 <div class="card">
-<span class="gold">将来のお金の不安</span>
-今の状況を整理し、何から始めるべきか明確になります
+<span class="gold">将来のお金の不安</span><br>
+今の状況を整理できます
 </div>
 
 <div class="card">
-<span class="gold">知識を身につけて</span>
-周りに流されず、自分で判断できるようになります
+<span class="gold">知識を身につけて</span><br>
+判断できるようになります
 </div>
 
 <div class="card">
-<span class="gold">一人で悩まず</span>
-同じ悩みを持つ仲間と安心して続けられます
+<span class="gold">一人で悩まず</span><br>
+相談できます
 </div>
 
 </section>
@@ -150,23 +192,23 @@ z-index:999;
 <h2>このサロンで学べること</h2>
 
 <div class="card">
-<span class="gold">インデックス投資</span>
-無理なくコツコツ増やしていく考え方を学びます
+<span class="gold">インデックス投資</span><br>
+無理なく増やす考え方
 </div>
 
 <div class="card">
-<span class="gold">老後資金</span>
-これから必要なお金の現実と考え方を整理します
+<span class="gold">老後資金</span><br>
+将来の考え方
 </div>
 
 <div class="card">
-<span class="gold">詐欺</span>
-実例をもとに騙されない判断力を身につけます
+<span class="gold">詐欺</span><br>
+見抜き方
 </div>
 
 <div class="card">
-<span class="gold">相続</span>
-トラブルを防ぐための基本知識を学びます
+<span class="gold">相続</span><br>
+基本知識
 </div>
 
 </section>
@@ -194,17 +236,17 @@ z-index:999;
 </div>
 
 <div class="card">
-<div style="font-size:14px;color:#666;">月額</div>
+<div style="font-size:14px;">月額</div>
 <div style="font-size:34px;color:#D4AF37;font-weight:900;">
 22,000円（税込）
 </div>
-<div style="font-size:13px;color:#666;">
-週1回 × 月4回の継続サロン
+<div style="font-size:13px;">
+週1回 × 月4回
 </div>
 </div>
 
 <p>
-当サロンは、地元コミュニティとしての活動も大切にしています<br>
+当サロンは地元コミュニティとしての活動も大切にしています<br>
 安心して続けられるサロンです
 </p>
 
@@ -223,8 +265,22 @@ z-index:999;
 </a>
 
 <p>
-内容を見てからご参加いただけますのでご安心ください
+内容を見てからご参加いただけます
 </p>
+
+</section>
+
+<!-- 開催場所 -->
+<section>
+
+<h2>開催場所</h2>
+
+<p>小倉南生涯学習センター（公共施設）</p>
+
+<iframe
+style="width:90%;height:250px;border-radius:12px;"
+src="https://maps.google.com/maps?q=小倉南生涯学習センター&output=embed">
+</iframe>
 
 </section>
 
@@ -234,25 +290,6 @@ z-index:999;
 無料体験はこちら
 </a>
 </div>
-
-<script>
-let i=0;
-const slider=document.getElementById("slider");
-
-setInterval(()=>{
-i++;
-slider.style.transform="translateX(-"+i*100+"%)";
-slider.style.transition="0.5s";
-
-if(i>=3){
-setTimeout(()=>{
-slider.style.transition="none";
-slider.style.transform="translateX(0)";
-i=0;
-},500);
-}
-},3000);
-</script>
 
 </body>
 </html>
