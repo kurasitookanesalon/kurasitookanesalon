@@ -61,14 +61,16 @@ margin-top:20px;
 .line-btn{
 background:#00c300;
 color:#fff;
-padding:18px 45px;
+padding:20px 50px;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
 margin-top:20px;
+font-size:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ===== 右スライド修正版 ===== */
+/* ===== 右スライド ===== */
 .hero-right{
 flex:1;
 overflow:hidden;
@@ -171,16 +173,22 @@ height:250px;
 
 <p>引退世代のためのお金の学校</p>
 
-<a href="#" class="line-btn">無料体験はこちら</a>
+<a href="https://lin.ee/yxZwj10" class="line-btn">
+無料体験はこちら
+</a>
 
 </div>
 
-<!-- ===== スライド修正版 ===== -->
+<!-- ===== スライド（完成版6枚） ===== -->
 <div class="hero-right">
 <div class="slider" id="slider">
 
+<img src="IMG_3616.png" class="slide">
 <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
 <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
 
 </div>
 </div>
@@ -189,15 +197,20 @@ height:250px;
 
 <!-- 不安 -->
 <section class="problem">
+
 <h2>こんな不安はありませんか？</h2>
+
 <div class="problem-card">老後のお金が不安</div>
 <div class="problem-card">投資がよく分からない</div>
 <div class="problem-card">詐欺が怖い</div>
+
 </section>
 
 <!-- インパクト -->
 <section class="impact">
+
 <h2>知らないだけでこれだけ差が出る</h2>
+
 <p>日本では毎日</p>
 <div class="big-number">約200人</div>
 <p>孤独死しています</p>
@@ -207,6 +220,7 @@ height:250px;
 <p>1件の詐欺被害で</p>
 <div class="big-number">5,500万円</div>
 <p>失うケースもあります</p>
+
 </section>
 
 <script>
@@ -216,7 +230,7 @@ const slides = document.querySelectorAll(".slide");
 let index = 0;
 const speed = 3000;
 
-/* ⭐ クローン1枚だけ（ここ重要） */
+/* ===== 無限ループ（安定版） ===== */
 const firstClone = slides[0].cloneNode(true);
 slider.appendChild(firstClone);
 
