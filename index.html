@@ -10,6 +10,7 @@ body{
   font-family:"Hiragino Kaku Gothic ProN", sans-serif;
 }
 
+/* ===== ヒーロー ===== */
 .hero{
   height:100vh;
   overflow:hidden;
@@ -20,7 +21,7 @@ body{
   display:flex;
   width:max-content;
   height:100%;
-  animation: flow 50s linear infinite; /* ←最終調整 */
+  animation: flow 50s linear infinite;
 }
 
 .img{
@@ -55,18 +56,25 @@ body{
 
 .logo{
   width:110px;
-  margin-bottom:20px;
 }
 
-h1{
-  font-size:34px;
-  margin:10px 0;
+/* ===== 共通セクション ===== */
+section{
+  padding:60px 20px;
+  background:url('92F216BD-DBCB-44E4-93A1-2E045A576A8F.png');
+  background-size:cover;
+  background-position:center;
 }
 
-.sub{
-  margin-bottom:20px;
+.section-inner{
+  background:rgba(255,255,255,0.92);
+  padding:30px;
+  border-radius:12px;
+  max-width:800px;
+  margin:auto;
 }
 
+/* ===== ボタン ===== */
 .cta{
   background:#00c300;
   color:white;
@@ -74,12 +82,14 @@ h1{
   border-radius:30px;
   text-decoration:none;
   display:inline-block;
+  margin-top:20px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- ===== トップ ===== -->
 <section class="hero">
 
   <div class="track">
@@ -105,10 +115,86 @@ h1{
   <div class="hero-content">
     <img src="ロゴ浮き.png" class="logo">
     <h1>くらしとお金サロン</h1>
-    <p class="sub">引退世代のためのお金の学校</p>
+    <p>引退世代のためのお金の学校</p>
     <a href="https://lin.ee/SerNrVa" class="cta">LINEで無料体験</a>
   </div>
 
+</section>
+
+<!-- ===== 悩み ===== -->
+<section>
+  <div class="section-inner">
+    <h2>こんなお悩みありませんか？</h2>
+    <ul>
+      <li>老後のお金が不安</li>
+      <li>投資が怖い</li>
+      <li>詐欺が心配</li>
+      <li>誰に相談していいかわからない</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== サロン内容 ===== -->
+<section>
+  <div class="section-inner">
+    <h2>サロン内容</h2>
+    <p>
+    このサロンでは、お金の不安を減らし、
+    安心して暮らしていくための知識を学びます。
+    </p>
+
+    <p>
+    難しい言葉は使わず、誰でも理解できる形でお伝えします。
+    </p>
+
+    <p>
+    週1回（120分）<br>
+    講義60分＋座談会60分
+    </p>
+
+    <p>月額22,000円（税込）</p>
+  </div>
+</section>
+
+<!-- ===== 強み ===== -->
+<section>
+  <div class="section-inner">
+    <h2>このサロンの特徴</h2>
+    <ul>
+      <li>商品の販売や勧誘などは一切ありません</li>
+      <li>少人数制で質問しやすい環境</li>
+      <li>地域の仲間とつながれる</li>
+      <li>必要に応じて専門家とも連携</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 理念 ===== -->
+<section>
+  <div class="section-inner">
+    <h2>サロン理念</h2>
+    <p>
+    増やす知識と守る知恵で、人生に安心を。
+    </p>
+
+    <p>
+    地域の中で、いつでも相談できる場所、
+    信頼できる人、同じ仲間がいる。
+    </p>
+
+    <p>
+    それが将来の安心につながります。
+    </p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section>
+  <div class="section-inner" style="text-align:center;">
+    <h2>無料体験受付中</h2>
+    <p>先着20名限定</p>
+    <a href="https://lin.ee/SerNrVa" class="cta">LINEで予約する</a>
+  </div>
 </section>
 
 </body>
