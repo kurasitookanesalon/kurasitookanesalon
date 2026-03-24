@@ -20,15 +20,15 @@
 body{
 margin:0;
 font-family:'Noto Sans JP', sans-serif;
-background:var(--bg);
+background:#fff;
 color:#222;
 letter-spacing:0.5px;
 padding-bottom:90px;
 }
 
-/* ===== 共通 ===== */
+/* 共通 */
 section{
-padding:40px 20px;
+padding:50px 20px;
 text-align:center;
 }
 
@@ -36,19 +36,19 @@ h2{
 font-size:26px;
 font-weight:900;
 line-height:1.4;
-margin-bottom:18px;
+margin-bottom:20px;
 }
 
 p{
 font-size:15px;
-line-height:1.6;
+line-height:1.7;
 }
 
-/* ===== ロゴ ===== */
+/* ロゴ */
 .brand{
 position:relative;
 text-align:center;
-margin-bottom:10px;
+margin-bottom:15px;
 padding-left:60px;
 }
 
@@ -65,7 +65,7 @@ font-size:20px;
 font-weight:900;
 }
 
-/* ===== CTA ===== */
+/* CTA */
 .cta-btn{
 display:block;
 width:calc(100% - 20px);
@@ -87,7 +87,7 @@ color:#ccc;
 margin-top:6px;
 }
 
-/* ===== トップ ===== */
+/* トップ */
 .hero{
 display:flex;
 height:100vh;
@@ -99,7 +99,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,var(--main),var(--sub));
+background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
 padding:20px;
 }
@@ -117,12 +117,12 @@ grid-column:1/4;
 
 .result{
 font-size:40px;
-color:var(--accent);
+color:#D4AF37;
 font-weight:900;
 margin-top:10px;
 }
 
-/* ===== スライド ===== */
+/* スライド */
 .hero-right{
 flex:1;
 overflow:hidden;
@@ -130,7 +130,6 @@ overflow:hidden;
 
 .slider{
 display:flex;
-width:100%;
 }
 
 .slide{
@@ -139,47 +138,63 @@ flex-shrink:0;
 object-fit:cover;
 }
 
-/* ===== 危機 ===== */
+/* 危機 */
 .danger{
-background:var(--sub);
+background:linear-gradient(135deg,#163E7A,#0f2f6b);
 color:#fff;
 }
 
 .danger-card{
-background:#204a8a;
+background:#fff;
+color:#222;
 padding:18px;
 border-radius:16px;
-margin-bottom:10px;
+margin-bottom:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
 
 .big{
 font-size:28px;
 font-weight:900;
-color:var(--accent);
+color:#1E5BB8;
 }
 
 .money{
 font-size:14px;
-opacity:0.9;
+color:#666;
 }
 
-/* ===== カード ===== */
+/* 共通カード */
 .card{
 background:#fff;
 padding:18px;
 border-radius:16px;
-margin-bottom:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
+margin-bottom:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
 }
 
-/* ===== 価格 ===== */
+/* セクション背景 */
+.light{
+background:#f5f7fb;
+}
+
+.price-section{
+background:linear-gradient(135deg,#fff7e6,#fdf0c2);
+}
+
+.final{
+background:linear-gradient(135deg,#1E5BB8,#163E7A);
+color:#fff;
+}
+
+/* 価格 */
 .price{
-font-size:34px;
-color:var(--accent);
+font-size:36px;
+color:#D4AF37;
 font-weight:900;
 }
 
-/* ===== 追従CTA ===== */
+/* 追従CTA */
 .floating-cta{
 position:fixed;
 bottom:10px;
@@ -193,7 +208,7 @@ transition:0.4s;
 
 .floating-cta a{
 display:block;
-background:var(--line);
+background:#00c300;
 color:#fff;
 padding:20px;
 text-align:center;
@@ -201,10 +216,10 @@ border-radius:50px;
 font-weight:900;
 font-size:18px;
 text-decoration:none;
-box-shadow:0 8px 24px rgba(0,0,0,0.4);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* ===== スマホ ===== */
+/* スマホ */
 @media(max-width:768px){
 .hero{
 flex-direction:column;
@@ -219,7 +234,7 @@ height:250px;
 
 <body>
 
-<!-- ===== トップ ===== -->
+<!-- トップ -->
 <div class="hero">
 
 <div class="hero-left">
@@ -269,65 +284,56 @@ height:250px;
 
 </div>
 
-<!-- ===== 危機 ===== -->
+<!-- 危機 -->
 <section class="danger">
-
-<h2>
-知らないだけで<br>
-こんな現実が起きています
-</h2>
+<h2>知らないだけで<br>こんな現実が起きています</h2>
 
 <div class="danger-card">
-認知症
-<div class="big">毎日 約800人</div>
+認知症<br><div class="big">毎日 約800人</div>
 </div>
 
 <div class="danger-card">
-詐欺被害
-<div class="big">毎日 約20〜30人</div>
-<div class="money">1日あたり約1億円以上の被害</div>
+詐欺被害<br><div class="big">毎日 約20〜30人</div>
+<div class="money">1日あたり約1億円以上</div>
 </div>
 
 <div class="danger-card">
-相続トラブル
-<div class="big">毎日 約30件</div>
+相続トラブル<br><div class="big">毎日 約30件</div>
 </div>
-
 </section>
 
-<!-- ===== 解決 ===== -->
-<section>
+<!-- 解決 -->
+<section class="light">
 
 <h2>このサロンでできること</h2>
 
-<div class="card">
-認知症によるトラブル<br>
-事前に備える方法を学べます
-</div>
-
-<div class="card">
-詐欺に騙される被害<br>
-防ぐための知識を学べます
-</div>
-
-<div class="card">
-相続の親族トラブル<br>
-トラブルを避ける考え方を学べます
-</div>
-
-<div class="card">
-お金や将来の不安<br>
-気軽に相談できます
-</div>
-
 <p>
-これらをすべて、事前に防ぐことができます
+聞くだけのセミナーではありません。<br>
+地域に寄り添い、安心して相談できるコミュニティ型サロンです
 </p>
+
+<div class="card">将来のお金の不安を整理できます</div>
+<div class="card">知識を身につけて判断できるようになります</div>
+<div class="card">一人で悩まず相談できます</div>
+
+<h2>このサロンで学べること</h2>
+
+<div class="card">インデックス投資（無理なく増やす考え方）</div>
+<div class="card">老後資金の考え方</div>
+<div class="card">詐欺の見抜き方</div>
+<div class="card">相続の基本知識</div>
+
+<h2>このサロンで相談できること</h2>
+
+<div class="card">今の貯金で大丈夫か</div>
+<div class="card">投資を始めるべきか</div>
+<div class="card">家族に迷惑をかけない準備</div>
+<div class="card">相続の不安</div>
 
 </section>
 
-<!-- ===== 料金 ===== -->
-<section>
+<!-- 料金 -->
+<section class="price-section">
 
 <h2>料金について</h2>
 
@@ -340,23 +346,17 @@ height:250px;
 
 <p>
 当サロンは、地元コミュニティとしての活動も大切にしています<br>
-毎週継続して、安心して続けられる<br>
-安心して相談できるサロンです
+安心して続けられる、相談できるサロンです
 </p>
 
 </section>
 
-<!-- ===== 最後 ===== -->
-<section>
-
-<h2>
-今からの備えが<br>
-これからの安心につながります
-</h2>
-
+<!-- 最後 -->
+<section class="final">
+<h2>今からの備えが<br>これからの安心につながります</h2>
 </section>
 
-<!-- ===== 追従CTA ===== -->
+<!-- 追従CTA -->
 <div class="floating-cta">
 <a href="https://lin.ee/8mjr5Lan">
 無料体験を公式LINEで受け取る
