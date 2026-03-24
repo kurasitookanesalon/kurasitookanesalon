@@ -13,25 +13,12 @@ body {
     color: #333;
 }
 
-/* ヘッダー（背景画像＋ロゴ） */
+/* ヘッダー（背景シンプル） */
 .header {
-    background: url("IMG_3616.png") center/cover no-repeat;
+    background: linear-gradient(135deg, #1E5BB8, #163E7A);
     color: white;
     text-align: center;
-    padding: 80px 20px;
-    position: relative;
-}
-
-.header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(30,91,184,0.8);
-}
-
-.header-content {
-    position: relative;
-    z-index: 1;
+    padding: 60px 20px;
 }
 
 .logo {
@@ -48,7 +35,7 @@ body {
     margin-top: 10px;
 }
 
-/* ナビ（飛ばし） */
+/* ナビ */
 .nav {
     display: flex;
     overflow-x: auto;
@@ -76,14 +63,10 @@ body {
     border-radius: 15px;
 }
 
-/* 講師画像（ズレ修正済） */
+/* 講師画像（修正済） */
 .profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 30%;
-    border: 6px solid #1E5BB8;
+    width: 200px;
+    border-radius: 15px;
     display: block;
     margin: 0 auto 20px auto;
 }
@@ -107,12 +90,10 @@ body {
 
 <!-- ヘッダー -->
 <div class="header">
-    <div class="header-content">
-        <img src="ロゴ浮き.png" class="logo">
-        <h1>くらしとお金サロン</h1>
-        <p>引退世代のためのお金の学校</p>
-        <a href="https://lin.ee/Sr8JBJa" class="btn">LINEで無料体験</a>
-    </div>
+    <img src="ロゴ浮き.png" class="logo">
+    <h1>くらしとお金サロン</h1>
+    <p>引退世代のためのお金の学校</p>
+    <a href="https://lin.ee/Sr8JBJa" class="btn">LINEで無料体験</a>
 </div>
 
 <!-- ナビ -->
