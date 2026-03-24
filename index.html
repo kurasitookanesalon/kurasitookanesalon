@@ -13,31 +13,29 @@ background-size:cover;
 background-attachment:fixed;
 }
 
-/* ===== トップ ===== */
 .hero{
 position:relative;
 height:100vh;
 overflow:hidden;
 }
 
-/* 🔥横に繋げる */
+/* 🔥ここ修正 */
 .hero-slider{
 display:flex;
 height:100%;
-animation:slideX 25s linear infinite;
+animation:slideX 18s linear infinite; /* ←速く */
 }
 
-/* 🔥切らない */
 .hero-slider img{
 height:100%;
-width:auto; /* ←これが本質 */
+width:auto;
 flex-shrink:0;
 }
 
-/* 🔥そのまま流す */
+/* 🔥距離短縮（これが重要） */
 @keyframes slideX{
 0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+100%{transform:translateX(-50%);} /* ←半分だけ動かす */
 }
 
 .hero::after{
