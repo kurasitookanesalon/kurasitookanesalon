@@ -9,17 +9,60 @@
 <title>くらしとお金サロン</title>
 
 <style>
+:root{
+--main:#1E5BB8;
+--sub:#163E7A;
+--accent:#D4AF37;
+--line:#00c300;
+--bg:#f5f7fb;
+}
+
 body{
 margin:0;
 font-family:'Noto Sans JP', sans-serif;
-background:#0f2f6b;
+background:var(--bg);
 }
 
-/* ================= トップ ================= */
+/* ===== 共通 ===== */
+section{
+padding:50px 18px;
+}
+
+h2{
+font-size:26px;
+font-weight:900;
+margin:10px 0 20px;
+}
+
+/* ===== CTA ===== */
+.cta-wrap{
+margin-top:25px;
+text-align:center;
+}
+
+.cta-btn{
+display:block;
+width:100%;
+background:var(--line);
+color:#fff;
+padding:20px;
+border-radius:50px;
+font-size:18px;
+font-weight:700;
+text-decoration:none;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+
+.cta-safe{
+font-size:12px;
+color:#999;
+margin-top:8px;
+}
+
+/* ===== トップ ===== */
 .hero{
 display:flex;
 height:100vh;
-overflow:hidden;
 }
 
 .hero-left{
@@ -28,60 +71,28 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:40px;
-background:linear-gradient(135deg,#1E5BB8,#163E7A);
+background:linear-gradient(135deg,var(--main),var(--sub));
 color:#fff;
-}
-
-.catch-wrap{
-max-width:700px;
-margin:auto;
+padding:20px;
 }
 
 .row{
 display:grid;
 grid-template-columns:1fr 60px 1fr;
-align-items:center;
-margin:12px 0;
-font-size:36px;
-font-weight:700;
+font-size:32px;
+margin:8px 0;
 }
 
-.left{ text-align:right; }
-.right{ text-align:left; }
-.center{ text-align:center; }
-
 .full{
-grid-column:1 / 4;
+grid-column:1/4;
 text-align:center;
-white-space:nowrap;
 }
 
 .result{
-text-align:center;
-font-size:48px;
-color:#D4AF37;
+font-size:42px;
+color:var(--accent);
 font-weight:900;
-margin-top:25px;
-}
-
-.line-btn{
-background:#00c300;
-color:#fff;
-padding:22px 55px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-margin-top:25px;
-font-size:20px;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
-animation: pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-0%{ transform:scale(1); }
-50%{ transform:scale(1.08); }
-100%{ transform:scale(1); }
+margin-top:10px;
 }
 
 .hero-right{
@@ -98,197 +109,110 @@ height:100%;
 width:100%;
 height:100%;
 object-fit:cover;
-flex-shrink:0;
 }
 
-/* ================= 危機 ================= */
+/* ===== 危機 ===== */
 .danger{
-background:#0f2f6b;
+background:var(--sub);
 color:#fff;
-padding:100px 20px;
-text-align:center;
 }
 
-.danger h2{
-font-size:28px;
-margin-bottom:50px;
-font-weight:900;
+.danger-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
 
 .danger-card{
-background:#163E7A;
-padding:30px;
-border-radius:15px;
-margin:20px auto;
-max-width:600px;
+background:#204a8a;
+padding:18px;
+border-radius:12px;
 }
 
 .danger-number{
-font-size:48px;
-color:#D4AF37;
-font-weight:900;
-margin:10px 0;
-}
-
-.danger-message{
-margin-top:40px;
-font-size:18px;
-line-height:1.6;
-}
-
-/* ================= 解決 ================= */
-.solution{
-background:#fff;
-padding:100px 20px;
-text-align:center;
-}
-
-.solution h2{
 font-size:32px;
+color:var(--accent);
 font-weight:900;
-margin-bottom:20px;
 }
 
-.solution-lead{
-font-size:20px;
-margin-bottom:40px;
-line-height:1.6;
-}
-
+/* ===== 解決 ===== */
 .solution-box{
-background:#f5f7fb;
-padding:40px;
-border-radius:15px;
-max-width:600px;
-margin:0 auto 30px;
-}
-
-.solution-box ul{
-list-style:none;
-padding:0;
-}
-
-.solution-box li{
-margin:10px 0;
-font-size:18px;
-}
-
-.solution-message{
-margin-top:40px;
-font-size:20px;
-font-weight:700;
-}
-
-/* ================= 概要 ================= */
-.info{
 background:#fff;
-padding:100px 20px;
-text-align:center;
+padding:20px;
+border-radius:12px;
 }
 
-.info h2{
-font-size:30px;
-font-weight:900;
-margin-bottom:50px;
-}
-
-.info-box{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:800px;
-margin:0 auto;
-}
-
-.info-item{
-background:#f5f7fb;
-padding:30px;
-border-radius:15px;
-}
-
-/* ================= 内容 ================= */
-.content{
-background:#f5f7fb;
-padding:100px 20px;
-text-align:center;
-}
-
-.content h2{
-font-size:30px;
-font-weight:900;
-margin-bottom:50px;
-}
-
+/* ===== 内容 ===== */
 .content-box{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:900px;
-margin:0 auto;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
 
 .content-item{
 background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.content-message{
-margin-top:40px;
-font-size:18px;
+padding:18px;
+border-radius:12px;
 font-weight:700;
 }
 
-/* ================= 料金 ================= */
-.price{
+/* ===== 料金 ===== */
+.price-box{
 background:#fff;
-padding:100px 20px;
-text-align:center;
-}
-
-.price h2{
-font-size:30px;
-font-weight:900;
-margin-bottom:40px;
+padding:20px;
+border-radius:12px;
 }
 
 .price-value{
-font-size:40px;
-color:#D4AF37;
+font-size:36px;
+color:var(--accent);
 font-weight:900;
-margin:20px 0;
 }
 
-/* ================= 最後 ================= */
+/* ===== 最後 ===== */
 .final{
-background:#163E7A;
+background:var(--sub);
 color:#fff;
-padding:100px 20px;
 text-align:center;
 }
 
-.final h2{
-font-size:30px;
-font-weight:900;
-margin-bottom:30px;
+/* ===== 追従ボタン ===== */
+.floating-cta{
+position:fixed;
+bottom:10px;
+left:10px;
+right:10px;
+opacity:0;
+transform:translateY(20px);
+transition:all 0.4s;
+z-index:999;
 }
 
-.final-btn{
-display:inline-block;
-margin-top:40px;
-background:#00c300;
+.floating-cta a{
+display:block;
+background:var(--line);
 color:#fff;
-padding:20px 50px;
+padding:16px;
+text-align:center;
 border-radius:50px;
-text-decoration:none;
 font-weight:700;
-font-size:20px;
-animation: pulse 1.8s infinite;
+text-decoration:none;
 }
 
-/* スマホ */
-@media (max-width:768px){
+/* ===== アニメ ===== */
+.cta-btn,
+.floating-cta a{
+animation:softPulse 2s infinite;
+}
+
+@keyframes softPulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+/* ===== スマホ ===== */
+@media(max-width:768px){
 .hero{
 flex-direction:column;
 height:auto;
@@ -296,30 +220,31 @@ height:auto;
 .hero-right{
 height:250px;
 }
-.row{ font-size:24px; }
-.result{ font-size:34px; }
+.danger-grid{
+grid-template-columns:1fr;
+}
+.content-box{
+grid-template-columns:1fr;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- トップ -->
+<!-- ===== トップ ===== -->
 <div class="hero">
+
 <div class="hero-left">
 
-<div class="catch-wrap">
-
 <div class="row">
-<div class="left">増やす知識</div>
-<div class="center">×</div>
-<div class="right">守る知恵</div>
+<div>増やす知識</div>
+<div style="text-align:center;">×</div>
+<div>守る知恵</div>
 </div>
 
 <div class="row">
-<div></div>
-<div class="center">＋</div>
-<div></div>
+<div></div><div style="text-align:center;">＋</div><div></div>
 </div>
 
 <div class="row">
@@ -327,20 +252,17 @@ height:250px;
 </div>
 
 <div class="row">
-<div></div>
-<div class="center">＝</div>
-<div></div>
+<div></div><div style="text-align:center;">＝</div><div></div>
 </div>
 
 <div class="result">安心・安定のくらし</div>
 
-</div>
-
-<p>引退世代のためのお金の学校</p>
-
-<a href="https://lin.ee/8mjr5Lan" class="line-btn">
-無料体験はこちら
+<div class="cta-wrap">
+<a href="https://lin.ee/8mjr5Lan" class="cta-btn">
+無料体験を公式LINEで受け取る
 </a>
+<p class="cta-safe">※当サロンは販売や勧誘は一切行いません※</p>
+</div>
 
 </div>
 
@@ -353,120 +275,133 @@ height:250px;
 <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
 </div>
 </div>
+
 </div>
 
 <!-- 危機 -->
 <section class="danger">
 <h2>知らないだけで、こんな現実が起きています</h2>
 
-<div class="danger-card">
-<p>日本では毎日 約800人が認知症になっています</p>
-<p><strong>資産が凍結され、家族でもお金を引き出せません</strong></p>
+<div class="danger-grid">
+<div class="danger-card">認知症<div class="danger-number">毎日 約800人</div></div>
+<div class="danger-card">孤独死<div class="danger-number">毎日 約200人</div></div>
+<div class="danger-card">詐欺被害<div class="danger-number">発生中</div></div>
+<div class="danger-card">相続<div class="danger-number">毎日 約30件</div></div>
 </div>
 
-<div class="danger-card">
-<p>毎日 約200人が孤独死</p>
+<div class="cta-wrap">
+<a href="https://lin.ee/8mjr5Lan" class="cta-btn">無料体験を公式LINEで受け取る</a>
+<p class="cta-safe">※勧誘なし</p>
 </div>
 
-<div class="danger-card">
-<p>詐欺被害は毎日発生しています</p>
-</div>
-
-<p class="danger-message">
-これは特別な人の話ではありません。<br>
-<strong>「知らない人」から起きています。</strong>
-</p>
 </section>
 
 <!-- 解決 -->
 <section class="solution">
-<h2>でも、大丈夫です</h2>
-
-<p class="solution-lead">
-正しい知識があれば防ぐことができます
-</p>
+<h2>でも大丈夫です</h2>
 
 <div class="solution-box">
 <ul>
-<li>お金を増やす方法（NISA・投資）</li>
-<li>老後資金の考え方</li>
-<li>詐欺対策</li>
-<li>相続・認知症対策</li>
+<li>増やす（NISA）</li>
+<li>守る（詐欺対策）</li>
+<li>老後資金</li>
+<li>相続対策</li>
 </ul>
 </div>
 
-<p class="solution-message">
-知ることで、安心に変わります
-</p>
-</section>
-
-<!-- 概要 -->
-<section class="info">
-<h2>サロン概要</h2>
-
-<div class="info-box">
-<div class="info-item"><h3>いつ</h3><p>週1回 9:00〜11:00</p></div>
-<div class="info-item"><h3>どこで</h3><p>小倉南生涯学習センター</p></div>
-<div class="info-item"><h3>誰と</h3><p>同じ世代の仲間と学ぶ</p></div>
+<div class="cta-wrap">
+<a href="https://lin.ee/8mjr5Lan" class="cta-btn">無料体験を公式LINEで受け取る</a>
+<p class="cta-safe">※勧誘なし</p>
 </div>
+
 </section>
 
 <!-- 内容 -->
 <section class="content">
-<h2>サロンで学べること</h2>
+<h2>学べること</h2>
 
 <div class="content-box">
-<div class="content-item"><h3>お金を増やす</h3></div>
-<div class="content-item"><h3>老後資金</h3></div>
-<div class="content-item"><h3>詐欺対策</h3></div>
-<div class="content-item"><h3>相続対策</h3></div>
+<div class="content-item">インデックス投資</div>
+<div class="content-item">老後資金</div>
+<div class="content-item">詐欺対策</div>
+<div class="content-item">相続対策</div>
 </div>
 
-<p class="content-message">
-増やす力と守る知識を両方学びます
-</p>
+<div class="cta-wrap">
+<a href="https://lin.ee/8mjr5Lan" class="cta-btn">無料体験を公式LINEで受け取る</a>
+<p class="cta-safe">※勧誘なし</p>
+</div>
+
 </section>
 
 <!-- 料金 -->
 <section class="price">
 <h2>料金</h2>
-<div class="price-value">月額 22,000円</div>
+
+<div class="price-box">
+<p>月 約8時間の学び</p>
+<div class="price-value">22,000円</div>
+</div>
+
+<div class="cta-wrap">
+<a href="https://lin.ee/8mjr5Lan" class="cta-btn">無料体験を公式LINEで受け取る</a>
+<p class="cta-safe">※勧誘なし</p>
+</div>
+
 </section>
 
 <!-- 最後 -->
 <section class="final">
 <h2>今の決断が未来を変えます</h2>
-<a href="https://lin.ee/8mjr5Lan" class="final-btn">
-無料体験に参加する
-</a>
+
+<div class="cta-wrap">
+<a href="https://lin.ee/8mjr5Lan" class="cta-btn">無料体験を公式LINEで受け取る</a>
+<p class="cta-safe">※勧誘なし</p>
+</div>
+
 </section>
 
+<!-- 追従CTA -->
+<div class="floating-cta">
+<a href="https://lin.ee/8mjr5Lan">
+無料体験を公式LINEで受け取る
+</a>
+</div>
+
 <script>
-const slider = document.getElementById("slider");
-const slides = document.querySelectorAll(".slide");
+// スライド
+const slider=document.getElementById("slider");
+const slides=document.querySelectorAll(".slide");
+let index=0;
 
-let index = 0;
-const speed = 3000;
-
-const firstClone = slides[0].cloneNode(true);
+const firstClone=slides[0].cloneNode(true);
 slider.appendChild(firstClone);
 
-function moveSlide(){
-  index++;
-  slider.style.transition = "transform 1s ease";
-  slider.style.transform = `translateX(-${index * 100}%)`;
-
-  if(index === slides.length){
-    setTimeout(()=>{
-      slider.style.transition = "none";
-      slider.style.transform = "translateX(0)";
-      index = 0;
-    },1000);
-  }
+setInterval(()=>{
+index++;
+slider.style.transition="transform 1s";
+slider.style.transform=`translateX(-${index*100}%)`;
+if(index===slides.length){
+setTimeout(()=>{
+slider.style.transition="none";
+slider.style.transform="translateX(0)";
+index=0;
+},1000);
 }
+},3000);
 
-setInterval(moveSlide, speed);
+// 追従ボタン
+const floating=document.querySelector(".floating-cta");
+window.addEventListener("scroll",()=>{
+if(window.scrollY>300){
+floating.style.opacity="1";
+floating.style.transform="translateY(0)";
+}else{
+floating.style.opacity="0";
+floating.style.transform="translateY(20px)";
+}
+});
 </script>
 
 </body>
-  </html>
+</html>
