@@ -18,21 +18,21 @@ body{
   position:relative;
 }
 
-/* ===== 横にそのまま並べて流す ===== */
+/* ===== 横スクロール ===== */
 .track{
   display:flex;
   height:100%;
-  animation: flow 80s linear infinite;
+  animation: flow 20s linear infinite; /* ←ここ速くした */
 }
 
-/* ここが最重要（切れ防止） */
+/* 画像（切れ防止） */
 .img{
   height:100%;
-  width:auto;        /* ←これで人が切れない */
+  width:auto;
   flex-shrink:0;
 }
 
-/* 無限スクロール */
+/* 無限ループ */
 @keyframes flow{
   0%{ transform:translateX(0); }
   100%{ transform:translateX(-50%); }
@@ -98,7 +98,7 @@ h1{
     <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
     <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
 
-    <!-- 2周目（同じ） -->
+    <!-- 2周目 -->
     <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
     <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
     <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
