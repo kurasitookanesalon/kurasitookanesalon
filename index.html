@@ -11,18 +11,19 @@ body{
   font-family:"Hiragino Kaku Gothic ProN", sans-serif;
 }
 
-/* ===== スライド ===== */
+/* ===== ヒーロー ===== */
 .hero{
   height:100vh;
   overflow:hidden;
   position:relative;
 }
 
+/* ===== 無限横スクロール ===== */
 .slider{
   display:flex;
-  width:600%;
+  width:200%;
   height:100%;
-  animation: slideMove 40s infinite;
+  animation: flow 80s linear infinite;
 }
 
 .slide{
@@ -33,27 +34,13 @@ body{
   flex-shrink:0;
 }
 
-/* 横スライド */
-@keyframes slideMove{
+/* 無限ループ */
+@keyframes flow{
   0%{ transform:translateX(0); }
-  16%{ transform:translateX(0); }
-
-  20%{ transform:translateX(-100%); }
-  36%{ transform:translateX(-100%); }
-
-  40%{ transform:translateX(-200%); }
-  56%{ transform:translateX(-200%); }
-
-  60%{ transform:translateX(-300%); }
-  76%{ transform:translateX(-300%); }
-
-  80%{ transform:translateX(-400%); }
-  96%{ transform:translateX(-400%); }
-
-  100%{ transform:translateX(-500%); }
+  100%{ transform:translateX(-50%); }
 }
 
-/* 暗くする */
+/* 暗幕 */
 .hero::before{
   content:"";
   position:absolute;
@@ -63,6 +50,7 @@ body{
   z-index:1;
 }
 
+/* テキスト */
 .hero-content{
   position:absolute;
   z-index:2;
@@ -80,6 +68,11 @@ body{
 
 h1{
   font-size:34px;
+  margin:10px 0;
+}
+
+.sub{
+  margin-bottom:20px;
 }
 
 .cta{
@@ -89,7 +82,6 @@ h1{
   border-radius:30px;
   text-decoration:none;
   display:inline-block;
-  margin-top:20px;
 }
 </style>
 </head>
@@ -99,18 +91,29 @@ h1{
 <section class="hero">
 
   <div class="slider">
+
+    <!-- 1周目 -->
     <div class="slide" style="background-image:url('41604837-5C3A-4DF9-B10F-E837EC243D5B.png')"></div>
     <div class="slide" style="background-image:url('480EA703-74CE-4342-9595-AB8F5ABDD83D.png')"></div>
     <div class="slide" style="background-image:url('6648FF22-7681-4F3D-8A69-FF57A9D10207.png')"></div>
     <div class="slide" style="background-image:url('89804053-68C8-4E48-A98F-6E56CD01A26C.png')"></div>
     <div class="slide" style="background-image:url('DEA53687-842A-4E25-9838-AE0A1C0C0C49.png')"></div>
     <div class="slide" style="background-image:url('DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png')"></div>
+
+    <!-- 2周目（同じ） -->
+    <div class="slide" style="background-image:url('41604837-5C3A-4DF9-B10F-E837EC243D5B.png')"></div>
+    <div class="slide" style="background-image:url('480EA703-74CE-4342-9595-AB8F5ABDD83D.png')"></div>
+    <div class="slide" style="background-image:url('6648FF22-7681-4F3D-8A69-FF57A9D10207.png')"></div>
+    <div class="slide" style="background-image:url('89804053-68C8-4E48-A98F-6E56CD01A26C.png')"></div>
+    <div class="slide" style="background-image:url('DEA53687-842A-4E25-9838-AE0A1C0C0C49.png')"></div>
+    <div class="slide" style="background-image:url('DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png')"></div>
+
   </div>
 
   <div class="hero-content">
     <img src="ロゴ浮き.png" class="logo">
     <h1>くらしとお金サロン</h1>
-    <p>引退世代のためのお金の学校</p>
+    <p class="sub">引退世代のためのお金の学校</p>
     <a href="https://lin.ee/SerNrVa" class="cta">LINEで無料体験</a>
   </div>
 
