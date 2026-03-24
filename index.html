@@ -50,7 +50,7 @@ body{
   margin-top:15px;
 }
 
-/* ===== ボタン ===== */
+/* ===== 上ボタン ===== */
 .btn{
   display:block;
   width:90%;
@@ -68,7 +68,7 @@ body{
 
 .note{
   font-size:12px;
-  opacity:0.8;
+  opacity:0.9;
   text-align:center;
 }
 
@@ -118,24 +118,48 @@ body{
   font-weight:bold;
 }
 
-/* ===== 追尾ボタン ===== */
+/* ===== 追尾LINEボタン（動く） ===== */
 .floating-btn{
   position:fixed;
   bottom:15px;
   left:50%;
   transform:translateX(-50%);
-  width:90%;
+  width:92%;
   max-width:420px;
   background:#00C300;
   color:#fff;
   text-align:center;
-  padding:18px;
-  border-radius:40px;
-  font-size:18px;
+  padding:16px 20px;
+  border-radius:50px;
+  font-size:17px;
   font-weight:bold;
   text-decoration:none;
   z-index:999;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+
+  animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{transform:translateX(-50%) scale(1)}
+  50%{transform:translateX(-50%) scale(1.04)}
+}
+
+.floating-btn:active{
+  transform:translateX(-50%) scale(0.95);
+}
+
+.floating-sub{
+  display:block;
+  font-size:11px;
+  opacity:0.85;
+  margin-top:2px;
 }
 </style>
 </head>
@@ -161,7 +185,7 @@ body{
   </a>
 
   <div class="note">
-    見るだけOK。納得してからご判断ください。
+    無料体験のうえ、ご検討いただけます
   </div>
 
 </div>
@@ -187,27 +211,37 @@ body{
   <div class="card"><div class="gold">認知症診断者 毎日 約800人</div></div>
   <div class="card"><div class="gold">詐欺被害 毎日 約20〜30人</div></div>
   <div class="card"><div class="gold">相続トラブル 毎日 約30件</div></div>
+
 </div>
 
 <!-- ===== 最後 ===== -->
 <div class="section">
   <h2>今からの備えが<br>これからの安心につながります</h2>
+
   <img src="IMG_2124.png" style="width:200px;margin-top:20px;">
 </div>
 
-<!-- ===== 追尾CTA ===== -->
+<!-- ===== 追尾LINEボタン ===== -->
 <a href="https://lin.ee/yxZwj10" class="floating-btn">
-  無料体験・ご質問はこちらから
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg"
+       style="width:22px;height:22px;">
+
+  <div>
+    無料体験・ご質問はこちらから
+    <span class="floating-sub">無料体験のうえ、ご検討いただけます</span>
+  </div>
+
 </a>
 
 <script>
 const track = document.getElementById("slideTrack");
 
-// クローンして無限化
+// 無限ループ
 track.innerHTML += track.innerHTML;
 
 let scrollX = 0;
-const speed = 0.5; // ←速さ（数字大きくすると速くなる）
+const speed = 0.6;
 
 function slide(){
   scrollX += speed;
