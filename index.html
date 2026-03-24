@@ -24,7 +24,7 @@ overflow:hidden;
 .hero-slider{
 display:flex;
 height:100%;
-animation:slideX 55s linear infinite; /* ←修正 */
+animation:slideX 48s linear infinite; /* ←修正 */
 }
 
 .hero-slider img{
@@ -33,18 +33,18 @@ width:auto;
 flex-shrink:0;
 }
 
-/* ループ */
+/* スライド */
 @keyframes slideX{
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
 }
 
-/* オーバーレイ */
+/* 🔥暗さ調整 */
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.4);
+background:rgba(0,0,0,0.2); /* ←修正 */
 }
 
 .hero-content{
