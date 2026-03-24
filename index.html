@@ -1,35 +1,42 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン</title>
-
-<style>
-body{
-  margin:0;
-  font-family:"Hiragino Kaku Gothic ProN", sans-serif;
-}
-
-/* ===== スライド ===== */
 .hero{
   height:100vh;
-  position:relative;
   overflow:hidden;
+  position:relative;
+}
+
+.slider{
+  display:flex;
+  width:600%; /* 画像6枚 */
+  height:100%;
+  animation: slideMove 30s infinite;
 }
 
 .slide{
-  position:absolute;
   width:100%;
   height:100%;
   background-size:cover;
-  background-position:center;
-  opacity:0;
-  transition:1s;
+  background-position: center;
+  flex-shrink:0;
 }
 
-.slide.active{
-  opacity:1;
+/* 横に流れる */
+@keyframes slideMove{
+  0%{ transform:translateX(0); }
+  16%{ transform:translateX(0); }
+
+  20%{ transform:translateX(-100%); }
+  36%{ transform:translateX(-100%); }
+
+  40%{ transform:translateX(-200%); }
+  56%{ transform:translateX(-200%); }
+
+  60%{ transform:translateX(-300%); }
+  76%{ transform:translateX(-300%); }
+
+  80%{ transform:translateX(-400%); }
+  96%{ transform:translateX(-400%); }
+
+  100%{ transform:translateX(-500%); }
 }
 
 /* 暗くする */
@@ -51,64 +58,3 @@ body{
   top:50%;
   transform:translateY(-50%);
 }
-
-.logo{
-  width:110px;
-  margin-bottom:20px;
-}
-
-h1{
-  font-size:34px;
-  margin:10px 0;
-}
-
-.sub{
-  margin-bottom:25px;
-}
-
-.cta{
-  background:#00c300;
-  color:white;
-  padding:15px 30px;
-  border-radius:30px;
-  text-decoration:none;
-  display:inline-block;
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-
-  <!-- 👇ここがスライド -->
-  <div class="slide active" style="background-image:url('41604837-5C3A-4DF9-B10F-E837EC243D5B.png')"></div>
-  <div class="slide" style="background-image:url('480EA703-74CE-4342-9595-AB8F5ABDD83D.png')"></div>
-  <div class="slide" style="background-image:url('6648FF22-7681-4F3D-8A69-FF57A9D10207.png')"></div>
-  <div class="slide" style="background-image:url('89804053-68C8-4E48-A98F-6E56CD01A26C.png')"></div>
-  <div class="slide" style="background-image:url('DEA53687-842A-4E25-9838-AE0A1C0C0C49.png')"></div>
-  <div class="slide" style="background-image:url('DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png')"></div>
-
-  <!-- 上の文字 -->
-  <div class="hero-content">
-    <img src="ロゴ浮き.png" class="logo">
-    <h1>くらしとお金サロン</h1>
-    <p class="sub">引退世代のためのお金の学校</p>
-    <a href="https://lin.ee/SerNrVa" class="cta">LINEで無料体験</a>
-  </div>
-
-</section>
-
-<script>
-let slides = document.querySelectorAll(".slide");
-let current = 0;
-
-setInterval(() => {
-  slides[current].classList.remove("active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("active");
-}, 4000);
-</script>
-
-</body>
-</html>
