@@ -19,7 +19,7 @@ height:100vh;
 overflow:hidden;
 }
 
-/* 左（中央寄せ＆バランス修正済） */
+/* 左 */
 .hero-left{
 flex:1;
 display:flex;
@@ -32,10 +32,10 @@ background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
 }
 
-/* キャッチ */
+/* キャッチ（サイズUP） */
 .catch{
-font-size:28px;
-line-height:1.8;
+font-size:34px;
+line-height:2;
 letter-spacing:1px;
 margin:0;
 }
@@ -43,9 +43,9 @@ margin:0;
 /* 記号 */
 .plus, .equal{
 display:block;
-font-size:26px;
-margin:12px 0;
-opacity:0.8;
+font-size:30px;
+margin:15px 0;
+opacity:0.9;
 }
 
 /* 強調 */
@@ -55,22 +55,22 @@ font-weight:bold;
 }
 
 .big{
-font-size:34px;
+font-size:42px;
 margin-top:10px;
 }
 
 /* 説明 */
 .hero-left p{
-font-size:15px;
+font-size:16px;
 line-height:1.8;
-margin:25px 0;
+margin:30px 0;
 }
 
 /* ボタン */
 .line-btn{
 background:#00c300;
 color:#fff;
-padding:16px 40px;
+padding:18px 45px;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
@@ -80,29 +80,7 @@ box-shadow:0 6px 15px rgba(0,0,0,0.25);
 /* 右（スライド） */
 .hero-right{
 flex:1;
-position:relative;
 overflow:hidden;
-}
-
-/* 境界ぼかし */
-.hero-right::before{
-content:"";
-position:absolute;
-left:0;
-top:0;
-width:100px;
-height:100%;
-background:linear-gradient(to right,#163E7A,transparent);
-z-index:2;
-}
-
-/* 軽いグラデ（暗くしない） */
-.hero-right::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to left, rgba(30,91,184,0.1), rgba(0,0,0,0.05));
-z-index:1;
 }
 
 /* スライド */
@@ -117,15 +95,12 @@ width:auto;
 flex-shrink:0;
 }
 
-/* 横スライド */
+/* スムーズ無限ループ */
 .slider.moving{
-animation:slideX 40s linear infinite;
+animation:slideX linear infinite;
 }
 
-@keyframes slideX{
-0%{ transform:translateX(0); }
-100%{ transform:translateX(-50%); }
-}
+/* JSで距離に応じて時間調整 */
 
 /* スマホ */
 @media (max-width:768px){
@@ -134,16 +109,12 @@ flex-direction:column;
 height:auto;
 }
 
-.hero-left{
-padding:30px 20px;
-}
-
 .catch{
-font-size:22px;
+font-size:26px;
 }
 
 .big{
-font-size:26px;
+font-size:32px;
 }
 
 .hero-right{
@@ -155,7 +126,6 @@ height:250px;
 
 <body>
 
-<!-- ================= トップ ================= -->
 <div class="hero">
 
 <!-- 左 -->
@@ -198,10 +168,34 @@ NISA・株式投資・詐欺対策まで学べます
 
 </div>
 
-<!-- ================= JS ================= -->
 <script>
 const slider = document.getElementById("slider");
+
+/* 画像を複製（途切れ防止） */
 slider.innerHTML += slider.innerHTML;
+
+/* スライド幅取得 */
+const totalWidth = slider.scrollWidth / 2;
+
+/* スピード一定（px/秒） */
+const speed = 80;
+
+/* 時間計算 */
+const duration = totalWidth / speed;
+
+/* keyframes動的生成 */
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes slideX {
+0% { transform: translateX(0); }
+100% { transform: translateX(-${totalWidth}px); }
+}
+#slider.moving {
+animation-duration: ${duration}s;
+}
+`;
+document.head.appendChild(style);
+
 slider.classList.add("moving");
 </script>
 
