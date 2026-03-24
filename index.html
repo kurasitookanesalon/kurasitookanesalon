@@ -51,7 +51,7 @@ body{
 }
 
 .btn{
-  display:block;
+  display:flex;
   width:90%;
   max-width:420px;
   margin:25px auto 10px;
@@ -63,8 +63,6 @@ body{
   font-size:18px;
   font-weight:bold;
   text-decoration:none;
-
-  display:flex;
   align-items:center;
   justify-content:center;
   gap:8px;
@@ -126,39 +124,18 @@ body{
   border-radius:20px;
   text-align:center;
   text-decoration:none;
-
   background:linear-gradient(180deg, #ffffff 0%, #f0f3f8 100%);
   color:#1E5BB8;
   border:3px solid #1E5BB8;
-
-  box-shadow:
-    0 6px 0 #163E7A,
-    0 16px 30px rgba(0,0,0,0.45),
-    0 4px 10px rgba(0,0,0,0.3);
-
+  box-shadow:0 6px 0 #163E7A,0 16px 30px rgba(0,0,0,0.45);
   opacity:0;
-  transform:translateY(60px) scale(0.95);
-  transition:all 0.6s cubic-bezier(0.22, 1.5, 0.36, 1);
-}
-
-.notion-btn strong{
-  display:block;
-  font-size:20px;
-  margin-bottom:6px;
-}
-
-.notion-btn span{
-  font-size:14px;
-  opacity:0.85;
+  transform:translateY(60px);
+  transition:0.6s;
 }
 
 .notion-btn.show{
   opacity:1;
-  transform:translateY(0) scale(1.05);
-}
-
-.notion-btn.show.done{
-  transform:translateY(0) scale(1);
+  transform:translateY(0);
 }
 
 .floating-btn{
@@ -171,25 +148,23 @@ body{
   background:#00C300;
   color:#fff;
   text-align:center;
-  padding:16px 20px;
+  padding:16px;
   border-radius:50px;
   font-size:17px;
   font-weight:bold;
   text-decoration:none;
   z-index:999;
-
   display:flex;
   align-items:center;
   justify-content:center;
   gap:8px;
-
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
 </style>
 </head>
 
 <body>
 
+<!-- ヒーロー -->
 <div class="hero">
   <div class="hero-header">
     <img src="ロゴ浮き.png">
@@ -204,7 +179,6 @@ body{
     <strong>安心・安定のくらし</strong>
   </div>
 
-  <!-- 🔥 上ボタン修正 -->
   <a href="https://lin.ee/n37s4pB" class="btn" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;">
     まずは内容を見てみる
@@ -215,6 +189,7 @@ body{
   </div>
 </div>
 
+<!-- スライダー -->
 <div class="slider">
   <div class="slide-track" id="slideTrack">
     <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
@@ -225,12 +200,64 @@ body{
   </div>
 </div>
 
-<!-- 以降そのまま（省略せず全部入ってる） -->
+<!-- 不安 -->
+<div class="section">
+  <h2>知らないだけでこんな現実が起きています</h2>
+  <div class="card">詐欺被害は毎日 約50件、約1.2億円</div>
+  <div class="card">認知症診断は、毎日 約800人</div>
+  <div class="card">相続トラブルも毎日 約30件</div>
+</div>
 
-<!-- 🔥 下ボタン修正 -->
+<!-- 安心 -->
+<div class="section">
+  <h2>ですが、ご安心ください</h2>
+  <div class="card">対策を学ぶことができます</div>
+  <div class="card">守る知識が身につきます</div>
+</div>
+
+<!-- 得られる -->
+<div class="section">
+  <h2>このサロンで得られること</h2>
+  <div class="card">地域の仲間と一緒に学べる場所</div>
+  <img src="BB39BDA6-B7C0-48F8-ABFA-FAE043FAE08E.png" style="width:90%;max-width:500px;">
+</div>
+
+<!-- Notion -->
+<div class="section">
+  <h2>詳しく知りたい方はこちら</h2>
+
+  <a href="https://noon-zircon-435.notion.site/321520320ef680baa5c6c9175f33bbbe?source=copy_link" class="notion-btn">講師プロフィール</a>
+  <a href="https://noon-zircon-435.notion.site/31f520320ef6806090e9c2aa44a4a245?source=copy_link" class="notion-btn">サロン内容</a>
+  <a href="https://noon-zircon-435.notion.site/31f520320ef680f0a1f8d6cb3112a5ad?source=copy_link" class="notion-btn">理念</a>
+
+</div>
+
+<!-- 開催場所 -->
+<div class="section">
+  <h2>開催場所</h2>
+
+  <div class="card">
+    小倉南生涯学習センター<br>
+    小倉南区若園5丁目1-5
+  </div>
+
+  <iframe src="https://www.google.com/maps?q=小倉南生涯学習センター&output=embed" width="90%" height="300"></iframe>
+</div>
+
+<!-- 参加 -->
+<div class="section">
+  <h2>こちらからご参加いただけます</h2>
+
+  <img src="IMG_2124.png" style="width:220px;">
+
+  <div class="card">
+    「体験」または「質問」と送ってください
+  </div>
+</div>
+
 <a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;">
-  友だち追加・質問はこちら
+  友だち追加はこちら
 </a>
 
 <script>
@@ -245,16 +272,12 @@ function slide(){
 }
 slide();
 
-const targets=document.querySelectorAll('.notion-btn');
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      setTimeout(()=>entry.target.classList.add('done'),300);
-    }
-  });
-},{threshold:0.2});
-targets.forEach(t=>observer.observe(t));
+ entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add("show")}
+ });
+});
+document.querySelectorAll(".notion-btn").forEach(el=>observer.observe(el));
 </script>
 
 </body>
