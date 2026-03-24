@@ -8,250 +8,246 @@
 <style>
 body{
   margin:0;
-  font-family:'Noto Sans JP',sans-serif;
+  font-family:sans-serif;
   background:#1E5BB8;
-  color:#fff;
-  text-align:center;
+  color:white;
 }
 
-/* セクション */
-.section{
-  padding:60px 20px;
-}
-
-/* ロゴ */
-.logo-area{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-}
-.logo-area img{
-  width:40px;
-}
-.logo-text{
-  font-size:20px;
-  font-weight:bold;
-}
-
-/* メインコピー */
-.main-copy{
-  font-size:22px;
-  line-height:1.6;
-}
-.gold{
-  color:#D4AF37;
-  font-size:30px;
-  font-weight:bold;
-  margin-top:20px;
-}
-
-/* ボタン */
-.btn{
-  background:#00C300;
-  color:#fff;
-  padding:18px;
-  border-radius:40px;
-  display:block;
-  margin:30px auto;
-  width:90%;
-  max-width:400px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-/* スライド */
+/* ===== スライド ===== */
 .slider{
+  width:100%;
   overflow:hidden;
 }
+
 .slide-track{
   display:flex;
   width:200%;
-  animation:scroll 20s linear infinite;
+  animation:scroll 30s linear infinite;
 }
+
 .slide-track img{
-  width:100%;
+  width:calc(100% / 6);
+  height:250px;
+  object-fit:cover;
   flex-shrink:0;
 }
+
 @keyframes scroll{
   0%{transform:translateX(0);}
   100%{transform:translateX(-50%);}
 }
 
-/* カード */
+/* ===== テキスト ===== */
+.section{
+  padding:40px 20px;
+  text-align:center;
+}
+
+h1{
+  font-size:26px;
+  margin-bottom:20px;
+}
+
+.gold{
+  color:#D4AF37;
+  font-weight:bold;
+  font-size:28px;
+}
+
+/* ===== カード ===== */
 .card{
-  background:#fff;
-  color:#000;
-  border-radius:20px;
+  background:white;
+  color:#333;
   padding:20px;
-  margin:20px auto;
-  width:90%;
-  max-width:500px;
+  border-radius:20px;
+  margin:15px 0;
 }
 
-/* 金文字 */
-.card-title{
-  color:#D4AF37;
+.card .gold{
   font-size:22px;
+}
+
+/* ===== ボタン ===== */
+.btn{
+  display:block;
+  margin:30px auto;
+  background:#00C300;
+  color:white;
+  padding:18px;
+  border-radius:40px;
+  width:90%;
+  text-align:center;
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* ===== 料金カード ===== */
+.price-card{
+  background:white;
+  color:#333;
+  padding:25px;
+  border-radius:20px;
+  margin:20px;
+}
+
+.price{
+  color:#D4AF37;
+  font-size:36px;
   font-weight:bold;
 }
 
-/* 料金 */
-.price{
-  font-size:32px;
-  color:#D4AF37;
-  font-weight:bold;
+/* ===== 地図 ===== */
+.map{
+  margin:20px;
+  border-radius:20px;
+  overflow:hidden;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ヘッダー -->
+<!-- ===== ヘッダー ===== -->
 <div class="section">
-  <div class="logo-area">
-    <img src="ロゴ浮き.png">
-    <div class="logo-text">くらしとお金サロン</div>
-  </div>
+  <h1>くらしとお金サロン</h1>
+  <p>増やす知識 × 守る知恵</p>
+  <p>＋</p>
+  <p>地域の仲間</p>
+  <p class="gold">安心・安定のくらし</p>
 
-  <div class="main-copy">
-    増やす知識 × 守る知恵<br>
-    ＋<br>
-    地域の仲間
-  </div>
-
-  <div class="gold">安心・安定のくらし</div>
-
-  <a href="#" class="btn">まずは内容を確認する</a>
-  <div style="font-size:12px;">※販売や勧誘は一切ありません※</div>
+  <a href="#" class="btn">まずは無料体験の内容を確認する</a>
+  <p style="font-size:12px;">※販売や勧誘は一切ありません※</p>
 </div>
 
-<!-- スライド -->
+<!-- ===== スライド ===== -->
 <div class="slider">
   <div class="slide-track">
-    <img src="IMG_2124.png">
-    <img src="IMG_3616.png">
-    <img src="IMG_2124.png">
-    <img src="IMG_3616.png">
+
+    <img src="1515CEE9-CB27-425E-813D-36D0B5C11CB0.jpeg">
+    <img src="5B3A78EA-BDAA-4C8B-882C-4894054B4AE0.jpeg">
+    <img src="733C0120-EB3D-42FE-9E46-F6A96C5325EA.jpeg">
+    <img src="5793377E-C044-491C-B946-7BC86F48B3F4.jpeg">
+    <img src="510A48DC-9946-4810-BDBB-94B632927BFA.jpeg">
+    <img src="A5544769-D3B9-480D-ABEB-1CAAB1676A3C.jpeg">
+
+    <!-- ループ用 -->
+    <img src="1515CEE9-CB27-425E-813D-36D0B5C11CB0.jpeg">
+    <img src="5B3A78EA-BDAA-4C8B-882C-4894054B4AE0.jpeg">
+    <img src="733C0120-EB3D-42FE-9E46-F6A96C5325EA.jpeg">
+    <img src="5793377E-C044-491C-B946-7BC86F48B3F4.jpeg">
+    <img src="510A48DC-9946-4810-BDBB-94B632927BFA.jpeg">
+    <img src="A5544769-D3B9-480D-ABEB-1CAAB1676A3C.jpeg">
+
   </div>
 </div>
 
-<a href="#" class="btn">雰囲気を見てみる</a>
-
-<!-- 現実 -->
+<!-- ===== 現実 ===== -->
 <div class="section">
-  <h2>知らないだけで<br>こんな現実が起きています</h2>
+  <h1>知らないだけで<br>こんな現実が起きています</h1>
 
   <div class="card">
-    <div>認知症診断者</div>
-    <div class="card-title">毎日 約800人</div>
+    <div class="gold">認知症診断者</div>
+    <div class="gold">毎日 約800人</div>
   </div>
 
   <div class="card">
-    <div>詐欺被害</div>
-    <div class="card-title">毎日 約20〜30人</div>
-    <div>1日あたり約1億円以上の被害</div>
+    <div class="gold">詐欺被害</div>
+    <div class="gold">毎日 約20〜30人</div>
   </div>
 
   <div class="card">
-    <div>相続トラブルで裁判</div>
-    <div class="card-title">毎日 約30件</div>
+    <div class="gold">相続トラブル</div>
+    <div class="gold">毎日 約30件</div>
   </div>
 </div>
 
-<!-- できること -->
+<!-- ===== できること ===== -->
 <div class="section">
-  <h2>このサロンでできること</h2>
+  <h1>このサロンでできること</h1>
+  <p>聞くだけのセミナーではありません<br>
+  地域に寄り添うコミュニティ型サロンです</p>
 
   <div class="card">
-    <div class="card-title">将来のお金の不安</div>
-    <div>今の状況を整理し、これからの方向性を考えられます</div>
+    <div class="gold">将来のお金の不安</div>
+    <p>今の状況を整理できます</p>
   </div>
 
   <div class="card">
-    <div class="card-title">知識を身につけて</div>
-    <div>自分で判断できる力を身につけることができます</div>
+    <div class="gold">知識を身につけて</div>
+    <p>自分で判断できるようになります</p>
   </div>
 
   <div class="card">
-    <div class="card-title">一人で悩まず</div>
-    <div>安心して相談できる環境があります</div>
+    <div class="gold">一人で悩まず</div>
+    <p>いつでも相談できます</p>
   </div>
 </div>
 
-<!-- 学べる -->
+<!-- ===== 学べること ===== -->
 <div class="section">
-  <h2>このサロンで学べること</h2>
+  <h1>このサロンで学べること</h1>
 
   <div class="card">
-    <div class="card-title">インデックス投資</div>
-    <div>無理なく長期で増やす考え方を学びます</div>
+    <div class="gold">インデックス投資</div>
+    <p>無理なく増やす考え方を学べます</p>
   </div>
 
   <div class="card">
-    <div class="card-title">老後資金</div>
-    <div>将来に向けた具体的な備え方を理解できます</div>
+    <div class="gold">老後資金</div>
+    <p>これからの生活設計を考えます</p>
   </div>
 
   <div class="card">
-    <div class="card-title">詐欺</div>
-    <div>騙されないための見抜き方を学びます</div>
+    <div class="gold">詐欺対策</div>
+    <p>被害にあわない見抜き方</p>
   </div>
 
   <div class="card">
-    <div class="card-title">相続</div>
-    <div>トラブルを防ぐための基本知識を身につけます</div>
+    <div class="gold">相続</div>
+    <p>トラブルを防ぐ基本知識</p>
   </div>
 </div>
 
-<!-- 相談 -->
+<!-- ===== 料金 ===== -->
 <div class="section">
-  <h2>このサロンで相談できること</h2>
-
-  <div class="card">
-    <div class="card-title">今の貯金で大丈夫か</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">投資を始めるべきか</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">家族に迷惑をかけない準備</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">相続の不安や悩み</div>
-  </div>
-</div>
-
-<!-- 料金 -->
-<div class="section">
-  <h2>料金について</h2>
+  <h1>料金について</h1>
 
   <div class="card">
     一般的な単発セミナーは<br>
     一回数万円のケースもあります
   </div>
 
-  <div class="card">
+  <div class="price-card">
     <div>月額</div>
     <div class="price">22,000円（税込）</div>
     <div>週1回 × 月4回の継続サロン</div>
   </div>
 
   <p>
-    地元コミュニティとしての活動も大切にしています<br>
-    安心して続けられる、相談できるサロンです
+  地元コミュニティとしての活動も大切にしています<br>
+  安心して続けられるサロンです
   </p>
 </div>
 
-<!-- 締め -->
+<!-- ===== CTA ===== -->
 <div class="section">
-  <h2>今からの備えが<br>これからの安心につながります</h2>
+  <h1>今からの備えが<br>これからの安心につながります</h1>
 
-  <a href="#" class="btn">内容を確認してみる</a>
-  <div>内容を見てから参加できますのでご安心ください</div>
+  <a href="#" class="btn">まずは無料体験の内容を確認する</a>
+
+  <p>内容を見てからご参加いただけます</p>
+</div>
+
+<!-- ===== 地図 ===== -->
+<div class="section">
+  <h1>開催場所</h1>
+  <p>小倉南生涯学習センター（公共施設）</p>
+
+  <div class="map">
+    <iframe 
+    src="https://maps.google.com/maps?q=小倉南生涯学習センター&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    width="100%" height="300" frameborder="0"></iframe>
+  </div>
 </div>
 
 </body>
