@@ -11,49 +11,20 @@ html, body{
   font-family:"Hiragino Kaku Gothic ProN", sans-serif;
 }
 
-/* ===== ヒーロー（最上部） ===== */
+/* ===== トップ（背景なし） ===== */
 .hero{
   height:100vh;
-  overflow:hidden;
-  position:relative;
+  background:#000; /* 仮 */
 }
 
-.track{
-  display:flex;
-  width:max-content;
-  height:100%;
-  animation: flow 50s linear infinite;
-  position:relative;
-}
-
-.img{
-  height:100%;
-  width:auto;
-  display:block;
-}
-
-@keyframes flow{
-  0%{ transform:translateX(0); }
-  100%{ transform:translateX(-50%); }
-}
-
-/* 黒幕 */
-.track::after{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.4);
-}
-
-/* ===== 背景（下だけ） ===== */
+/* ===== 背景セクション（ここが修正済み） ===== */
 .bg-section{
-  padding:100px 20px;
+  padding:120px 20px;
 
   background:url('92F216BD-DBCB-44E4-93A1-2E045A576A8F.png');
-  background-size:100% auto;
-  background-repeat:repeat-y; /* ←縦に繋ぐ */
-  background-position:top center;
+  background-size:100% 100%;   /* ←ズームなし＆1枚固定 */
+  background-repeat:no-repeat; /* ←繰り返さない */
+  background-position:center;
 }
 
 /* 白カード */
@@ -64,37 +35,17 @@ html, body{
   max-width:700px;
   margin:auto;
   text-align:center;
-  font-size:20px;
+  font-size:22px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== トップ（ここは背景なし） ===== -->
-<section class="hero">
-  <div class="track">
+<!-- トップ -->
+<section class="hero"></section>
 
-    <!-- 画像 -->
-    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
-    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
-    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
-    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="img">
-    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
-    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
-
-    <!-- ループ -->
-    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
-    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
-    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
-    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="img">
-    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
-    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
-
-  </div>
-</section>
-
-<!-- ===== ここから背景あり ===== -->
+<!-- 背景テスト -->
 <section class="bg-section">
   <div class="box">テスト1</div>
 </section>
@@ -105,10 +56,6 @@ html, body{
 
 <section class="bg-section">
   <div class="box">テスト3</div>
-</section>
-
-<section class="bg-section">
-  <div class="box">テスト4</div>
 </section>
 
 </body>
