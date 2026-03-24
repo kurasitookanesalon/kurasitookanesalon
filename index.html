@@ -33,34 +33,49 @@ text-align:center;
 }
 
 h2{
-font-size:28px;
+font-size:26px;
 font-weight:900;
-margin:0 0 20px;
+margin-bottom:18px;
+line-height:1.4;
 }
 
 p{
-margin:10px 0;
 font-size:15px;
 line-height:1.6;
+margin:10px 0;
 }
 
 .sub{
 font-size:13px;
-color:#666;
+color:#fff;
+opacity:0.85;
 }
 
-/* ===== ロゴ ===== */
+.big{
+font-size:28px;
+font-weight:900;
+color:var(--accent);
+}
+
+.money{
+font-size:14px;
+color:#fff;
+opacity:0.9;
+}
+
+/* ===== ロゴ（文字中心） ===== */
 .brand{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
+position:relative;
+text-align:center;
 margin-bottom:10px;
 }
 
 .logo{
 width:50px;
-filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+position:absolute;
+left:0;
+top:50%;
+transform:translateY(-50%);
 }
 
 .brand-name{
@@ -71,7 +86,8 @@ font-weight:900;
 /* ===== CTA（最初） ===== */
 .cta-btn{
 display:block;
-width:100%;
+width:calc(100% - 20px);
+margin:0 auto;
 background:var(--line);
 color:#fff;
 padding:18px;
@@ -80,11 +96,12 @@ font-size:17px;
 font-weight:700;
 text-decoration:none;
 box-shadow:0 6px 18px rgba(0,0,0,0.2);
+text-align:center;
 }
 
 .cta-safe{
 font-size:12px;
-color:#aaa;
+color:#ccc;
 margin-top:6px;
 }
 
@@ -108,13 +125,12 @@ padding:20px;
 .row{
 display:grid;
 grid-template-columns:1fr 60px 1fr;
-font-size:30px;
+font-size:28px;
 margin:6px 0;
 }
 
 .full{
 grid-column:1/4;
-text-align:center;
 }
 
 .result{
@@ -149,63 +165,41 @@ color:#fff;
 
 .danger-grid{
 display:grid;
-grid-template-columns:1fr;
 gap:10px;
 }
 
 .danger-card{
 background:#204a8a;
-padding:16px;
-border-radius:12px;
-text-align:left;
-}
-
-.big{
-font-size:28px;
-font-weight:900;
-color:var(--accent);
-}
-
-.money{
-font-size:14px;
-color:#ddd;
+padding:18px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+text-align:center;
 }
 
 /* ===== 解決 ===== */
 .solution-grid{
 display:grid;
-grid-template-columns:1fr;
 gap:10px;
 }
 
 .solution-card{
 background:#fff;
-padding:16px;
-border-radius:12px;
-text-align:left;
-}
-
-.label{
-font-size:14px;
-color:#666;
-}
-
-.solution-message{
-margin-top:15px;
-font-weight:700;
+padding:18px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* ===== 内容 ===== */
 .content-box{
 display:grid;
-grid-template-columns:1fr;
 gap:10px;
 }
 
 .content-item{
 background:#fff;
-padding:16px;
-border-radius:12px;
+padding:18px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 font-weight:700;
 }
 
@@ -213,7 +207,8 @@ font-weight:700;
 .price-box{
 background:#fff;
 padding:18px;
-border-radius:12px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
 .price-value{
@@ -228,7 +223,7 @@ background:var(--sub);
 color:#fff;
 }
 
-/* ===== 追従ボタン ===== */
+/* ===== 追従CTA ===== */
 .floating-cta{
 position:fixed;
 bottom:10px;
@@ -244,12 +239,14 @@ transition:0.4s;
 display:block;
 background:var(--line);
 color:#fff;
-padding:18px;
+padding:20px;
 text-align:center;
 border-radius:50px;
-font-weight:700;
+font-weight:900;
+font-size:18px;
+letter-spacing:1px;
 text-decoration:none;
-box-shadow:0 6px 20px rgba(0,0,0,0.3);
+box-shadow:0 8px 24px rgba(0,0,0,0.4);
 animation:float 2s infinite;
 }
 
@@ -326,7 +323,10 @@ height:250px;
 
 <!-- 危機 -->
 <section class="danger">
-<h2>知らないだけで、こんな現実が起きています</h2>
+<h2>
+知らないだけで<br>
+こんな現実が起きています
+</h2>
 
 <div class="danger-grid">
 
@@ -354,29 +354,29 @@ height:250px;
 </section>
 
 <!-- 解決 -->
-<section class="solution">
+<section>
 <h2>このサロンでできること</h2>
 
 <div class="solution-grid">
 
 <div class="solution-card">
-<p class="label">認知症</p>
-<p class="big">事前に対策できます</p>
+認知症によるトラブル<br>
+<strong>事前に対策できます</strong>
 </div>
 
 <div class="solution-card">
-<p class="label">詐欺</p>
-<p class="big">騙されない知識</p>
+詐欺に騙される被害<br>
+<strong>防ぐ知識を学べます</strong>
 </div>
 
 <div class="solution-card">
-<p class="label">相続</p>
-<p class="big">トラブル回避</p>
+相続の親族トラブル<br>
+<strong>事前に回避できます</strong>
 </div>
 
 </div>
 
-<p class="solution-message">
+<p>
 これらをすべて、事前に防ぐことができます
 </p>
 
@@ -412,14 +412,17 @@ height:250px;
 </div>
 
 <p>
-この学びが、これからの安心につながります
+今からの備えが、これからの安心につながります
 </p>
 
 </section>
 
 <!-- 最後 -->
 <section class="final">
-<h2>今の決断が未来を変えます</h2>
+<h2>
+今からの備えが<br>
+これからの安心につながります
+</h2>
 </section>
 
 <!-- 追従CTA -->
