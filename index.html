@@ -23,7 +23,7 @@ overflow:hidden;
 .hero-slider{
 display:flex;
 height:100%;
-animation:slideX 36s linear infinite;
+animation:slideX 28s linear infinite; /* ←修正 */
 }
 
 .hero-slider img{
@@ -32,10 +32,9 @@ width:auto;
 flex-shrink:0;
 }
 
-/* 🔥ここが本質修正 */
 @keyframes slideX{
 0%{transform:translateX(0);}
-100%{transform:translateX(-100%);} /* ←修正 */
+100%{transform:translateX(-100%);}
 }
 
 .hero::after{
