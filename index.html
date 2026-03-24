@@ -68,10 +68,11 @@ font-weight:bold;
 margin-top:20px;
 }
 
-/* 右スライド復活 */
+/* ===== 右スライド修正版 ===== */
 .hero-right{
 flex:1;
 overflow:hidden;
+position:relative;
 }
 
 .slider{
@@ -79,14 +80,11 @@ display:flex;
 height:100%;
 }
 
-.slider img{
+.slide{
+width:100%;
 height:100%;
-width:auto;
+object-fit:cover;
 flex-shrink:0;
-}
-
-.slider.moving{
-animation:slideX linear infinite;
 }
 
 /* ================= 不安 ================= */
@@ -143,7 +141,6 @@ height:250px;
 
 <body>
 
-<!-- トップ -->
 <div class="hero">
 
 <div class="hero-left">
@@ -178,11 +175,13 @@ height:250px;
 
 </div>
 
-<!-- スライド（復活＋画像差別化） -->
+<!-- ===== スライド修正版 ===== -->
 <div class="hero-right">
 <div class="slider" id="slider">
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
+
 </div>
 </div>
 
@@ -190,20 +189,15 @@ height:250px;
 
 <!-- 不安 -->
 <section class="problem">
-
 <h2>こんな不安はありませんか？</h2>
-
 <div class="problem-card">老後のお金が不安</div>
 <div class="problem-card">投資がよく分からない</div>
 <div class="problem-card">詐欺が怖い</div>
-
 </section>
 
 <!-- インパクト -->
 <section class="impact">
-
 <h2>知らないだけでこれだけ差が出る</h2>
-
 <p>日本では毎日</p>
 <div class="big-number">約200人</div>
 <p>孤独死しています</p>
@@ -213,31 +207,34 @@ height:250px;
 <p>1件の詐欺被害で</p>
 <div class="big-number">5,500万円</div>
 <p>失うケースもあります</p>
-
 </section>
 
-<!-- JS -->
 <script>
 const slider = document.getElementById("slider");
-slider.innerHTML += slider.innerHTML;
+const slides = document.querySelectorAll(".slide");
 
-const totalWidth = slider.scrollWidth / 2;
-const speed = 80;
-const duration = totalWidth / speed;
+let index = 0;
+const speed = 3000;
 
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes slideX {
-0% { transform: translateX(0); }
-100% { transform: translateX(-${totalWidth}px); }
+/* ⭐ クローン1枚だけ（ここ重要） */
+const firstClone = slides[0].cloneNode(true);
+slider.appendChild(firstClone);
+
+function moveSlide(){
+  index++;
+  slider.style.transition = "transform 1s ease";
+  slider.style.transform = `translateX(-${index * 100}%)`;
+
+  if(index === slides.length){
+    setTimeout(()=>{
+      slider.style.transition = "none";
+      slider.style.transform = "translateX(0)";
+      index = 0;
+    },1000);
+  }
 }
-#slider.moving {
-animation-duration: ${duration}s;
-}
-`;
-document.head.appendChild(style);
 
-slider.classList.add("moving");
+setInterval(moveSlide, speed);
 </script>
 
 </body>
