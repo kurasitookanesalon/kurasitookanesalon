@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>くらしとお金サロン</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 body{
   margin:0;
@@ -94,7 +103,7 @@ body{
   margin-bottom:30px;
 }
 
-/* ===== ここが変更（ベース） ===== */
+/* ===== ★ここがベース変更済み ===== */
 .card{
   background:rgba(255,255,255,0.08);
   color:#fff;
@@ -110,7 +119,7 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* 金強調 */
+/* 金 */
 .gold{
   color:#D4AF37;
   font-size:24px;
@@ -160,4 +169,126 @@ body{
   opacity:0.85;
   margin-top:2px;
 }
-  </style>
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+  <div class="hero-header">
+    <img src="ロゴ浮き.png">
+    <div class="hero-title">くらしとお金サロン</div>
+  </div>
+
+  <div class="formula">
+    増やす知識 × 守る知恵 ＋ 地域の仲間 ＝
+    <strong>安心・安定のくらし</strong>
+  </div>
+
+  <a href="https://lin.ee/yxZwj10" class="btn">
+    まずは内容を見てみる
+  </a>
+
+  <div class="note">
+    無料体験のうえ、ご検討いただけます
+  </div>
+
+</div>
+
+<div class="slider">
+  <div class="slide-track" id="slideTrack">
+
+    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>知らないだけで<br>こんな現実が起きています</h2>
+
+  <div class="card"><div class="gold">認知症診断者 毎日 約800人</div></div>
+  <div class="card"><div class="gold">詐欺被害 毎日 約20〜30人</div></div>
+  <div class="card"><div class="gold">相続トラブル 毎日 約30件</div></div>
+</div>
+
+<div class="section">
+  <h2>こんなお悩みありませんか？</h2>
+
+  <div class="card">何から始めたらいいか分からない</div>
+  <div class="card">NISAや株が気になるけど不安</div>
+  <div class="card">将来のお金、このままで大丈夫か心配</div>
+  <div class="card">相談できる人が周りにいない</div>
+</div>
+
+<div class="section">
+  <h2>このサロンでは</h2>
+
+  <div class="card">ゆっくり学べる少人数制</div>
+  <div class="card">何度でも質問OK</div>
+  <div class="card">同じ世代の仲間と一緒に学べる</div>
+  <div class="card">無理な勧誘・販売は一切ありません</div>
+</div>
+
+<div class="section">
+  <h2>まずは気軽にご参加ください</h2>
+
+  <div class="card">
+    初回は無料体験でご参加いただけます。<br><br>
+    実際の雰囲気を見てから<br>
+    ご自身でご判断ください。
+  </div>
+</div>
+
+<div class="section">
+  <h2>一人で悩まず、<br>一歩踏み出してみませんか？</h2>
+
+  <div class="card">
+    小さな一歩が、<br>
+    将来の大きな安心につながります。
+  </div>
+</div>
+
+<div class="section">
+  <h2>今からの備えが<br>これからの安心につながります</h2>
+
+  <img src="IMG_2124.png" style="width:200px;margin-top:20px;">
+</div>
+
+<a href="https://lin.ee/yxZwj10" class="floating-btn">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg"
+       style="width:22px;height:22px;">
+
+  <div>
+    無料体験・ご質問はこちらから
+    <span class="floating-sub">公式LINEで受付中</span>
+  </div>
+
+</a>
+
+<script>
+const track = document.getElementById("slideTrack");
+track.innerHTML += track.innerHTML;
+
+let scrollX = 0;
+const speed = 0.6;
+
+function slide(){
+  scrollX += speed;
+  if(scrollX >= track.scrollWidth / 2){
+    scrollX = 0;
+  }
+  track.style.transform = `translateX(-${scrollX}px)`;
+  requestAnimationFrame(slide);
+}
+slide();
+</script>
+
+</body>
+</html>
