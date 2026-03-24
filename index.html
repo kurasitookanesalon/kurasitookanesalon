@@ -7,106 +7,95 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    background: #f5f7fa;
-    color: #333;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  background: #f5f7fa;
+  color: #333;
 }
 
-/* ヘッダー（背景シンプル） */
 .header {
-    background: linear-gradient(135deg, #1E5BB8, #163E7A);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
+  background: #1E5BB8;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.logo {
-    width: 80px;
-    margin-bottom: 10px;
+.header img {
+  width: 80px;
+  margin-bottom: 20px;
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 26px;
+.btn {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  padding: 18px;
+  background: #00C300;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.header p {
-    margin-top: 10px;
-}
-
-/* ナビ */
 .nav {
-    display: flex;
-    overflow-x: auto;
-    background: white;
-    padding: 10px;
-    gap: 10px;
-    border-bottom: 1px solid #ddd;
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
 }
 
 .nav a {
-    padding: 8px 12px;
-    background: #1E5BB8;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    font-size: 14px;
-    white-space: nowrap;
+  background: #1E5BB8;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-/* セクション */
 .section {
-    background: white;
-    margin: 20px;
-    padding: 25px;
-    border-radius: 15px;
+  background: white;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 12px;
 }
 
-/* 講師画像（修正済） */
-.profile-img {
-    width: 200px;
-    border-radius: 15px;
-    display: block;
-    margin: 0 auto 20px auto;
+h2 {
+  margin-top: 0;
 }
 
-/* ボタン */
-.btn {
-    display: block;
-    text-align: center;
-    background: #00c300;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
+.profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: 0 auto 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ヘッダー -->
 <div class="header">
-    <img src="ロゴ浮き.png" class="logo">
-    <h1>くらしとお金サロン</h1>
-    <p>引退世代のためのお金の学校</p>
-    <a href="https://lin.ee/Sr8JBJa" class="btn">LINEで無料体験</a>
+  <img src="ロゴ浮き.png">
+  <h1>くらしとお金サロン</h1>
+  <p>引退世代のためのお金の学校</p>
 </div>
 
-<!-- ナビ -->
+<a class="btn" href="#">LINEで無料体験</a>
+
 <div class="nav">
-    <a href="#about">サロンとは</a>
-    <a href="#problem">お悩み</a>
-    <a href="#teacher">講師</a>
-    <a href="#service">内容</a>
-    <a href="#philosophy">理念</a>
+  <a href="#nayami">お悩み</a>
+  <a href="#profile">講師</a>
+  <a href="#content">内容</a>
+  <a href="#concept">理念</a>
 </div>
 
-<!-- お悩み -->
-<div class="section" id="problem">
+<div class="section" id="nayami">
 <h2>こんなお悩みありませんか？</h2>
 <ul>
 <li>老後のお金が不安</li>
@@ -115,55 +104,115 @@ body {
 </ul>
 </div>
 
-<!-- サロン紹介 -->
-<div class="section" id="about">
-<h2>サロンとは</h2>
-<p>
-引退世代のための「お金の学校」。<br>
-難しい金融知識をわかりやすく学びながら、仲間と安心して続けられる環境を提供します。
-</p>
-</div>
-
-<!-- 講師 -->
-<div class="section" id="teacher">
+<div class="section" id="profile">
 <h2>講師紹介</h2>
-
-<img src="IMG_3616.png" class="profile-img">
-
-<p>
-飲食業15年、約200店舗・6000人以上を見てきた経験。<br>
-現場で培った「伝える力」で、難しい金融知識を誰でも理解できる形で提供。<br><br>
-お金の不安を「安心」に変えるサポートをしています。
-</p>
+<div class="profile">
+<img src="IMG_3616.png">
 </div>
 
-<!-- サロン内容 -->
-<div class="section" id="service">
+<p>平松 広大（36歳）</p>
+<p>福岡県北九州市小倉南区出身。</p>
+
+<p>約15年間、複数の全国飲食チェーンで店長・エリア管理職・営業部長補佐・広報室・商品開発・人事・マーケティングなどを経験。</p>
+
+<p>最大約200店舗・年商約200億円・従業員約6,000名規模のエリアを運営。</p>
+
+<p>約10,000名以上の方と関わり、現場で培った「伝える力」を強みとしています。</p>
+
+<p>現在は国家資格FP3級を取得し、投資・金融知識を実践的に学びながら活動。</p>
+
+<p>「くらしとお金サロン」を運営し、地域の金融リテラシー向上に取り組んでいます。</p>
+</div>
+
+<div class="section" id="content">
 <h2>サロン内容</h2>
+
+<p>将来のお金や生活に不安を感じていませんか。</p>
+
+<p>このサロンでは、日々の暮らしに関わる知識を分かりやすく整理しながら、これからの生活に向けた考え方を学びます。</p>
+
+<p>難しい言葉を使わず、ゆっくり丁寧に理解していくことで、不安を減らし安心して考えられる力を身につけていきます。</p>
+
+<p>一人で抱え込まず、同じ地域の方と顔を合わせて話せる場として、少人数で落ち着いて学べる環境を大切にしています。</p>
+
+<p>※金融商品の販売・勧誘は一切行っておりません</p>
+
+<h3>開催内容</h3>
+<p>週1回（120分）</p>
+<p>小倉南生涯学習センター</p>
+
+<p>前半：講義（60分）</p>
+<p>後半：座談会（60分）</p>
+
+<p>基礎から順番に学びながら、分からないことを共有し理解を深めていきます。</p>
+
+<h3>学べる内容</h3>
 <ul>
-<li>NISA・インデックス投資</li>
-<li>老後資金の考え方</li>
-<li>資産防衛</li>
-<li>詐欺対策</li>
-<li>4%ルール（取り崩し）</li>
+<li>生活に関わる基礎知識</li>
+<li>家計の考え方</li>
+<li>将来に向けた備え</li>
+<li>詐欺やトラブルの対策</li>
+<li>安心して暮らすための知識</li>
 </ul>
+
+<h3>特徴</h3>
+<ul>
+<li>少人数制（定員あり）</li>
+<li>地域コミュニティ</li>
+<li>安心して話せる環境</li>
+</ul>
+
+<h3>料金</h3>
+<p>月額 22,000円（税込）</p>
+
+<h3>運営情報</h3>
+<p>名称：くらしとお金サロン</p>
+<p>所在地：福岡県北九州市小倉南区上石田2丁目24-21-304</p>
+<p>開催：小倉南生涯学習センター</p>
+<p>連絡先：070-3538-5073</p>
+
 </div>
 
-<!-- 理念 -->
-<div class="section" id="philosophy">
+<div class="section" id="concept">
 <h2>サロン理念</h2>
-<p>
-増やす知識 × 守る知恵 × 地域の仲間<br><br>
-安心して暮らせる未来をつくる。
-</p>
+
+<p>増やす知識と守る知恵で、人生に安心を。</p>
+
+<p>くらしとお金サロンは、これからの人生を安心を土台に前向きに生きていくためのコミュニティです。</p>
+
+<p>今の日本では、孤独死やセルフネグレクトが決して珍しい話ではなくなっています。</p>
+
+<p>「まだ大丈夫」「自分は関係ない」そう思っているうちに、一人で抱え込んでしまうことも少なくありません。</p>
+
+<p>年齢を重ねるほど、お金や暮らしの不安は増えていきますが、相談できる相手は少なくなっていきます。</p>
+
+<p>だからこそ地域の中に、いつでも相談できる場所、信頼できる人、同じ仲間が必要です。</p>
+
+<p>不安を放置するのではなく、向き合い、整理し、備える。</p>
+
+<p>そのためのコミュニティが、くらしとお金サロンです。</p>
+
+<h3>このサロンを作った理由</h3>
+
+<p>このサロンを作ろうと思った理由の一つに、父の孤独死があります。</p>
+
+<p>もっと早く誰かに相談できる場所があれば。</p>
+
+<p>もっと早く地域の中でつながれる場所があれば。</p>
+
+<p>そう思ったことが、このサロンを作るきっかけになりました。</p>
+
+<p>お金の問題も、暮らしの問題も、一人で抱えるものではありません。</p>
+
+<p>地域の中に顔が見える関係があり、何かあればすぐに相談できる場所がある。</p>
+
+<p>そんな場所を作りたい。</p>
+
+<p>それが、くらしとお金サロンです。</p>
+
 </div>
 
-<!-- CTA -->
-<div class="section">
-<h2>無料体験受付中</h2>
-<p>先着20名限定 / 無理な勧誘は一切ありません</p>
-<a href="https://lin.ee/Sr8JBJa" class="btn">LINEで無料体験</a>
-</div>
+<a class="btn" href="#">LINEで無料体験</a>
 
 </body>
 </html>
