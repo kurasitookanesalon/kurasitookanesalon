@@ -63,6 +63,31 @@ padding:15px 30px;
 border-radius:30px;
 text-decoration:none;
 }
+
+/* 🔽ここから追加（既存には一切触ってない） */
+.section{
+background:url("9A1B20E6-2BD1-4E26-B63B-62227C4D4A25.jpeg") no-repeat center;
+background-size:cover;
+padding:80px 20px;
+}
+
+.section-inner{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,0.9);
+padding:40px;
+border-radius:15px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.section p{
+line-height:1.8;
+}
+/* 🔼ここまで追加 */
 </style>
 </head>
 
@@ -90,14 +115,10 @@ text-decoration:none;
 
 <script>
 const slider = document.getElementById("slider");
-
-// 🔥1回だけ複製（絶対触るな）
 slider.innerHTML += slider.innerHTML;
 
-// 🔥1セット分の幅取得
 const totalWidth = slider.scrollWidth / 2;
 
-// 🔥アニメーション生成（ここ固定）
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes slideX {
@@ -110,9 +131,58 @@ animation-duration: 28s;
 `;
 document.head.appendChild(style);
 
-// 🔥開始
 slider.classList.add("moving");
 </script>
+
+<!-- 🔽ここから下に追加だけ -->
+
+<section class="section">
+  <div class="section-inner">
+    <h2>サロン内容</h2>
+    <p>
+    くらしとお金サロンは、引退世代の方を対象にした金融教育サロンです。<br>
+    NISA・株式投資・資産の守り方・詐欺対策など、これからの時代に必要なお金の知識を学びます。<br><br>
+    週1回の講義（60分）と座談会（60分）を通じて、知識だけでなく「実際に使える力」を身につけていきます。
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>サロン理念</h2>
+    <p>
+    お金の知識は「知っているか知らないか」で人生が大きく変わります。<br><br>
+    増やす知識だけでなく、守る知恵も学び、安心して暮らせる環境を作ることを目的としています。<br><br>
+    一人で悩むのではなく、仲間と一緒に学び、支え合う場所を提供します。
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>サロンを始めた理由</h2>
+    <p>
+    現在、日本では投資詐欺や金融トラブルが増えています。<br>
+    特に引退世代を狙った被害は深刻です。<br><br>
+    「知らなかった」だけで損をする現状を変えたい。<br>
+    その想いから、このサロンを立ち上げました。
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>自己紹介</h2>
+    <p>
+    飲食業界で15年以上勤務し、最大200店舗規模のエリアを担当。<br>
+    約6000人以上のスタッフと関わってきました。<br><br>
+    多くの人と接する中で「お金の知識不足による不安」を強く感じ、金融教育の必要性を実感。<br><br>
+    現在は地域に根ざした金融サロンとして活動しています。
+    </p>
+  </div>
+</section>
+
+<!-- 🔼追加ここまで -->
 
 </body>
 </html>
