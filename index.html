@@ -1,39 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>くらしとお金サロン</title>
+
 <style>
-.catch{
-font-size:32px;
-line-height:1.6;
-letter-spacing:1px;
-margin-bottom:20px;
+body{
+margin:0;
+font-family:sans-serif;
+background:#0f2f6b;
 }
 
+/* ================= トップ ================= */
+.hero{
+display:flex;
+height:100vh;
+overflow:hidden;
+}
+
+/* 左（中央寄せ＆バランス修正済） */
+.hero-left{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+background:linear-gradient(135deg,#1E5BB8,#163E7A);
+color:#fff;
+}
+
+/* キャッチ */
+.catch{
+font-size:28px;
+line-height:1.8;
+letter-spacing:1px;
+margin:0;
+}
+
+/* 記号 */
 .plus, .equal{
 display:block;
-font-size:28px;
-margin:10px 0;
+font-size:26px;
+margin:12px 0;
 opacity:0.8;
 }
 
+/* 強調 */
 .gold{
 color:#D4AF37;
 font-weight:bold;
 }
 
 .big{
-font-size:38px;
-line-height:1.4;
+font-size:34px;
+margin-top:10px;
+}
+
+/* 説明 */
+.hero-left p{
+font-size:15px;
+line-height:1.8;
+margin:25px 0;
+}
+
+/* ボタン */
+.line-btn{
+background:#00c300;
+color:#fff;
+padding:16px 40px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* 右（スライド） */
+.hero-right{
+flex:1;
+position:relative;
+overflow:hidden;
+}
+
+/* 境界ぼかし */
+.hero-right::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:100px;
+height:100%;
+background:linear-gradient(to right,#163E7A,transparent);
+z-index:2;
+}
+
+/* 軽いグラデ（暗くしない） */
+.hero-right::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to left, rgba(30,91,184,0.1), rgba(0,0,0,0.05));
+z-index:1;
+}
+
+/* スライド */
+.slider{
+display:flex;
+height:100%;
+}
+
+.slider img{
+height:100%;
+width:auto;
+flex-shrink:0;
+}
+
+/* 横スライド */
+.slider.moving{
+animation:slideX 40s linear infinite;
+}
+
+@keyframes slideX{
+0%{ transform:translateX(0); }
+100%{ transform:translateX(-50%); }
+}
+
+/* スマホ */
+@media (max-width:768px){
+.hero{
+flex-direction:column;
+height:auto;
+}
+
+.hero-left{
+padding:30px 20px;
+}
+
+.catch{
+font-size:22px;
+}
+
+.big{
+font-size:26px;
+}
+
+.hero-right{
+height:250px;
+}
 }
 </style>
+</head>
+
+<body>
+
+<!-- ================= トップ ================= -->
+<div class="hero">
+
+<!-- 左 -->
+<div class="hero-left">
 
 <h1 class="catch">
+増やす知識 × 守る知恵
 
-増やす知識 × 守る知恵<br>
+<span class="plus">＋</span>
 
-<span class="plus">＋</span><br>
+地域の仲間
 
-地域の仲間<br>
-
-<span class="equal">＝</span><br>
+<span class="equal">＝</span>
 
 <span class="gold big">安心・安定のくらし</span>
-
 </h1>
+
+<p>
+引退世代のためのお金の学校<br>
+NISA・株式投資・詐欺対策まで学べます
+</p>
+
+<a href="https://lin.ee/yxZwj10" class="line-btn">
+無料体験はこちら
+</a>
+
+</div>
+
+<!-- 右 -->
+<div class="hero-right">
+<div class="slider" id="slider">
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+</div>
+</div>
+
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+const slider = document.getElementById("slider");
+slider.innerHTML += slider.innerHTML;
+slider.classList.add("moving");
+</script>
+
+</body>
+</html>
