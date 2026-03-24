@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ★ フォント追加 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
 <title>くらしとお金サロン</title>
 
 <style>
 body{
 margin:0;
-font-family:sans-serif;
+font-family:'Noto Sans JP', sans-serif;
 background:#0f2f6b;
 }
 
@@ -43,25 +47,27 @@ grid-template-columns:1fr 60px 1fr;
 align-items:center;
 margin:12px 0;
 font-size:36px;
+font-weight:700; /* ★ 太く */
 }
 
 .left{ text-align:right; }
 .right{ text-align:left; }
 .center{ text-align:center; }
 
-/* ★ 追加（横固定） */
 .full{
 grid-column:1 / 4;
 text-align:center;
 white-space:nowrap;
 }
 
+/* ★ メインコピー強化 */
 .result{
 text-align:center;
-font-size:44px;
+font-size:48px;
 color:#D4AF37;
-font-weight:bold;
-margin-top:20px;
+font-weight:900;
+margin-top:25px;
+letter-spacing:1px;
 }
 
 /* ボタン */
@@ -71,7 +77,7 @@ color:#fff;
 padding:20px 50px;
 border-radius:40px;
 text-decoration:none;
-font-weight:bold;
+font-weight:700;
 margin-top:20px;
 font-size:20px;
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
@@ -96,41 +102,6 @@ object-fit:cover;
 flex-shrink:0;
 }
 
-/* ================= 不安 ================= */
-.problem{
-background:#f5f7fb;
-padding:80px 20px;
-text-align:center;
-}
-
-.problem h2{
-font-size:28px;
-margin-bottom:40px;
-}
-
-.problem-card{
-background:#fff;
-padding:25px;
-border-radius:15px;
-margin:15px auto;
-max-width:600px;
-}
-
-/* ================= 数字 ================= */
-.impact{
-background:#163E7A;
-color:#fff;
-padding:80px 20px;
-text-align:center;
-}
-
-.big-number{
-font-size:46px;
-color:#D4AF37;
-font-weight:bold;
-margin:10px 0;
-}
-
 /* スマホ */
 @media (max-width:768px){
 .hero{
@@ -143,7 +114,7 @@ height:250px;
 }
 
 .row{ font-size:24px; }
-.result{ font-size:30px; }
+.result{ font-size:34px; }
 }
 </style>
 </head>
@@ -168,7 +139,6 @@ height:250px;
 <div></div>
 </div>
 
-<!-- ★ ここ修正 -->
 <div class="row">
 <div class="full">地域の仲間</div>
 </div>
@@ -191,7 +161,7 @@ height:250px;
 
 </div>
 
-<!-- ===== スライド ===== -->
+<!-- スライド -->
 <div class="hero-right">
 <div class="slider" id="slider">
 
