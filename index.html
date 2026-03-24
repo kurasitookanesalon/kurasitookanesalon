@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>くらしとお金サロン</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+/* ===== スライド ===== */
 .hero{
   height:100vh;
   overflow:hidden;
@@ -6,20 +20,20 @@
 
 .slider{
   display:flex;
-  width:600%; /* 画像6枚 */
+  width:600%;
   height:100%;
-  animation: slideMove 30s infinite;
+  animation: slideMove 40s infinite;
 }
 
 .slide{
   width:100%;
   height:100%;
   background-size:cover;
-  background-position: center;
+  background-position:center;
   flex-shrink:0;
 }
 
-/* 横に流れる */
+/* 横スライド */
 @keyframes slideMove{
   0%{ transform:translateX(0); }
   16%{ transform:translateX(0); }
@@ -58,3 +72,49 @@
   top:50%;
   transform:translateY(-50%);
 }
+
+.logo{
+  width:110px;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:34px;
+}
+
+.cta{
+  background:#00c300;
+  color:white;
+  padding:15px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <div class="slider">
+    <div class="slide" style="background-image:url('41604837-5C3A-4DF9-B10F-E837EC243D5B.png')"></div>
+    <div class="slide" style="background-image:url('480EA703-74CE-4342-9595-AB8F5ABDD83D.png')"></div>
+    <div class="slide" style="background-image:url('6648FF22-7681-4F3D-8A69-FF57A9D10207.png')"></div>
+    <div class="slide" style="background-image:url('89804053-68C8-4E48-A98F-6E56CD01A26C.png')"></div>
+    <div class="slide" style="background-image:url('DEA53687-842A-4E25-9838-AE0A1C0C0C49.png')"></div>
+    <div class="slide" style="background-image:url('DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png')"></div>
+  </div>
+
+  <div class="hero-content">
+    <img src="ロゴ浮き.png" class="logo">
+    <h1>くらしとお金サロン</h1>
+    <p>引退世代のためのお金の学校</p>
+    <a href="https://lin.ee/SerNrVa" class="cta">LINEで無料体験</a>
+  </div>
+
+</section>
+
+</body>
+</html>
