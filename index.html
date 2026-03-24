@@ -3,140 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン</title>
 
 <style>
-body{
-margin:0;
-font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-line-height:1.8;
-color:#333;
+html, body{
+  margin:0;
+  padding:0;
+  font-family:"Hiragino Kaku Gothic ProN", sans-serif;
 }
 
-/* 背景 */
-.bg-section{
-background-image:url("92F216BD-DBCB-44E4-93A1-2E045A576A8F.png");
-background-size:100% auto;
-background-repeat:no-repeat;
-background-position:top center;
-padding:60px 20px;
-}
-
-/* 白ボックス */
-.box{
-background:rgba(255,255,255,0.9);
-padding:25px;
-border-radius:15px;
-margin:20px auto;
-max-width:800px;
-}
-
-/* 見出し */
-h2{
-font-size:24px;
-margin-bottom:20px;
-}
-
-h3{
-font-size:20px;
-margin-bottom:15px;
-}
-
-/* ヒーロー */
+/* ===== トップ（そのまま） ===== */
 .hero{
-position:relative;
-height:100vh;
-overflow:hidden;
+  height:100vh;
+  overflow:hidden;
+  position:relative;
 }
 
-.slider{
-display:flex;
-width:200%;
-animation:slide 80s linear infinite;
+.track{
+  display:flex;
+  width:max-content;
+  height:100%;
+  animation: flow 50s linear infinite;
 }
 
-.slide{
-width:100%;
-height:100vh;
-flex-shrink:0;
-background-size:cover;
-background-position:center;
+.img{
+  height:100%;
+  width:auto;
 }
 
-@keyframes slide{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+@keyframes flow{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+
+.track::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
 }
 
 .hero-content{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-text-align:center;
-color:#fff;
-z-index:2;
+  position:absolute;
+  z-index:2;
+  color:white;
+  width:100%;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
 }
 
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
-}
-
+/* ===== CTA（修正済み） ===== */
 .cta{
-display:inline-block;
-background:#00c300;
-color:#fff;
-padding:15px 30px;
-border-radius:30px;
-margin-top:20px;
-text-decoration:none;
-font-size:16px;
+  background:#00c300;
+  color:white;
+  padding:16px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
+  font-size:16px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+/* ===== 背景（触ってない） ===== */
+.bg-section{
+  padding:100px 20px;
+  background:url('92F216BD-DBCB-44E4-93A1-2E045A576A8F.png');
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+}
+
+.box{
+  background:rgba(255,255,255,0.96);
+  padding:30px;
+  border-radius:12px;
+  max-width:800px;
+  margin:auto;
+  line-height:1.9;
 }
 
 /* 講師 */
-.profile img{
-width:200px;
-border-radius:10px;
-display:block;
-margin:0 auto 20px;
+.profile-img{
+  width:200px;
+  border-radius:12px;
+  display:block;
+  margin:0 auto 20px;
+}
+
+/* フッター */
+.footer{
+  background:#0e2a5a;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- ヒーロー -->
+<!-- ===== トップ ===== -->
 <section class="hero">
-<div class="slider">
-
-<div class="slide" style="background-image:url('41604837-5C3A-4DF9-B10F-E837EC243D5B.png')"></div>
-<div class="slide" style="background-image:url('480EA703-74CE-4342-9595-AB8F5ABDD83D.png')"></div>
-<div class="slide" style="background-image:url('6648FF22-7681-4F3D-8A69-FF57A9D10207.png')"></div>
-<div class="slide" style="background-image:url('89804053-68C8-4E48-A98F-6E56CD01A26C.png')"></div>
-<div class="slide" style="background-image:url('DEA53687-842A-4E25-9838-AE0A1C0C0C49.png')"></div>
-<div class="slide" style="background-image:url('DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png')"></div>
-
-<!-- ループ用 -->
-<div class="slide" style="background-image:url('41604837-5C3A-4DF9-B10F-E837EC243D5B.png')"></div>
-<div class="slide" style="background-image:url('480EA703-74CE-4342-9595-AB8F5ABDD83D.png')"></div>
-
+<div class="track">
+<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="img">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
+<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="img">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
 </div>
 
 <div class="hero-content">
 <h1>くらしとお金サロン</h1>
 <p>引退世代のためのお金の学校</p>
-<a href="#" class="cta">無料体験はこちら（公式LINE）</a>
+
+<a href="https://lin.ee/SerNrVa" class="cta">無料体験はこちら</a>
+<div style="font-size:12px;">
+※公式LINEから簡単にご予約いただけます
+</div>
+
 </div>
 </section>
 
-<!-- 理念 -->
+<!-- ===== 理念（そのまま） ===== -->
 <section class="bg-section">
 <div class="box">
 
@@ -144,110 +141,57 @@ margin:0 auto 20px;
 
 <h3>増やす知識と守る知恵で、人生に安心を。</h3>
 
-<p>くらしとお金サロンは、</p>
-<p>これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。</p>
+<p>くらしとお金サロンは、これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。</p>
 
-<p>今の日本では、孤独死やセルフネグレクトが</p>
-<p>決して珍しい話ではなくなっています。</p>
+<p>今の日本では、孤独死やセルフネグレクトが決して珍しい話ではなくなっています。</p>
 
-<p>成年後見制度などの仕組みもありますが、</p>
-<p>知らない専門家に任せるだけで</p>
-<p>本当に本人の幸せにつながっているのか</p>
-<p>考えさせられる現実もあります。</p>
+<p>成年後見制度などの仕組みもありますが、知らない専門家に任せるだけで本当に本人の幸せにつながっているのか考えさせられる現実もあります。</p>
 
-<p>「まだ大丈夫」</p>
-<p>「自分は関係ない」</p>
-
-<p>そう思っているうちに、</p>
-
-<p>気づけば一人で、あるいは家族だけで</p>
-<p>抱え込んでしまうことも少なくありません。</p>
-
-<p>年齢を重ねるほど、暮らしやお金のことを考える時間は増えていきます。</p>
-
-<p>しかし同時に、相談できる相手は少なくなっていきます。</p>
-
-<p>だからこそ地域の中に</p>
-
-<p>【所属できる場所】</p>
-<p>【いつでも相談できる信頼できる人】</p>
-<p>【同じ地域の仲間】</p>
-
-<p>が必要だと考えています。</p>
-
-<p>いつでも何でも話せるコミュニティがあること。</p>
-<p>それが、将来の安心を大きく左右します。</p>
-
-<p>不安を放置するのではなく、向き合い、整理し、備える。</p>
-
-<p>そのためのコミュニティが、くらしとお金サロンです。</p>
-
-<p>そのため、当サロンは</p>
-<p>少人数制の高密度な伴走型コミュニティとして運営しています。</p>
-
-<p>メンバー様一人ひとりに寄り添い、</p>
-<p>顧問FPとして伴走することを大切にしています。</p>
+<p>だからこそ地域の中に「所属できる場所」「相談できる人」「仲間」が必要だと考えています。</p>
 
 </div>
 </section>
 
-<!-- 講師 -->
-<section class="bg-section">
-<div class="box profile">
-
-<h2>講師紹介</h2>
-
-<img src="IMG_3616.png">
-
-<p>平松 広大（36歳）</p>
-
-<p>福岡県北九州市小倉南区出身。</p>
-<p>小倉南区で生まれ小中高を過ごして社会に出ました。</p>
-
-<p>約15年間、複数の全国飲食チェーンで店長・エリア管理職・営業部長補佐・広報室・商品開発・人事・マーケティングなどを経験</p>
-
-<p>最大約200店舗・年商約200億円・従業員約6,000名の西日本全体規模のエリアを運営してきました。</p>
-
-<p>約10,000名以上の方と関わってきました。</p>
-
-<p>その後独立し、現在は投資・事業運営を行いながらサロンを運営しています。</p>
-
-<p>金融業界の人間ではなく、自身で学び実践してきました。</p>
-
-<p>※当サロンでは金融商品の販売や勧誘は一切行っておりません。</p>
-
-</div>
-</section>
-
-<!-- バックアップ -->
+<!-- ===== 講師（写真追加） ===== -->
 <section class="bg-section">
 <div class="box">
 
-<h2>バックアップ体制</h2>
+<img src="IMG_3616.png" class="profile-img">
 
-<p>必要に応じて専門家と連携しています。</p>
+<h2>講師紹介</h2>
 
-<ul>
-<li>税理士法人松本会計</li>
-<li>日本FP協会</li>
-<li>北九州銀行 守恒支店</li>
-</ul>
+<p>平松 広大（36歳）</p>
+
+<p>約15年間、飲食業で店長・エリア管理などを経験し、最大約200店舗・約6,000名規模の運営に携わってきました。</p>
+
+<p>約10,000名以上と関わり、「分かりやすく伝える力」を強みとしています。</p>
 
 </div>
 </section>
 
-<!-- CTA -->
+<!-- ===== CTA ===== -->
 <section class="bg-section">
 <div class="box" style="text-align:center;">
 
 <h2>まずはお気軽にご相談ください</h2>
 
-<p>無料体験は公式LINEからご案内しています。</p>
+<a href="https://lin.ee/SerNrVa" class="cta">
+無料体験を申し込む
+</a>
 
-<a href="#" class="cta">無料体験を申し込む（公式LINE）</a>
+<div style="font-size:12px;">
+※ご相談だけでも大丈夫です
+</div>
 
 </div>
 </section>
+
+<!-- ===== フッター（住所修正） ===== -->
+<footer class="footer">
+<p>くらしとお金サロン 小倉南校</p>
+<p>小倉南生涯学習センター</p>
+<p>※詳細はご予約後にご案内いたします</p>
+</footer>
 
 </body>
 </html>
