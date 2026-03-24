@@ -19,11 +19,11 @@ height:100vh;
 overflow:hidden;
 }
 
-/* 🔥ここだけ変更 */
+/* 🔥ここ */
 .hero-slider{
 display:flex;
 height:100%;
-animation:slideX 35s linear infinite; /* ←30→35 */
+animation:slideX 30s linear infinite;
 }
 
 .hero-slider img{
@@ -32,9 +32,10 @@ width:auto;
 flex-shrink:0;
 }
 
+/* 🔥ここが本質修正 */
 @keyframes slideX{
 0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+100%{transform:translateX(-100%);} /* ←変更 */
 }
 
 .hero::after{
