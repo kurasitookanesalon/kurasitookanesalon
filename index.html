@@ -86,13 +86,10 @@ text-decoration:none;
 <script>
 const slider = document.getElementById("slider");
 
-// ループ用複製
 slider.innerHTML += slider.innerHTML;
 
-// 幅取得
 const totalWidth = slider.scrollWidth / 2;
 
-// アニメーション生成
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes slideX {
@@ -100,12 +97,11 @@ style.innerHTML = `
 100% { transform: translateX(-${totalWidth}px); }
 }
 #slider.moving {
-animation-duration: 20s;
+animation-duration: 40s;
 }
 `;
 document.head.appendChild(style);
 
-// 開始
 slider.classList.add("moving");
 </script>
 
