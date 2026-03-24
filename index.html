@@ -64,24 +64,20 @@ border-radius:30px;
 text-decoration:none;
 }
 
-/* 🔥背景（引き伸ばしなし） */
+/* 🔥ここが本質（繋がない・そのまま使う） */
 .section{
-background:url("9A1B20E6-2BD1-4E26-B63B-62227C4D4A25.jpeg") center top;
-background-size:100% auto;
-background-repeat:repeat-y;
+background:url("BDF99BA9-D9B1-451E-8DC5-BD1D12FA18EF.jpeg") no-repeat center;
+background-size:cover;
 padding:80px 20px;
 }
 
-/* 🔥ガラス風カード（完成形） */
+/* 白カード（普通でOK） */
 .section-inner{
 max-width:900px;
 margin:auto;
-background:rgba(255,255,255,0.6);
+background:rgba(255,255,255,0.9);
 padding:40px;
 border-radius:20px;
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .section h2{
@@ -130,7 +126,7 @@ style.innerHTML = `
 100% { transform: translateX(-${totalWidth}px); }
 }
 #slider.moving {
-animation-duration: 30s;
+animation-duration: 40s;
 }
 `;
 document.head.appendChild(style);
@@ -141,44 +137,28 @@ slider.classList.add("moving");
 <section class="section">
   <div class="section-inner">
     <h2>サロン内容</h2>
-    <p>
-    くらしとお金サロンは、引退世代の方を対象にした金融教育サロンです。<br>
-    NISA・株式投資・資産の守り方・詐欺対策など、これからの時代に必要なお金の知識を学びます。<br><br>
-    週1回の講義（60分）と座談会（60分）を通じて、知識だけでなく「実際に使える力」を身につけていきます。
-    </p>
+    <p>内容テキスト</p>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
     <h2>サロン理念</h2>
-    <p>
-    お金の知識は「知っているか知らないか」で人生が大きく変わります。<br><br>
-    増やす知識だけでなく、守る知恵も学び、安心して暮らせる環境を作ることを目的としています。<br><br>
-    一人で悩むのではなく、仲間と一緒に学び、支え合う場所を提供します。
-    </p>
+    <p>理念テキスト</p>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
     <h2>サロンを始めた理由</h2>
-    <p>
-    「知らなかった」だけで損をする現状を変えたい。<br>
-    その想いから、このサロンを立ち上げました。
-    </p>
+    <p>理由テキスト</p>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
     <h2>自己紹介</h2>
-    <p>
-    飲食業界で15年以上勤務し、最大200店舗規模のエリアを担当。<br>
-    約6000人以上のスタッフと関わってきました。<br><br>
-    多くの人と接する中で「お金の知識不足による不安」を強く感じ、金融教育の必要性を実感。<br><br>
-    現在は地域に根ざした金融サロンとして活動しています。
-    </p>
+    <p>自己紹介テキスト</p>
   </div>
 </section>
 
