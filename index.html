@@ -113,6 +113,7 @@ body{
   line-height:1.6;
 }
 
+/* 追尾ボタン */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -136,14 +137,21 @@ body{
   gap:8px;
 
   box-shadow:0 8px 20px rgba(0,0,0,0.25);
+
+  animation:floaty 2.5s ease-in-out infinite,
+             pulse 2.5s ease-in-out infinite;
 }
 
-.floating-sub{
-  display:block;
-  font-size:11px;
-  opacity:0.85;
-  margin-top:2px;
+@keyframes floaty{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(-6px);}
 }
+
+@keyframes pulse{
+  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+  50%{box-shadow:0 12px 30px rgba(0,0,0,0.35);}
+}
+
 </style>
 </head>
 
@@ -175,7 +183,6 @@ body{
 <!-- スライド -->
 <div class="slider">
   <div class="slide-track" id="slideTrack">
-    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
     <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
     <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
     <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
@@ -184,25 +191,23 @@ body{
   </div>
 </div>
 
-<!-- 自分ごと化 -->
+<!-- 統合ブロック -->
 <div class="section">
+  <h2>知らないだけでこんな現実が起きています</h2>
+
   <div class="card">
     詐欺や認知症の話、身近で聞いたことはありませんか？
   </div>
 
   <div class="card">
-    まだ自分の周りで起きていないだけで、誰にでも起こりうることです。
+    まだ自分の周りで起きていないだけで、<br>
+    誰にでも起こりうることです。
   </div>
 
   <div class="card">
     詐欺被害は毎日 約50件、約1.2億円。<br>
     決して他人事ではありません。
   </div>
-</div>
-
-<!-- 危機感 -->
-<div class="section">
-  <h2>知らないだけでこんな現実が起きています</h2>
 
   <div class="card">
     認知症診断 毎日 約800人
