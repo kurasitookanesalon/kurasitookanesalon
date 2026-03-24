@@ -19,21 +19,22 @@ height:100vh;
 overflow:hidden;
 }
 
-/* 🔥ここが本質 */
+/* ===== スライド ===== */
 .hero-slider{
 display:flex;
-width:200%; /* ←固定 */
+width:200%;
 height:100%;
-animation:slideX 12s linear infinite; /* ←速く */
+animation:slideX 12s linear infinite;
 }
 
+/* 🔥ここ修正済み（本質） */
 .hero-slider img{
 height:100%;
-width:auto;
+width:50vw; /* ←変更 */
+object-fit:cover;
 flex-shrink:0;
 }
 
-/* 🔥距離も正しく */
 @keyframes slideX{
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
@@ -54,6 +55,16 @@ transform:translate(-50%,-50%);
 color:#fff;
 text-align:center;
 z-index:2;
+}
+
+.hero-content img{
+width:120px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:32px;
+margin:10px 0;
 }
 
 .line-btn{
@@ -89,7 +100,7 @@ text-decoration:none;
 </div>
 
 <div class="hero-content">
-<img src="ロゴ浮き.png" width="120">
+<img src="ロゴ浮き.png">
 <h1>くらしとお金サロン</h1>
 <p>引退世代のためのお金の学校</p>
 <a href="https://lin.ee/yxZwj10" class="line-btn">LINEで無料体験</a>
