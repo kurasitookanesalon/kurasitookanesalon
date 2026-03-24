@@ -167,7 +167,6 @@ body{
 
 <body>
 
-<!-- ===== トップ ===== -->
 <div class="hero">
 
   <div class="hero-header">
@@ -190,7 +189,6 @@ body{
 
 </div>
 
-<!-- ===== スライド ===== -->
 <div class="slider">
   <div class="slide-track" id="slideTrack">
 
@@ -204,7 +202,6 @@ body{
   </div>
 </div>
 
-<!-- ===== 問題提起 ===== -->
 <div class="section">
   <h2>知らないだけで<br>こんな現実が起きています</h2>
 
@@ -213,7 +210,6 @@ body{
   <div class="card"><div class="gold">相続トラブル 毎日 約30件</div></div>
 </div>
 
-<!-- ===== 共感 ===== -->
 <div class="section">
   <h2>こんなお悩みありませんか？</h2>
 
@@ -223,7 +219,6 @@ body{
   <div class="card">相談できる人が周りにいない</div>
 </div>
 
-<!-- ===== 安心 ===== -->
 <div class="section">
   <h2>このサロンでは</h2>
 
@@ -233,7 +228,6 @@ body{
   <div class="card">無理な勧誘・販売は一切ありません</div>
 </div>
 
-<!-- ===== 体験導線 ===== -->
 <div class="section">
   <h2>まずは気軽にご参加ください</h2>
 
@@ -244,7 +238,6 @@ body{
   </div>
 </div>
 
-<!-- ===== 最後の一押し ===== -->
 <div class="section">
   <h2>一人で悩まず、<br>一歩踏み出してみませんか？</h2>
 
@@ -254,14 +247,12 @@ body{
   </div>
 </div>
 
-<!-- ===== QR ===== -->
 <div class="section">
   <h2>今からの備えが<br>これからの安心につながります</h2>
 
   <img src="IMG_2124.png" style="width:200px;margin-top:20px;">
 </div>
 
-<!-- ===== 追尾LINEボタン ===== -->
 <a href="https://lin.ee/yxZwj10" class="floating-btn">
 
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg"
@@ -276,23 +267,19 @@ body{
 
 <script>
 const track = document.getElementById("slideTrack");
-const original = track.innerHTML;
-track.innerHTML += original;
+track.innerHTML += track.innerHTML;
 
 let scrollX = 0;
 const speed = 0.6;
 
 function slide(){
   scrollX += speed;
-
   if(scrollX >= track.scrollWidth / 2){
-    scrollX -= track.scrollWidth / 2;
+    scrollX = 0;
   }
-
   track.style.transform = `translateX(-${scrollX}px)`;
   requestAnimationFrame(slide);
 }
-
 slide();
 </script>
 
