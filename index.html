@@ -23,7 +23,6 @@ color:#fff;
 padding-bottom:120px;
 }
 
-/* 共通 */
 section{
 padding:40px 20px;
 text-align:center;
@@ -34,11 +33,6 @@ font-size:28px;
 margin-bottom:18px;
 }
 
-p{
-line-height:1.6;
-}
-
-/* カード */
 .card{
 background:#fff;
 color:#222;
@@ -48,7 +42,6 @@ margin:12px auto;
 width:90%;
 }
 
-/* 金 */
 .gold{
 color:var(--gold);
 font-weight:900;
@@ -57,7 +50,6 @@ display:block;
 margin-bottom:6px;
 }
 
-/* CTA */
 .cta{
 display:block;
 width:90%;
@@ -72,7 +64,6 @@ text-decoration:none;
 font-size:18px;
 }
 
-/* 固定CTA */
 .floating{
 position:fixed;
 bottom:10px;
@@ -81,95 +72,14 @@ right:10px;
 z-index:999;
 }
 
-/* トップ */
-.hero{
-padding:30px 20px;
-text-align:center;
-}
-
-.brand{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-}
-
-.logo{
-width:45px;
-}
-
-.brand-name{
-font-size:22px;
-font-weight:900;
-}
-
-.main-copy{
-font-size:28px;
-margin:20px 0;
-line-height:1.6;
-}
-
-.result{
-font-size:40px;
-color:var(--gold);
-font-weight:900;
-margin:10px 0;
-}
-
 /* スライド */
-.slider-wrap{
-overflow:hidden;
-}
-
-.slider{
-display:flex;
-}
-
-.slide{
-width:100%;
-flex-shrink:0;
-object-fit:cover;
-}
-
-/* 地図 */
-.map{
-width:90%;
-height:250px;
-border-radius:12px;
-margin-top:15px;
-}
+.slider-wrap{overflow:hidden;}
+.slider{display:flex;}
+.slide{width:100%;flex-shrink:0;}
 </style>
 </head>
 
 <body>
-
-<!-- トップ -->
-<section class="hero">
-
-<div class="brand">
-<img src="ロゴ浮き.png" class="logo">
-<div class="brand-name">くらしとお金サロン</div>
-</div>
-
-<div class="main-copy">
-増やす知識 × 守る知恵<br>
-＋<br>
-地域の仲間
-</div>
-
-<div class="result">
-安心・安定のくらし
-</div>
-
-<a href="https://lin.ee/8mjr5Lan" class="cta">
-無料体験の内容を確認する
-</a>
-
-<p style="font-size:12px;">
-※当サロンは販売や勧誘は一切行いません※
-</p>
-
-</section>
 
 <!-- スライド -->
 <div class="slider-wrap">
@@ -179,7 +89,6 @@ margin-top:15px;
 <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
 
 </div>
 </div>
@@ -197,12 +106,13 @@ margin-top:15px;
 <div class="card">
 詐欺被害<br>
 <div class="gold">毎日 約20〜30人</div>
-<p>1日あたり約1億円以上</p>
+<p>1日あたり約1億円以上の被害が発生しています</p>
 </div>
 
 <div class="card">
 相続トラブルで裁判<br>
 <div class="gold">毎日 約30件</div>
+<p>家族間のトラブルに発展するケースも増えています</p>
 </div>
 
 </section>
@@ -219,17 +129,17 @@ margin-top:15px;
 
 <div class="card">
 <span class="gold">将来のお金の不安</span>
-整理できます
+今の状況を整理し、何から始めるべきか明確になります
 </div>
 
 <div class="card">
 <span class="gold">知識を身につけて</span>
-判断できるようになります
+周りに流されず、自分で判断できるようになります
 </div>
 
 <div class="card">
 <span class="gold">一人で悩まず</span>
-安心して続けられます
+同じ悩みを持つ仲間と安心して続けられます
 </div>
 
 </section>
@@ -241,22 +151,22 @@ margin-top:15px;
 
 <div class="card">
 <span class="gold">インデックス投資</span>
-無理なく増やす考え方
+無理なくコツコツ増やしていく考え方を学びます
 </div>
 
 <div class="card">
 <span class="gold">老後資金</span>
-将来の考え方
+これから必要なお金の現実と考え方を整理します
 </div>
 
 <div class="card">
 <span class="gold">詐欺</span>
-見抜き方
+実例をもとに騙されない判断力を身につけます
 </div>
 
 <div class="card">
 <span class="gold">相続</span>
-基本知識
+トラブルを防ぐための基本知識を学びます
 </div>
 
 </section>
@@ -283,12 +193,12 @@ margin-top:15px;
 一回数万円のケースもあります
 </div>
 
-<div class="card" style="padding:30px;">
+<div class="card">
 <div style="font-size:14px;color:#666;">月額</div>
-<div style="font-size:42px;color:#D4AF37;font-weight:900;">
+<div style="font-size:34px;color:#D4AF37;font-weight:900;">
 22,000円（税込）
 </div>
-<div style="font-size:13px;color:#666;margin-top:5px;">
+<div style="font-size:13px;color:#666;">
 週1回 × 月4回の継続サロン
 </div>
 </div>
@@ -300,7 +210,7 @@ margin-top:15px;
 
 </section>
 
-<!-- ラストCTA -->
+<!-- CTA -->
 <section>
 
 <h2>
@@ -309,39 +219,22 @@ margin-top:15px;
 </h2>
 
 <a href="https://lin.ee/8mjr5Lan" class="cta">
-無料体験の内容を確認する
+まずは無料体験の内容を確認する
 </a>
 
-<p style="font-size:14px;">
-まずは無料体験の内容をご確認ください<br>
-内容を見てからご参加いただけます
+<p>
+内容を見てからご参加いただけますのでご安心ください
 </p>
-
-</section>
-
-<!-- 開催場所 -->
-<section>
-
-<h2>開催場所</h2>
-
-<p>小倉南生涯学習センター（公共施設）</p>
-
-<iframe class="map"
-src="https://maps.google.com/maps?q=小倉南生涯学習センター&output=embed">
-</iframe>
 
 </section>
 
 <!-- 固定CTA -->
 <div class="floating">
-
 <a href="https://lin.ee/8mjr5Lan" class="cta">
-無料体験の内容を確認する
+無料体験はこちら
 </a>
-
 </div>
 
-<!-- スライド -->
 <script>
 let i=0;
 const slider=document.getElementById("slider");
@@ -349,14 +242,14 @@ const slider=document.getElementById("slider");
 setInterval(()=>{
 i++;
 slider.style.transform="translateX(-"+i*100+"%)";
-slider.style.transition="0.6s";
+slider.style.transition="0.5s";
 
-if(i>=4){
+if(i>=3){
 setTimeout(()=>{
 slider.style.transition="none";
 slider.style.transform="translateX(0)";
 i=0;
-},600);
+},500);
 }
 },3000);
 </script>
