@@ -16,28 +16,19 @@
 --line:#00c300;
 }
 
+/* 背景完全統一 */
 body{
 margin:0;
 font-family:'Noto Sans JP',sans-serif;
-padding-bottom:90px;
+background:#1E5BB8;
+padding-bottom:110px;
+color:#fff;
 }
 
 /* 共通 */
 section{
 padding:50px 20px;
 text-align:center;
-}
-
-h2{
-font-size:26px;
-font-weight:900;
-line-height:1.5;
-}
-
-/* 青背景統一 */
-.section-blue{
-background:linear-gradient(135deg,#1E5BB8,#163E7A);
-color:#fff;
 }
 
 /* ロゴ */
@@ -48,9 +39,8 @@ justify-content:center;
 gap:10px;
 margin-bottom:10px;
 }
-
 .logo{width:45px;}
-.brand-name{font-size:22px;font-weight:900;color:#fff;}
+.brand-name{font-size:22px;font-weight:900;}
 
 /* CTA */
 .cta-btn{
@@ -64,7 +54,6 @@ border-radius:50px;
 font-size:17px;
 font-weight:700;
 text-decoration:none;
-text-align:center;
 }
 
 /* トップ */
@@ -79,8 +68,6 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,var(--main),var(--sub));
-color:#fff;
 padding:20px;
 text-align:center;
 }
@@ -150,7 +137,6 @@ font-weight:900;
 .map{
 width:100%;
 height:250px;
-border:0;
 border-radius:12px;
 margin-top:15px;
 }
@@ -161,6 +147,7 @@ position:fixed;
 bottom:10px;
 left:10px;
 right:10px;
+z-index:999;
 }
 
 .floating a{
@@ -171,6 +158,7 @@ padding:18px;
 text-align:center;
 border-radius:50px;
 font-weight:900;
+font-size:18px;
 text-decoration:none;
 }
 
@@ -220,7 +208,7 @@ height:250px;
 <div class="result">安心・安定のくらし</div>
 
 <a href="https://lin.ee/8mjr5Lan" class="cta-btn">
-まずは無料体験の内容を確認する
+無料体験・ご相談はこちら
 </a>
 
 <p style="font-size:12px;">※当サロンは販売や勧誘は一切行いません※</p>
@@ -241,7 +229,7 @@ height:250px;
 </div>
 
 <!-- 危機 -->
-<section class="section-blue">
+<section>
 
 <h2>知らないだけで<br>こんな現実が起きています</h2>
 
@@ -264,7 +252,7 @@ height:250px;
 </section>
 
 <!-- できる -->
-<section class="section-blue">
+<section>
 
 <h2>このサロンでできること</h2>
 
@@ -290,81 +278,16 @@ height:250px;
 
 </section>
 
-<!-- 学べる -->
-<section class="section-blue">
-
-<h2>このサロンで学べること</h2>
-
-<div class="card">
-<span class="gold">インデックス投資</span>
-<span class="sub">無理なく続けられる増やし方を学べます</span>
-</div>
-
-<div class="card">
-<span class="gold">老後資金</span>
-<span class="sub">これから必要なお金の考え方を学べます</span>
-</div>
-
-<div class="card">
-<span class="gold">詐欺</span>
-<span class="sub">騙されないための見抜き方を学べます</span>
-</div>
-
-<div class="card">
-<span class="gold">相続</span>
-<span class="sub">基本からトラブル回避まで学べます</span>
-</div>
-
-</section>
-
-<!-- 相談 -->
-<section class="section-blue">
-
-<h2>このサロンで相談できること</h2>
-
-<div class="card">
-<span class="gold">今の貯金で老後は大丈夫か</span>
-<span class="sub">安心して生活できるか一緒に考えます</span>
-</div>
-
-<div class="card">
-<span class="gold">投資を始めるべきか</span>
-<span class="sub">自分に合った方法を分かりやすくお伝えします</span>
-</div>
-
-<div class="card">
-<span class="gold">家族に迷惑をかけない準備</span>
-<span class="sub">認知症や相続の対策も相談できます</span>
-</div>
-
-<div class="card">
-<span class="gold">相続の不安や悩み</span>
-<span class="sub">トラブルを防ぐための考え方をお伝えします</span>
-</div>
-
-</section>
-
-<!-- 場所 -->
-<section class="section-blue">
-
-<h2>開催場所</h2>
-
-<p>
-小倉南生涯学習センター<br>
-公共施設で安心して参加できます
-</p>
-
-<iframe class="map"
-src="https://maps.google.com/maps?q=小倉南生涯学習センター&t=&z=15&ie=UTF8&iwloc=&output=embed">
-</iframe>
-
-</section>
-
-<!-- CTA -->
+<!-- CTA強化 -->
 <div class="floating">
 <a href="https://lin.ee/8mjr5Lan">
-無料体験を公式LINEで受け取る
+無料体験・ご相談はこちら
 </a>
+
+<p style="color:#fff;font-size:13px;text-align:center;margin-top:8px;font-weight:700;">
+このままで大丈夫かな…と感じた方へ<br>
+今すぐ公式LINEからご相談ください
+</p>
 </div>
 
 <!-- スライドJS -->
