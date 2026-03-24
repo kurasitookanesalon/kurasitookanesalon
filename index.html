@@ -20,66 +20,43 @@ height:100vh;
 overflow:hidden;
 }
 
-/* スライド */
+/* 🔥横スライド */
 .hero-slider{
-position:absolute;
-width:100%;
+display:flex;
+width:600vw; /* 6枚分 */
 height:100%;
+animation:slideX 30s linear infinite;
 }
 
+/* 🔥1枚ずつ表示 */
 .hero-slider img{
-position:absolute;
-width:100%;
+width:100vw;
 height:100%;
 object-fit:cover;
-object-position:center 30%; /* ←ここ重要 */
-opacity:0;
-animation:fade 24s infinite;
+flex-shrink:0;
 }
 
-/* 6枚タイミング */
-.hero-slider img:nth-child(1){animation-delay:0s;}
-.hero-slider img:nth-child(2){animation-delay:4s;}
-.hero-slider img:nth-child(3){animation-delay:8s;}
-.hero-slider img:nth-child(4){animation-delay:12s;}
-.hero-slider img:nth-child(5){animation-delay:16s;}
-.hero-slider img:nth-child(6){animation-delay:20s;}
-
-@keyframes fade{
-0%{opacity:0;}
-5%{opacity:1;}
-15%{opacity:1;}
-20%{opacity:0;}
-100%{opacity:0;}
+/* 🔥6枚分しっかり流す */
+@keyframes slideX{
+0%{transform:translateX(0);}
+100%{transform:translateX(-500vw);} 
 }
 
-/* 暗さ */
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.2);
+background:rgba(0,0,0,0.15);
 }
 
-/* テキスト */
 .hero-content{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-text-align:center;
 color:#fff;
+text-align:center;
 z-index:2;
-}
-
-.hero-content img{
-width:120px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:32px;
-margin:10px 0;
 }
 
 .line-btn{
@@ -88,7 +65,6 @@ color:#fff;
 padding:15px 30px;
 border-radius:30px;
 text-decoration:none;
-font-weight:bold;
 }
 </style>
 </head>
@@ -107,7 +83,7 @@ font-weight:bold;
 </div>
 
 <div class="hero-content">
-<img src="ロゴ浮き.png">
+<img src="ロゴ浮き.png" width="120">
 <h1>くらしとお金サロン</h1>
 <p>引退世代のためのお金の学校</p>
 <a href="https://lin.ee/yxZwj10" class="line-btn">LINEで無料体験</a>
