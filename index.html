@@ -22,7 +22,6 @@ height:100vh;
 overflow:hidden;
 }
 
-/* 左 */
 .hero-left{
 flex:1;
 display:flex;
@@ -34,7 +33,6 @@ background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
 }
 
-/* 数式 */
 .catch-wrap{
 max-width:700px;
 margin:auto;
@@ -67,7 +65,6 @@ font-weight:900;
 margin-top:25px;
 }
 
-/* ===== CTA（進化版） ===== */
 .line-btn{
 background:#00c300;
 color:#fff;
@@ -78,25 +75,15 @@ font-weight:700;
 margin-top:25px;
 font-size:20px;
 box-shadow:0 8px 20px rgba(0,0,0,0.3);
-display:inline-block;
-
-/* ★ アニメーション */
 animation: pulse 1.8s infinite;
 }
 
-/* ★ ふわっと拡大 */
 @keyframes pulse{
 0%{ transform:scale(1); }
 50%{ transform:scale(1.08); }
 100%{ transform:scale(1); }
 }
 
-/* ★ タップ時 */
-.line-btn:active{
-transform:scale(0.95);
-}
-
-/* ===== 右スライド ===== */
 .hero-right{
 flex:1;
 overflow:hidden;
@@ -114,17 +101,201 @@ object-fit:cover;
 flex-shrink:0;
 }
 
+/* ================= 危機 ================= */
+.danger{
+background:#0f2f6b;
+color:#fff;
+padding:100px 20px;
+text-align:center;
+}
+
+.danger h2{
+font-size:28px;
+margin-bottom:50px;
+font-weight:900;
+}
+
+.danger-card{
+background:#163E7A;
+padding:30px;
+border-radius:15px;
+margin:20px auto;
+max-width:600px;
+}
+
+.danger-number{
+font-size:48px;
+color:#D4AF37;
+font-weight:900;
+margin:10px 0;
+}
+
+.danger-message{
+margin-top:40px;
+font-size:18px;
+line-height:1.6;
+}
+
+/* ================= 解決 ================= */
+.solution{
+background:#fff;
+padding:100px 20px;
+text-align:center;
+}
+
+.solution h2{
+font-size:32px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.solution-lead{
+font-size:20px;
+margin-bottom:40px;
+line-height:1.6;
+}
+
+.solution-box{
+background:#f5f7fb;
+padding:40px;
+border-radius:15px;
+max-width:600px;
+margin:0 auto 30px;
+}
+
+.solution-box ul{
+list-style:none;
+padding:0;
+}
+
+.solution-box li{
+margin:10px 0;
+font-size:18px;
+}
+
+.solution-message{
+margin-top:40px;
+font-size:20px;
+font-weight:700;
+}
+
+/* ================= 概要 ================= */
+.info{
+background:#fff;
+padding:100px 20px;
+text-align:center;
+}
+
+.info h2{
+font-size:30px;
+font-weight:900;
+margin-bottom:50px;
+}
+
+.info-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:800px;
+margin:0 auto;
+}
+
+.info-item{
+background:#f5f7fb;
+padding:30px;
+border-radius:15px;
+}
+
+/* ================= 内容 ================= */
+.content{
+background:#f5f7fb;
+padding:100px 20px;
+text-align:center;
+}
+
+.content h2{
+font-size:30px;
+font-weight:900;
+margin-bottom:50px;
+}
+
+.content-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:900px;
+margin:0 auto;
+}
+
+.content-item{
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.content-message{
+margin-top:40px;
+font-size:18px;
+font-weight:700;
+}
+
+/* ================= 料金 ================= */
+.price{
+background:#fff;
+padding:100px 20px;
+text-align:center;
+}
+
+.price h2{
+font-size:30px;
+font-weight:900;
+margin-bottom:40px;
+}
+
+.price-value{
+font-size:40px;
+color:#D4AF37;
+font-weight:900;
+margin:20px 0;
+}
+
+/* ================= 最後 ================= */
+.final{
+background:#163E7A;
+color:#fff;
+padding:100px 20px;
+text-align:center;
+}
+
+.final h2{
+font-size:30px;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.final-btn{
+display:inline-block;
+margin-top:40px;
+background:#00c300;
+color:#fff;
+padding:20px 50px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+font-size:20px;
+animation: pulse 1.8s infinite;
+}
+
 /* スマホ */
 @media (max-width:768px){
 .hero{
 flex-direction:column;
 height:auto;
 }
-
 .hero-right{
 height:250px;
 }
-
 .row{ font-size:24px; }
 .result{ font-size:34px; }
 }
@@ -133,8 +304,8 @@ height:250px;
 
 <body>
 
+<!-- トップ -->
 <div class="hero">
-
 <div class="hero-left">
 
 <div class="catch-wrap">
@@ -167,27 +338,108 @@ height:250px;
 
 <p>引退世代のためのお金の学校</p>
 
-<!-- ★ LINEリンク反映 -->
 <a href="https://lin.ee/8mjr5Lan" class="line-btn">
 無料体験はこちら
 </a>
 
 </div>
 
-<!-- スライド -->
 <div class="hero-right">
 <div class="slider" id="slider">
-
 <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
 <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
 <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
+</div>
+</div>
+</div>
 
-</div>
+<!-- 危機 -->
+<section class="danger">
+<h2>知らないだけで、こんな現実が起きています</h2>
+
+<div class="danger-card">
+<p>日本では毎日 約800人が認知症になっています</p>
+<p><strong>資産が凍結され、家族でもお金を引き出せません</strong></p>
 </div>
 
+<div class="danger-card">
+<p>毎日 約200人が孤独死</p>
 </div>
+
+<div class="danger-card">
+<p>詐欺被害は毎日発生しています</p>
+</div>
+
+<p class="danger-message">
+これは特別な人の話ではありません。<br>
+<strong>「知らない人」から起きています。</strong>
+</p>
+</section>
+
+<!-- 解決 -->
+<section class="solution">
+<h2>でも、大丈夫です</h2>
+
+<p class="solution-lead">
+正しい知識があれば防ぐことができます
+</p>
+
+<div class="solution-box">
+<ul>
+<li>お金を増やす方法（NISA・投資）</li>
+<li>老後資金の考え方</li>
+<li>詐欺対策</li>
+<li>相続・認知症対策</li>
+</ul>
+</div>
+
+<p class="solution-message">
+知ることで、安心に変わります
+</p>
+</section>
+
+<!-- 概要 -->
+<section class="info">
+<h2>サロン概要</h2>
+
+<div class="info-box">
+<div class="info-item"><h3>いつ</h3><p>週1回 9:00〜11:00</p></div>
+<div class="info-item"><h3>どこで</h3><p>小倉南生涯学習センター</p></div>
+<div class="info-item"><h3>誰と</h3><p>同じ世代の仲間と学ぶ</p></div>
+</div>
+</section>
+
+<!-- 内容 -->
+<section class="content">
+<h2>サロンで学べること</h2>
+
+<div class="content-box">
+<div class="content-item"><h3>お金を増やす</h3></div>
+<div class="content-item"><h3>老後資金</h3></div>
+<div class="content-item"><h3>詐欺対策</h3></div>
+<div class="content-item"><h3>相続対策</h3></div>
+</div>
+
+<p class="content-message">
+増やす力と守る知識を両方学びます
+</p>
+</section>
+
+<!-- 料金 -->
+<section class="price">
+<h2>料金</h2>
+<div class="price-value">月額 22,000円</div>
+</section>
+
+<!-- 最後 -->
+<section class="final">
+<h2>今の決断が未来を変えます</h2>
+<a href="https://lin.ee/8mjr5Lan" class="final-btn">
+無料体験に参加する
+</a>
+</section>
 
 <script>
 const slider = document.getElementById("slider");
