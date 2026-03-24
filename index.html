@@ -110,14 +110,8 @@ body{
   font-size:22px;
   font-weight:bold;
   line-height:1.6;
-  position:relative;
 }
 
-a.card{
-  display:block;
-}
-
-/* 🔥 Notionボタン（最終完成） */
 .notion-btn{
   display:block;
   width:90%;
@@ -137,10 +131,8 @@ a.card{
     0 16px 30px rgba(0,0,0,0.45),
     0 4px 10px rgba(0,0,0,0.3);
 
-  /* 初期状態 */
   opacity:0;
   transform:translateY(60px) scale(0.95);
-
   transition:all 0.6s cubic-bezier(0.22, 1.5, 0.36, 1);
 }
 
@@ -155,13 +147,11 @@ a.card{
   opacity:0.85;
 }
 
-/* 出現 */
 .notion-btn.show{
   opacity:1;
   transform:translateY(0) scale(1.05);
 }
 
-/* バウンド戻り */
 .notion-btn.show.done{
   transform:translateY(0) scale(1);
 }
@@ -189,19 +179,6 @@ a.card{
   gap:8px;
 
   box-shadow:0 8px 20px rgba(0,0,0,0.25);
-
-  animation:floaty 2.5s ease-in-out infinite,
-             pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes floaty{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(-6px);}
-}
-
-@keyframes pulse{
-  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
-  50%{box-shadow:0 12px 30px rgba(0,0,0,0.35);}
 }
 </style>
 </head>
@@ -223,7 +200,6 @@ a.card{
   </div>
 
   <a href="https://lin.ee/n37s4pB" class="btn" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;margin-right:8px;">
     まずは内容を見てみる
   </a>
 
@@ -232,64 +208,13 @@ a.card{
   </div>
 </div>
 
-<div class="slider">
-  <div class="slide-track" id="slideTrack">
-    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
-    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
-    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
-  </div>
-</div>
-
-<div class="section">
-  <h2>知らないだけでこんな現実が起きています</h2>
-
-  <div class="card">詐欺や認知症の話、身近で聞いたことはありませんか？</div>
-  <div class="card">まだ自分の周りで起きていないだけで、誰にでも起こりうることです。</div>
-  <div class="card">詐欺被害は毎日 約50件、約1.2億円。決して他人事ではありません。</div>
-  <div class="card">認知症診断は、毎日 約800人</div>
-  <div class="card">相続トラブルで裁判になるケースも、毎日 約30件あります</div>
-</div>
-
-<div class="section">
-  <h2>ですが、ご安心ください</h2>
-
-  <div class="card">将来起こりうる問題に備えることができます</div>
-  <div class="card">大切なお金を守る知識も学べます</div>
-  <div class="card">繰り返し学びながら理解を深めていきます</div>
-</div>
-
-<div class="section">
-  <h2>運営について</h2>
-
-  <div class="card">金融機関の営業ではありません</div>
-  <div class="card">販売や勧誘は一切ありません</div>
-  <div class="card">投資の判断は必ずご自身でしていただきます</div>
-</div>
-
-<div class="section">
-  <h2>料金について</h2>
-
-  <div class="card">月額 22,000円（週1回＋相談し放題）</div>
-
-  <div class="card">
-    一般的な講座は1回参加して終わることが多いですが、<br>
-    くらしとお金サロンは毎週継続して学び、相談できる環境です
-  </div>
-
-  <div class="card">
-    1回あたり約5,500円。<br>
-    参加の中で、いつでも相談できる環境です
-  </div>
-</div>
-
 <div class="section">
   <h2>このサロンで得られること</h2>
 
   <div class="card">一人で悩まず、地域の仲間と一緒に学べる場所です</div>
 
-  <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png"
+  <!-- 🔥画像差し替え -->
+  <img src="BB39BDA6-B7C0-48F8-ABFA-FAE043FAE08E.png"
        style="width:90%;max-width:500px;border-radius:20px;margin:20px auto;display:block;">
 </div>
 
@@ -320,79 +245,32 @@ a.card{
     下の友だち追加ボタンからご参加いただけます
   </div>
 
-  <a href="https://lin.ee/n37s4pB" target="_blank">
-    <img src="IMG_2124.png" style="width:220px;">
-  </a>
-
   <div class="card">
-    友だち追加後、「体験」または「質問」とお気軽にお送りください
-  </div>
-</div>
-
-<div class="section">
-  <h2>今、動いた方から変わっています</h2>
-
-  <div class="card">何もしなければ、不安はそのまま残ります</div>
-  <div class="card">少し早く知ることで、防げること・守れることが増えていきます</div>
-  <div class="card">まずは無料体験で雰囲気を見に来てください</div>
-
-  <div class="card">
-    定員制のため、満席になり次第受付を停止します
-  </div>
-</div>
-
-<div class="section">
-  <h2>開催場所</h2>
-
-  <div class="card">小倉南生涯学習センターで開催しています</div>
-
-  <div style="width:90%;max-width:500px;margin:20px auto;border-radius:20px;overflow:hidden;">
-    <iframe 
-      src="https://www.google.com/maps?q=小倉南生涯学習センター&output=embed"
-      width="100%" 
-      height="300" 
-      style="border:0;">
-    </iframe>
+    友だち追加後<br>
+    「体験」または「質問」<br>
+    とお気軽にお送りください
   </div>
 </div>
 
 <a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;">
   友だち追加・質問はこちら
 </a>
 
 <script>
-const track=document.getElementById("slideTrack");
-track.innerHTML+=track.innerHTML;
-let x=0;
-function slide(){
-  x+=0.6;
-  if(x>=track.scrollWidth/2){x=0;}
-  track.style.transform=`translateX(-${x}px)`;
-  requestAnimationFrame(slide);
-}
-slide();
-
-/* 🔥 アニメーション */
 const targets = document.querySelectorAll('.notion-btn');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add('show');
-
       setTimeout(()=>{
         entry.target.classList.add('done');
-      }, 300);
+      },300);
     }
   });
-}, {
-  threshold: 0.2
-});
+},{threshold:0.2});
 
-targets.forEach(target => {
-  observer.observe(target);
-});
+targets.forEach(t => observer.observe(t));
 </script>
 
 </body>
