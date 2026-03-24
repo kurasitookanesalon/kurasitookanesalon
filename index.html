@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ★ フォント追加 -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 
 <title>くらしとお金サロン</title>
@@ -47,7 +46,7 @@ grid-template-columns:1fr 60px 1fr;
 align-items:center;
 margin:12px 0;
 font-size:36px;
-font-weight:700; /* ★ 太く */
+font-weight:700;
 }
 
 .left{ text-align:right; }
@@ -60,34 +59,47 @@ text-align:center;
 white-space:nowrap;
 }
 
-/* ★ メインコピー強化 */
 .result{
 text-align:center;
 font-size:48px;
 color:#D4AF37;
 font-weight:900;
 margin-top:25px;
-letter-spacing:1px;
 }
 
-/* ボタン */
+/* ===== CTA（進化版） ===== */
 .line-btn{
 background:#00c300;
 color:#fff;
-padding:20px 50px;
-border-radius:40px;
+padding:22px 55px;
+border-radius:50px;
 text-decoration:none;
 font-weight:700;
-margin-top:20px;
+margin-top:25px;
 font-size:20px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+display:inline-block;
+
+/* ★ アニメーション */
+animation: pulse 1.8s infinite;
+}
+
+/* ★ ふわっと拡大 */
+@keyframes pulse{
+0%{ transform:scale(1); }
+50%{ transform:scale(1.08); }
+100%{ transform:scale(1); }
+}
+
+/* ★ タップ時 */
+.line-btn:active{
+transform:scale(0.95);
 }
 
 /* ===== 右スライド ===== */
 .hero-right{
 flex:1;
 overflow:hidden;
-position:relative;
 }
 
 .slider{
@@ -155,7 +167,8 @@ height:250px;
 
 <p>引退世代のためのお金の学校</p>
 
-<a href="https://lin.ee/yxZwj10" class="line-btn">
+<!-- ★ LINEリンク反映 -->
+<a href="https://lin.ee/8mjr5Lan" class="line-btn">
 無料体験はこちら
 </a>
 
