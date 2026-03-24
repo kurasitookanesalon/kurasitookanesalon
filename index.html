@@ -117,24 +117,31 @@ a.card{
   display:block;
 }
 
-/* 🔥 Notionボタン（完成版） */
+/* 🔥 Notionボタン（最終完成） */
 .notion-btn{
   display:block;
   width:90%;
   max-width:500px;
-  margin:20px auto;
-  padding:20px;
+  margin:22px auto;
+  padding:24px;
   border-radius:20px;
   text-align:center;
   text-decoration:none;
 
-  background:#ffffff;
+  background:linear-gradient(180deg, #ffffff 0%, #f0f3f8 100%);
   color:#1E5BB8;
   border:3px solid #1E5BB8;
 
-  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+  box-shadow:
+    0 6px 0 #163E7A,
+    0 16px 30px rgba(0,0,0,0.45),
+    0 4px 10px rgba(0,0,0,0.3);
 
-  transition:0.2s;
+  /* 初期状態 */
+  opacity:0;
+  transform:translateY(60px) scale(0.95);
+
+  transition:all 0.6s cubic-bezier(0.22, 1.5, 0.36, 1);
 }
 
 .notion-btn strong{
@@ -145,19 +152,18 @@ a.card{
 
 .notion-btn span{
   font-size:14px;
-  opacity:0.8;
+  opacity:0.85;
 }
 
-/* 🔥 hover */
-.notion-btn:hover{
-  background:#1E5BB8;
-  color:#ffffff;
+/* 出現 */
+.notion-btn.show{
+  opacity:1;
+  transform:translateY(0) scale(1.05);
 }
 
-/* 🔥 押した時 */
-.notion-btn:active{
-  transform:translateY(4px);
-  box-shadow:0 6px 15px rgba(0,0,0,0.25);
+/* バウンド戻り */
+.notion-btn.show.done{
+  transform:translateY(0) scale(1);
 }
 
 .floating-btn{
@@ -366,6 +372,27 @@ function slide(){
   requestAnimationFrame(slide);
 }
 slide();
+
+/* 🔥 アニメーション */
+const targets = document.querySelectorAll('.notion-btn');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+
+      setTimeout(()=>{
+        entry.target.classList.add('done');
+      }, 300);
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+targets.forEach(target => {
+  observer.observe(target);
+});
 </script>
 
 </body>
