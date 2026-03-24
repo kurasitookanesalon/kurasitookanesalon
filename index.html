@@ -12,7 +12,6 @@ font-family:sans-serif;
 background:url("92F216BD-DBCB-44E4-93A1-2E045A576A8F.png") no-repeat center;
 background-size:cover;
 background-attachment:fixed;
-color:#333;
 }
 
 /* ===== トップ ===== */
@@ -25,29 +24,27 @@ overflow:hidden;
 .hero-slider{
 display:flex;
 height:100%;
-animation:slideX 70s linear infinite;
-z-index:0;
+animation:slideX 55s linear infinite; /* ←修正 */
 }
 
-/* 🔥ズーム完全なし */
 .hero-slider img{
 height:100%;
 width:auto;
 flex-shrink:0;
 }
 
-/* 横スライド */
+/* ループ */
 @keyframes slideX{
 0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
+100%{transform:translateX(-50%);}
 }
 
+/* オーバーレイ */
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
 background:rgba(0,0,0,0.4);
-z-index:1;
 }
 
 .hero-content{
@@ -57,62 +54,20 @@ left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
 color:#fff;
-z-index:2;
-}
-
-.hero-content img{
-width:120px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:32px;
-margin:10px 0;
 }
 
 .line-btn{
-display:inline-block;
 background:#00c300;
 color:#fff;
 padding:15px 30px;
 border-radius:30px;
 text-decoration:none;
-font-weight:bold;
-}
-
-/* ===== 共通 ===== */
-.container{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
-
-.card{
-background:rgba(255,255,255,0.95);
-padding:30px;
-border-radius:20px;
-margin-bottom:30px;
-}
-
-.profile img{
-width:150px;
-border-radius:10px;
-margin-bottom:15px;
-}
-
-.line-section{
-text-align:center;
-}
-
-.line-section img{
-width:200px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== トップ ===== -->
 <div class="hero">
 
 <div class="hero-slider">
@@ -122,72 +77,21 @@ width:200px;
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
 <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+
+<!-- ループ用 -->
 <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
 </div>
 
 <div class="hero-content">
-<img src="ロゴ浮き.png">
+<img src="ロゴ浮き.png" width="120">
 <h1>くらしとお金サロン</h1>
 <p>引退世代のためのお金の学校</p>
 <a href="https://lin.ee/yxZwj10" class="line-btn">LINEで無料体験</a>
-</div>
-
-</div>
-
-<div class="container">
-
-<div class="card">
-<h2>サロンの内容</h2>
-
-<p>
-将来のお金や生活に不安を感じていませんか。このサロンでは、日々の暮らしに関わる知識を分かりやすく整理しながら、これからの生活に向けた考え方を学んでいきます。難しい言葉を使わず、ゆっくり丁寧に理解していくことで、不安を減らし安心して考えられる力を身につけていきます。
-</p>
-
-<p>
-一人で抱え込まず、同じ地域の方と顔を合わせて話せる場として、少人数で落ち着いて学べる環境を大切にしています。
-</p>
-
-<p>※金融商品やサービスの販売・勧誘は一切行っておりません</p>
-
-<h3>開催内容</h3>
-<p>
-週1回（120分） 小倉南生涯学習センター<br>
-前半：講義（60分） 後半：座談会（60分）
-</p>
-
-<h3>料金</h3>
-<p>月額 22,000円（税込）</p>
-
-</div>
-
-<div class="card profile">
-<h2>自己紹介</h2>
-
-<img src="IMG_3616.png">
-
-<p>
-平松 広大（36歳）<br>
-福岡県北九州市小倉南区出身。
-</p>
-
-</div>
-
-<div class="card line-section">
-
-<h2>公式LINE</h2>
-
-<p>
-無料体験・お問い合わせは公式LINEから受け付けています。
-</p>
-
-<a href="https://lin.ee/yxZwj10" class="line-btn">
-ここをタップして友だち追加
-</a>
-
-<br><br>
-
-<img src="IMG_2124.png">
-
 </div>
 
 </div>
