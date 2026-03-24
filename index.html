@@ -1,224 +1,39 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン</title>
-
 <style>
-body{
-margin:0;
-font-family:sans-serif;
-background:#0f2f6b;
-}
-
-/* ================= トップ ================= */
-.hero{
-display:flex;
-height:100vh;
-overflow:hidden;
-}
-
-/* 左 */
-.hero-left{
-flex:1;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:60px;
-background:linear-gradient(135deg,#1E5BB8,#163E7A);
-color:#fff;
-}
-
-.hero-left h1{
-font-size:34px;
+.catch{
+font-size:32px;
 line-height:1.6;
+letter-spacing:1px;
 margin-bottom:20px;
 }
 
-.hero-left p{
-font-size:16px;
-line-height:1.8;
-margin-bottom:30px;
+.plus, .equal{
+display:block;
+font-size:28px;
+margin:10px 0;
+opacity:0.8;
 }
 
-/* ゴールド */
 .gold{
 color:#D4AF37;
 font-weight:bold;
 }
 
-/* ボタン */
-.line-btn{
-background:#00c300;
-color:#fff;
-padding:18px 45px;
-border-radius:40px;
-text-decoration:none;
-font-weight:bold;
-font-size:16px;
-box-shadow:0 8px 20px rgba(0,0,0,0.25);
-transition:0.3s;
-}
-
-.line-btn:hover{
-transform:translateY(-3px);
-}
-
-/* 右 */
-.hero-right{
-flex:1;
-position:relative;
-overflow:hidden;
-}
-
-/* 左との境界ぼかし */
-.hero-right::before{
-content:"";
-position:absolute;
-left:0;
-top:0;
-width:120px;
-height:100%;
-background:linear-gradient(to right,#163E7A,transparent);
-z-index:2;
-}
-
-/* 軽いグラデ（暗くしない） */
-.hero-right::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to left, rgba(30,91,184,0.15), rgba(0,0,0,0.05));
-z-index:1;
-}
-
-/* スライド */
-.slider{
-display:flex;
-height:100%;
-}
-
-.slider img{
-height:100%;
-width:auto;
-flex-shrink:0;
-animation:zoom 8s ease-in-out infinite alternate;
-}
-
-.slider.moving{
-animation:slideX 40s linear infinite;
-}
-
-/* 横スライド */
-@keyframes slideX{
-0%{ transform:translateX(0); }
-100%{ transform:translateX(-50%); }
-}
-
-/* ズーム */
-@keyframes zoom{
-0%{ transform:scale(1); }
-100%{ transform:scale(1.05); }
-}
-
-/* ================= セクション ================= */
-.section{
-padding:80px 20px;
-}
-
-.section-inner{
-max-width:900px;
-margin:auto;
-background:#fff;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.section h2{
-text-align:center;
-margin-bottom:20px;
-font-size:28px;
-color:#1E5BB8;
-}
-
-.section p{
-line-height:1.8;
-font-size:16px;
-}
-
-/* スマホ */
-@media (max-width:768px){
-.hero{
-flex-direction:column;
-height:auto;
-}
-
-.hero-left{
-padding:40px 20px;
-}
-
-.hero-left h1{
-font-size:24px;
-}
-
-.hero-right{
-height:300px;
-}
+.big{
+font-size:38px;
+line-height:1.4;
 }
 </style>
-</head>
 
-<body>
+<h1 class="catch">
 
-<!-- ================= トップ ================= -->
-<div class="hero">
-
-<!-- 左 -->
-<div class="hero-left">
-
-<h1>
 増やす知識 × 守る知恵<br>
-＋ 地域の仲間 ＝<br><br>
 
-<span class="gold">安心・安定のくらし</span>
+<span class="plus">＋</span><br>
+
+地域の仲間<br>
+
+<span class="equal">＝</span><br>
+
+<span class="gold big">安心・安定のくらし</span>
+
 </h1>
-
-<p>
-引退世代のためのお金の学校<br><br>
-NISA・株式投資・詐欺対策まで<br>
-これからの時代に必要な知識を学べます
-</p>
-
-<a href="https://lin.ee/yxZwj10" class="line-btn">
-無料体験はこちら
-</a>
-
-</div>
-
-<!-- 右 -->
-<div class="hero-right">
-<div class="slider" id="slider">
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
-<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
-</div>
-</div>
-
-</div>
-
-<!-- ================= JS ================= -->
-<script>
-const slider = document.getElementById("slider");
-slider.innerHTML += slider.innerHTML;
-slider.classList.add("moving");
-</script>
-
-</body>
-</html>
