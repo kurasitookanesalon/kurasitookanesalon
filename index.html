@@ -28,30 +28,32 @@ align-items:center;
 padding:40px;
 background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
-text-align:center;
 }
 
-/* キャッチ */
+/* 数式デザイン */
 .catch-wrap{
-text-align:center;
+max-width:700px;
+margin:auto;
 }
 
-.catch-line{
+.row{
+display:grid;
+grid-template-columns:1fr 60px 1fr;
+align-items:center;
+margin:12px 0;
 font-size:36px;
-line-height:1.8;
-margin:10px 0;
 }
 
-.symbol{
-font-size:32px;
-margin:10px 0;
-}
+.left{ text-align:right; padding-right:10px; }
+.right{ text-align:left; padding-left:10px; }
+.center{ text-align:center; font-size:32px; }
 
 .result{
+text-align:center;
 font-size:44px;
 color:#D4AF37;
 font-weight:bold;
-margin-top:15px;
+margin-top:20px;
 }
 
 /* 説明 */
@@ -59,6 +61,7 @@ margin-top:15px;
 font-size:16px;
 line-height:1.8;
 margin:25px 0;
+text-align:center;
 }
 
 /* ボタン */
@@ -110,25 +113,35 @@ font-size:28px;
 margin-bottom:40px;
 }
 
-.problem-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:25px;
+.problem-wrap{
+display:flex;
+gap:30px;
+align-items:center;
 margin-bottom:40px;
+}
+
+.problem-image img{
+width:100%;
+border-radius:20px;
+}
+
+.problem-content{
+display:flex;
+flex-direction:column;
+gap:20px;
 }
 
 .problem-card{
 background:#fff;
-padding:30px;
-border-radius:20px;
+padding:25px;
+border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
-font-size:15px;
-line-height:1.7;
+text-align:left;
 }
 
+/* メッセージ */
 .problem-message{
 font-size:18px;
-line-height:1.8;
 }
 
 .problem-message span{
@@ -143,11 +156,6 @@ color:#1E5BB8;
 .solution{
 background:#fff;
 padding:80px 20px;
-}
-
-.solution-inner{
-max-width:1000px;
-margin:auto;
 text-align:center;
 }
 
@@ -161,61 +169,69 @@ color:#1E5BB8;
 display:grid;
 grid-template-columns:1fr 1fr 1fr;
 gap:25px;
-margin-bottom:50px;
+max-width:1000px;
+margin:auto;
 }
 
 .solution-card{
 background:#f5f7fb;
 padding:30px;
 border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 .solution-card h3{
-font-size:20px;
-margin-bottom:15px;
 color:#1E5BB8;
 }
 
-.solution-card p{
-font-size:15px;
-line-height:1.7;
+/* ================= 信頼（追加） ================= */
+.trust{
+background:#163E7A;
+color:#fff;
+padding:80px 20px;
+text-align:center;
 }
 
-.solution-message{
+.trust h2{
+font-size:28px;
+margin-bottom:40px;
+}
+
+.trust-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.trust-card{
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:15px;
 font-size:18px;
-line-height:1.8;
-}
-
-.solution-message span{
-display:block;
-font-size:22px;
-font-weight:bold;
-margin-top:10px;
-color:#D4AF37;
 }
 
 /* ================= スマホ ================= */
 @media (max-width:768px){
+
 .hero{
 flex-direction:column;
 height:auto;
-}
-
-.catch-line{
-font-size:26px;
-}
-
-.result{
-font-size:32px;
 }
 
 .hero-right{
 height:250px;
 }
 
-.problem-grid,
-.solution-grid{
+.row{ font-size:24px; }
+.result{ font-size:30px; }
+
+.problem-wrap{
+flex-direction:column;
+}
+
+.solution-grid,
+.trust-grid{
 grid-template-columns:1fr;
 }
 }
@@ -230,11 +246,27 @@ grid-template-columns:1fr;
 <div class="hero-left">
 
 <div class="catch-wrap">
-<div class="catch-line">増やす知識 × 守る知恵</div>
-<div class="symbol">＋</div>
-<div class="catch-line">地域の仲間</div>
-<div class="symbol">＝</div>
+
+<div class="row">
+<div class="left">増やす知識</div>
+<div class="center">×</div>
+<div class="right">守る知恵</div>
+</div>
+
+<div class="row">
+<div class="left"></div>
+<div class="center">＋</div>
+<div class="right">地域の仲間</div>
+</div>
+
+<div class="row">
+<div class="left"></div>
+<div class="center">＝</div>
+<div class="right"></div>
+</div>
+
 <div class="result">安心・安定のくらし</div>
+
 </div>
 
 <p>
@@ -268,18 +300,16 @@ NISA・株式投資・詐欺対策まで学べます
 
 <h2>こんな不安はありませんか？</h2>
 
-<div class="problem-grid">
+<div class="problem-wrap">
 
-<div class="problem-card">
-老後のお金がこのままで大丈夫か不安
+<div class="problem-image">
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
 </div>
 
-<div class="problem-card">
-NISAや投資をよく分からないまま始めている
-</div>
-
-<div class="problem-card">
-詐欺や騙されるのが怖い
+<div class="problem-content">
+<div class="problem-card">老後のお金が不安</div>
+<div class="problem-card">投資がよく分からない</div>
+<div class="problem-card">詐欺が怖い</div>
 </div>
 
 </div>
@@ -296,32 +326,46 @@ NISAや投資をよく分からないまま始めている
 <!-- ================= 解決 ================= -->
 <section class="solution">
 
-<div class="solution-inner">
-
 <h2>このサロンで得られること</h2>
 
 <div class="solution-grid">
 
 <div class="solution-card">
 <h3>増やす力</h3>
-<p>NISA・株式投資を基礎から学べる</p>
+<p>投資を基礎から学べる</p>
 </div>
 
 <div class="solution-card">
 <h3>守る知恵</h3>
-<p>詐欺や損失を防ぐ判断力が身につく</p>
+<p>詐欺や損失を防ぐ</p>
 </div>
 
 <div class="solution-card">
 <h3>地域のつながり</h3>
-<p>同世代と学び安心して相談できる</p>
+<p>安心して相談できる</p>
 </div>
 
 </div>
 
-<div class="solution-message">
-知識がある人だけが守れる時代です<br>
-<span>今からでも遅くありません</span>
+</section>
+
+<!-- ================= 信頼 ================= -->
+<section class="trust">
+
+<h2>知っているか知らないかで差が出る時代</h2>
+
+<div class="trust-grid">
+
+<div class="trust-card">
+詐欺被害<br><strong>最大5,500万円</strong>
+</div>
+
+<div class="trust-card">
+孤独死<br><strong>年間約7万人</strong>
+</div>
+
+<div class="trust-card">
+金融知識の差で<br><strong>大きな差が生まれる</strong>
 </div>
 
 </div>
