@@ -9,7 +9,9 @@
 body{
 margin:0;
 font-family:sans-serif;
-line-height:1.8;
+background:url("92F216BD-DBCB-44E4-93A1-2E045A576A8F.png") no-repeat center;
+background-size:cover;
+background-attachment:fixed;
 color:#333;
 }
 
@@ -21,33 +23,31 @@ overflow:hidden;
 }
 
 .hero-slider{
-position:absolute;
-width:100%;
+display:flex;
+width:700%;
 height:100%;
+animation:slideX 40s linear infinite;
+z-index:0;
 }
 
 .hero-slider img{
-position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
-opacity:0;
-animation:slide 24s infinite;
+flex-shrink:0;
 }
 
-.hero-slider img:nth-child(1){animation-delay:0s;}
-.hero-slider img:nth-child(2){animation-delay:4s;}
-.hero-slider img:nth-child(3){animation-delay:8s;}
-.hero-slider img:nth-child(4){animation-delay:12s;}
-.hero-slider img:nth-child(5){animation-delay:16s;}
-.hero-slider img:nth-child(6){animation-delay:20s;}
+@keyframes slideX{
+0%{transform:translateX(0);}
+100%{transform:translateX(-600%);}
+}
 
-@keyframes slide{
-0%{opacity:0;}
-5%{opacity:1;}
-15%{opacity:1;}
-20%{opacity:0;}
-100%{opacity:0;}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.4);
+z-index:1;
 }
 
 .hero-content{
@@ -71,12 +71,11 @@ margin:10px 0;
 }
 
 .hero p{
-font-size:16px;
+margin-bottom:20px;
 }
 
 .line-btn{
 display:inline-block;
-margin-top:20px;
 background:#00c300;
 color:#fff;
 padding:15px 30px;
@@ -85,51 +84,40 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* ===== セクション ===== */
-.section{
-padding:50px 20px;
+/* ===== 共通 ===== */
+.container{
 max-width:900px;
 margin:auto;
+padding:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.95);
+padding:30px;
+border-radius:20px;
+margin-bottom:30px;
 }
 
 h2{
-font-size:26px;
-margin-bottom:20px;
-}
-
-ul{
-padding-left:20px;
+margin-top:0;
 }
 
 /* ===== 自己紹介 ===== */
 .profile img{
-width:200px;
+width:150px;
 border-radius:10px;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 /* ===== LINE ===== */
-.line-box{
-background:#f5f5f5;
-padding:30px;
+.line-section{
 text-align:center;
-border-radius:10px;
 }
 
-.line-box img{
+.line-section img{
 width:200px;
-margin-top:20px;
 }
 
-/* ===== フッター ===== */
-.footer{
-text-align:center;
-padding:30px;
-}
-
-.footer img{
-width:80px;
-}
 </style>
 </head>
 
@@ -145,6 +133,7 @@ width:80px;
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
 <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
 </div>
 
 <div class="hero-content">
@@ -156,8 +145,10 @@ width:80px;
 
 </div>
 
+<div class="container">
+
 <!-- ===== サロン内容 ===== -->
-<div class="section">
+<div class="card">
 <h2>サロンの内容</h2>
 
 <p>
@@ -171,24 +162,24 @@ width:80px;
 <p>※金融商品やサービスの販売・勧誘は一切行っておりません</p>
 
 <h3>開催内容</h3>
-<p>週1回（120分） 小倉南生涯学習センター</p>
-<p>前半：講義（60分） 後半：座談会（60分）</p>
+<p>
+週1回（120分） 小倉南生涯学習センター<br>
+前半：講義（60分） 後半：座談会（60分）
+</p>
+
+<p>
+基礎から順番に学びながら、分からないことを共有し理解を深めていきます。
+</p>
 
 <h3>学べる内容</h3>
-<ul>
-<li>生活に関わる基礎知識</li>
-<li>家計の考え方</li>
-<li>将来に向けた備え</li>
-<li>詐欺やトラブルの対策</li>
-<li>安心して暮らすための知識</li>
-</ul>
+<p>
+・生活に関わる基礎知識 ・家計の考え方 ・将来に向けた備え ・詐欺やトラブルの対策 ・安心して暮らすための知識
+</p>
 
 <h3>特徴</h3>
-<ul>
-<li>少人数制（定員あり）</li>
-<li>地域コミュニティ</li>
-<li>安心して話せる環境</li>
-</ul>
+<p>
+・少人数制（定員あり） ・地域コミュニティ ・安心して話せる環境
+</p>
 
 <h3>料金</h3>
 <p>月額 22,000円（税込）</p>
@@ -200,50 +191,65 @@ width:80px;
 ※開催：小倉南生涯学習センター<br>
 連絡先：070-3538-5073
 </p>
+
 </div>
 
 <!-- ===== サロン理念 ===== -->
-<div class="section">
+<div class="card">
 <h2>サロン理念</h2>
 
+<p>増やす知識と守る知恵で、人生に安心を。</p>
+
 <p>
-増やす知識と守る知恵で、人生に安心を。
-くらしとお金サロンは、
-これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。
+くらしとお金サロンは、これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。
 </p>
 
 <p>
-今の日本では、孤独死やセルフネグレクトが
-決して珍しい話ではなくなっています。
+今の日本では、孤独死やセルフネグレクトが決して珍しい話ではなくなっています。
 </p>
 
 <p>
-不安を放置するのではなく、向き合い、整理し、備える。
-そのためのコミュニティが、くらしとお金サロンです。
+年齢を重ねるほど、暮らしやお金のことを考える時間は増えていきます。しかし同時に、相談できる相手は少なくなっていきます。
 </p>
+
+<p>
+だからこそ地域の中に、所属できる場所、相談できる人、同じ地域の仲間が必要だと考えています。
+</p>
+
+<p>
+不安を放置するのではなく、向き合い、整理し、備える。そのためのコミュニティが、くらしとお金サロンです。
+</p>
+
 </div>
 
 <!-- ===== サロン動機 ===== -->
-<div class="section">
+<div class="card">
 <h2>このサロンを作った理由</h2>
 
 <p>
-このサロンを作ろうと思った理由の一つに
-父の孤独死があります。
+父の孤独死が、このサロンを作るきっかけになりました。
 </p>
 
 <p>
-もっと早く誰かに相談できる場所があったら。
-もっと早く地域の中でつながれる場所があったら。
+もっと早く誰かに相談できる場所があったら。もっと早く地域の中でつながれる場所があったら。
 </p>
 
 <p>
-そう思ったことが、このサロンを作る大きなきっかけになりました。
+そう思ったことが、このサロンを作る大きな理由です。
 </p>
+
+<p>
+お金の問題も暮らしの問題も、本来は一人で抱えるものではありません。
+</p>
+
+<p>
+地域の中に顔の見える関係があり、すぐに相談できる場所を作りたい。それが、くらしとお金サロンです。
+</p>
+
 </div>
 
 <!-- ===== 自己紹介 ===== -->
-<div class="section profile">
+<div class="card profile">
 <h2>自己紹介</h2>
 
 <img src="IMG_3616.png">
@@ -254,40 +260,44 @@ width:80px;
 </p>
 
 <p>
-約15年間、複数の全国飲食チェーンで経験を積み、
-最大約200店舗のエリア運営を担当してきました。
+約15年間、全国飲食チェーンで店長・エリア管理・人事・マーケティングなどを経験。
 </p>
 
 <p>
-現在はFP3級を取得し、投資や事業を通じて
-地域の金融リテラシー向上に取り組んでいます。
+最大200店舗・6000人規模の運営に関わってきました。
 </p>
 
-<p>※金融商品の販売や勧誘は一切行っておりません。</p>
+<p>
+現在はFP3級を取得し、投資や事業を行いながらサロンを運営しています。
+</p>
+
+<p>
+数字だけでなく、人の不安に寄り添うことを大切にしています。
+</p>
+
 </div>
 
 <!-- ===== LINE ===== -->
-<div class="section">
-<div class="line-box">
+<div class="card line-section">
+
 <h2>公式LINE</h2>
 
 <p>
-無料体験・お問い合わせは公式LINEから<br>
-受け付けています。
+無料体験・お問い合わせは公式LINEから受け付けています。
 </p>
 
-<a href="https://lin.ee/yxZwj10" class="line-btn">ここをタップして友だち追加</a>
+<a href="https://lin.ee/yxZwj10" class="line-btn">
+ここをタップして友だち追加
+</a>
+
+<br><br>
 
 <img src="IMG_2124.png">
 
 <p>QRコードを読み取ってもご登録いただけます</p>
 
 </div>
-</div>
 
-<!-- ===== フッター ===== -->
-<div class="footer">
-<img src="ロゴ浮き.png">
 </div>
 
 </body>
