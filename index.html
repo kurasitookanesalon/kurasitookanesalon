@@ -14,7 +14,6 @@ background-size:cover;
 background-attachment:fixed;
 }
 
-/* ===== トップ ===== */
 .hero{
 position:relative;
 height:100vh;
@@ -24,7 +23,7 @@ overflow:hidden;
 .hero-slider{
 display:flex;
 height:100%;
-animation:slideX 36s linear infinite; /* ←修正 */
+animation:slideX 36s linear infinite;
 }
 
 .hero-slider img{
@@ -33,9 +32,10 @@ width:auto;
 flex-shrink:0;
 }
 
+/* 🔥ここが本質修正 */
 @keyframes slideX{
 0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+100%{transform:translateX(-100%);} /* ←修正 */
 }
 
 .hero::after{
