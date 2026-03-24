@@ -6,174 +6,197 @@
 <title>くらしとお金サロン</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #f5f7fa;
-  color: #333;
+body{
+  margin:0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background:#f5f7fb;
+  color:#333;
 }
 
-/* トップ */
-.header {
-  background: linear-gradient(rgba(30,91,184,0.85), rgba(30,91,184,0.85)), url("hero.jpg");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 80px 20px;
-  color: white;
+/* ===== TOP ===== */
+.hero{
+  height:100vh;
+  background:url("DEA53687-842A-4E25-9838-AE0A1C0C0C49.png") center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
 }
 
-.logo {
-  width: 80px;
-  margin-bottom: 20px;
+.hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
 }
 
-.header h1 {
-  font-size: 28px;
-  margin: 10px 0;
+.hero-content{
+  position:relative;
+  z-index:2;
 }
 
-.header p {
-  margin-bottom: 30px;
+.logo{
+  width:100px;
+  margin-bottom:20px;
 }
 
-/* ボタン */
-.btn {
-  display: inline-block;
-  background: #00c300;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
+h1{
+  font-size:32px;
+  margin:10px 0;
 }
 
-/* ナビ */
-.nav {
-  text-align: center;
-  padding: 20px;
+.sub{
+  font-size:16px;
+  margin-bottom:25px;
 }
 
-.nav a {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px 15px;
-  background: #1E5BB8;
-  color: white;
-  border-radius: 20px;
-  text-decoration: none;
+.cta{
+  background:#00c300;
+  color:white;
+  padding:15px 30px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+  display:inline-block;
 }
 
-/* カード */
-.section {
-  background: white;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 15px;
+/* ===== SECTION ===== */
+.section{
+  padding:40px 20px;
 }
 
-/* 講師 */
-.profile-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 20px auto;
+.card{
+  background:white;
+  border-radius:15px;
+  padding:25px;
+  margin-bottom:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* QR */
-.qr {
-  width: 200px;
-  display: block;
-  margin: 20px auto;
+/* ===== PROFILE ===== */
+.profile-img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 20px;
+}
+
+h2{
+  margin-bottom:15px;
+}
+
+/* ===== FOOT CTA ===== */
+.footer{
+  text-align:center;
+  padding:40px 20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- トップ -->
-<div class="header">
-  <img src="logo.png" class="logo">
-  <h1>くらしとお金サロン</h1>
-  <p>引退世代のためのお金の学校</p>
+<!-- TOP -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="ロゴ浮き.png" class="logo">
+    <h1>くらしとお金サロン</h1>
+    <div class="sub">引退世代のためのお金の学校</div>
+    <a href="https://lin.ee/SerNrVa" class="cta">LINEで無料体験</a>
+  </div>
+</section>
 
-  <a href="https://lin.ee/SerNrVa" target="_blank" class="btn">
-    LINEで無料体験
-  </a>
-</div>
-
-<!-- ナビ -->
-<div class="nav">
-  <a href="#nayami">お悩み</a>
-  <a href="#profile">講師</a>
-  <a href="#content">内容</a>
-  <a href="#concept">理念</a>
-</div>
-
-<!-- お悩み -->
-<div class="section" id="nayami">
-  <h2>こんなお悩みありませんか？</h2>
-  <ul>
-    <li>老後のお金が不安</li>
-    <li>投資が怖い</li>
-    <li>詐欺が心配</li>
-  </ul>
-
-  <a href="https://lin.ee/SerNrVa" target="_blank" class="btn">
-    LINEで相談する
-  </a>
-</div>
+<!-- 悩み -->
+<section class="section">
+  <div class="card">
+    <h2>こんなお悩みありませんか？</h2>
+    <ul>
+      <li>老後のお金が不安</li>
+      <li>投資が怖い</li>
+      <li>詐欺が心配</li>
+    </ul>
+  </div>
+</section>
 
 <!-- 講師 -->
-<div class="section" id="profile">
-  <h2>講師紹介</h2>
+<section class="section">
+  <div class="card">
+    <h2>講師紹介</h2>
+    <img src="IMG_3616.png" class="profile-img">
 
-  <img src="profile.jpg" class="profile-img">
+    <p><strong>平松 広大（36歳）</strong></p>
+    <p>福岡県北九州市小倉南区出身。</p>
 
-  <p><strong>平松 広大（36歳）</strong></p>
-  <p>福岡県北九州市小倉南区出身。</p>
-  <p>約15年間、全国飲食チェーンで店長・エリア管理などを経験。</p>
-  <p>最大約200店舗・6000名規模のエリアを運営。</p>
-  <p>約10,000人以上と関わり、「伝える力」を強みとしています。</p>
-</div>
+    <p>
+    約15年間、全国飲食チェーンで店長・エリア管理などを経験。<br>
+    最大約200店舗・従業員約6,000名規模のエリアを運営。
+    </p>
 
-<!-- 内容 -->
-<div class="section" id="content">
-  <h2>サロン内容</h2>
-  <p>将来のお金や生活に不安を感じていませんか？</p>
-  <p>分かりやすく整理しながら、これからの生活の考え方を学びます。</p>
+    <p>
+    約10,000名以上と関わり、「伝える力」を強みとしています。
+    </p>
 
-  <h3>開催内容</h3>
-  <p>週1回（120分）</p>
-  <p>前半：講義（60分） 後半：座談会（60分）</p>
+    <p>
+    現在はFP3級を取得し、投資・金融知識を実践的に学びながら活動。<br>
+    くらしとお金サロンを運営しています。
+    </p>
+  </div>
+</section>
 
-  <h3>料金</h3>
-  <p>月額 22,000円（税込）</p>
-</div>
+<!-- サロン内容 -->
+<section class="section">
+  <div class="card">
+    <h2>サロン内容</h2>
+
+    <p>
+    将来のお金や生活に不安を感じていませんか。<br><br>
+
+    このサロンでは、暮らしに関わる知識を分かりやすく整理しながら、
+    これからの生活に向けた考え方を学びます。<br><br>
+
+    難しい言葉を使わず、ゆっくり理解していくことで、
+    安心して考えられる力を身につけていきます。
+    </p>
+
+    <h3>開催内容</h3>
+    <p>
+    週1回（120分）<br>
+    小倉南生涯学習センター<br><br>
+    前半：講義（60分）<br>
+    後半：座談会（60分）
+    </p>
+
+    <h3>料金</h3>
+    <p>月額 22,000円（税込）</p>
+  </div>
+</section>
 
 <!-- 理念 -->
-<div class="section" id="concept">
-  <h2>サロン理念</h2>
-  <p>増やす知識と守る知恵で、人生に安心を。</p>
-  <p>地域の中で、いつでも相談できる場所をつくる。</p>
-</div>
+<section class="section">
+  <div class="card">
+    <h2>サロン理念</h2>
+
+    <p>
+    増やす知識と守る知恵で、人生に安心を。<br><br>
+
+    地域の中で、いつでも相談できる場所、信頼できる人、
+    同じ仲間がいる環境を作ります。<br><br>
+
+    一人で抱え込まず、すぐ相談できる環境を。
+    </p>
+  </div>
+</section>
 
 <!-- CTA -->
-<div class="section" style="text-align:center;">
+<section class="footer">
   <h2>無料体験受付中</h2>
   <p>先着20名限定</p>
-
-  <a href="https://lin.ee/SerNrVa" target="_blank" class="btn">
-    LINEで無料体験
-  </a>
-
-  <a href="https://lin.ee/SerNrVa" target="_blank">
-    <img src="qr.png" class="qr">
-  </a>
-</div>
+  <a href="https://lin.ee/SerNrVa" class="cta">LINEで無料体験</a>
+</section>
 
 </body>
 </html>
