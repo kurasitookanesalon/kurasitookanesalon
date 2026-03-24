@@ -24,23 +24,22 @@ overflow:hidden;
 
 .hero-slider{
 display:flex;
-width:700%;
 height:100%;
 animation:slideX 70s linear infinite;
 z-index:0;
 }
 
+/* 🔥ズーム完全なし */
 .hero-slider img{
-width:100%;
 height:100%;
-object-fit:cover; /* ←修正 */
-object-position:center;
+width:auto;
 flex-shrink:0;
 }
 
+/* 横スライド */
 @keyframes slideX{
 0%{transform:translateX(0);}
-100%{transform:translateX(-600%);}
+100%{transform:translateX(-100%);}
 }
 
 .hero::after{
@@ -71,10 +70,6 @@ font-size:32px;
 margin:10px 0;
 }
 
-.hero p{
-margin-bottom:20px;
-}
-
 .line-btn{
 display:inline-block;
 background:#00c300;
@@ -99,18 +94,12 @@ border-radius:20px;
 margin-bottom:30px;
 }
 
-h2{
-margin-top:0;
-}
-
-/* ===== 自己紹介 ===== */
 .profile img{
 width:150px;
 border-radius:10px;
 margin-bottom:15px;
 }
 
-/* ===== LINE ===== */
 .line-section{
 text-align:center;
 }
@@ -147,7 +136,6 @@ width:200px;
 
 <div class="container">
 
-<!-- ===== サロン内容 ===== -->
 <div class="card">
 <h2>サロンの内容</h2>
 
@@ -167,34 +155,23 @@ width:200px;
 前半：講義（60分） 後半：座談会（60分）
 </p>
 
-<p>
-基礎から順番に学びながら、分からないことを共有し理解を深めていきます。
-</p>
-
-<h3>学べる内容</h3>
-<p>
-・生活に関わる基礎知識 ・家計の考え方 ・将来に向けた備え ・詐欺やトラブルの対策 ・安心して暮らすための知識
-</p>
-
-<h3>特徴</h3>
-<p>
-・少人数制（定員あり） ・地域コミュニティ ・安心して話せる環境
-</p>
-
 <h3>料金</h3>
 <p>月額 22,000円（税込）</p>
 
-<h3>運営情報</h3>
+</div>
+
+<div class="card profile">
+<h2>自己紹介</h2>
+
+<img src="IMG_3616.png">
+
 <p>
-名称：くらしとお金サロン<br>
-所在地：福岡県北九州市小倉南区上石田2丁目24-21-304（サンビル守恒）<br>
-※開催：小倉南生涯学習センター<br>
-連絡先：070-3538-5073
+平松 広大（36歳）<br>
+福岡県北九州市小倉南区出身。
 </p>
 
 </div>
 
-<!-- ===== LINE ===== -->
 <div class="card line-section">
 
 <h2>公式LINE</h2>
@@ -210,8 +187,6 @@ width:200px;
 <br><br>
 
 <img src="IMG_2124.png">
-
-<p>QRコードを読み取ってもご登録いただけます</p>
 
 </div>
 
