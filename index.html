@@ -35,45 +35,27 @@ text-align:center;
 h2{
 font-size:26px;
 font-weight:900;
-margin-bottom:18px;
 line-height:1.4;
+margin-bottom:18px;
 }
 
 p{
 font-size:15px;
 line-height:1.6;
-margin:10px 0;
 }
 
-.sub{
-font-size:13px;
-color:#fff;
-opacity:0.85;
-}
-
-.big{
-font-size:28px;
-font-weight:900;
-color:var(--accent);
-}
-
-.money{
-font-size:14px;
-color:#fff;
-opacity:0.9;
-}
-
-/* ===== ロゴ（文字中心） ===== */
+/* ===== ロゴ ===== */
 .brand{
 position:relative;
 text-align:center;
 margin-bottom:10px;
+padding-left:60px; /* ←ロゴ分余白 */
 }
 
 .logo{
 width:50px;
 position:absolute;
-left:0;
+left:10px;
 top:50%;
 transform:translateY(-50%);
 }
@@ -83,7 +65,7 @@ font-size:20px;
 font-weight:900;
 }
 
-/* ===== CTA（最初） ===== */
+/* ===== CTA ===== */
 .cta-btn{
 display:block;
 width:calc(100% - 20px);
@@ -95,8 +77,8 @@ border-radius:50px;
 font-size:17px;
 font-weight:700;
 text-decoration:none;
-box-shadow:0 6px 18px rgba(0,0,0,0.2);
 text-align:center;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
 
 .cta-safe{
@@ -163,64 +145,38 @@ background:var(--sub);
 color:#fff;
 }
 
-.danger-grid{
-display:grid;
-gap:10px;
-}
-
 .danger-card{
 background:#204a8a;
 padding:18px;
 border-radius:16px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-text-align:center;
+margin-bottom:10px;
 }
 
-/* ===== 解決 ===== */
-.solution-grid{
-display:grid;
-gap:10px;
+.big{
+font-size:28px;
+font-weight:900;
+color:var(--accent);
 }
 
-.solution-card{
+.money{
+font-size:14px;
+opacity:0.9;
+}
+
+/* ===== カード共通 ===== */
+.card{
 background:#fff;
 padding:18px;
 border-radius:16px;
+margin-bottom:10px;
 box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* ===== 内容 ===== */
-.content-box{
-display:grid;
-gap:10px;
-}
-
-.content-item{
-background:#fff;
-padding:18px;
-border-radius:16px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-font-weight:700;
-}
-
-/* ===== 料金 ===== */
-.price-box{
-background:#fff;
-padding:18px;
-border-radius:16px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-.price-value{
+/* ===== 価格 ===== */
+.price{
 font-size:34px;
 color:var(--accent);
 font-weight:900;
-}
-
-/* ===== 最後 ===== */
-.final{
-background:var(--sub);
-color:#fff;
 }
 
 /* ===== 追従CTA ===== */
@@ -244,16 +200,8 @@ text-align:center;
 border-radius:50px;
 font-weight:900;
 font-size:18px;
-letter-spacing:1px;
 text-decoration:none;
 box-shadow:0 8px 24px rgba(0,0,0,0.4);
-animation:float 2s infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-4px);}
-100%{transform:translateY(0);}
 }
 
 /* ===== スマホ ===== */
@@ -271,14 +219,14 @@ height:250px;
 
 <body>
 
-<!-- ===== トップ ===== -->
+<!-- トップ -->
 <div class="hero">
 
 <div class="hero-left">
 
 <div class="brand">
 <img src="ロゴ浮き.png" class="logo">
-<p class="brand-name">くらしとお金サロン</p>
+<div class="brand-name">くらしとお金サロン</div>
 </div>
 
 <div class="row">
@@ -311,11 +259,11 @@ height:250px;
 
 <div class="hero-right">
 <div class="slider" id="slider">
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
+<img src="6648FF22.png" class="slide">
+<img src="480EA703.png" class="slide">
+<img src="89804053.png" class="slide">
+<img src="DEA53687.png" class="slide">
+<img src="DEB3CB95.png" class="slide">
 </div>
 </div>
 
@@ -323,57 +271,48 @@ height:250px;
 
 <!-- 危機 -->
 <section class="danger">
+
 <h2>
 知らないだけで<br>
 こんな現実が起きています
 </h2>
 
-<div class="danger-grid">
-
 <div class="danger-card">
 認知症
 <div class="big">毎日 約800人</div>
-<div class="sub">資産凍結のリスク</div>
 </div>
 
 <div class="danger-card">
 詐欺被害
 <div class="big">毎日 約20〜30人</div>
 <div class="money">1日あたり約1億円以上の被害</div>
-<div class="sub">高齢者の被害が増えています</div>
 </div>
 
 <div class="danger-card">
 相続トラブル
 <div class="big">毎日 約30件</div>
-<div class="sub">裁判に発展するケースも</div>
-</div>
-
 </div>
 
 </section>
 
 <!-- 解決 -->
 <section>
+
 <h2>このサロンでできること</h2>
 
-<div class="solution-grid">
-
-<div class="solution-card">
+<div class="card">
 認知症によるトラブル<br>
-<strong>事前に対策できます</strong>
+事前に対策できます
 </div>
 
-<div class="solution-card">
+<div class="card">
 詐欺に騙される被害<br>
-<strong>防ぐ知識を学べます</strong>
+防ぐ知識を学べます
 </div>
 
-<div class="solution-card">
+<div class="card">
 相続の親族トラブル<br>
-<strong>事前に回避できます</strong>
-</div>
-
+事前に回避できます
 </div>
 
 <p>
@@ -382,47 +321,34 @@ height:250px;
 
 </section>
 
-<!-- 内容 -->
-<section>
-<h2>学べること</h2>
-
-<div class="content-box">
-<div class="content-item">インデックス投資</div>
-<div class="content-item">老後資金</div>
-<div class="content-item">詐欺対策</div>
-<div class="content-item">相続対策</div>
-</div>
-
-</section>
-
 <!-- 料金 -->
 <section>
+
 <h2>料金について</h2>
 
-<p>
-週に1回、合計で月に約8時間学びます
-</p>
-
-<div class="price-box">
-<p>
-一般的なセミナーでは、1回で数万円かかることもあります
-</p>
-
-<div class="price-value">22,000円</div>
+<div class="card">
+一般的な単発セミナーは<br>
+一回数万円のケースもあります
 </div>
 
+<div class="price">22,000円</div>
+
 <p>
-今からの備えが、これからの安心につながります
+当サロンは、地元コミュニティとしての活動も大切にしています<br>
+毎週継続して、安心して続けられる<br>
+安心して相談できるサロンです
 </p>
 
 </section>
 
 <!-- 最後 -->
-<section class="final">
+<section>
+
 <h2>
 今からの備えが<br>
 これからの安心につながります
 </h2>
+
 </section>
 
 <!-- 追従CTA -->
