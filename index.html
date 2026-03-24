@@ -22,41 +22,53 @@ margin:0;
 font-family:'Noto Sans JP', sans-serif;
 background:var(--bg);
 color:#222;
+letter-spacing:0.5px;
+padding-bottom:90px;
 }
 
 /* ===== 共通 ===== */
 section{
-padding:40px 18px;
+padding:40px 20px;
+text-align:center;
 }
 
 h2{
-font-size:26px;
+font-size:28px;
 font-weight:900;
-margin:10px 0 20px;
+margin:0 0 20px;
+}
+
+p{
+margin:10px 0;
+font-size:15px;
+line-height:1.6;
+}
+
+.sub{
+font-size:13px;
+color:#666;
 }
 
 /* ===== ロゴ ===== */
 .brand{
-text-align:center;
-margin-bottom:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin-bottom:10px;
 }
 
 .logo{
-width:70px;
+width:50px;
 filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
 }
 
 .brand-name{
-font-size:14px;
-font-weight:700;
+font-size:20px;
+font-weight:900;
 }
 
-/* ===== CTA（最初だけ） ===== */
-.cta-wrap{
-margin-top:20px;
-text-align:center;
-}
-
+/* ===== CTA（最初） ===== */
 .cta-btn{
 display:block;
 width:100%;
@@ -72,7 +84,7 @@ box-shadow:0 6px 18px rgba(0,0,0,0.2);
 
 .cta-safe{
 font-size:12px;
-color:#999;
+color:#aaa;
 margin-top:6px;
 }
 
@@ -120,12 +132,12 @@ overflow:hidden;
 
 .slider{
 display:flex;
-height:100%;
+width:100%;
 }
 
 .slide{
 width:100%;
-height:100%;
+flex-shrink:0;
 object-fit:cover;
 }
 
@@ -137,7 +149,7 @@ color:#fff;
 
 .danger-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:1fr;
 gap:10px;
 }
 
@@ -145,25 +157,48 @@ gap:10px;
 background:#204a8a;
 padding:16px;
 border-radius:12px;
+text-align:left;
 }
 
-.danger-number{
-font-size:30px;
-color:var(--accent);
+.big{
+font-size:28px;
 font-weight:900;
+color:var(--accent);
+}
+
+.money{
+font-size:14px;
+color:#ddd;
 }
 
 /* ===== 解決 ===== */
-.solution-box{
+.solution-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:10px;
+}
+
+.solution-card{
 background:#fff;
-padding:18px;
+padding:16px;
 border-radius:12px;
+text-align:left;
+}
+
+.label{
+font-size:14px;
+color:#666;
+}
+
+.solution-message{
+margin-top:15px;
+font-weight:700;
 }
 
 /* ===== 内容 ===== */
 .content-box{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:1fr;
 gap:10px;
 }
 
@@ -191,7 +226,6 @@ font-weight:900;
 .final{
 background:var(--sub);
 color:#fff;
-text-align:center;
 }
 
 /* ===== 追従ボタン ===== */
@@ -234,10 +268,6 @@ height:auto;
 .hero-right{
 height:250px;
 }
-.danger-grid,
-.content-box{
-grid-template-columns:1fr;
-}
 }
 </style>
 </head>
@@ -274,12 +304,11 @@ grid-template-columns:1fr;
 
 <div class="result">安心・安定のくらし</div>
 
-<div class="cta-wrap">
 <a href="https://lin.ee/8mjr5Lan" class="cta-btn">
 まずは無料体験の内容を確認する
 </a>
+
 <p class="cta-safe">※当サロンは販売や勧誘は一切行いません※</p>
-</div>
 
 </div>
 
@@ -300,33 +329,61 @@ grid-template-columns:1fr;
 <h2>知らないだけで、こんな現実が起きています</h2>
 
 <div class="danger-grid">
-<div class="danger-card">認知症<div class="danger-number">毎日 約800人</div></div>
-<div class="danger-card">孤独死<div class="danger-number">毎日 約200人</div></div>
-<div class="danger-card">詐欺被害<div class="danger-number">発生中</div></div>
-<div class="danger-card">相続<div class="danger-number">毎日 約30件</div></div>
+
+<div class="danger-card">
+認知症
+<div class="big">毎日 約800人</div>
+<div class="sub">資産凍結のリスク</div>
+</div>
+
+<div class="danger-card">
+詐欺被害
+<div class="big">毎日 約20〜30人</div>
+<div class="money">1日あたり約1億円以上の被害</div>
+<div class="sub">高齢者の被害が増えています</div>
+</div>
+
+<div class="danger-card">
+相続トラブル
+<div class="big">毎日 約30件</div>
+<div class="sub">裁判に発展するケースも</div>
+</div>
+
 </div>
 
 </section>
 
 <!-- 解決 -->
 <section class="solution">
-<h2>でも大丈夫です</h2>
+<h2>このサロンでできること</h2>
 
-<div class="solution-box">
-<ul>
-<li>お金を増やす（NISA・投資）</li>
-<li>老後資金の考え方</li>
-<li>詐欺対策</li>
-<li>相続・認知症対策</li>
-</ul>
+<div class="solution-grid">
+
+<div class="solution-card">
+<p class="label">認知症</p>
+<p class="big">事前に対策できます</p>
 </div>
 
-<p>知ることで、安心に変わります</p>
+<div class="solution-card">
+<p class="label">詐欺</p>
+<p class="big">騙されない知識</p>
+</div>
+
+<div class="solution-card">
+<p class="label">相続</p>
+<p class="big">トラブル回避</p>
+</div>
+
+</div>
+
+<p class="solution-message">
+これらをすべて、事前に防ぐことができます
+</p>
 
 </section>
 
 <!-- 内容 -->
-<section class="content">
+<section>
 <h2>学べること</h2>
 
 <div class="content-box">
@@ -339,17 +396,24 @@ grid-template-columns:1fr;
 </section>
 
 <!-- 料金 -->
-<section class="price">
+<section>
 <h2>料金について</h2>
 
-<p>週1回・月 約8時間の学び</p>
+<p>
+週に1回、合計で月に約8時間学びます
+</p>
 
 <div class="price-box">
-<p>一般的なセミナーは数万円</p>
+<p>
+一般的なセミナーでは、1回で数万円かかることもあります
+</p>
+
 <div class="price-value">22,000円</div>
 </div>
 
-<p>一度の判断で人生が変わる可能性があります</p>
+<p>
+この学びが、これからの安心につながります
+</p>
 
 </section>
 
@@ -358,7 +422,7 @@ grid-template-columns:1fr;
 <h2>今の決断が未来を変えます</h2>
 </section>
 
-<!-- 追従CTA（唯一のメイン） -->
+<!-- 追従CTA -->
 <div class="floating-cta">
 <a href="https://lin.ee/8mjr5Lan">
 無料体験を公式LINEで受け取る
@@ -366,28 +430,25 @@ grid-template-columns:1fr;
 </div>
 
 <script>
-// スライド
 const slider=document.getElementById("slider");
-const slides=document.querySelectorAll(".slide");
 let index=0;
-const firstClone=slides[0].cloneNode(true);
-slider.appendChild(firstClone);
 
 setInterval(()=>{
 index++;
-slider.style.transition="1s";
+slider.style.transition="0.8s";
 slider.style.transform=`translateX(-${index*100}%)`;
-if(index===slides.length){
+
+if(index===4){
 setTimeout(()=>{
 slider.style.transition="none";
 slider.style.transform="translateX(0)";
 index=0;
-},1000);
+},800);
 }
 },3000);
 
-// 追従ボタン表示
 const floating=document.querySelector(".floating-cta");
+
 window.addEventListener("scroll",()=>{
 if(window.scrollY>300){
 floating.style.opacity="1";
