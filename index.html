@@ -19,25 +19,20 @@ height:100vh;
 overflow:hidden;
 }
 
-/* ===== スライド ===== */
 .hero-slider{
 display:flex;
-width:200%;
 height:100%;
-animation:slideX 12s linear infinite;
 }
 
-/* 🔥ここ修正済み（本質） */
 .hero-slider img{
 height:100%;
-width:50vw; /* ←変更 */
-object-fit:cover;
+width:auto;
 flex-shrink:0;
 }
 
-@keyframes slideX{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+/* JSで距離制御する */
+.hero-slider.moving{
+animation:slideX linear infinite;
 }
 
 .hero::after{
@@ -57,16 +52,6 @@ text-align:center;
 z-index:2;
 }
 
-.hero-content img{
-width:120px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:32px;
-margin:10px 0;
-}
-
 .line-btn{
 background:#00c300;
 color:#fff;
@@ -81,16 +66,8 @@ text-decoration:none;
 
 <div class="hero">
 
-<div class="hero-slider">
+<div class="hero-slider" id="slider">
 <!-- 1セット -->
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
-<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
-
-<!-- ループ -->
 <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
@@ -100,13 +77,39 @@ text-decoration:none;
 </div>
 
 <div class="hero-content">
-<img src="ロゴ浮き.png">
+<img src="ロゴ浮き.png" width="120">
 <h1>くらしとお金サロン</h1>
 <p>引退世代のためのお金の学校</p>
 <a href="https://lin.ee/yxZwj10" class="line-btn">LINEで無料体験</a>
 </div>
 
 </div>
+
+<script>
+const slider = document.getElementById("slider");
+
+// クローンしてループ作る
+slider.innerHTML += slider.innerHTML;
+
+// 幅取得
+const totalWidth = slider.scrollWidth / 2;
+
+// アニメーション生成
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes slideX {
+0% { transform: translateX(0); }
+100% { transform: translateX(-${totalWidth}px); }
+}
+#slider.moving {
+animation-duration: 12s;
+}
+`;
+document.head.appendChild(style);
+
+// 動かす
+slider.classList.add("moving");
+</script>
 
 </body>
 </html>
