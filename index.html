@@ -13,6 +13,50 @@ body{
   color:white;
 }
 
+/* ===== ヘッダー ===== */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding-top:20px;
+}
+
+.logo{
+  width:40px;
+}
+
+.title{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* ===== メイン ===== */
+.section{
+  padding:40px 20px;
+  text-align:center;
+}
+
+.gold{
+  color:#D4AF37;
+  font-weight:bold;
+  font-size:28px;
+}
+
+/* ===== ボタン ===== */
+.btn{
+  display:block;
+  margin:30px auto;
+  background:#00C300;
+  color:white;
+  padding:18px;
+  border-radius:40px;
+  width:90%;
+  text-align:center;
+  font-weight:bold;
+  font-size:18px;
+}
+
 /* ===== スライド ===== */
 .slider{
   width:100%;
@@ -37,23 +81,6 @@ body{
   100%{transform:translateX(-50%);}
 }
 
-/* ===== テキスト ===== */
-.section{
-  padding:40px 20px;
-  text-align:center;
-}
-
-h1{
-  font-size:26px;
-  margin-bottom:20px;
-}
-
-.gold{
-  color:#D4AF37;
-  font-weight:bold;
-  font-size:28px;
-}
-
 /* ===== カード ===== */
 .card{
   background:white;
@@ -67,40 +94,19 @@ h1{
   font-size:22px;
 }
 
-/* ===== ボタン ===== */
-.btn{
-  display:block;
-  margin:30px auto;
-  background:#00C300;
-  color:white;
-  padding:18px;
-  border-radius:40px;
-  width:90%;
-  text-align:center;
-  font-weight:bold;
-  font-size:18px;
-}
-
-/* ===== 料金カード ===== */
+/* ===== 料金 ===== */
 .price-card{
   background:white;
   color:#333;
-  padding:25px;
+  padding:20px;
   border-radius:20px;
   margin:20px;
 }
 
 .price{
   color:#D4AF37;
-  font-size:36px;
+  font-size:32px;
   font-weight:bold;
-}
-
-/* ===== 地図 ===== */
-.map{
-  margin:20px;
-  border-radius:20px;
-  overflow:hidden;
 }
 </style>
 </head>
@@ -108,12 +114,16 @@ h1{
 <body>
 
 <!-- ===== ヘッダー ===== -->
+<div class="header">
+  <img src="ロゴ浮き.png" class="logo">
+  <div class="title">くらしとお金サロン</div>
+</div>
+
 <div class="section">
-  <h1>くらしとお金サロン</h1>
   <p>増やす知識 × 守る知恵</p>
   <p>＋</p>
   <p>地域の仲間</p>
-  <p class="gold">安心・安定のくらし</p>
+  <div class="gold">安心・安定のくらし</div>
 
   <a href="#" class="btn">まずは無料体験の内容を確認する</a>
   <p style="font-size:12px;">※販売や勧誘は一切ありません※</p>
@@ -123,27 +133,27 @@ h1{
 <div class="slider">
   <div class="slide-track">
 
-    <img src="1515CEE9-CB27-425E-813D-36D0B5C11CB0.jpeg">
-    <img src="5B3A78EA-BDAA-4C8B-882C-4894054B4AE0.jpeg">
-    <img src="733C0120-EB3D-42FE-9E46-F6A96C5325EA.jpeg">
-    <img src="5793377E-C044-491C-B946-7BC86F48B3F4.jpeg">
-    <img src="510A48DC-9946-4810-BDBB-94B632927BFA.jpeg">
-    <img src="A5544769-D3B9-480D-ABEB-1CAAB1676A3C.jpeg">
+    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
 
-    <!-- ループ用 -->
-    <img src="1515CEE9-CB27-425E-813D-36D0B5C11CB0.jpeg">
-    <img src="5B3A78EA-BDAA-4C8B-882C-4894054B4AE0.jpeg">
-    <img src="733C0120-EB3D-42FE-9E46-F6A96C5325EA.jpeg">
-    <img src="5793377E-C044-491C-B946-7BC86F48B3F4.jpeg">
-    <img src="510A48DC-9946-4810-BDBB-94B632927BFA.jpeg">
-    <img src="A5544769-D3B9-480D-ABEB-1CAAB1676A3C.jpeg">
+    <!-- ループ -->
+    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
 
   </div>
 </div>
 
 <!-- ===== 現実 ===== -->
 <div class="section">
-  <h1>知らないだけで<br>こんな現実が起きています</h1>
+  <h2>知らないだけで<br>こんな現実が起きています</h2>
 
   <div class="card">
     <div class="gold">認知症診断者</div>
@@ -163,9 +173,7 @@ h1{
 
 <!-- ===== できること ===== -->
 <div class="section">
-  <h1>このサロンでできること</h1>
-  <p>聞くだけのセミナーではありません<br>
-  地域に寄り添うコミュニティ型サロンです</p>
+  <h2>このサロンでできること</h2>
 
   <div class="card">
     <div class="gold">将来のお金の不安</div>
@@ -174,43 +182,43 @@ h1{
 
   <div class="card">
     <div class="gold">知識を身につけて</div>
-    <p>自分で判断できるようになります</p>
+    <p>判断できるようになります</p>
   </div>
 
   <div class="card">
     <div class="gold">一人で悩まず</div>
-    <p>いつでも相談できます</p>
+    <p>相談できます</p>
   </div>
 </div>
 
 <!-- ===== 学べること ===== -->
 <div class="section">
-  <h1>このサロンで学べること</h1>
+  <h2>このサロンで学べること</h2>
 
   <div class="card">
     <div class="gold">インデックス投資</div>
-    <p>無理なく増やす考え方を学べます</p>
+    <p>無理なく増やす考え方</p>
   </div>
 
   <div class="card">
     <div class="gold">老後資金</div>
-    <p>これからの生活設計を考えます</p>
+    <p>将来の考え方</p>
   </div>
 
   <div class="card">
-    <div class="gold">詐欺対策</div>
-    <p>被害にあわない見抜き方</p>
+    <div class="gold">詐欺</div>
+    <p>見抜き方</p>
   </div>
 
   <div class="card">
     <div class="gold">相続</div>
-    <p>トラブルを防ぐ基本知識</p>
+    <p>基本知識</p>
   </div>
 </div>
 
 <!-- ===== 料金 ===== -->
 <div class="section">
-  <h1>料金について</h1>
+  <h2>料金について</h2>
 
   <div class="card">
     一般的な単発セミナーは<br>
@@ -220,34 +228,26 @@ h1{
   <div class="price-card">
     <div>月額</div>
     <div class="price">22,000円（税込）</div>
-    <div>週1回 × 月4回の継続サロン</div>
+    <div>週1回 × 月4回</div>
   </div>
 
-  <p>
-  地元コミュニティとしての活動も大切にしています<br>
-  安心して続けられるサロンです
-  </p>
+  <p>安心して続けられるサロンです</p>
 </div>
 
 <!-- ===== CTA ===== -->
 <div class="section">
-  <h1>今からの備えが<br>これからの安心につながります</h1>
+  <h2>今からの備えが<br>これからの安心につながります</h2>
 
   <a href="#" class="btn">まずは無料体験の内容を確認する</a>
-
-  <p>内容を見てからご参加いただけます</p>
 </div>
 
-<!-- ===== 地図 ===== -->
+<!-- ===== QR ===== -->
 <div class="section">
-  <h1>開催場所</h1>
-  <p>小倉南生涯学習センター（公共施設）</p>
+  <h2>無料体験はこちら</h2>
 
-  <div class="map">
-    <iframe 
-    src="https://maps.google.com/maps?q=小倉南生涯学習センター&t=&z=15&ie=UTF8&iwloc=&output=embed"
-    width="100%" height="300" frameborder="0"></iframe>
-  </div>
+  <img src="IMG_2124.png" style="width:200px; display:block; margin:20px auto;">
+
+  <p>LINEで「体験」と送るだけ</p>
 </div>
 
 </body>
