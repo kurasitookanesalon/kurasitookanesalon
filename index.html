@@ -7,100 +7,128 @@
 
 <style>
 body{
-  margin:0;
-  font-family:sans-serif;
-  background:#f5f5f5;
-  line-height:1.9;
+margin:0;
+font-family:sans-serif;
+line-height:1.8;
+color:#333;
 }
 
-/* ===== トップ（背景スライド） ===== */
+/* ===== トップ ===== */
 .hero{
-  position:relative;
-  width:100%;
-  height:320px;
-  overflow:hidden;
+position:relative;
+height:100vh;
+overflow:hidden;
 }
+
+.hero-slider{
+position:absolute;
+width:100%;
+height:100%;
+}
+
 .hero-slider img{
-  position:absolute;
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  opacity:0;
-  animation:slide 18s infinite;
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+animation:slide 24s infinite;
 }
+
 .hero-slider img:nth-child(1){animation-delay:0s;}
-.hero-slider img:nth-child(2){animation-delay:6s;}
-.hero-slider img:nth-child(3){animation-delay:12s;}
+.hero-slider img:nth-child(2){animation-delay:4s;}
+.hero-slider img:nth-child(3){animation-delay:8s;}
+.hero-slider img:nth-child(4){animation-delay:12s;}
+.hero-slider img:nth-child(5){animation-delay:16s;}
+.hero-slider img:nth-child(6){animation-delay:20s;}
+
 @keyframes slide{
-  0%{opacity:0;}
-  5%{opacity:1;}
-  30%{opacity:1;}
-  35%{opacity:0;}
-  100%{opacity:0;}
+0%{opacity:0;}
+5%{opacity:1;}
+15%{opacity:1;}
+20%{opacity:0;}
+100%{opacity:0;}
 }
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.35);
-}
+
 .hero-content{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
-  color:#fff;
-  z-index:2;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+color:#fff;
+z-index:2;
 }
-.hero-logo{
-  width:120px;
-  margin-bottom:10px;
+
+.hero-content img{
+width:120px;
+margin-bottom:20px;
 }
+
 .hero h1{
-  margin:0;
-  font-size:26px;
-  text-shadow:0 2px 10px rgba(0,0,0,0.6);
+font-size:32px;
+margin:10px 0;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.line-btn{
+display:inline-block;
+margin-top:20px;
+background:#00c300;
+color:#fff;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
 }
 
 /* ===== セクション ===== */
 .section{
-  padding:60px 20px;
+padding:50px 20px;
+max-width:900px;
+margin:auto;
 }
-.card{
-  background:#fff;
-  border-radius:20px;
-  padding:30px;
-  max-width:760px;
-  margin:0 auto;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
+
 h2{
-  font-size:26px;
-  margin:0 0 20px;
+font-size:26px;
+margin-bottom:20px;
+}
+
+ul{
+padding-left:20px;
+}
+
+/* ===== 自己紹介 ===== */
+.profile img{
+width:200px;
+border-radius:10px;
+margin-bottom:20px;
 }
 
 /* ===== LINE ===== */
-.line-btn{
-  background:#00c300;
-  color:#fff;
-  padding:18px 28px;
-  border-radius:40px;
-  display:inline-block;
-  text-decoration:none;
-  font-size:18px;
-  margin-top:20px;
-}
-.qr{
-  width:200px;
-  margin:20px auto;
-  display:block;
+.line-box{
+background:#f5f5f5;
+padding:30px;
+text-align:center;
+border-radius:10px;
 }
 
-.logo{
-  width:120px;
-  margin:30px auto;
-  display:block;
+.line-box img{
+width:200px;
+margin-top:20px;
+}
+
+/* ===== フッター ===== */
+.footer{
+text-align:center;
+padding:30px;
+}
+
+.footer img{
+width:80px;
 }
 </style>
 </head>
@@ -109,224 +137,158 @@ h2{
 
 <!-- ===== トップ ===== -->
 <div class="hero">
-  <div class="hero-slider">
-    <img src="IMG_3616.png">
-    <img src="IMG_2124.png">
-    <img src="ロゴ浮き.png">
-  </div>
-  <div class="hero-content">
-    <img src="ロゴ浮き.png" class="hero-logo">
-    <h1>くらしとお金サロン</h1>
-  </div>
+
+<div class="hero-slider">
+<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+</div>
+
+<div class="hero-content">
+<img src="ロゴ浮き.png">
+<h1>くらしとお金サロン</h1>
+<p>引退世代のためのお金の学校</p>
+<a href="https://lin.ee/yxZwj10" class="line-btn">LINEで無料体験</a>
+</div>
+
 </div>
 
 <!-- ===== サロン内容 ===== -->
-<section class="section">
-<div class="card">
-<h2>サロン内容</h2>
-<pre style="white-space:pre-wrap; font-family:inherit;">
-■ サロン内容
-将来のお金や生活に不安を感じていませんか。 このサロンでは、日々の暮らしに関わる知識を分かりやすく整理しながら、これからの生活に向けた考え方を学んでいきます。難しい言葉を使わず、ゆっくり丁寧に理解していくことで、不安を減らし安心して考えられる力を身につけていきます。
-一人で抱え込まず、同じ地域の方と顔を合わせて話せる場として、少人数で落ち着いて学べる環境を大切にしています。
-※金融商品やサービスの販売・勧誘は一切行っておりません
-■ 開催内容
-週1回（120分） 小倉南生涯学習センター
-前半：講義（60分） 後半：座談会（60分）
-基礎から順番に学びながら、分からないことを共有し理解を深めていきます。
-■ 学べる内容
-・生活に関わる基礎知識 ・家計の考え方 ・将来に向けた備え ・詐欺やトラブルの対策 ・安心して暮らすための知識
-■ 特徴
-・少人数制（定員あり） ・地域コミュニティ ・安心して話せる環境
-■ 料金
-月額 22,000円（税込）
-■ 運営情報
-・名称：くらしとお金サロン
-・所在地：福岡県北九州市小倉南区上石田2丁目24-21-304（サンビル守恒）
-※開催：小倉南生涯学習センター
-・連絡先：070-3538-5073
-</pre>
-</div>
-</section>
+<div class="section">
+<h2>サロンの内容</h2>
 
-<!-- ===== サロン理念・動機 ===== -->
-<section class="section">
-<div class="card">
-<h2>サロン理念・動機</h2>
-<pre style="white-space:pre-wrap; font-family:inherit;">
+<p>
+将来のお金や生活に不安を感じていませんか。 このサロンでは、日々の暮らしに関わる知識を分かりやすく整理しながら、これからの生活に向けた考え方を学んでいきます。難しい言葉を使わず、ゆっくり丁寧に理解していくことで、不安を減らし安心して考えられる力を身につけていきます。
+</p>
+
+<p>
+一人で抱え込まず、同じ地域の方と顔を合わせて話せる場として、少人数で落ち着いて学べる環境を大切にしています。
+</p>
+
+<p>※金融商品やサービスの販売・勧誘は一切行っておりません</p>
+
+<h3>開催内容</h3>
+<p>週1回（120分） 小倉南生涯学習センター</p>
+<p>前半：講義（60分） 後半：座談会（60分）</p>
+
+<h3>学べる内容</h3>
+<ul>
+<li>生活に関わる基礎知識</li>
+<li>家計の考え方</li>
+<li>将来に向けた備え</li>
+<li>詐欺やトラブルの対策</li>
+<li>安心して暮らすための知識</li>
+</ul>
+
+<h3>特徴</h3>
+<ul>
+<li>少人数制（定員あり）</li>
+<li>地域コミュニティ</li>
+<li>安心して話せる環境</li>
+</ul>
+
+<h3>料金</h3>
+<p>月額 22,000円（税込）</p>
+
+<h3>運営情報</h3>
+<p>
+名称：くらしとお金サロン<br>
+所在地：福岡県北九州市小倉南区上石田2丁目24-21-304（サンビル守恒）<br>
+※開催：小倉南生涯学習センター<br>
+連絡先：070-3538-5073
+</p>
+</div>
+
+<!-- ===== サロン理念 ===== -->
+<div class="section">
+<h2>サロン理念</h2>
+
+<p>
 増やす知識と守る知恵で、人生に安心を。
 くらしとお金サロンは、
 これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。
+</p>
+
+<p>
 今の日本では、孤独死やセルフネグレクトが
 決して珍しい話ではなくなっています。
-成年後見制度などの仕組みもありますが、
-知らない専門家に任せるだけで
-本当に本人の幸せにつながっているのか
-考えさせられる現実もあります。
-「まだ大丈夫」
-「自分は関係ない」
-そう思っているうちに、
-気づけば一人で、あるいは家族だけで
-抱え込んでしまうことも少なくありません。
-年齢を重ねるほど、暮らしやお金のことを考える時間は増えていきます。
-しかし同時に、相談できる相手は少なくなっていきます。
-だからこそ地域の中に
-【所属できる場所】
-【いつでも相談できる信頼できる人】
-【同じ地域の仲間】
-が必要だと考えています。
-いつでも何でも話せるコミュニティがあること。
-それが、将来の安心を大きく左右します。
+</p>
+
+<p>
 不安を放置するのではなく、向き合い、整理し、備える。
 そのためのコミュニティが、くらしとお金サロンです。
-そのため、当サロンは
-少人数制の高密度な併走型コミュニティとして運営しています。
-メンバー様一人ひとりに寄り添い、
-顧問FPとして伴走することを大切にしています。
+</p>
+</div>
 
-お金の不安
-老後のお金は足りるのか。
-年金だけで本当に大丈夫なのか。
-物価は上がり続けているのに
-預金の金利はほとんど増えない。
-株価は上がっていると聞くけれど
-どういうことか分からない。
-新NISAが始まったけれど
-何をすればいいのか分からない。
-投資は気になるけれど
-正直こわい。
-詐欺にあって
-お金が無くなるのが怖い。
-北九州市でも
-詐欺被害は増え続けています。
-もし突然
-警察や役所、銀行を名乗る電話が来たら。
-自分の子供を名乗る電話が来たら。
-どうすればよいのか
-分からない人も多いと思います。
-何かあったとき誰に相談すればよいのか。
-それが分からないこと自体が大きな不安になります。
+<!-- ===== サロン動機 ===== -->
+<div class="section">
+<h2>このサロンを作った理由</h2>
 
-住まいの不安
-今の家にこのまま住み続けられるのか。
-体が不自由になったとき
-この家で暮らせるのか。
-施設はどう選べばいいのか。
-費用はいくらかかるのか。
-実家じまいはどうすればいいのか。
-墓じまいはどうすればいいのか。
-子どもに負担をかけていないだろうか。
-
-将来と家族の不安
-終活は何から始めればいいのか。
-相続で家族が困らないだろうか。
-遺言は必要なのか。
-自分の思いはきちんと伝わっているだろうか。
-自分がいなくなったあと家族は安心して暮らせるだろうか。
-こうした不安の多くは
-「何から始めればいいか分からない」
-そこから生まれています。
-私たちはそれぞれの状況に合わせて
-問題を一つひとつ整理し解決していくお手伝いをします。
-
-投資について
-サロンでは投資についても学びます。
-株式市場は長い目で見れば
-成長を続けてきました。
-制度も整い
-NISAのような活用しやすい仕組みも
-始まっています。
-増やす力と守る知識。
-その両方を身につけることが、これからの安心につながると考えています。
-ただし
-※投資の最終判断は必ずご自身で行っていただきます。私たちは商品の販売や、投資助言を行う立場ではありません。
-理解し、納得して判断できる力を
-身につけていただく場所でありたいと考えています。
-
-このサロンを作った理由
+<p>
 このサロンを作ろうと思った理由の一つに
 父の孤独死があります。
-父は一人で暮らしていました。
-「まだ大丈夫」
-「自分は平気」
-そう言いながら
-誰にも頼らず生活していました。
-しかしある日
-父は一人で亡くなっていました。
+</p>
+
+<p>
 もっと早く誰かに相談できる場所があったら。
 もっと早く地域の中でつながれる場所があったら。
-そう思ったことが、このサロンを作る大きなきっかけになりました。
-お金の問題も、暮らしの問題も本来は、一人で抱えるものではありません。
-地域の中に顔の見える関係があり
-何かあればすぐに相談できる場所がある。
-そんな場所を作りたい。
-それが、くらしとお金サロンです。
+</p>
 
-最後に
-地域の中で
-顔が見える関係を大切にしながら
-安心して話せる場所を作ります。
-一人や家族だけで
-抱え込まなくて大丈夫です。
-小さな一歩が
-これからの大きな安心につながります。
-</pre>
+<p>
+そう思ったことが、このサロンを作る大きなきっかけになりました。
+</p>
 </div>
-</section>
 
 <!-- ===== 自己紹介 ===== -->
-<section class="section">
-<div class="card">
-<h2>講師プロフィール</h2>
-<pre style="white-space:pre-wrap; font-family:inherit;">
-平松 広大（36歳）
-福岡県北九州市小倉南区出身。
-小倉南区で生まれ小中高を過ごして社会に出ました。
-経歴としましては
-約15年間、複数の全国飲食チェーンで店長・エリア管理職・営業部長補佐・広報室・商品開発・人事・マーケティングなどを経験
-最大約200店舗・年商約200億円・従業員約6,000名の西日本全体規模のエリアを運営してきました。
-他エリアの従業員や他社での従業員、お取引先様なども含めると、約10,000名以上の方と関わってきました。
-毎日さまざまな現場で
-人と向き合い、数字と向き合い
-課題を一つずつ解決してきました。
-その後フランチャイズ制度で独立し
-社長として年商約4億円規模の複数店舗経営を実践。
-金融業界の人間ではなく
-自身で勉強し、実践し学びました。
-また、社会の現場で沢山働いてきたので、皆様と同じ様な悩みを抱えてきました。
-これも、わたしの強みです。
-現在は国家資格FP3級技能士を取得し
-起業家や投資家として新規事業の立ち上げや、株式投資に取り組んでいます。
-そして、私の地元で「くらしとお金サロン」を運営しています。
-数字だけでなく、人の不安や想いに寄り添うことを大切にしています。
-現在は、各種詐欺対策や金融リテラシー向上をテーマに地域の皆様と関わっております。
-※当サロンでは金融商品の販売や勧誘は一切行っておりません。
+<div class="section profile">
+<h2>自己紹介</h2>
 
-バックアップ体制
-当サロンでは、必要に応じて専門家やスポンサー様やお取引先様と提携しています。
-・税理士法人松本会計（当社顧問税理士事務所）
-・日本FP協会
-・山口フィナンシャルグループ北九州銀行守恒支店
-</pre>
+<img src="IMG_3616.png">
+
+<p>
+平松 広大（36歳）<br>
+福岡県北九州市小倉南区出身。
+</p>
+
+<p>
+約15年間、複数の全国飲食チェーンで経験を積み、
+最大約200店舗のエリア運営を担当してきました。
+</p>
+
+<p>
+現在はFP3級を取得し、投資や事業を通じて
+地域の金融リテラシー向上に取り組んでいます。
+</p>
+
+<p>※金融商品の販売や勧誘は一切行っておりません。</p>
 </div>
-</section>
 
 <!-- ===== LINE ===== -->
-<section class="section">
-<div class="card" style="text-align:center;">
+<div class="section">
+<div class="line-box">
 <h2>公式LINE</h2>
-<p>
-無料体験・お問い合わせは<br>
-公式LINEから受け付けています。
-</p>
-<a href="https://lin.ee/yxZwj10" class="line-btn">
-ここをタップして友だち追加
-</a>
-<img src="IMG_2124.png" class="qr">
-<p>QRコードを読み取ってもご登録いただけます</p>
-</div>
-</section>
 
-<img src="ロゴ浮き.png" class="logo">
+<p>
+無料体験・お問い合わせは公式LINEから<br>
+受け付けています。
+</p>
+
+<a href="https://lin.ee/yxZwj10" class="line-btn">ここをタップして友だち追加</a>
+
+<img src="IMG_2124.png">
+
+<p>QRコードを読み取ってもご登録いただけます</p>
+
+</div>
+</div>
+
+<!-- ===== フッター ===== -->
+<div class="footer">
+<img src="ロゴ浮き.png">
+</div>
 
 </body>
 </html>
