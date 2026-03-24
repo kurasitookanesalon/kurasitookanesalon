@@ -19,7 +19,6 @@
 body{
 margin:0;
 font-family:'Noto Sans JP',sans-serif;
-color:#222;
 padding-bottom:90px;
 }
 
@@ -32,27 +31,20 @@ text-align:center;
 h2{
 font-size:26px;
 font-weight:900;
-margin-bottom:20px;
-line-height:1.5;
+color:#fff;
 }
 
 /* ロゴ */
 .brand{
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 gap:10px;
 margin-bottom:10px;
 }
 
-.logo{
-width:45px;
-}
-
-.brand-name{
-font-size:22px;
-font-weight:900;
-}
+.logo{width:45px;}
+.brand-name{font-size:22px;font-weight:900;color:#fff;}
 
 /* CTA */
 .cta-btn{
@@ -65,42 +57,16 @@ padding:18px;
 border-radius:50px;
 font-size:17px;
 font-weight:700;
-text-decoration:none;
 text-align:center;
-box-shadow:0 6px 18px rgba(0,0,0,0.2);
-}
-
-.cta-safe{
-font-size:12px;
-color:#ccc;
+text-decoration:none;
 }
 
 /* トップ */
 .hero{
-display:flex;
-height:100vh;
-}
-
-.hero-left{
-flex:1;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 background:linear-gradient(135deg,var(--main),var(--sub));
 color:#fff;
-padding:20px;
-}
-
-.row{
-display:grid;
-grid-template-columns:1fr 60px 1fr;
-font-size:28px;
-margin:6px 0;
-}
-
-.full{
-grid-column:1/4;
+padding:40px 20px;
+text-align:center;
 }
 
 .result{
@@ -110,78 +76,51 @@ font-weight:900;
 margin-top:10px;
 }
 
-/* スライド */
-.hero-right{
-flex:1;
-overflow:hidden;
-}
-
-.slider{
-display:flex;
-}
-
-.slide{
-width:100%;
-flex-shrink:0;
-object-fit:cover;
-}
-
-/* 青セクション */
+/* 青背景 */
 .section-blue{
 background:linear-gradient(135deg,#1E5BB8,#163E7A);
-color:#fff;
 }
 
-/* 危機カード */
-.danger-card{
+/* カード */
+.card{
 background:#fff;
-color:#222;
 padding:20px;
 border-radius:16px;
-margin-bottom:12px;
-box-shadow:0 8px 24px rgba(0,0,0,0.2);
+margin-bottom:14px;
 }
 
+/* 金タイトル */
+.gold{
+color:var(--gold);
+font-size:22px;
+font-weight:900;
+display:block;
+margin-bottom:6px;
+}
+
+/* 説明 */
+.sub{
+font-size:15px;
+color:#222;
+}
+
+/* 危機 */
 .big{
 font-size:36px;
 color:var(--gold);
 font-weight:900;
 }
 
-/* カード */
-.card{
-background:#fff;
-color:#222;
-padding:20px;
-border-radius:16px;
-margin-bottom:12px;
-box-shadow:0 8px 24px rgba(0,0,0,0.15);
-}
-
-/* 学び強調 */
-.learn-title{
-font-size:22px;
-color:var(--gold);
-font-weight:900;
-display:block;
-margin-bottom:4px;
-}
-
-.learn-sub{
-font-size:15px;
-color:#222;
-}
-
 /* 料金 */
 .price-section{
 background:linear-gradient(135deg,#fff7e6,#fdf0c2);
+text-align:center;
 }
 
 .price{
 font-size:38px;
 color:var(--gold);
 font-weight:900;
-line-height:1.3;
 }
 
 .price span{
@@ -189,43 +128,32 @@ font-size:16px;
 color:#333;
 }
 
-/* 最後 */
-.final{
-background:linear-gradient(135deg,#1E5BB8,#163E7A);
-color:#fff;
+/* 地図 */
+.map{
+width:100%;
+height:250px;
+border:0;
+border-radius:12px;
+margin-top:15px;
 }
 
-/* 追従CTA */
-.floating-cta{
+/* CTA固定 */
+.floating{
 position:fixed;
 bottom:10px;
 left:10px;
 right:10px;
-z-index:999;
 }
 
-.floating-cta a{
+.floating a{
 display:block;
 background:#00c300;
 color:#fff;
-padding:20px;
+padding:18px;
 text-align:center;
 border-radius:50px;
 font-weight:900;
-font-size:18px;
 text-decoration:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* スマホ */
-@media(max-width:768px){
-.hero{
-flex-direction:column;
-height:auto;
-}
-.hero-right{
-height:250px;
-}
 }
 </style>
 </head>
@@ -233,32 +161,14 @@ height:250px;
 <body>
 
 <!-- トップ -->
-<div class="hero">
-
-<div class="hero-left">
+<section class="hero">
 
 <div class="brand">
 <img src="ロゴ浮き.png" class="logo">
 <div class="brand-name">くらしとお金サロン</div>
 </div>
 
-<div class="row">
-<div>増やす知識</div>
-<div style="text-align:center;">×</div>
-<div>守る知恵</div>
-</div>
-
-<div class="row">
-<div></div><div style="text-align:center;">＋</div><div></div>
-</div>
-
-<div class="row">
-<div class="full">地域の仲間</div>
-</div>
-
-<div class="row">
-<div></div><div style="text-align:center;">＝</div><div></div>
-</div>
+<p>増やす知識 × 守る知恵 + 地域の仲間</p>
 
 <div class="result">安心・安定のくらし</div>
 
@@ -266,95 +176,83 @@ height:250px;
 まずは無料体験の内容を確認する
 </a>
 
-<p class="cta-safe">※当サロンは販売や勧誘は一切行いません※</p>
+<p style="font-size:12px;">※当サロンは販売や勧誘は一切行いません※</p>
 
-</div>
-
-<div class="hero-right">
-<div class="slider" id="slider">
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
-</div>
-</div>
-
-</div>
+</section>
 
 <!-- 危機 -->
 <section class="section-blue">
 
 <h2>知らないだけで<br>こんな現実が起きています</h2>
 
-<div class="danger-card">
+<div class="card">
 認知症診断者<br>
 <div class="big">毎日 約800人</div>
 </div>
 
-<div class="danger-card">
+<div class="card">
 詐欺被害<br>
 <div class="big">毎日 約20〜30人</div>
-<p>1日あたり約1億円以上</p>
+<p class="sub">1日あたり約1億円以上</p>
 </div>
 
-<div class="danger-card">
+<div class="card">
 相続トラブルで裁判<br>
 <div class="big">毎日 約30件</div>
 </div>
 
 </section>
 
-<!-- できること -->
+<!-- できる -->
 <section class="section-blue">
 
 <h2>このサロンでできること</h2>
 
-<p>
+<p style="color:#fff;">
 聞くだけのセミナーではありません。<br>
 地域に寄り添い、安心して相談できるコミュニティ型サロンです
 </p>
 
 <div class="card">
-<span class="learn-title">将来のお金の不安</span>
-<span class="learn-sub">整理できます</span>
+<span class="gold">将来のお金の不安</span>
+<span class="sub">整理できます</span>
 </div>
 
 <div class="card">
-<span class="learn-title">知識を身につけて</span>
-<span class="learn-sub">判断できるようになります</span>
+<span class="gold">知識を身につけて</span>
+<span class="sub">判断できるようになります</span>
 </div>
 
 <div class="card">
-<span class="learn-title">一人で悩まず</span>
-<span class="learn-sub">相談できます</span>
+<span class="gold">一人で悩まず</span>
+<span class="sub">相談できます</span>
 </div>
 
 </section>
 
-<!-- 学べること -->
+<!-- 学べる -->
 <section class="section-blue">
 
 <h2>このサロンで学べること</h2>
 
 <div class="card">
-<span class="learn-title">インデックス投資</span>
-<span class="learn-sub">無理なく増やす考え方</span>
+<span class="gold">インデックス投資</span>
+<span class="sub">無理なく続けられる増やし方を学べます</span>
 </div>
 
 <div class="card">
-<span class="learn-title">老後資金</span>
-<span class="learn-sub">考え方</span>
+<span class="gold">老後資金</span>
+<span class="sub">これから必要なお金の考え方を学べます</span>
 </div>
 
 <div class="card">
-<span class="learn-title">詐欺</span>
-<span class="learn-sub">見抜き方</span>
+<span class="gold">詐欺</span>
+<span class="sub">騙されないための見抜き方を学べます</span>
 </div>
 
 <div class="card">
-<span class="learn-title">相続</span>
-<span class="learn-sub">基本知識</span>
+<span class="gold">相続</span>
+<span class="sub">基本からトラブル回避まで学べます</span>
 </div>
 
 </section>
@@ -364,17 +262,32 @@ height:250px;
 
 <h2>このサロンで相談できること</h2>
 
-<div class="card">今の貯金で老後は大丈夫か</div>
-<div class="card">投資を始めるべきか</div>
-<div class="card">家族に迷惑をかけない準備</div>
-<div class="card">相続の不安や悩み</div>
+<div class="card">
+<span class="gold">今の貯金で老後は大丈夫か</span>
+<span class="sub">安心して生活できるか一緒に考えます</span>
+</div>
+
+<div class="card">
+<span class="gold">投資を始めるべきか</span>
+<span class="sub">自分に合った方法を分かりやすくお伝えします</span>
+</div>
+
+<div class="card">
+<span class="gold">家族に迷惑をかけない準備</span>
+<span class="sub">認知症や相続の対策も相談できます</span>
+</div>
+
+<div class="card">
+<span class="gold">相続の不安や悩み</span>
+<span class="sub">トラブルを防ぐための考え方をお伝えします</span>
+</div>
 
 </section>
 
 <!-- 料金 -->
 <section class="price-section">
 
-<h2>料金について</h2>
+<h2 style="color:#222;">料金について</h2>
 
 <div class="card">
 一般的な単発セミナーは<br>
@@ -385,43 +298,35 @@ height:250px;
 月額 22,000円<span>（税込）</span>
 </div>
 
-<p>
-当サロンは、地元コミュニティとしての活動も大切にしています<br>
+<p class="sub">
+地元コミュニティとしての活動も大切にしています<br>
 安心して続けられる、相談できるサロンです
 </p>
 
 </section>
 
-<!-- 最後 -->
-<section class="final">
-<h2>今からの備えが<br>これからの安心につながります</h2>
+<!-- 場所 -->
+<section class="section-blue">
+
+<h2>開催場所</h2>
+
+<p style="color:#fff;">
+小倉南生涯学習センター<br>
+公共施設で安心して参加できます
+</p>
+
+<iframe class="map"
+src="https://maps.google.com/maps?q=小倉南生涯学習センター&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
 </section>
 
 <!-- CTA -->
-<div class="floating-cta">
+<div class="floating">
 <a href="https://lin.ee/8mjr5Lan">
 無料体験を公式LINEで受け取る
 </a>
 </div>
-
-<script>
-const slider=document.getElementById("slider");
-let index=0;
-
-setInterval(()=>{
-index++;
-slider.style.transition="0.8s";
-slider.style.transform=`translateX(-${index*100}%)`;
-
-if(index===4){
-setTimeout(()=>{
-slider.style.transition="none";
-slider.style.transform="translateX(0)";
-index=0;
-},800);
-}
-},3000);
-</script>
 
 </body>
 </html>
