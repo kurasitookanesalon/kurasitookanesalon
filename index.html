@@ -3,247 +3,250 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>くらしとお金サロン</title>
 
 <style>
 body{
-margin:0;
-font-family:"Hiragino Kaku Gothic ProN", sans-serif;
-line-height:1.9;
-color:#333;
+  margin:0;
+  font-family:sans-serif;
+  background:#f5f5f5;
+  line-height:1.8;
 }
 
-/* ===== トップ ===== */
-.hero{
-height:100vh;
-overflow:hidden;
-position:relative;
+.section{
+  padding:60px 20px;
+  text-align:center;
 }
 
-.track{
-display:flex;
-width:max-content;
-height:100%;
-animation:flow 60s linear infinite;
+.card{
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  max-width:700px;
+  margin:auto;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  text-align:left;
 }
 
-.img{
-height:100%;
-width:auto;
+.logo{
+  width:120px;
+  margin:20px auto;
+  display:block;
 }
 
-@keyframes flow{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+h2{
+  font-size:26px;
+  margin-bottom:20px;
 }
 
-.track::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.45);
-top:0;
-left:0;
+.line-btn{
+  background:#00c300;
+  color:white;
+  padding:18px;
+  border-radius:40px;
+  display:inline-block;
+  text-decoration:none;
+  font-size:18px;
+  margin-top:20px;
 }
 
-.hero-content{
-position:absolute;
-z-index:2;
-color:white;
-width:100%;
-text-align:center;
-top:50%;
-transform:translateY(-50%);
-}
-
-.cta{
-background:#00c300;
-color:white;
-padding:16px 28px;
-border-radius:30px;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-font-weight:bold;
-white-space:nowrap;
-}
-
-/* ===== 背景 ===== */
-.bg-section{
-padding:100px 20px;
-background:url('92F216BD-DBCB-44E4-93A1-2E045A576A8F.png');
-background-size:100% 100%;
-background-repeat:no-repeat;
-}
-
-.box{
-background:rgba(255,255,255,0.96);
-padding:30px;
-border-radius:12px;
-max-width:800px;
-margin:auto;
-}
-
-/* 講師 */
-.profile-img{
-width:200px;
-border-radius:12px;
-display:block;
-margin:0 auto 20px;
-}
-
-/* フッター */
-.footer{
-background:#0e2a5a;
-color:white;
-text-align:center;
-padding:40px 20px;
+.qr{
+  width:200px;
+  margin:20px auto;
+  display:block;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== トップ ===== -->
-<section class="hero">
-<div class="track">
-<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="img">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
+<!-- ロゴ上 -->
+<img src="ロゴ浮き.png" class="logo">
 
-<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="img">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
-</div>
+<!-- サロンの内容 -->
+<section class="section">
+<div class="card">
 
-<div class="hero-content">
+<h2>サロンの内容</h2>
 
-<img src="ロゴ浮き.png" style="width:100px; margin-bottom:20px;">
+<p>
+将来のお金や生活に不安を感じていませんか。<br>
+このサロンでは、日々の暮らしに関わる知識を分かりやすく整理しながら、これからの生活に向けた考え方を学んでいきます。難しい言葉を使わず、ゆっくり丁寧に理解していくことで、不安を減らし安心して考えられる力を身につけていきます。
+</p>
 
-<h1>くらしとお金サロン</h1>
-<p>引退世代のためのお金の学校</p>
+<p>
+一人で抱え込まず、同じ地域の方と顔を合わせて話せる場として、少人数で落ち着いて学べる環境を大切にしています。
+</p>
 
-<a href="https://lin.ee/SerNrVa" class="cta">無料体験はこちら</a>
+<p>
+※金融商品やサービスの販売・勧誘は一切行っておりません
+</p>
 
-<p style="font-size:12px;">
-※公式LINEから簡単にご予約いただけます（1分で完了）
+<h3>開催内容</h3>
+
+<p>
+週1回（120分）<br>
+小倉南生涯学習センター<br><br>
+
+前半：講義（60分）<br>
+後半：座談会（60分）
+</p>
+
+<p>
+基礎から順番に学びながら、分からないことを共有し理解を深めていきます。
+</p>
+
+<h3>学べる内容</h3>
+
+<ul>
+<li>生活に関わる基礎知識</li>
+<li>家計の考え方</li>
+<li>将来に向けた備え</li>
+<li>詐欺やトラブルの対策</li>
+<li>安心して暮らすための知識</li>
+</ul>
+
+<h3>特徴</h3>
+
+<ul>
+<li>少人数制（定員あり）</li>
+<li>地域コミュニティ</li>
+<li>安心して話せる環境</li>
+</ul>
+
+<h3>料金</h3>
+
+<p>
+月額 22,000円（税込）
 </p>
 
 </div>
 </section>
 
-<!-- ===== 理念 ===== -->
-<section class="bg-section">
-<div class="box">
+<!-- 理念 -->
+<section class="section">
+<div class="card">
 
 <h2>サロン理念</h2>
 
-<h3>増やす知識と守る知恵で、人生に安心を。</h3>
+<p>
+増やす知識と守る知恵で、人生に安心を。
+</p>
 
-<p>くらしとお金サロンは、</p>
-<p>これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。</p>
+<p>
+くらしとお金サロンは、
+これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。
+</p>
 
-<p>今の日本では、孤独死やセルフネグレクトが</p>
-<p>決して珍しい話ではなくなっています。</p>
+<p>
+今の日本では、孤独死やセルフネグレクトが決して珍しい話ではなくなっています。
+</p>
 
-<p>成年後見制度などの仕組みもありますが、</p>
-<p>知らない専門家に任せるだけで</p>
-<p>本当に本人の幸せにつながっているのか</p>
-<p>考えさせられる現実もあります。</p>
+<p>
+成年後見制度などの仕組みもありますが、
+知らない専門家に任せるだけで
+本当に本人の幸せにつながっているのか
+考えさせられる現実もあります。
+</p>
 
-<p>「まだ大丈夫」「自分は関係ない」</p>
+<p>
+「まだ大丈夫」<br>
+「自分は関係ない」
+</p>
 
-<p>そう思っているうちに、</p>
+<p>
+そう思っているうちに、
+気づけば一人で、あるいは家族だけで
+抱え込んでしまうことも少なくありません。
+</p>
 
-<p>気づけば一人で抱え込んでしまうことも少なくありません。</p>
+<p>
+年齢を重ねるほど、暮らしやお金のことを考える時間は増えていきます。
+</p>
 
-<p>だからこそ地域の中に安心できる場所が必要です。</p>
+<p>
+しかし同時に、相談できる相手は少なくなっていきます。
+</p>
+
+<p>
+だからこそ地域の中に
+</p>
+
+<p>
+【所属できる場所】<br>
+【いつでも相談できる信頼できる人】<br>
+【同じ地域の仲間】
+</p>
+
+<p>
+が必要だと考えています。
+</p>
+
+<p>
+いつでも何でも話せるコミュニティがあること。
+それが、将来の安心を大きく左右します。
+</p>
+
+<p>
+不安を放置するのではなく、向き合い、整理し、備える。
+</p>
+
+<p>
+そのためのコミュニティが、くらしとお金サロンです。
+</p>
 
 </div>
 </section>
 
-<!-- ===== サロン内容 ===== -->
-<section class="bg-section">
-<div class="box">
+<!-- 最後に -->
+<section class="section">
+<div class="card">
 
-<h2>サロン内容</h2>
+<h2>最後に</h2>
 
-<p>将来のお金や生活に不安を感じていませんか。</p>
+<p>
+地域の中で顔が見える関係を大切にしながら
+安心して話せる場所を作ります。
+</p>
 
-<p>知識を整理し、安心して考えられる力を身につけていきます。</p>
+<p>
+一人や家族だけで抱え込まなくて大丈夫です。
+</p>
 
-<p>※金融商品の販売・勧誘は一切行っておりません</p>
-
-<p>週1回（120分）</p>
-<p>講義60分＋座談会60分</p>
-<p>月額22,000円（税込）</p>
-
-<p>開催場所：小倉南生涯学習センター（公共施設）</p>
-<p style="font-size:14px;">※公共施設で安心してご参加いただけます</p>
-
-</div>
-</section>
-
-<!-- ===== 自己紹介 ===== -->
-<section class="bg-section">
-<div class="box">
-
-<img src="IMG_3616.png" class="profile-img">
-
-<h2>講師紹介</h2>
-
-<p>平松 広大（36歳）</p>
-
-<p>約15年間、約200店舗・約6,000名規模の運営を経験</p>
-
-<p>分かりやすく伝えることを強みとしています</p>
+<p>
+小さな一歩が
+これからの大きな安心につながります。
+</p>
 
 </div>
 </section>
 
-<!-- ===== LINE ===== -->
-<section class="bg-section">
-<div class="box" style="text-align:center;">
+<!-- LINE -->
+<section class="section">
+<div class="card" style="text-align:center;">
 
 <h2>公式LINE</h2>
 
-<p>無料体験・お問い合わせは公式LINEから<br>受け付けています。</p>
+<p>
+無料体験・お問い合わせは<br>
+公式LINEから受け付けています。
+</p>
 
-<a href="https://lin.ee/SerNrVa" class="cta">
+<a href="https://lin.ee/yxZwj10" class="line-btn">
 ここをタップして友だち追加
 </a>
 
-<img src="IMG_2124.png" style="width:220px; margin:25px auto; display:block;">
+<img src="IMG_2124.png" class="qr">
 
-<p style="font-size:14px;">
+<p>
 QRコードを読み取ってもご登録いただけます
 </p>
 
 </div>
 </section>
 
-<!-- ===== フッター ===== -->
-<footer class="footer">
-
-<img src="ロゴ浮き.png" style="width:80px; margin-bottom:15px;">
-
-<p>くらしとお金サロン 小倉南校</p>
-<p>開催場所：小倉南生涯学習センター</p>
-<p>※詳細はご予約後にご案内いたします</p>
-
-<p style="font-size:12px;">
-金融商品の販売・勧誘は一切行っておりません
-</p>
-
-</footer>
+<!-- ロゴ下 -->
+<img src="ロゴ浮き.png" class="logo">
 
 </body>
 </html>
