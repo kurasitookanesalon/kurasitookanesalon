@@ -16,6 +16,7 @@ background:#0f2f6b;
 .hero{
 display:flex;
 height:100vh;
+overflow:hidden;
 }
 
 /* 左 */
@@ -33,7 +34,7 @@ color:#fff;
 
 .hero-left h1{
 font-size:34px;
-line-height:1.5;
+line-height:1.6;
 margin-bottom:20px;
 }
 
@@ -43,7 +44,7 @@ line-height:1.8;
 margin-bottom:30px;
 }
 
-/* 強調 */
+/* ゴールド */
 .gold{
 color:#D4AF37;
 font-weight:bold;
@@ -58,7 +59,7 @@ border-radius:40px;
 text-decoration:none;
 font-weight:bold;
 font-size:16px;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
 transition:0.3s;
 }
 
@@ -66,22 +67,35 @@ transition:0.3s;
 transform:translateY(-3px);
 }
 
-/* 右スライド */
+/* 右 */
 .hero-right{
 flex:1;
 position:relative;
 overflow:hidden;
 }
 
-/* 黒＋グラデ */
+/* 左との境界ぼかし */
+.hero-right::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:120px;
+height:100%;
+background:linear-gradient(to right,#163E7A,transparent);
+z-index:2;
+}
+
+/* 軽いグラデ（暗くしない） */
 .hero-right::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+background:linear-gradient(to left, rgba(30,91,184,0.15), rgba(0,0,0,0.05));
 z-index:1;
 }
 
+/* スライド */
 .slider{
 display:flex;
 height:100%;
@@ -91,10 +105,23 @@ height:100%;
 height:100%;
 width:auto;
 flex-shrink:0;
+animation:zoom 8s ease-in-out infinite alternate;
 }
 
 .slider.moving{
 animation:slideX 40s linear infinite;
+}
+
+/* 横スライド */
+@keyframes slideX{
+0%{ transform:translateX(0); }
+100%{ transform:translateX(-50%); }
+}
+
+/* ズーム */
+@keyframes zoom{
+0%{ transform:scale(1); }
+100%{ transform:scale(1.05); }
 }
 
 /* ================= セクション ================= */
@@ -154,19 +181,16 @@ height:300px;
 <div class="hero-left">
 
 <h1>
-<span class="gold">知らなかった</span>だけで、<br>
-大切なお金は減っていく。<br><br>
+増やす知識 × 守る知恵<br>
+＋ 地域の仲間 ＝<br><br>
 
-<span class="gold">守る知識</span>と<br>
-<span class="gold">増やす力</span>を学ぶ場所
+<span class="gold">安心・安定のくらし</span>
 </h1>
 
 <p>
 引退世代のためのお金の学校<br><br>
-
 NISA・株式投資・詐欺対策まで<br>
-これからの時代に必要な知識を<br>
-わかりやすく学べます
+これからの時代に必要な知識を学べます
 </p>
 
 <a href="https://lin.ee/yxZwj10" class="line-btn">
@@ -193,18 +217,6 @@ NISA・株式投資・詐欺対策まで<br>
 <script>
 const slider = document.getElementById("slider");
 slider.innerHTML += slider.innerHTML;
-
-const totalWidth = slider.scrollWidth / 2;
-
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes slideX {
-0% { transform: translateX(0); }
-100% { transform: translateX(-${totalWidth}px); }
-}
-`;
-document.head.appendChild(style);
-
 slider.classList.add("moving");
 </script>
 
