@@ -8,8 +8,6 @@
 <style>
 body{
 margin:0;
-
-/* 🔥背景：縦OK・横伸ばさない */
 background:url("BDF99BA9-D9B1-451E-8DC5-BD1D12FA18EF.jpeg") no-repeat center top;
 background-size:auto 100%;
 background-attachment:fixed;
@@ -60,12 +58,21 @@ width:120px;
 margin-bottom:20px;
 }
 
+/* LINEボタン強化 */
 .line-btn{
 background:#00c300;
 color:#fff;
-padding:15px 30px;
-border-radius:30px;
+padding:18px 40px;
+border-radius:40px;
 text-decoration:none;
+font-weight:bold;
+display:inline-block;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.line-btn:hover{
+transform:translateY(-3px);
 }
 
 /* ================= セクション ================= */
@@ -91,6 +98,16 @@ font-size:28px;
 .section p{
 line-height:1.8;
 font-size:16px;
+}
+
+/* スマホ最適化 */
+@media (max-width:600px){
+.hero-content h1{
+font-size:22px;
+}
+.section-inner{
+padding:25px;
+}
 }
 </style>
 </head>
@@ -185,6 +202,39 @@ slider.classList.add("moving");
     </p>
   </div>
 </section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>開催日程・料金</h2>
+    <p>
+    開催場所：小倉南生涯学習センター<br>
+    開催時間：9:00〜11:00（週1回）<br><br>
+    内容：講義60分＋座談会60分<br><br>
+    月会費：22,000円（税込）<br>
+    定員：20名<br><br>
+    ※まずは無料体験からご参加いただけます
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner" style="text-align:center;">
+    <h2>まずは無料体験へ</h2>
+    <p>
+    「体験」とLINEで送るだけでOKです。<br><br>
+    無理な勧誘は一切ありません。<br>
+    お気軽にご参加ください。
+    </p><br>
+
+    <a href="https://lin.ee/yxZwj10" class="line-btn">
+      LINEで無料体験する
+    </a>
+  </div>
+</section>
+
+<footer style="text-align:center; padding:30px; color:#fff; font-size:12px;">
+  © くらしとお金サロン 小倉南校
+</footer>
 
 </body>
 </html>
