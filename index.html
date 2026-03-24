@@ -49,6 +49,13 @@ font-size:36px;
 .right{ text-align:left; }
 .center{ text-align:center; }
 
+/* ★ 追加（横固定） */
+.full{
+grid-column:1 / 4;
+text-align:center;
+white-space:nowrap;
+}
+
 .result{
 text-align:center;
 font-size:44px;
@@ -155,17 +162,15 @@ height:250px;
 <div class="right">守る知恵</div>
 </div>
 
-<!-- ★ 修正ここ -->
 <div class="row">
 <div></div>
 <div class="center">＋</div>
 <div></div>
 </div>
 
+<!-- ★ ここ修正 -->
 <div class="row">
-<div></div>
-<div class="center">地域の仲間</div>
-<div></div>
+<div class="full">地域の仲間</div>
 </div>
 
 <div class="row">
@@ -186,7 +191,7 @@ height:250px;
 
 </div>
 
-<!-- ===== スライド（証明写真削除済み） ===== -->
+<!-- ===== スライド ===== -->
 <div class="hero-right">
 <div class="slider" id="slider">
 
@@ -201,34 +206,6 @@ height:250px;
 
 </div>
 
-<!-- 不安 -->
-<section class="problem">
-
-<h2>こんな不安はありませんか？</h2>
-
-<div class="problem-card">老後のお金が不安</div>
-<div class="problem-card">投資がよく分からない</div>
-<div class="problem-card">詐欺が怖い</div>
-
-</section>
-
-<!-- インパクト -->
-<section class="impact">
-
-<h2>知らないだけでこれだけ差が出る</h2>
-
-<p>日本では毎日</p>
-<div class="big-number">約200人</div>
-<p>孤独死しています</p>
-
-<br>
-
-<p>1件の詐欺被害で</p>
-<div class="big-number">5,500万円</div>
-<p>失うケースもあります</p>
-
-</section>
-
 <script>
 const slider = document.getElementById("slider");
 const slides = document.querySelectorAll(".slide");
@@ -236,7 +213,6 @@ const slides = document.querySelectorAll(".slide");
 let index = 0;
 const speed = 3000;
 
-/* ===== 無限ループ ===== */
 const firstClone = slides[0].cloneNode(true);
 slider.appendChild(firstClone);
 
