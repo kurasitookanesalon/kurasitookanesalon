@@ -25,15 +25,20 @@ padding-bottom:120px;
 
 /* 共通 */
 section{
-padding:50px 20px;
+padding:40px 20px;
 text-align:center;
 }
 
 h2{
 font-size:28px;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
+p{
+line-height:1.6;
+}
+
+/* カード */
 .card{
 background:#fff;
 color:#222;
@@ -43,7 +48,7 @@ margin:12px auto;
 width:90%;
 }
 
-/* 金強調 */
+/* 金 */
 .gold{
 color:var(--gold);
 font-weight:900;
@@ -64,6 +69,7 @@ border-radius:50px;
 font-weight:900;
 text-align:center;
 text-decoration:none;
+font-size:18px;
 }
 
 /* 固定CTA */
@@ -122,6 +128,7 @@ display:flex;
 .slide{
 width:100%;
 flex-shrink:0;
+object-fit:cover;
 }
 
 /* 地図 */
@@ -129,7 +136,7 @@ flex-shrink:0;
 width:90%;
 height:250px;
 border-radius:12px;
-margin-top:20px;
+margin-top:15px;
 }
 </style>
 </head>
@@ -254,6 +261,18 @@ margin-top:20px;
 
 </section>
 
+<!-- 相談 -->
+<section>
+
+<h2>このサロンで相談できること</h2>
+
+<div class="card"><span class="gold">今の貯金で老後は大丈夫か</span></div>
+<div class="card"><span class="gold">投資を始めるべきか</span></div>
+<div class="card"><span class="gold">家族に迷惑をかけない準備</span></div>
+<div class="card"><span class="gold">相続の不安や悩み</span></div>
+
+</section>
+
 <!-- 料金 -->
 <section>
 
@@ -264,8 +283,14 @@ margin-top:20px;
 一回数万円のケースもあります
 </div>
 
-<div class="gold" style="font-size:36px;">
-月額 22,000円（税込）
+<div class="card" style="padding:30px;">
+<div style="font-size:14px;color:#666;">月額</div>
+<div style="font-size:42px;color:#D4AF37;font-weight:900;">
+22,000円（税込）
+</div>
+<div style="font-size:13px;color:#666;margin-top:5px;">
+週1回 × 月4回の継続サロン
+</div>
 </div>
 
 <p>
@@ -275,7 +300,26 @@ margin-top:20px;
 
 </section>
 
-<!-- 地図 -->
+<!-- ラストCTA -->
+<section>
+
+<h2>
+今からの備えが<br>
+これからの安心につながります
+</h2>
+
+<a href="https://lin.ee/8mjr5Lan" class="cta">
+無料体験の内容を確認する
+</a>
+
+<p style="font-size:14px;">
+まずは無料体験の内容をご確認ください<br>
+内容を見てからご参加いただけます
+</p>
+
+</section>
+
+<!-- 開催場所 -->
 <section>
 
 <h2>開催場所</h2>
@@ -291,18 +335,13 @@ src="https://maps.google.com/maps?q=小倉南生涯学習センター&output=emb
 <!-- 固定CTA -->
 <div class="floating">
 
-<a href="https://lin.ee/8mjr5Lan">
+<a href="https://lin.ee/8mjr5Lan" class="cta">
 無料体験の内容を確認する
 </a>
 
-<p style="text-align:center;font-size:13px;margin-top:6px;">
-まずは無料体験の内容をご確認ください<br>
-内容を見てからご参加いただけます
-</p>
-
 </div>
 
-<!-- スライドJS -->
+<!-- スライド -->
 <script>
 let i=0;
 const slider=document.getElementById("slider");
