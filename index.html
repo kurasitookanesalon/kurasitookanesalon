@@ -16,8 +16,10 @@ background:#0f2f6b;
 .hero{
 display:flex;
 height:100vh;
+overflow:hidden;
 }
 
+/* 左 */
 .hero-left{
 flex:1;
 display:flex;
@@ -29,6 +31,7 @@ background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
 }
 
+/* 数式 */
 .catch-wrap{
 max-width:700px;
 margin:auto;
@@ -54,10 +57,7 @@ font-weight:bold;
 margin-top:20px;
 }
 
-.hero-left p{
-margin:20px 0;
-}
-
+/* ボタン */
 .line-btn{
 background:#00c300;
 color:#fff;
@@ -65,17 +65,28 @@ padding:18px 45px;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
+margin-top:20px;
 }
 
-/* 右画像（1枚に変更） */
+/* 右スライド復活 */
 .hero-right{
 flex:1;
+overflow:hidden;
 }
 
-.hero-right img{
-width:100%;
+.slider{
+display:flex;
 height:100%;
-object-fit:cover;
+}
+
+.slider img{
+height:100%;
+width:auto;
+flex-shrink:0;
+}
+
+.slider.moving{
+animation:slideX linear infinite;
 }
 
 /* ================= 不安 ================= */
@@ -90,50 +101,15 @@ font-size:28px;
 margin-bottom:40px;
 }
 
-.problem-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
 .problem-card{
 background:#fff;
 padding:25px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+margin:15px auto;
+max-width:600px;
 }
 
-.problem img{
-width:100%;
-max-width:700px;
-margin-top:40px;
-border-radius:20px;
-}
-
-/* ================= 解決 ================= */
-.solution{
-padding:80px 20px;
-text-align:center;
-background:#fff;
-}
-
-.solution-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-.solution-card{
-background:#f5f7fb;
-padding:30px;
-border-radius:20px;
-}
-
-/* ================= インパクト数字 ================= */
+/* ================= 数字 ================= */
 .impact{
 background:#163E7A;
 color:#fff;
@@ -141,29 +117,10 @@ padding:80px 20px;
 text-align:center;
 }
 
-.impact h2{
-font-size:28px;
-margin-bottom:40px;
-}
-
-.impact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-max-width:900px;
-margin:auto;
-}
-
-.impact-card{
-background:rgba(255,255,255,0.1);
-padding:40px 20px;
-border-radius:20px;
-}
-
 .big-number{
-font-size:42px;
-font-weight:bold;
+font-size:46px;
 color:#D4AF37;
+font-weight:bold;
 margin:10px 0;
 }
 
@@ -176,12 +133,6 @@ height:auto;
 
 .hero-right{
 height:250px;
-}
-
-.problem-grid,
-.solution-grid,
-.impact-grid{
-grid-template-columns:1fr;
 }
 
 .row{ font-size:24px; }
@@ -198,6 +149,7 @@ grid-template-columns:1fr;
 <div class="hero-left">
 
 <div class="catch-wrap">
+
 <div class="row">
 <div class="left">増やす知識</div>
 <div class="center">×</div>
@@ -217,19 +169,21 @@ grid-template-columns:1fr;
 </div>
 
 <div class="result">安心・安定のくらし</div>
+
 </div>
 
-<p>
-引退世代のためのお金の学校<br>
-NISA・株式投資・詐欺対策まで学べます
-</p>
+<p>引退世代のためのお金の学校</p>
 
 <a href="#" class="line-btn">無料体験はこちら</a>
 
 </div>
 
+<!-- スライド（復活＋画像差別化） -->
 <div class="hero-right">
+<div class="slider" id="slider">
 <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+</div>
 </div>
 
 </div>
@@ -239,26 +193,9 @@ NISA・株式投資・詐欺対策まで学べます
 
 <h2>こんな不安はありませんか？</h2>
 
-<div class="problem-grid">
 <div class="problem-card">老後のお金が不安</div>
 <div class="problem-card">投資がよく分からない</div>
 <div class="problem-card">詐欺が怖い</div>
-</div>
-
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-
-</section>
-
-<!-- 解決 -->
-<section class="solution">
-
-<h2>このサロンで得られること</h2>
-
-<div class="solution-grid">
-<div class="solution-card">投資を基礎から学べる</div>
-<div class="solution-card">詐欺や損失を防ぐ</div>
-<div class="solution-card">安心して相談できる</div>
-</div>
 
 </section>
 
@@ -267,23 +204,41 @@ NISA・株式投資・詐欺対策まで学べます
 
 <h2>知らないだけでこれだけ差が出る</h2>
 
-<div class="impact-grid">
-
-<div class="impact-card">
-1日あたり<br>
+<p>日本では毎日</p>
 <div class="big-number">約200人</div>
-孤独死
-</div>
+<p>孤独死しています</p>
 
-<div class="impact-card">
-1件の詐欺被害<br>
+<br>
+
+<p>1件の詐欺被害で</p>
 <div class="big-number">5,500万円</div>
-失うケースも
-</div>
-
-</div>
+<p>失うケースもあります</p>
 
 </section>
+
+<!-- JS -->
+<script>
+const slider = document.getElementById("slider");
+slider.innerHTML += slider.innerHTML;
+
+const totalWidth = slider.scrollWidth / 2;
+const speed = 80;
+const duration = totalWidth / speed;
+
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes slideX {
+0% { transform: translateX(0); }
+100% { transform: translateX(-${totalWidth}px); }
+}
+#slider.moving {
+animation-duration: ${duration}s;
+}
+`;
+document.head.appendChild(style);
+
+slider.classList.add("moving");
+</script>
 
 </body>
 </html>
