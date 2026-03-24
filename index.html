@@ -64,7 +64,7 @@ border-radius:30px;
 text-decoration:none;
 }
 
-/* 🔥ここだけ修正（綺麗版） */
+/* 🔥背景（引き伸ばしなし） */
 .section{
 background:url("9A1B20E6-2BD1-4E26-B63B-62227C4D4A25.jpeg") center top;
 background-size:100% auto;
@@ -72,12 +72,16 @@ background-repeat:repeat-y;
 padding:80px 20px;
 }
 
+/* 🔥ガラス風カード（完成形） */
 .section-inner{
 max-width:900px;
 margin:auto;
-background:rgba(255,255,255,0.9);
+background:rgba(255,255,255,0.6);
 padding:40px;
-border-radius:15px;
+border-radius:20px;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .section h2{
@@ -126,7 +130,7 @@ style.innerHTML = `
 100% { transform: translateX(-${totalWidth}px); }
 }
 #slider.moving {
-animation-duration: 28s;
+animation-duration: 30s;
 }
 `;
 document.head.appendChild(style);
@@ -160,8 +164,6 @@ slider.classList.add("moving");
   <div class="section-inner">
     <h2>サロンを始めた理由</h2>
     <p>
-    現在、日本では投資詐欺や金融トラブルが増えています。<br>
-    特に引退世代を狙った被害は深刻です。<br><br>
     「知らなかった」だけで損をする現状を変えたい。<br>
     その想いから、このサロンを立ち上げました。
     </p>
