@@ -1,229 +1,86 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン</title>
-
-<style>
-body{
-margin:0;
-font-family:sans-serif;
-background:#0f2f6b;
-}
-
-/* ================= トップ ================= */
-.hero{
-display:flex;
-height:100vh;
-overflow:hidden;
-}
-
-/* 左 */
-.hero-left{
-flex:1;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:40px;
-background:linear-gradient(135deg,#1E5BB8,#163E7A);
-color:#fff;
-text-align:center;
-}
-
-/* キャッチ構造 */
-.catch-wrap{
-text-align:center;
-}
-
-.catch-line{
-font-size:34px;
-line-height:1.8;
-letter-spacing:1px;
-margin:10px 0;
-}
-
-.symbol{
-font-size:32px;
-margin:10px 0;
-opacity:0.9;
-}
-
-.result{
-font-size:42px;
-color:#D4AF37;
-font-weight:bold;
-margin-top:15px;
-}
-
-/* 説明 */
-.hero-left p{
-font-size:16px;
-line-height:1.8;
-margin:25px 0;
-}
-
-/* ボタン */
-.line-btn{
-background:#00c300;
-color:#fff;
-padding:18px 45px;
-border-radius:40px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 6px 15px rgba(0,0,0,0.25);
-}
-
-/* 右スライド */
-.hero-right{
-flex:1;
-overflow:hidden;
-}
-
-.slider{
-display:flex;
-height:100%;
-}
-
-.slider img{
-height:100%;
-width:auto;
-flex-shrink:0;
-}
-
-.slider.moving{
-animation:slideX linear infinite;
-}
-
-/* ================= 次セクション ================= */
-.problem{
-background:#f5f7fb;
-padding:60px 20px;
-}
-
-.problem-inner{
-max-width:800px;
-margin:auto;
-text-align:center;
-}
-
-.problem h2{
-font-size:24px;
-margin-bottom:20px;
-}
-
-.problem p{
-font-size:16px;
-line-height:2;
-}
-
-/* スマホ */
-@media (max-width:768px){
-.hero{
-flex-direction:column;
-height:auto;
-}
-
-.catch-line{
-font-size:26px;
-}
-
-.result{
-font-size:32px;
-}
-
-.hero-right{
-height:250px;
-}
-}
-</style>
-</head>
-
-<body>
-
-<!-- ================= トップ ================= -->
-<div class="hero">
-
-<!-- 左 -->
-<div class="hero-left">
-
-<div class="catch-wrap">
-<div class="catch-line">増やす知識 × 守る知恵</div>
-<div class="symbol">＋</div>
-<div class="catch-line">地域の仲間</div>
-<div class="symbol">＝</div>
-<div class="result">安心・安定のくらし</div>
-</div>
-
-<p>
-引退世代のためのお金の学校<br>
-NISA・株式投資・詐欺対策まで学べます
-</p>
-
-<a href="https://lin.ee/yxZwj10" class="line-btn">
-無料体験はこちら
-</a>
-
-</div>
-
-<!-- 右 -->
-<div class="hero-right">
-<div class="slider" id="slider">
-<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
-<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
-<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
-<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
-</div>
-</div>
-
-</div>
-
-<!-- ================= 次セクション ================= -->
 <section class="problem">
 
 <div class="problem-inner">
 
 <h2>こんな不安はありませんか？</h2>
 
-<p>
-・老後のお金、このままで大丈夫か不安<br>
-・NISAや投資、よく分からないまま始めている<br>
-・詐欺や騙されるのが怖い<br><br>
+<div class="problem-grid">
 
+<div class="problem-card">
+<p>老後のお金が<br>このままで大丈夫か不安</p>
+</div>
+
+<div class="problem-card">
+<p>NISAや投資を<br>よく分からないまま始めている</p>
+</div>
+
+<div class="problem-card">
+<p>詐欺や騙されるのが怖い</p>
+</div>
+
+</div>
+
+<div class="problem-message">
 その不安、<br>
-正しい知識で解決できます
-</p>
+<span>正しい知識で解決できます</span>
+</div>
 
 </div>
 
 </section>
 
-<!-- ================= JS ================= -->
-<script>
-const slider = document.getElementById("slider");
-slider.innerHTML += slider.innerHTML;
-
-const totalWidth = slider.scrollWidth / 2;
-const speed = 80;
-const duration = totalWidth / speed;
-
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes slideX {
-0% { transform: translateX(0); }
-100% { transform: translateX(-${totalWidth}px); }
+<style>
+.problem{
+background:#f5f7fb;
+padding:60px 20px;
 }
-#slider.moving {
-animation-duration: ${duration}s;
+
+.problem-inner{
+max-width:900px;
+margin:auto;
+text-align:center;
 }
-`;
-document.head.appendChild(style);
 
-slider.classList.add("moving");
-</script>
+.problem h2{
+font-size:26px;
+margin-bottom:30px;
+}
 
-</body>
-</html>
+/* カード */
+.problem-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:20px;
+margin-bottom:40px;
+}
+
+.problem-card{
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+font-size:15px;
+line-height:1.6;
+}
+
+/* メッセージ */
+.problem-message{
+font-size:18px;
+line-height:1.8;
+}
+
+.problem-message span{
+display:block;
+font-size:22px;
+font-weight:bold;
+margin-top:10px;
+color:#1E5BB8;
+}
+
+/* スマホ */
+@media (max-width:768px){
+.problem-grid{
+grid-template-columns:1fr;
+}
+}
+</style>
