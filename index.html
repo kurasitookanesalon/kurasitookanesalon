@@ -13,6 +13,7 @@ body{
   font-family:"Noto Sans JP",sans-serif;
   background:#1E5BB8;
   color:#fff;
+  padding-bottom:100px;
 }
 
 /* ===== トップ ===== */
@@ -118,7 +119,7 @@ body{
   font-weight:bold;
 }
 
-/* ===== 追尾LINEボタン（動く） ===== */
+/* ===== 追尾LINEボタン ===== */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -229,15 +230,13 @@ body{
 
   <div>
     無料体験・ご質問はこちらから
-    <span class="floating-sub">無料体験のうえ、ご検討いただけます</span>
+    <span class="floating-sub">公式LINEで受付中</span>
   </div>
 
 </a>
 
 <script>
 const track = document.getElementById("slideTrack");
-
-// 無限ループ
 track.innerHTML += track.innerHTML;
 
 let scrollX = 0;
@@ -251,7 +250,6 @@ function slide(){
   track.style.transform = `translateX(-${scrollX}px)`;
   requestAnimationFrame(slide);
 }
-
 slide();
 </script>
 
