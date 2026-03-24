@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>くらしとお金サロン</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
@@ -23,15 +22,21 @@ color:#fff;
 padding-bottom:120px;
 }
 
+/* 共通 */
 section{
 padding:40px 20px;
 text-align:center;
 }
 
+h2{
+font-size:28px;
+margin-bottom:18px;
+}
+
 .card{
 background:#fff;
 color:#222;
-padding:22px;
+padding:20px;
 border-radius:16px;
 margin:14px auto;
 width:90%;
@@ -42,9 +47,10 @@ color:var(--gold);
 font-weight:900;
 font-size:26px;
 display:block;
-margin-bottom:8px;
+margin-bottom:6px;
 }
 
+/* CTA */
 .cta{
 display:block;
 width:90%;
@@ -59,6 +65,7 @@ text-decoration:none;
 font-size:18px;
 }
 
+/* 固定CTA */
 .floating{
 position:fixed;
 bottom:10px;
@@ -66,12 +73,34 @@ left:10px;
 right:10px;
 z-index:999;
 }
+
+/* 画像CTA */
+.image-cta{
+position:relative;
+}
+
+.image-cta img{
+width:100%;
+display:block;
+}
+
+.image-cta .cta{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+}
+
+/* スライド */
+.slider-wrap{overflow:hidden;}
+.slider{display:flex;}
+.slide{width:100%;flex-shrink:0;}
 </style>
 </head>
 
 <body>
 
-<!-- コンセプト -->
+<!-- 🔵 コンセプト -->
 <section>
 
 <div style="display:flex;justify-content:center;align-items:center;gap:10px;">
@@ -85,7 +114,7 @@ z-index:999;
 地域の仲間
 </div>
 
-<div style="font-size:38px;color:#D4AF37;font-weight:900;margin-top:15px;">
+<div style="font-size:40px;color:#D4AF37;font-weight:900;margin-top:15px;">
 安心・安定のくらし
 </div>
 
@@ -99,7 +128,29 @@ z-index:999;
 
 </section>
 
-<!-- 危機 -->
+<!-- 🔥 スライド -->
+<div class="slider-wrap">
+<div class="slider" id="slider">
+
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
+
+</div>
+</div>
+
+<!-- 🔥 画像＋CTA（復活） -->
+<div class="image-cta">
+
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+
+<a href="https://lin.ee/8mjr5Lan" class="cta">
+無料体験を公式LINEで受け取る
+</a>
+
+</div>
+
+<!-- 🔴 危機 -->
 <section>
 
 <h2>知らないだけで<br>こんな現実が起きています</h2>
@@ -112,18 +163,17 @@ z-index:999;
 <div class="card">
 詐欺被害<br>
 <div class="gold">毎日 約20〜30人</div>
-<p>1日あたり約1億円以上の被害が発生しています</p>
+<p>1日あたり約1億円以上の被害</p>
 </div>
 
 <div class="card">
 相続トラブルで裁判<br>
 <div class="gold">毎日 約30件</div>
-<p>家族間のトラブルに発展するケースも増えています</p>
 </div>
 
 </section>
 
-<!-- できる -->
+<!-- 🟢 できる -->
 <section>
 
 <h2>このサロンでできること</h2>
@@ -135,61 +185,49 @@ z-index:999;
 
 <div class="card">
 <span class="gold">将来のお金の不安</span>
-今の収入・貯金・支出を整理し、何から始めるべきかが明確になります
+現状を整理し、何をすればいいかが分かります
 </div>
 
 <div class="card">
 <span class="gold">知識を身につけて</span>
-周りに流されず、自分で判断できる力が身につきます
+自分で判断できる力がつきます
 </div>
 
 <div class="card">
 <span class="gold">一人で悩まず</span>
-同じ悩みを持つ人と共有しながら安心して続けられます
+安心して相談できる環境があります
 </div>
 
 </section>
 
-<!-- 学べる -->
+<!-- 📘 学べる -->
 <section>
 
 <h2>このサロンで学べること</h2>
 
 <div class="card">
 <span class="gold">インデックス投資</span>
-無理なく続けられる投資の考え方と、リスクを抑える方法を学びます
+無理なく増やす考え方
 </div>
 
 <div class="card">
 <span class="gold">老後資金</span>
-これから必要になるお金と、準備の進め方を具体的に理解できます
+必要なお金の考え方
 </div>
 
 <div class="card">
 <span class="gold">詐欺</span>
-実際の事例をもとに、騙されないための判断基準を身につけます
+騙されない判断力
 </div>
 
 <div class="card">
 <span class="gold">相続</span>
-トラブルを防ぐための基本と、事前にできる対策を学びます
+トラブルを防ぐ基本知識
 </div>
 
 </section>
 
-<!-- 相談 -->
-<section>
-
-<h2>このサロンで相談できること</h2>
-
-<div class="card"><span class="gold">今の貯金で老後は大丈夫か</span></div>
-<div class="card"><span class="gold">投資を始めるべきか</span></div>
-<div class="card"><span class="gold">家族に迷惑をかけない準備</span></div>
-<div class="card"><span class="gold">相続の不安や悩み</span></div>
-
-</section>
-
-<!-- 料金 -->
+<!-- 💰 料金 -->
 <section>
 
 <h2>料金について</h2>
@@ -205,18 +243,17 @@ z-index:999;
 22,000円（税込）
 </div>
 <div style="font-size:13px;">
-週1回 × 月4回の継続サロン
+週1回 × 月4回
 </div>
 </div>
 
 <p>
-当サロンは、地元コミュニティとしての活動も大切にしています<br>
-安心して続けられる環境で、継続的に学び・相談できるサロンです
+地元コミュニティとして安心して続けられるサロンです
 </p>
 
 </section>
 
-<!-- ラスト -->
+<!-- 🔵 ラスト -->
 <section>
 
 <h2>
@@ -226,8 +263,22 @@ z-index:999;
 
 <p>
 まずは無料体験の内容をご確認ください<br>
-ご自身に合うかどうかをしっかり判断できます
+ご自身に合うかどうか判断できます
 </p>
+
+</section>
+
+<!-- 📍 場所 -->
+<section>
+
+<h2>開催場所</h2>
+
+<p>小倉南生涯学習センター（公共施設）</p>
+
+<iframe
+style="width:90%;height:250px;border-radius:12px;"
+src="https://maps.google.com/maps?q=小倉南生涯学習センター&output=embed">
+</iframe>
 
 </section>
 
@@ -237,6 +288,26 @@ z-index:999;
 無料体験はこちら
 </a>
 </div>
+
+<!-- スライドJS -->
+<script>
+let i=0;
+const slider=document.getElementById("slider");
+
+setInterval(()=>{
+i++;
+slider.style.transform="translateX(-"+i*100+"%)";
+slider.style.transition="0.5s";
+
+if(i>=2){
+setTimeout(()=>{
+slider.style.transition="none";
+slider.style.transform="translateX(0)";
+i=0;
+},500);
+}
+},3000);
+</script>
 
 </body>
 </html>
