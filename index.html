@@ -112,6 +112,7 @@ body{
   line-height:1.6;
 }
 
+/* Notionボタン */
 .notion-btn{
   display:block;
   width:90%;
@@ -208,12 +209,50 @@ body{
   </div>
 </div>
 
+<div class="slider">
+  <div class="slide-track" id="slideTrack">
+    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+  </div>
+</div>
+
+<div class="section">
+  <h2>知らないだけでこんな現実が起きています</h2>
+  <div class="card">詐欺や認知症の話、身近で聞いたことはありませんか？</div>
+  <div class="card">まだ自分の周りで起きていないだけで、誰にでも起こりうることです。</div>
+  <div class="card">詐欺被害は毎日 約50件、約1.2億円。決して他人事ではありません。</div>
+  <div class="card">認知症診断は、毎日 約800人</div>
+  <div class="card">相続トラブルで裁判になるケースも、毎日 約30件あります</div>
+</div>
+
+<div class="section">
+  <h2>ですが、ご安心ください</h2>
+  <div class="card">将来起こりうる問題に備えることができます</div>
+  <div class="card">大切なお金を守る知識も学べます</div>
+  <div class="card">繰り返し学びながら理解を深めていきます</div>
+</div>
+
+<div class="section">
+  <h2>運営について</h2>
+  <div class="card">金融機関の営業ではありません</div>
+  <div class="card">販売や勧誘は一切ありません</div>
+  <div class="card">投資の判断は必ずご自身でしていただきます</div>
+</div>
+
+<div class="section">
+  <h2>料金について</h2>
+  <div class="card">月額 22,000円（週1回＋相談し放題）</div>
+  <div class="card">一般的な講座は1回参加して終わることが多いですが、くらしとお金サロンは毎週継続して学び、相談できる環境です</div>
+  <div class="card">1回あたり約5,500円。参加の中で、いつでも相談できる環境です</div>
+</div>
+
 <div class="section">
   <h2>このサロンで得られること</h2>
-
   <div class="card">一人で悩まず、地域の仲間と一緒に学べる場所です</div>
 
-  <!-- 🔥画像差し替え -->
   <img src="BB39BDA6-B7C0-48F8-ABFA-FAE043FAE08E.png"
        style="width:90%;max-width:500px;border-radius:20px;margin:20px auto;display:block;">
 </div>
@@ -221,17 +260,17 @@ body{
 <div class="section">
   <h2>詳しく知りたい方はこちら</h2>
 
-  <a href="https://noon-zircon-435.notion.site/321520320ef680baa5c6c9175f33bbbe?source=copy_link" target="_blank" class="notion-btn">
+  <a href="https://noon-zircon-435.notion.site/321520320ef680baa5c6c9175f33bbbe?source=copy_link" class="notion-btn">
     <strong>→ 講師プロフィールを見る</strong>
     <span>どんな人が教えるのか</span>
   </a>
 
-  <a href="https://noon-zircon-435.notion.site/31f520320ef6806090e9c2aa44a4a245?source=copy_link" target="_blank" class="notion-btn">
+  <a href="https://noon-zircon-435.notion.site/31f520320ef6806090e9c2aa44a4a245?source=copy_link" class="notion-btn">
     <strong>→ サロン内容を詳しく見る</strong>
     <span>具体的に何をするのか</span>
   </a>
 
-  <a href="https://noon-zircon-435.notion.site/31f520320ef680f0a1f8d6cb3112a5ad?source=copy_link" target="_blank" class="notion-btn">
+  <a href="https://noon-zircon-435.notion.site/31f520320ef680f0a1f8d6cb3112a5ad?source=copy_link" class="notion-btn">
     <strong>→ サロンの想いを見る</strong>
     <span>なぜこの活動をしているのか</span>
   </a>
@@ -241,8 +280,7 @@ body{
   <h2>こちらからご参加いただけます</h2>
 
   <div class="card">
-    QRコードをカメラで読み取るか、<br>
-    下の友だち追加ボタンからご参加いただけます
+    QRコードをカメラで読み取るか、下のボタンからご参加いただけます
   </div>
 
   <div class="card">
@@ -252,25 +290,30 @@ body{
   </div>
 </div>
 
-<a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
-  友だち追加・質問はこちら
-</a>
+<a href="https://lin.ee/n37s4pB" class="floating-btn">友だち追加・質問はこちら</a>
 
 <script>
-const targets = document.querySelectorAll('.notion-btn');
+const track=document.getElementById("slideTrack");
+track.innerHTML+=track.innerHTML;
+let x=0;
+function slide(){
+  x+=0.6;
+  if(x>=track.scrollWidth/2){x=0;}
+  track.style.transform=`translateX(-${x}px)`;
+  requestAnimationFrame(slide);
+}
+slide();
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+const targets=document.querySelectorAll('.notion-btn');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
-      setTimeout(()=>{
-        entry.target.classList.add('done');
-      },300);
+      setTimeout(()=>entry.target.classList.add('done'),300);
     }
   });
 },{threshold:0.2});
-
-targets.forEach(t => observer.observe(t));
+targets.forEach(t=>observer.observe(t));
 </script>
 
 </body>
