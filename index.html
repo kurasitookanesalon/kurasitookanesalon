@@ -3,38 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン</title>
 
 <style>
 body{
   margin:0;
-  font-family:"Hiragino Kaku Gothic ProN", sans-serif;
 }
 
-/* ===== ヒーロー ===== */
 .hero{
   height:100vh;
   overflow:hidden;
   position:relative;
 }
 
-/* ===== 横スクロール ===== */
+/* 👇ここが最重要 */
 .track{
   display:flex;
-  width:1200%; /* 6枚×2周 */
+  width:max-content;   /* ←これでピッタリ繋がる */
   height:100%;
-  animation: flow 15s linear infinite; /* ←速くした */
+  animation: flow 20s linear infinite;
 }
 
-/* ここ重要（1枚＝画面サイズ） */
+/* 画像 */
 .img{
-  width:100vw;
   height:100%;
-  object-fit:cover;
-  flex-shrink:0;
+  width:auto;
+  display:block;       /* ←隙間防止 */
 }
 
-/* 無限ループ */
+/* 無限ループ（ズレ修正） */
 @keyframes flow{
   0%{ transform:translateX(0); }
   100%{ transform:translateX(-50%); }
@@ -46,11 +42,10 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.45);
+  background:rgba(0,0,0,0.4);
   z-index:1;
 }
 
-/* テキスト */
 .hero-content{
   position:absolute;
   z-index:2;
@@ -59,25 +54,6 @@ body{
   text-align:center;
   top:50%;
   transform:translateY(-50%);
-}
-
-.logo{
-  width:110px;
-  margin-bottom:20px;
-}
-
-h1{
-  font-size:34px;
-}
-
-.cta{
-  background:#00c300;
-  color:white;
-  padding:15px 30px;
-  border-radius:30px;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:20px;
 }
 </style>
 </head>
@@ -96,7 +72,7 @@ h1{
     <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="img">
     <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="img">
 
-    <!-- 2周目 -->
+    <!-- 2周目（完全コピー） -->
     <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png" class="img">
     <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="img">
     <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="img">
@@ -107,10 +83,7 @@ h1{
   </div>
 
   <div class="hero-content">
-    <img src="ロゴ浮き.png" class="logo">
     <h1>くらしとお金サロン</h1>
-    <p>引退世代のためのお金の学校</p>
-    <a href="https://lin.ee/SerNrVa" class="cta">LINEで無料体験</a>
   </div>
 
 </section>
