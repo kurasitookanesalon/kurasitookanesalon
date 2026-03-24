@@ -26,44 +26,42 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
 padding:40px;
 background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
+text-align:center;
 }
 
-/* キャッチ（サイズUP） */
-.catch{
+/* キャッチ構造 */
+.catch-wrap{
+text-align:center;
+}
+
+.catch-line{
 font-size:34px;
-line-height:2;
+line-height:1.8;
 letter-spacing:1px;
-margin:0;
+margin:10px 0;
 }
 
-/* 記号 */
-.plus, .equal{
-display:block;
-font-size:30px;
-margin:15px 0;
+.symbol{
+font-size:32px;
+margin:10px 0;
 opacity:0.9;
 }
 
-/* 強調 */
-.gold{
+.result{
+font-size:42px;
 color:#D4AF37;
 font-weight:bold;
-}
-
-.big{
-font-size:42px;
-margin-top:10px;
+margin-top:15px;
 }
 
 /* 説明 */
 .hero-left p{
 font-size:16px;
 line-height:1.8;
-margin:30px 0;
+margin:25px 0;
 }
 
 /* ボタン */
@@ -77,13 +75,12 @@ font-weight:bold;
 box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* 右（スライド） */
+/* 右スライド */
 .hero-right{
 flex:1;
 overflow:hidden;
 }
 
-/* スライド */
 .slider{
 display:flex;
 height:100%;
@@ -95,12 +92,31 @@ width:auto;
 flex-shrink:0;
 }
 
-/* スムーズ無限ループ */
 .slider.moving{
 animation:slideX linear infinite;
 }
 
-/* JSで距離に応じて時間調整 */
+/* ================= 次セクション ================= */
+.problem{
+background:#f5f7fb;
+padding:60px 20px;
+}
+
+.problem-inner{
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+.problem h2{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.problem p{
+font-size:16px;
+line-height:2;
+}
 
 /* スマホ */
 @media (max-width:768px){
@@ -109,11 +125,11 @@ flex-direction:column;
 height:auto;
 }
 
-.catch{
+.catch-line{
 font-size:26px;
 }
 
-.big{
+.result{
 font-size:32px;
 }
 
@@ -126,22 +142,19 @@ height:250px;
 
 <body>
 
+<!-- ================= トップ ================= -->
 <div class="hero">
 
 <!-- 左 -->
 <div class="hero-left">
 
-<h1 class="catch">
-増やす知識 × 守る知恵
-
-<span class="plus">＋</span>
-
-地域の仲間
-
-<span class="equal">＝</span>
-
-<span class="gold big">安心・安定のくらし</span>
-</h1>
+<div class="catch-wrap">
+<div class="catch-line">増やす知識 × 守る知恵</div>
+<div class="symbol">＋</div>
+<div class="catch-line">地域の仲間</div>
+<div class="symbol">＝</div>
+<div class="result">安心・安定のくらし</div>
+</div>
 
 <p>
 引退世代のためのお金の学校<br>
@@ -168,22 +181,35 @@ NISA・株式投資・詐欺対策まで学べます
 
 </div>
 
+<!-- ================= 次セクション ================= -->
+<section class="problem">
+
+<div class="problem-inner">
+
+<h2>こんな不安はありませんか？</h2>
+
+<p>
+・老後のお金、このままで大丈夫か不安<br>
+・NISAや投資、よく分からないまま始めている<br>
+・詐欺や騙されるのが怖い<br><br>
+
+その不安、<br>
+正しい知識で解決できます
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= JS ================= -->
 <script>
 const slider = document.getElementById("slider");
-
-/* 画像を複製（途切れ防止） */
 slider.innerHTML += slider.innerHTML;
 
-/* スライド幅取得 */
 const totalWidth = slider.scrollWidth / 2;
-
-/* スピード一定（px/秒） */
 const speed = 80;
-
-/* 時間計算 */
 const duration = totalWidth / speed;
 
-/* keyframes動的生成 */
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes slideX {
