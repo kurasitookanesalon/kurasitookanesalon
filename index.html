@@ -1,6 +1,26 @@
-<style>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>くらしとお金サロン</title>
 
-/* ===== トップ横並び ===== */
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Noto Sans JP",sans-serif;
+  background:#1E5BB8;
+  color:#fff;
+}
+
+/* ===== トップ ===== */
+.hero{
+  text-align:center;
+  padding:60px 20px 40px;
+}
+
 .hero-header{
   display:flex;
   align-items:center;
@@ -26,9 +46,109 @@
 
 .formula strong{
   display:block;
-  font-size:36px;
+  font-size:40px;
   color:#D4AF37;
   margin-top:15px;
+}
+
+/* ボタン */
+.btn{
+  display:block;
+  width:90%;
+  max-width:420px;
+  margin:30px auto 10px;
+  background:#00C300;
+  color:#fff;
+  text-align:center;
+  padding:18px;
+  border-radius:40px;
+  font-size:18px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.note{
+  font-size:12px;
+  opacity:0.8;
+}
+
+/* ===== スライド ===== */
+.slider{
+  width:100%;
+  overflow:hidden;
+  margin-top:30px;
+}
+
+.slide-track{
+  display:flex;
+  width:1200%;
+  animation:scroll 40s linear infinite;
+}
+
+.slide-track img{
+  width:100vw;
+  height:260px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ===== セクション ===== */
+.section{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.section h2{
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+.card{
+  background:#fff;
+  color:#333;
+  border-radius:20px;
+  padding:22px;
+  margin:15px auto;
+  width:90%;
+  max-width:500px;
+}
+
+.gold{
+  color:#D4AF37;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.sub{
+  font-size:16px;
+  margin-top:5px;
+}
+
+/* ===== 料金 ===== */
+.price-card{
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+  margin:20px auto;
+  width:90%;
+  max-width:500px;
+}
+
+.price{
+  font-size:34px;
+  color:#D4AF37;
+  font-weight:bold;
+}
+
+/* ===== QR ===== */
+.qr{
+  width:200px;
+  margin:20px auto;
 }
 
 /* ===== 追尾ボタン ===== */
@@ -50,11 +170,12 @@
   z-index:999;
   box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
-
 </style>
+</head>
 
+<body>
 
-<!-- ===== トップ（修正版） ===== -->
+<!-- ===== トップ ===== -->
 <div class="hero">
 
   <div class="hero-header">
@@ -75,8 +196,52 @@
 
 </div>
 
+<!-- ===== スライド ===== -->
+<div class="slider">
+  <div class="slide-track">
 
-<!-- ===== 追尾LINEボタン ===== -->
+    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+
+    <!-- ループ -->
+    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+
+  </div>
+</div>
+
+<!-- ===== 問題提起 ===== -->
+<div class="section">
+  <h2>知らないだけで<br>こんな現実が起きています</h2>
+
+  <div class="card">
+    <div class="gold">認知症診断者</div>
+    <div class="gold">毎日 約800人</div>
+  </div>
+
+  <div class="card">
+    <div class="gold">詐欺被害</div>
+    <div class="gold">毎日 約20〜30人</div>
+  </div>
+
+  <div class="card">
+    <div class="gold">相続トラブル</div>
+    <div class="gold">毎日 約30件</div>
+  </div>
+</div>
+
+<!-- ===== LINE追尾 ===== -->
 <a href="https://lin.ee/yxZwj10" class="floating-btn">
   無料体験の内容を確認する
 </a>
+
+</body>
+</html>
