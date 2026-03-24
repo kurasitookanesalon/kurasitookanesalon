@@ -8,55 +8,36 @@
 <style>
 body{
 margin:0;
-background:url("BDF99BA9-D9B1-451E-8DC5-BD1D12FA18EF.jpeg") no-repeat center top;
-background-size:auto 100%;
-background-attachment:fixed;
-background-color:#0f2f6b;
+font-family:sans-serif;
+background:#0f2f6b;
 }
 
-/* ================= ヒーロー ================= */
+/* ================= トップ ================= */
 .hero{
-position:relative;
-height:100vh;
-overflow:hidden;
-}
-
-.hero-slider{
 display:flex;
-height:100%;
+height:100vh;
 }
 
-.hero-slider img{
-height:100%;
-width:auto;
-flex-shrink:0;
+/* 左テキスト */
+.hero-left{
+flex:1;
+background:#ffffff;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:60px;
 }
 
-/* ★ここで速度完全管理（40秒） */
-.hero-slider.moving{
-animation:slideX 40s linear infinite;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.15);
-}
-
-.hero-content{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-color:#fff;
-text-align:center;
-z-index:2;
-}
-
-.hero-content img{
-width:120px;
+.hero-left h1{
+font-size:36px;
 margin-bottom:20px;
+line-height:1.4;
+}
+
+.hero-left p{
+font-size:16px;
+line-height:1.8;
+margin-bottom:30px;
 }
 
 /* LINEボタン */
@@ -76,6 +57,28 @@ transition:0.3s;
 transform:translateY(-3px);
 }
 
+/* 右スライド */
+.hero-right{
+flex:1;
+overflow:hidden;
+position:relative;
+}
+
+.slider{
+display:flex;
+height:100%;
+}
+
+.slider img{
+height:100%;
+width:auto;
+flex-shrink:0;
+}
+
+.slider.moving{
+animation:slideX 40s linear infinite;
+}
+
 /* ================= セクション ================= */
 .section{
 padding:80px 20px;
@@ -84,7 +87,7 @@ padding:80px 20px;
 .section-inner{
 max-width:900px;
 margin:auto;
-background:rgba(255,255,255,0.9);
+background:#fff;
 padding:40px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
@@ -101,13 +104,23 @@ line-height:1.8;
 font-size:16px;
 }
 
-/* スマホ最適化 */
-@media (max-width:600px){
-.hero-content h1{
-font-size:22px;
+/* スマホ */
+@media (max-width:768px){
+.hero{
+flex-direction:column;
+height:auto;
 }
-.section-inner{
-padding:25px;
+
+.hero-left{
+padding:30px;
+}
+
+.hero-left h1{
+font-size:24px;
+}
+
+.hero-right{
+height:300px;
 }
 }
 </style>
@@ -118,7 +131,30 @@ padding:25px;
 <!-- ================= トップ ================= -->
 <div class="hero">
 
-<div class="hero-slider" id="slider">
+<!-- 左 -->
+<div class="hero-left">
+<h1>
+引退世代のお金の学校<br>
+「知らなかった」で損しないために
+</h1>
+
+<p>
+NISA・株式投資・詐欺対策まで<br>
+これからの時代に必要な知識を学べます<br><br>
+
+・小倉南生涯学習センター開催<br>
+・週1回 9:00〜11:00<br>
+・定員20名
+</p>
+
+<a href="https://lin.ee/yxZwj10" class="line-btn">
+LINEで無料体験する
+</a>
+</div>
+
+<!-- 右 -->
+<div class="hero-right">
+<div class="slider" id="slider">
 <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
@@ -126,17 +162,11 @@ padding:25px;
 <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
 <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
 </div>
-
-<div class="hero-content">
-<img src="ロゴ浮き.png">
-<h1>くらしとお金サロン</h1>
-<p>引退世代のためのお金の学校</p>
-<a href="https://lin.ee/yxZwj10" class="line-btn">LINEで無料体験</a>
 </div>
 
 </div>
 
-<!-- ================= JS（距離だけ制御） ================= -->
+<!-- ================= JS ================= -->
 <script>
 const slider = document.getElementById("slider");
 slider.innerHTML += slider.innerHTML;
@@ -161,9 +191,8 @@ slider.classList.add("moving");
   <div class="section-inner">
     <h2>サロン内容</h2>
     <p>
-    くらしとお金サロンは、引退世代の方を対象にした金融教育サロンです。<br>
-    NISA・株式投資・資産の守り方・詐欺対策など、これからの時代に必要なお金の知識を学びます。<br><br>
-    週1回の講義（60分）と座談会（60分）を通じて、知識だけでなく「実際に使える力」を身につけていきます。
+    引退世代向けの金融教育サロンです。<br>
+    NISA・株式投資・資産防衛・詐欺対策などを学びます。
     </p>
   </div>
 </section>
@@ -172,19 +201,7 @@ slider.classList.add("moving");
   <div class="section-inner">
     <h2>サロン理念</h2>
     <p>
-    お金の知識は「知っているか知らないか」で人生が大きく変わります。<br><br>
-    増やす知識だけでなく、守る知恵も学び、安心して暮らせる環境を作ることを目的としています。<br><br>
-    一人で悩むのではなく、仲間と一緒に学び、支え合う場所を提供します。
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner">
-    <h2>サロンを始めた理由</h2>
-    <p>
-    「知らなかった」だけで損をする現状を変えたい。<br>
-    その想いから、このサロンを立ち上げました。
+    増やす知識だけでなく、守る知恵も学び、安心して暮らせる環境を作ります。
     </p>
   </div>
 </section>
@@ -193,24 +210,8 @@ slider.classList.add("moving");
   <div class="section-inner">
     <h2>自己紹介</h2>
     <p>
-    飲食業界で15年以上勤務し、最大200店舗規模のエリアを担当。<br>
-    約6000人以上のスタッフと関わってきました。<br><br>
-    多くの人と接する中で「お金の知識不足による不安」を強く感じ、金融教育の必要性を実感。<br><br>
-    現在は地域に根ざした金融サロンとして活動しています。
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner">
-    <h2>開催日程・料金</h2>
-    <p>
-    開催場所：小倉南生涯学習センター<br>
-    開催時間：9:00〜11:00（週1回）<br><br>
-    内容：講義60分＋座談会60分<br><br>
-    月会費：22,000円（税込）<br>
-    定員：20名<br><br>
-    ※まずは無料体験からご参加いただけます
+    飲食業15年、最大200店舗エリア担当。<br>
+    多くの人と関わる中で金融知識の重要性を実感し、このサロンを立ち上げました。
     </p>
   </div>
 </section>
@@ -218,21 +219,11 @@ slider.classList.add("moving");
 <section class="section">
   <div class="section-inner" style="text-align:center;">
     <h2>まずは無料体験へ</h2>
-    <p>
-    「体験」とLINEで送るだけでOKです。<br><br>
-    無理な勧誘は一切ありません。<br>
-    お気軽にご参加ください。
-    </p><br>
-
     <a href="https://lin.ee/yxZwj10" class="line-btn">
       LINEで無料体験する
     </a>
   </div>
 </section>
-
-<footer style="text-align:center; padding:30px; color:#fff; font-size:12px;">
-  © くらしとお金サロン 小倉南校
-</footer>
 
 </body>
 </html>
