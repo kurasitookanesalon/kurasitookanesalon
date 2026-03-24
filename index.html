@@ -31,14 +31,20 @@ text-align:center;
 h2{
 font-size:26px;
 font-weight:900;
+line-height:1.5;
+}
+
+/* 青背景統一 */
+.section-blue{
+background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
 }
 
 /* ロゴ */
 .brand{
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 gap:10px;
 margin-bottom:10px;
 }
@@ -51,23 +57,42 @@ margin-bottom:10px;
 display:block;
 width:90%;
 margin:20px auto;
-background:var(--line);
+background:#00c300;
 color:#fff;
 padding:18px;
 border-radius:50px;
 font-size:17px;
 font-weight:700;
-text-align:center;
 text-decoration:none;
+text-align:center;
 }
 
 /* トップ */
 .hero{
+display:flex;
+height:100vh;
+}
+
+.hero-left{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 background:linear-gradient(135deg,var(--main),var(--sub));
 color:#fff;
-padding:40px 20px;
+padding:20px;
 text-align:center;
 }
+
+.row{
+display:grid;
+grid-template-columns:1fr 60px 1fr;
+font-size:28px;
+margin:6px 0;
+}
+
+.full{grid-column:1/4;}
 
 .result{
 font-size:42px;
@@ -76,20 +101,32 @@ font-weight:900;
 margin-top:10px;
 }
 
-/* 青背景 */
-.section-blue{
-background:linear-gradient(135deg,#1E5BB8,#163E7A);
+/* スライド */
+.hero-right{
+flex:1;
+overflow:hidden;
+}
+
+.slider{
+display:flex;
+}
+
+.slide{
+width:100%;
+flex-shrink:0;
+object-fit:cover;
 }
 
 /* カード */
 .card{
 background:#fff;
+color:#222;
 padding:20px;
 border-radius:16px;
 margin-bottom:14px;
 }
 
-/* 金タイトル */
+/* 強調 */
 .gold{
 color:var(--gold);
 font-size:22px;
@@ -98,34 +135,15 @@ display:block;
 margin-bottom:6px;
 }
 
-/* 説明 */
 .sub{
 font-size:15px;
 color:#222;
 }
 
-/* 危機 */
 .big{
 font-size:36px;
 color:var(--gold);
 font-weight:900;
-}
-
-/* 料金 */
-.price-section{
-background:linear-gradient(135deg,#fff7e6,#fdf0c2);
-text-align:center;
-}
-
-.price{
-font-size:38px;
-color:var(--gold);
-font-weight:900;
-}
-
-.price span{
-font-size:16px;
-color:#333;
 }
 
 /* 地図 */
@@ -155,20 +173,49 @@ border-radius:50px;
 font-weight:900;
 text-decoration:none;
 }
+
+/* スマホ */
+@media(max-width:768px){
+.hero{
+flex-direction:column;
+height:auto;
+}
+.hero-right{
+height:250px;
+}
+}
 </style>
 </head>
 
 <body>
 
 <!-- トップ -->
-<section class="hero">
+<div class="hero">
+
+<div class="hero-left">
 
 <div class="brand">
 <img src="ロゴ浮き.png" class="logo">
 <div class="brand-name">くらしとお金サロン</div>
 </div>
 
-<p>増やす知識 × 守る知恵 + 地域の仲間</p>
+<div class="row">
+<div>増やす知識</div>
+<div>×</div>
+<div>守る知恵</div>
+</div>
+
+<div class="row">
+<div></div><div>＋</div><div></div>
+</div>
+
+<div class="row">
+<div class="full">地域の仲間</div>
+</div>
+
+<div class="row">
+<div></div><div>＝</div><div></div>
+</div>
 
 <div class="result">安心・安定のくらし</div>
 
@@ -178,7 +225,20 @@ text-decoration:none;
 
 <p style="font-size:12px;">※当サロンは販売や勧誘は一切行いません※</p>
 
-</section>
+</div>
+
+<!-- スライド -->
+<div class="hero-right">
+<div class="slider" id="slider">
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
+</div>
+</div>
+
+</div>
 
 <!-- 危機 -->
 <section class="section-blue">
@@ -208,7 +268,7 @@ text-decoration:none;
 
 <h2>このサロンでできること</h2>
 
-<p style="color:#fff;">
+<p>
 聞くだけのセミナーではありません。<br>
 地域に寄り添い、安心して相談できるコミュニティ型サロンです
 </p>
@@ -284,33 +344,12 @@ text-decoration:none;
 
 </section>
 
-<!-- 料金 -->
-<section class="price-section">
-
-<h2 style="color:#222;">料金について</h2>
-
-<div class="card">
-一般的な単発セミナーは<br>
-一回数万円のケースもあります
-</div>
-
-<div class="price">
-月額 22,000円<span>（税込）</span>
-</div>
-
-<p class="sub">
-地元コミュニティとしての活動も大切にしています<br>
-安心して続けられる、相談できるサロンです
-</p>
-
-</section>
-
 <!-- 場所 -->
 <section class="section-blue">
 
 <h2>開催場所</h2>
 
-<p style="color:#fff;">
+<p>
 小倉南生涯学習センター<br>
 公共施設で安心して参加できます
 </p>
@@ -327,6 +366,26 @@ src="https://maps.google.com/maps?q=小倉南生涯学習センター&t=&z=15&ie
 無料体験を公式LINEで受け取る
 </a>
 </div>
+
+<!-- スライドJS -->
+<script>
+const slider=document.getElementById("slider");
+let index=0;
+
+setInterval(()=>{
+index++;
+slider.style.transition="0.8s";
+slider.style.transform=`translateX(-${index*100}%)`;
+
+if(index===4){
+setTimeout(()=>{
+slider.style.transition="none";
+slider.style.transform="translateX(0)";
+index=0;
+},800);
+}
+},3000);
+</script>
 
 </body>
 </html>
