@@ -117,30 +117,42 @@ a.card{
   display:block;
 }
 
-/* 🔥 Notionボタン */
+/* 🔥 Notionボタン（最終版） */
 .notion-btn{
   display:block;
   width:90%;
   max-width:500px;
-  margin:18px auto;
-  padding:22px;
+  margin:20px auto;
+  padding:20px;
   border-radius:20px;
   text-align:center;
-  font-size:20px;
-  font-weight:bold;
-  line-height:1.6;
   text-decoration:none;
 
-  background:#D4AF37;
+  background:#ffffff;
   color:#1E5BB8;
+  border:2px solid #1E5BB8;
 
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  /* 強い影 */
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
 
-  transition:0.2s;
+  transition:0.15s;
 }
 
+.notion-btn strong{
+  display:block;
+  font-size:20px;
+  margin-bottom:6px;
+}
+
+.notion-btn span{
+  font-size:14px;
+  opacity:0.8;
+}
+
+/* 押した時 */
 .notion-btn:active{
-  transform:scale(0.96);
+  transform:translateY(4px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
 
 .floating-btn{
@@ -274,15 +286,18 @@ a.card{
   <h2>詳しく知りたい方はこちら</h2>
 
   <a href="https://noon-zircon-435.notion.site/321520320ef680baa5c6c9175f33bbbe?source=copy_link" target="_blank" class="notion-btn">
-    講師について（どんな人が教えるのか）
+    <strong>→ 講師プロフィールを見る</strong>
+    <span>どんな人が教えるのか</span>
   </a>
 
   <a href="https://noon-zircon-435.notion.site/31f520320ef6806090e9c2aa44a4a245?source=copy_link" target="_blank" class="notion-btn">
-    サロン内容（具体的に何をするのか）
+    <strong>→ サロン内容を詳しく見る</strong>
+    <span>具体的に何をするのか</span>
   </a>
 
   <a href="https://noon-zircon-435.notion.site/31f520320ef680f0a1f8d6cb3112a5ad?source=copy_link" target="_blank" class="notion-btn">
-    サロン理念（なぜこの活動をしているのか）
+    <strong>→ サロンの想いを見る</strong>
+    <span>なぜこの活動をしているのか</span>
   </a>
 </div>
 
