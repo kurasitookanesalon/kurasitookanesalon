@@ -81,7 +81,6 @@ body{
 
 .slide-track{
   display:flex;
-  animation:scroll 40s linear infinite;
 }
 
 .slide-track img{
@@ -90,11 +89,6 @@ body{
   max-height:400px;
   object-fit:cover;
   flex-shrink:0;
-}
-
-@keyframes scroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
 }
 
 /* ===== セクション ===== */
@@ -161,9 +155,9 @@ body{
     <strong>安心・安定のくらし</strong>
   </div>
 
-  <!-- 上CTA（軽い） -->
+  <!-- 上CTA -->
   <a href="https://lin.ee/yxZwj10" class="btn">
-    内容を確認してみる
+    まずは内容を見てみる
   </a>
 
   <div class="note">
@@ -174,16 +168,8 @@ body{
 
 <!-- ===== スライド ===== -->
 <div class="slider">
-  <div class="slide-track">
+  <div class="slide-track" id="slideTrack">
 
-    <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
-    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
-    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
-    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
-
-    <!-- ループ -->
     <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
     <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
     <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
@@ -201,20 +187,39 @@ body{
   <div class="card"><div class="gold">認知症診断者 毎日 約800人</div></div>
   <div class="card"><div class="gold">詐欺被害 毎日 約20〜30人</div></div>
   <div class="card"><div class="gold">相続トラブル 毎日 約30件</div></div>
-
 </div>
 
 <!-- ===== 最後 ===== -->
 <div class="section">
   <h2>今からの備えが<br>これからの安心につながります</h2>
-
   <img src="IMG_2124.png" style="width:200px;margin-top:20px;">
 </div>
 
-<!-- ===== 追尾CTA（強い） ===== -->
+<!-- ===== 追尾CTA ===== -->
 <a href="https://lin.ee/yxZwj10" class="floating-btn">
   無料体験・ご質問はこちらから
 </a>
+
+<script>
+const track = document.getElementById("slideTrack");
+
+// クローンして無限化
+track.innerHTML += track.innerHTML;
+
+let scrollX = 0;
+const speed = 0.5; // ←速さ（数字大きくすると速くなる）
+
+function slide(){
+  scrollX += speed;
+  if(scrollX >= track.scrollWidth / 2){
+    scrollX = 0;
+  }
+  track.style.transform = `translateX(-${scrollX}px)`;
+  requestAnimationFrame(slide);
+}
+
+slide();
+</script>
 
 </body>
 </html>
