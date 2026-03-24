@@ -32,8 +32,9 @@ width:auto;
 flex-shrink:0;
 }
 
+/* ★ここで速度完全管理（40秒） */
 .hero-slider.moving{
-animation:slideX linear infinite;
+animation:slideX 40s linear infinite;
 }
 
 .hero::after{
@@ -58,7 +59,7 @@ width:120px;
 margin-bottom:20px;
 }
 
-/* LINEボタン強化 */
+/* LINEボタン */
 .line-btn{
 background:#00c300;
 color:#fff;
@@ -135,7 +136,7 @@ padding:25px;
 
 </div>
 
-<!-- ================= JSスライド ================= -->
+<!-- ================= JS（距離だけ制御） ================= -->
 <script>
 const slider = document.getElementById("slider");
 slider.innerHTML += slider.innerHTML;
@@ -147,9 +148,6 @@ style.innerHTML = `
 @keyframes slideX {
 0% { transform: translateX(0); }
 100% { transform: translateX(-${totalWidth}px); }
-}
-#slider.moving {
-animation-duration: 40s;
 }
 `;
 document.head.appendChild(style);
