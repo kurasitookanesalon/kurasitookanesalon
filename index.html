@@ -26,7 +26,7 @@ body{
   align-items:center;
   justify-content:center;
   gap:10px;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 .hero-header img{
@@ -34,7 +34,7 @@ body{
 }
 
 .hero-title{
-  font-size:26px;
+  font-size:28px;
   font-weight:bold;
 }
 
@@ -45,7 +45,7 @@ body{
 
 .formula strong{
   display:block;
-  font-size:40px;
+  font-size:42px;
   color:#D4AF37;
   margin-top:15px;
 }
@@ -69,6 +69,7 @@ body{
 .note{
   font-size:12px;
   opacity:0.8;
+  text-align:center;
 }
 
 /* ===== スライド ===== */
@@ -80,13 +81,13 @@ body{
 
 .slide-track{
   display:flex;
-  width:1200%;
   animation:scroll 40s linear infinite;
 }
 
 .slide-track img{
   width:100vw;
-  height:260px;
+  height:50vw; /* ←ここ改善 */
+  max-height:400px;
   object-fit:cover;
   flex-shrink:0;
 }
@@ -123,9 +124,27 @@ body{
   font-weight:bold;
 }
 
-.sub{
-  font-size:16px;
-  margin-top:5px;
+/* ===== 講師 ===== */
+.profile{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.profile img{
+  width:120px;
+  border-radius:50%;
+  margin-bottom:15px;
+}
+
+.profile-name{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.profile-text{
+  font-size:14px;
+  opacity:0.9;
+  margin-top:10px;
 }
 
 /* ===== 追尾ボタン ===== */
@@ -152,7 +171,7 @@ body{
 
 <body>
 
-<!-- ===== トップCTA ===== -->
+<!-- ===== トップ ===== -->
 <div class="hero">
 
   <div class="hero-header">
@@ -167,10 +186,12 @@ body{
 
   <!-- 上CTA -->
   <a href="https://lin.ee/yxZwj10" class="btn">
-    まずは無料体験・ご相談はこちら
+    内容を見てから判断する
   </a>
 
-  <div class="note">※販売や勧誘は一切ありません※</div>
+  <div class="note">
+    無理な勧誘はありません。安心してご確認いただけます。
+  </div>
 
 </div>
 
@@ -200,45 +221,30 @@ body{
 <div class="section">
   <h2>知らないだけで<br>こんな現実が起きています</h2>
 
-  <div class="card">
-    <div class="gold">認知症診断者</div>
-    <div class="gold">毎日 約800人</div>
-  </div>
-
-  <div class="card">
-    <div class="gold">詐欺被害</div>
-    <div class="gold">毎日 約20〜30人</div>
-  </div>
-
-  <div class="card">
-    <div class="gold">相続トラブル</div>
-    <div class="gold">毎日 約30件</div>
-  </div>
-
-  <!-- 中CTA -->
-  <a href="https://lin.ee/yxZwj10" class="btn">
-    このままで大丈夫かな…と感じた方へ<br>
-    まずは無料体験・ご相談はこちら
-  </a>
-
+  <div class="card"><div class="gold">認知症診断者 毎日 約800人</div></div>
+  <div class="card"><div class="gold">詐欺被害 毎日 約20〜30人</div></div>
+  <div class="card"><div class="gold">相続トラブル 毎日 約30件</div></div>
 </div>
 
-<!-- ===== 最後CTA ===== -->
+<!-- ===== 講師 ===== -->
+<div class="profile">
+  <img src="IMG_3616.png">
+  <div class="profile-name">講師：平松広大</div>
+  <div class="profile-text">
+    飲食業15年／1000人以上の人材育成<br>
+    地域に根ざした「お金の学び」を提供
+  </div>
+</div>
+
+<!-- ===== 最後 ===== -->
 <div class="section">
   <h2>今からの備えが<br>これからの安心につながります</h2>
-
-  <a href="https://lin.ee/yxZwj10" class="btn">
-    まずは無料体験・ご相談はこちら
-  </a>
-
-  <p>内容を見てからご参加いただけますのでご安心ください</p>
-
   <img src="IMG_2124.png" style="width:200px;margin-top:20px;">
 </div>
 
-<!-- ===== 追尾ボタン ===== -->
+<!-- ===== 追尾CTA ===== -->
 <a href="https://lin.ee/yxZwj10" class="floating-btn">
-  まずは無料体験・ご相談はこちら
+  無料体験はこちら（相談OK）
 </a>
 
 </body>
