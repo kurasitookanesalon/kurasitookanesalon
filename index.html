@@ -180,7 +180,6 @@ body{
     <strong>安心・安定のくらし</strong>
   </div>
 
-  <!-- 上CTA -->
   <a href="https://lin.ee/yxZwj10" class="btn">
     まずは内容を見てみる
   </a>
@@ -212,10 +211,50 @@ body{
   <div class="card"><div class="gold">認知症診断者 毎日 約800人</div></div>
   <div class="card"><div class="gold">詐欺被害 毎日 約20〜30人</div></div>
   <div class="card"><div class="gold">相続トラブル 毎日 約30件</div></div>
-
 </div>
 
-<!-- ===== 最後 ===== -->
+<!-- ===== 共感 ===== -->
+<div class="section">
+  <h2>こんなお悩みありませんか？</h2>
+
+  <div class="card">何から始めたらいいか分からない</div>
+  <div class="card">NISAや株が気になるけど不安</div>
+  <div class="card">将来のお金、このままで大丈夫か心配</div>
+  <div class="card">相談できる人が周りにいない</div>
+</div>
+
+<!-- ===== 安心 ===== -->
+<div class="section">
+  <h2>このサロンでは</h2>
+
+  <div class="card">ゆっくり学べる少人数制</div>
+  <div class="card">何度でも質問OK</div>
+  <div class="card">同じ世代の仲間と一緒に学べる</div>
+  <div class="card">無理な勧誘・販売は一切ありません</div>
+</div>
+
+<!-- ===== 体験導線 ===== -->
+<div class="section">
+  <h2>まずは気軽にご参加ください</h2>
+
+  <div class="card">
+    初回は無料体験でご参加いただけます。<br><br>
+    実際の雰囲気を見てから<br>
+    ご自身でご判断ください。
+  </div>
+</div>
+
+<!-- ===== 最後の一押し ===== -->
+<div class="section">
+  <h2>一人で悩まず、<br>一歩踏み出してみませんか？</h2>
+
+  <div class="card">
+    小さな一歩が、<br>
+    将来の大きな安心につながります。
+  </div>
+</div>
+
+<!-- ===== QR ===== -->
 <div class="section">
   <h2>今からの備えが<br>これからの安心につながります</h2>
 
@@ -237,19 +276,23 @@ body{
 
 <script>
 const track = document.getElementById("slideTrack");
-track.innerHTML += track.innerHTML;
+const original = track.innerHTML;
+track.innerHTML += original;
 
 let scrollX = 0;
 const speed = 0.6;
 
 function slide(){
   scrollX += speed;
+
   if(scrollX >= track.scrollWidth / 2){
-    scrollX = 0;
+    scrollX -= track.scrollWidth / 2;
   }
+
   track.style.transform = `translateX(-${scrollX}px)`;
   requestAnimationFrame(slide);
 }
+
 slide();
 </script>
 
