@@ -64,10 +64,11 @@ border-radius:30px;
 text-decoration:none;
 }
 
-/* 🔽ここから追加（既存には一切触ってない） */
+/* 🔥ここだけ修正（綺麗版） */
 .section{
-background:url("9A1B20E6-2BD1-4E26-B63B-62227C4D4A25.jpeg") no-repeat center;
-background-size:cover;
+background:url("9A1B20E6-2BD1-4E26-B63B-62227C4D4A25.jpeg") center top;
+background-size:100% auto;
+background-repeat:repeat-y;
 padding:80px 20px;
 }
 
@@ -87,7 +88,6 @@ margin-bottom:20px;
 .section p{
 line-height:1.8;
 }
-/* 🔼ここまで追加 */
 </style>
 </head>
 
@@ -134,8 +134,6 @@ document.head.appendChild(style);
 slider.classList.add("moving");
 </script>
 
-<!-- 🔽ここから下に追加だけ -->
-
 <section class="section">
   <div class="section-inner">
     <h2>サロン内容</h2>
@@ -181,8 +179,6 @@ slider.classList.add("moving");
     </p>
   </div>
 </section>
-
-<!-- 🔼追加ここまで -->
 
 </body>
 </html>
