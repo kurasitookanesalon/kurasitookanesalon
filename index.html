@@ -22,20 +22,24 @@ body{
 }
 
 .hero-header{
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
   margin-bottom:20px;
 }
 
 .hero-header img{
   width:50px;
+  position:absolute;
+  left:10px;
 }
 
 .hero-title{
   font-size:28px;
   font-weight:bold;
+  text-align:center;
+  width:100%;
 }
 
 .formula{
@@ -115,13 +119,13 @@ body{
   line-height:1.6;
 }
 
-/* Notion */
+/* ★ここ修正 */
 .notion-btn{
   display:block;
   width:90%;
   max-width:500px;
   margin:22px auto;
-  padding:24px;
+  padding:26px;
   border-radius:20px;
   text-align:center;
   text-decoration:none;
@@ -129,17 +133,22 @@ body{
   color:#1E5BB8;
   border:3px solid #1E5BB8;
   box-shadow:0 6px 0 #163E7A,0 16px 30px rgba(0,0,0,0.45);
+
+  font-size:24px;
+  font-weight:bold;
+  line-height:1.4;
+
   opacity:0;
   transform:translateY(60px);
   transition:0.6s;
 }
+/* ★ここまで */
 
 .notion-btn.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* 🔥 追尾ボタン（モーション追加） */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -178,7 +187,6 @@ body{
 
 <body>
 
-<!-- ヒーロー -->
 <div class="hero">
   <div class="hero-header">
     <img src="ロゴ浮き.png">
@@ -203,7 +211,6 @@ body{
   </div>
 </div>
 
-<!-- スライダー -->
 <div class="slider">
   <div class="slide-track" id="slideTrack">
     <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
@@ -214,15 +221,17 @@ body{
   </div>
 </div>
 
-<!-- 不安 -->
 <div class="section">
-  <h2>知らないだけでこんな現実が起きています</h2>
+  <h2>
+    知らないだけで<br>
+    こんな現実が起きています
+  </h2>
+
   <div class="card">詐欺被害は毎日 約50件、約1.2億円</div>
   <div class="card">認知症診断は、毎日 約800人</div>
-  <div class="card">相続トラブルで裁判になるケースも、毎日 約30件</div>
+  <div class="card">相続トラブルで裁判 毎日 約30件</div>
 </div>
 
-<!-- 安心 -->
 <div class="section">
   <h2>ですが、ご安心ください</h2>
   <div class="card">将来起こりうる問題に備えることができます</div>
@@ -230,7 +239,6 @@ body{
   <div class="card">繰り返し学びながら理解を深めていきます</div>
 </div>
 
-<!-- 運営 -->
 <div class="section">
   <h2>運営について</h2>
   <div class="card">金融機関の営業ではありません</div>
@@ -238,7 +246,6 @@ body{
   <div class="card">投資の判断は必ずご自身でしていただきます</div>
 </div>
 
-<!-- 🔥 料金（修正） -->
 <div class="section">
   <h2>料金について</h2>
 
@@ -258,7 +265,6 @@ body{
   </div>
 </div>
 
-<!-- 得られる -->
 <div class="section">
   <h2>このサロンで得られること</h2>
   <div class="card">一人で悩まず、地域の仲間と一緒に学べる場所です</div>
@@ -267,16 +273,22 @@ body{
        style="width:90%;max-width:500px;border-radius:20px;margin:20px auto;display:block;">
 </div>
 
-<!-- Notion -->
 <div class="section">
   <h2>詳しく知りたい方はこちら</h2>
 
-  <a href="https://noon-zircon-435.notion.site/321520320ef680baa5c6c9175f33bbbe?source=copy_link" class="notion-btn">→プロフィールを見てみる</a>
-  <a href="https://noon-zircon-435.notion.site/31f520320ef6806090e9c2aa44a4a245?source=copy_link" class="notion-btn">→サロン内容を見てみる</a>
-  <a href="https://noon-zircon-435.notion.site/31f520320ef680f0a1f8d6cb3112a5ad?source=copy_link" class="notion-btn">→サロン理念を見てみる</a>
+  <a href="https://noon-zircon-435.notion.site/321520320ef680baa5c6c9175f33bbbe?source=copy_link" class="notion-btn">
+    →講師のプロフィールを見てみる
+  </a>
+
+  <a href="https://noon-zircon-435.notion.site/31f520320ef6806090e9c2aa44a4a245?source=copy_link" class="notion-btn">
+    →サロン内容を見てみる
+  </a>
+
+  <a href="https://noon-zircon-435.notion.site/31f520320ef680f0a1f8d6cb3112a5ad?source=copy_link" class="notion-btn">
+    →サロン理念を見てみる
+  </a>
 </div>
 
-<!-- 開催場所 -->
 <div class="section">
   <h2>開催場所</h2>
 
@@ -296,7 +308,6 @@ body{
   </div>
 </div>
 
-<!-- 参加 -->
 <div class="section">
   <h2>こちらからご参加いただけます</h2>
 
@@ -313,10 +324,9 @@ body{
   </div>
 </div>
 
-<!-- 追尾ボタン -->
 <a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;">
-  友だち追加・質問はこちら
+  友だち追加して無料体験・質問もこちら
 </a>
 
 <script>
