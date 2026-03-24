@@ -19,9 +19,11 @@ height:100vh;
 overflow:hidden;
 }
 
+/* 🔥ここ固定（触るな） */
 .hero-slider{
 display:flex;
 height:100%;
+animation:slideX 30s linear infinite; /* ←ここだけ調整 */
 }
 
 .hero-slider img{
@@ -30,8 +32,10 @@ width:auto;
 flex-shrink:0;
 }
 
-.hero-slider.moving{
-animation:slideX linear infinite;
+/* 🔥ループ安定 */
+@keyframes slideX{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 .hero::after{
@@ -65,7 +69,16 @@ text-decoration:none;
 
 <div class="hero">
 
-<div class="hero-slider" id="slider">
+<div class="hero-slider">
+<!-- 1セット -->
+<img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+<img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+<img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+<img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+<img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+<img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+
+<!-- 🔥完全コピー（これ重要） -->
 <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
@@ -82,28 +95,6 @@ text-decoration:none;
 </div>
 
 </div>
-
-<script>
-const slider = document.getElementById("slider");
-
-slider.innerHTML += slider.innerHTML;
-
-const totalWidth = slider.scrollWidth / 2;
-
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes slideX {
-0% { transform: translateX(0); }
-100% { transform: translateX(-${totalWidth}px); }
-}
-#slider.moving {
-animation-duration: 40s;
-}
-`;
-document.head.appendChild(style);
-
-slider.classList.add("moving");
-</script>
 
 </body>
 </html>
