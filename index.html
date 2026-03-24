@@ -4,25 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
-
 <title>くらしとお金サロン</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
---main:#1E5BB8;
---sub:#163E7A;
+--blue:#1E5BB8;
 --gold:#D4AF37;
 --line:#00c300;
 }
 
-/* 背景完全統一 */
 body{
 margin:0;
 font-family:'Noto Sans JP',sans-serif;
-background:#1E5BB8;
-padding-bottom:110px;
+background:var(--blue);
 color:#fff;
+padding-bottom:120px;
 }
 
 /* 共通 */
@@ -31,66 +29,89 @@ padding:50px 20px;
 text-align:center;
 }
 
-/* ロゴ */
-.brand{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-margin-bottom:10px;
+h2{
+font-size:28px;
+margin-bottom:20px;
 }
-.logo{width:45px;}
-.brand-name{font-size:22px;font-weight:900;}
+
+.card{
+background:#fff;
+color:#222;
+padding:20px;
+border-radius:16px;
+margin:12px auto;
+width:90%;
+}
+
+/* 金強調 */
+.gold{
+color:var(--gold);
+font-weight:900;
+font-size:26px;
+display:block;
+margin-bottom:6px;
+}
 
 /* CTA */
-.cta-btn{
+.cta{
 display:block;
 width:90%;
 margin:20px auto;
-background:#00c300;
+background:var(--line);
 color:#fff;
 padding:18px;
 border-radius:50px;
-font-size:17px;
-font-weight:700;
+font-weight:900;
+text-align:center;
 text-decoration:none;
+}
+
+/* 固定CTA */
+.floating{
+position:fixed;
+bottom:10px;
+left:10px;
+right:10px;
+z-index:999;
 }
 
 /* トップ */
 .hero{
-display:flex;
-height:100vh;
-}
-
-.hero-left{
-flex:1;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:20px;
+padding:30px 20px;
 text-align:center;
 }
 
-.row{
-display:grid;
-grid-template-columns:1fr 60px 1fr;
-font-size:28px;
-margin:6px 0;
+.brand{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
 }
 
-.full{grid-column:1/4;}
+.logo{
+width:45px;
+}
+
+.brand-name{
+font-size:22px;
+font-weight:900;
+}
+
+.main-copy{
+font-size:28px;
+margin:20px 0;
+line-height:1.6;
+}
 
 .result{
-font-size:42px;
+font-size:40px;
 color:var(--gold);
 font-weight:900;
-margin-top:10px;
+margin:10px 0;
 }
 
 /* スライド */
-.hero-right{
-flex:1;
+.slider-wrap{
 overflow:hidden;
 }
 
@@ -101,76 +122,14 @@ display:flex;
 .slide{
 width:100%;
 flex-shrink:0;
-object-fit:cover;
-}
-
-/* カード */
-.card{
-background:#fff;
-color:#222;
-padding:20px;
-border-radius:16px;
-margin-bottom:14px;
-}
-
-/* 強調 */
-.gold{
-color:var(--gold);
-font-size:22px;
-font-weight:900;
-display:block;
-margin-bottom:6px;
-}
-
-.sub{
-font-size:15px;
-color:#222;
-}
-
-.big{
-font-size:36px;
-color:var(--gold);
-font-weight:900;
 }
 
 /* 地図 */
 .map{
-width:100%;
+width:90%;
 height:250px;
 border-radius:12px;
-margin-top:15px;
-}
-
-/* CTA固定 */
-.floating{
-position:fixed;
-bottom:10px;
-left:10px;
-right:10px;
-z-index:999;
-}
-
-.floating a{
-display:block;
-background:#00c300;
-color:#fff;
-padding:18px;
-text-align:center;
-border-radius:50px;
-font-weight:900;
-font-size:18px;
-text-decoration:none;
-}
-
-/* スマホ */
-@media(max-width:768px){
-.hero{
-flex-direction:column;
-height:auto;
-}
-.hero-right{
-height:250px;
-}
+margin-top:20px;
 }
 </style>
 </head>
@@ -178,54 +137,44 @@ height:250px;
 <body>
 
 <!-- トップ -->
-<div class="hero">
-
-<div class="hero-left">
+<section class="hero">
 
 <div class="brand">
 <img src="ロゴ浮き.png" class="logo">
 <div class="brand-name">くらしとお金サロン</div>
 </div>
 
-<div class="row">
-<div>増やす知識</div>
-<div>×</div>
-<div>守る知恵</div>
+<div class="main-copy">
+増やす知識 × 守る知恵<br>
+＋<br>
+地域の仲間
 </div>
 
-<div class="row">
-<div></div><div>＋</div><div></div>
+<div class="result">
+安心・安定のくらし
 </div>
 
-<div class="row">
-<div class="full">地域の仲間</div>
-</div>
-
-<div class="row">
-<div></div><div>＝</div><div></div>
-</div>
-
-<div class="result">安心・安定のくらし</div>
-
-<a href="https://lin.ee/8mjr5Lan" class="cta-btn">
-無料体験・ご相談はこちら
+<a href="https://lin.ee/8mjr5Lan" class="cta">
+無料体験の内容を確認する
 </a>
 
-<p style="font-size:12px;">※当サロンは販売や勧誘は一切行いません※</p>
+<p style="font-size:12px;">
+※当サロンは販売や勧誘は一切行いません※
+</p>
 
-</div>
+</section>
 
 <!-- スライド -->
-<div class="hero-right">
+<div class="slider-wrap">
 <div class="slider" id="slider">
+
 <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" class="slide">
 <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" class="slide">
 <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" class="slide">
 <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" class="slide">
 <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png" class="slide">
-</div>
-</div>
 
+</div>
 </div>
 
 <!-- 危機 -->
@@ -235,18 +184,18 @@ height:250px;
 
 <div class="card">
 認知症診断者<br>
-<div class="big">毎日 約800人</div>
+<div class="gold">毎日 約800人</div>
 </div>
 
 <div class="card">
 詐欺被害<br>
-<div class="big">毎日 約20〜30人</div>
-<p class="sub">1日あたり約1億円以上</p>
+<div class="gold">毎日 約20〜30人</div>
+<p>1日あたり約1億円以上</p>
 </div>
 
 <div class="card">
 相続トラブルで裁判<br>
-<div class="big">毎日 約30件</div>
+<div class="gold">毎日 約30件</div>
 </div>
 
 </section>
@@ -258,54 +207,117 @@ height:250px;
 
 <p>
 聞くだけのセミナーではありません。<br>
-地域に寄り添い、安心して相談できるコミュニティ型サロンです
+地域に寄り添い、安心して続けられるコミュニティ型サロンです
 </p>
 
 <div class="card">
 <span class="gold">将来のお金の不安</span>
-<span class="sub">整理できます</span>
+整理できます
 </div>
 
 <div class="card">
 <span class="gold">知識を身につけて</span>
-<span class="sub">判断できるようになります</span>
+判断できるようになります
 </div>
 
 <div class="card">
 <span class="gold">一人で悩まず</span>
-<span class="sub">相談できます</span>
+安心して続けられます
 </div>
 
 </section>
 
-<!-- CTA強化 -->
+<!-- 学べる -->
+<section>
+
+<h2>このサロンで学べること</h2>
+
+<div class="card">
+<span class="gold">インデックス投資</span>
+無理なく増やす考え方
+</div>
+
+<div class="card">
+<span class="gold">老後資金</span>
+将来の考え方
+</div>
+
+<div class="card">
+<span class="gold">詐欺</span>
+見抜き方
+</div>
+
+<div class="card">
+<span class="gold">相続</span>
+基本知識
+</div>
+
+</section>
+
+<!-- 料金 -->
+<section>
+
+<h2>料金について</h2>
+
+<div class="card">
+一般的な単発セミナーは<br>
+一回数万円のケースもあります
+</div>
+
+<div class="gold" style="font-size:36px;">
+月額 22,000円（税込）
+</div>
+
+<p>
+当サロンは、地元コミュニティとしての活動も大切にしています<br>
+安心して続けられるサロンです
+</p>
+
+</section>
+
+<!-- 地図 -->
+<section>
+
+<h2>開催場所</h2>
+
+<p>小倉南生涯学習センター（公共施設）</p>
+
+<iframe class="map"
+src="https://maps.google.com/maps?q=小倉南生涯学習センター&output=embed">
+</iframe>
+
+</section>
+
+<!-- 固定CTA -->
 <div class="floating">
+
 <a href="https://lin.ee/8mjr5Lan">
-無料体験・ご相談はこちら
+無料体験の内容を確認する
 </a>
 
-<p style="color:#fff;font-size:13px;text-align:center;margin-top:8px;font-weight:700;">
-このままで大丈夫かな…と感じた方へ<br>
-今すぐ公式LINEからご相談ください
+<p style="text-align:center;font-size:13px;margin-top:6px;">
+まずは無料体験の内容をご確認ください<br>
+内容を見てからご参加いただけます
 </p>
+
 </div>
 
 <!-- スライドJS -->
 <script>
+let i=0;
 const slider=document.getElementById("slider");
-let index=0;
 
 setInterval(()=>{
-index++;
-slider.style.transition="0.8s";
-slider.style.transform=`translateX(-${index*100}%)`;
+i++;
+slider.style.transform="translateX(-"+i*100+"%)";
+slider.style.transition="0.6s";
 
-if(index===4){
+if(i>=4){
 setTimeout(()=>{
 slider.style.transition="none";
 slider.style.transform="translateX(0)";
-index=0;
-},800);
+i=0;
+},600);
 }
 },3000);
 </script>
