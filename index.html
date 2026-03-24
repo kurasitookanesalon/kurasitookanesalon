@@ -12,17 +12,14 @@
 :root{
 --main:#1E5BB8;
 --sub:#163E7A;
---accent:#D4AF37;
+--gold:#D4AF37;
 --line:#00c300;
---bg:#f5f7fb;
 }
 
 body{
 margin:0;
-font-family:'Noto Sans JP', sans-serif;
-background:#fff;
+font-family:'Noto Sans JP',sans-serif;
 color:#222;
-letter-spacing:0.5px;
 padding-bottom:90px;
 }
 
@@ -35,8 +32,8 @@ text-align:center;
 h2{
 font-size:26px;
 font-weight:900;
-line-height:1.4;
 margin-bottom:20px;
+line-height:1.4;
 }
 
 p{
@@ -48,7 +45,7 @@ line-height:1.7;
 .brand{
 position:relative;
 text-align:center;
-margin-bottom:15px;
+margin-bottom:10px;
 padding-left:60px;
 }
 
@@ -77,7 +74,6 @@ border-radius:50px;
 font-size:17px;
 font-weight:700;
 text-decoration:none;
-text-align:center;
 box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
 
@@ -99,7 +95,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#1E5BB8,#163E7A);
+background:linear-gradient(135deg,var(--main),var(--sub));
 color:#fff;
 padding:20px;
 }
@@ -116,8 +112,8 @@ grid-column:1/4;
 }
 
 .result{
-font-size:40px;
-color:#D4AF37;
+font-size:42px;
+color:var(--gold);
 font-weight:900;
 margin-top:10px;
 }
@@ -138,60 +134,58 @@ flex-shrink:0;
 object-fit:cover;
 }
 
-/* 危機 */
-.danger{
-background:linear-gradient(135deg,#163E7A,#0f2f6b);
-color:#fff;
-}
-
-.danger-card{
-background:#fff;
-color:#222;
-padding:18px;
-border-radius:16px;
-margin-bottom:12px;
-box-shadow:0 6px 18px rgba(0,0,0,0.2);
-}
-
-.big{
-font-size:28px;
-font-weight:900;
-color:#1E5BB8;
-}
-
-.money{
-font-size:14px;
-color:#666;
-}
-
-/* 共通カード */
-.card{
-background:#fff;
-padding:18px;
-border-radius:16px;
-margin-bottom:12px;
-box-shadow:0 6px 18px rgba(0,0,0,0.1);
-}
-
-/* セクション背景 */
-.light{
-background:#f5f7fb;
-}
-
-.price-section{
-background:linear-gradient(135deg,#fff7e6,#fdf0c2);
-}
-
-.final{
+/* 青セクション */
+.section-blue{
 background:linear-gradient(135deg,#1E5BB8,#163E7A);
 color:#fff;
 }
 
-/* 価格 */
-.price{
+/* 危機カード */
+.danger-card{
+background:#fff;
+color:#222;
+padding:20px;
+border-radius:16px;
+margin-bottom:12px;
+box-shadow:0 8px 24px rgba(0,0,0,0.2);
+}
+
+.big{
 font-size:36px;
-color:#D4AF37;
+color:var(--gold);
 font-weight:900;
+}
+
+/* カード */
+.card{
+background:#fff;
+color:#222;
+padding:20px;
+border-radius:16px;
+margin-bottom:12px;
+box-shadow:0 8px 24px rgba(0,0,0,0.15);
+font-size:16px;
+}
+
+.card strong{
+color:var(--gold);
+}
+
+/* 料金 */
+.price-section{
+background:linear-gradient(135deg,#fff7e6,#fdf0c2);
+}
+
+.price{
+font-size:38px;
+color:var(--gold);
+font-weight:900;
+}
+
+/* 最後 */
+.final{
+background:linear-gradient(135deg,#1E5BB8,#163E7A);
+color:#fff;
 }
 
 /* 追従CTA */
@@ -201,9 +195,6 @@ bottom:10px;
 left:10px;
 right:10px;
 z-index:999;
-opacity:0;
-transform:translateY(20px);
-transition:0.4s;
 }
 
 .floating-cta a{
@@ -285,25 +276,30 @@ height:250px;
 </div>
 
 <!-- 危機 -->
-<section class="danger">
+<section class="section-blue">
+
 <h2>知らないだけで<br>こんな現実が起きています</h2>
 
 <div class="danger-card">
-認知症<br><div class="big">毎日 約800人</div>
+認知症診断者<br>
+<div class="big">毎日 約800人</div>
 </div>
 
 <div class="danger-card">
-詐欺被害<br><div class="big">毎日 約20〜30人</div>
-<div class="money">1日あたり約1億円以上</div>
+詐欺被害<br>
+<div class="big">毎日 約20〜30人</div>
+<p>1日あたり約1億円以上</p>
 </div>
 
 <div class="danger-card">
-相続トラブル<br><div class="big">毎日 約30件</div>
+相続トラブルで裁判<br>
+<div class="big">毎日 約30件</div>
 </div>
+
 </section>
 
-<!-- 解決 -->
-<section class="light">
+<!-- できること -->
+<section class="section-blue">
 
 <h2>このサロンでできること</h2>
 
@@ -312,9 +308,25 @@ height:250px;
 地域に寄り添い、安心して相談できるコミュニティ型サロンです
 </p>
 
-<div class="card">将来のお金の不安を整理できます</div>
-<div class="card">知識を身につけて判断できるようになります</div>
-<div class="card">一人で悩まず相談できます</div>
+<div class="card">
+<strong>将来のお金の不安</strong><br>
+整理できます
+</div>
+
+<div class="card">
+<strong>知識を身につけて</strong><br>
+判断できるようになります
+</div>
+
+<div class="card">
+<strong>一人で悩まず</strong><br>
+相談できます
+</div>
+
+</section>
+
+<!-- 学べること -->
+<section class="section-blue">
 
 <h2>このサロンで学べること</h2>
 
@@ -323,12 +335,17 @@ height:250px;
 <div class="card">詐欺の見抜き方</div>
 <div class="card">相続の基本知識</div>
 
+</section>
+
+<!-- 相談 -->
+<section class="section-blue">
+
 <h2>このサロンで相談できること</h2>
 
 <div class="card">今の貯金で大丈夫か</div>
 <div class="card">投資を始めるべきか</div>
 <div class="card">家族に迷惑をかけない準備</div>
-<div class="card">相続の不安</div>
+<div class="card">相続の不安や悩み</div>
 
 </section>
 
@@ -342,7 +359,7 @@ height:250px;
 一回数万円のケースもあります
 </div>
 
-<div class="price">22,000円</div>
+<div class="price">月額 22,000円（税込）</div>
 
 <p>
 当サロンは、地元コミュニティとしての活動も大切にしています<br>
@@ -356,7 +373,7 @@ height:250px;
 <h2>今からの備えが<br>これからの安心につながります</h2>
 </section>
 
-<!-- 追従CTA -->
+<!-- CTA -->
 <div class="floating-cta">
 <a href="https://lin.ee/8mjr5Lan">
 無料体験を公式LINEで受け取る
@@ -380,18 +397,6 @@ index=0;
 },800);
 }
 },3000);
-
-const floating=document.querySelector(".floating-cta");
-
-window.addEventListener("scroll",()=>{
-if(window.scrollY>300){
-floating.style.opacity="1";
-floating.style.transform="translateY(0)";
-}else{
-floating.style.opacity="0";
-floating.style.transform="translateY(20px)";
-}
-});
 </script>
 
 </body>
