@@ -16,21 +16,25 @@ body{
   padding-bottom:120px;
 }
 
-.header{
+/* 🔥 ヒーロー */
+.hero{
   text-align:center;
-  padding:50px 20px 20px;
+  padding:60px 20px 40px;
 }
 
-.header h1{
-  font-size:28px;
+.hero h1{
+  font-size:30px;
+  line-height:1.5;
   font-weight:bold;
 }
 
+/* セクション */
 .section{
-  padding:40px 20px;
+  padding:60px 20px;
   text-align:center;
 }
 
+/* カード */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -42,6 +46,12 @@ body{
   font-size:18px;
   line-height:1.9;
   font-weight:500;
+}
+
+/* 強調 */
+.card-main{
+  font-size:20px;
+  font-weight:bold;
 }
 
 .highlight{
@@ -66,6 +76,7 @@ body{
   justify-content:center;
 }
 
+/* 🔥 追尾LINE */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -81,25 +92,37 @@ body{
   font-weight:bold;
   text-decoration:none;
   z-index:999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+
+  animation:floaty 2.5s ease-in-out infinite,
+             pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes floaty{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(-6px);}
+}
+
+@keyframes pulse{
+  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>サロン理念</h1>
+<!-- 🔥 ヒーロー -->
+<div class="hero">
+  <h1>
+    増やす知識と守る知恵で、<br>
+    人生に安心を。
+  </h1>
 </div>
 
 <div class="section">
 
-  <div class="card">
-    <span class="highlight">
-    増やす知識と守る知恵で、人生に安心を。
-    </span><br><br>
+  <!-- 強調 -->
+  <div class="card card-main">
     くらしとお金サロンは、<br>
     人生を安心を土台に前向きに生きていくためのコミュニティです。
   </div>
@@ -167,7 +190,6 @@ body{
   <h2>投資について</h2>
 
   <div class="card">
-    サロンでは投資についても学びます。<br><br>
     増やす力と守る知識。<br>
     その両方を身につけることが、<br>
     これからの安心につながります。
@@ -183,9 +205,8 @@ body{
 <div class="section">
   <h2>このサロンを作った理由</h2>
 
-  <div class="card">
-    このサロンを作ろうと思ったきっかけの一つに、<br>
-    父の孤独死があります。
+  <div class="card card-main">
+    父の孤独死がきっかけでした。
   </div>
 
   <div class="card">
@@ -217,7 +238,7 @@ body{
 <div class="section">
   <h2>最後に</h2>
 
-  <div class="card">
+  <div class="card card-main">
     一人や家族だけで抱え込まなくて大丈夫です。<br><br>
     小さな一歩が、これからの大きな安心につながります。
   </div>
