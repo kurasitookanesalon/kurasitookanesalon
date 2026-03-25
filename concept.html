@@ -16,7 +16,7 @@ body{
   padding-bottom:120px;
 }
 
-/* 🔥 ヒーロー */
+/* ヒーロー */
 .hero{
   text-align:center;
   padding:60px 20px 40px;
@@ -54,11 +54,13 @@ body{
   font-weight:bold;
 }
 
+/* 金字 */
 .highlight{
   color:#D4AF37;
   font-weight:bold;
 }
 
+/* ボタン */
 .btn{
   display:flex;
   width:90%;
@@ -76,7 +78,7 @@ body{
   justify-content:center;
 }
 
-/* 🔥 追尾LINE */
+/* 🔥 追尾LINE（トップ完全一致） */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -92,6 +94,10 @@ body{
   font-weight:bold;
   text-decoration:none;
   z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
 
   animation:floaty 2.5s ease-in-out infinite,
              pulse 2.5s ease-in-out infinite;
@@ -111,11 +117,11 @@ body{
 
 <body>
 
-<!-- 🔥 ヒーロー -->
+<!-- ヒーロー -->
 <div class="hero">
   <h1>
     増やす知識と守る知恵で、<br>
-    人生に安心を。
+    <span class="highlight">人生に安心を。</span>
   </h1>
 </div>
 
@@ -123,42 +129,41 @@ body{
 
   <!-- 強調 -->
   <div class="card card-main">
-    くらしとお金サロンは、<br>
-    人生を安心を土台に前向きに生きていくためのコミュニティです。
+    人生を安心を土台に、<br>
+    前向きに生きていくためのコミュニティです。
   </div>
 
   <div class="card">
     今の日本では、<br>
     孤独死やセルフネグレクトが<br>
-    決して珍しい話ではなくなっています。
+    珍しくない時代になっています。
   </div>
 
   <div class="card">
     「まだ大丈夫」<br>
     「自分は関係ない」<br><br>
     そう思っているうちに、<br>
-    一人や家族だけで抱え込んでしまうことも少なくありません。
+    一人で抱え込んでしまうことも少なくありません。
   </div>
 
   <div class="card">
     年齢を重ねるほど、<br>
-    暮らしやお金を考える時間は増えます。<br><br>
-    しかし同時に、<br>
-    相談できる相手は少なくなっていきます。
+    お金や暮らしの不安は増えていきます。<br><br>
+    しかし、相談できる相手は少なくなります。
   </div>
 
   <div class="card">
-    だからこそ地域の中に<br><br>
-    ・所属できる場所<br>
-    ・いつでも相談できる人<br>
-    ・同じ地域の仲間<br><br>
+    だからこそ<br><br>
+    <span class="highlight">所属できる場所</span><br>
+    <span class="highlight">いつでも相談できる人</span><br>
+    <span class="highlight">同じ地域の仲間</span><br><br>
     が必要だと考えています。
   </div>
 
   <div class="card">
     不安を放置するのではなく、<br>
     向き合い、整理し、備える。<br><br>
-    そのためのコミュニティが<br>
+    それを支える場所が<br>
     くらしとお金サロンです。
   </div>
 
@@ -178,26 +183,9 @@ body{
 
   <div class="card">
     住まいはこのままで大丈夫か。<br>
-    施設はどう選ぶのか。<br>
     家族に負担をかけていないか。<br><br>
-    将来や家族の問題も、<br>
+    将来の問題も、<br>
     一人で抱えるには大きすぎます。
-  </div>
-
-</div>
-
-<div class="section">
-  <h2>投資について</h2>
-
-  <div class="card">
-    増やす力と守る知識。<br>
-    その両方を身につけることが、<br>
-    これからの安心につながります。
-  </div>
-
-  <div class="card">
-    ※投資の最終判断は必ずご自身で行っていただきます。<br>
-    当サロンでは商品の販売や投資助言は行いません。
   </div>
 
 </div>
@@ -210,27 +198,23 @@ body{
   </div>
 
   <div class="card">
-    「まだ大丈夫」<br>
-    「自分は平気」<br><br>
-    そう言いながら、誰にも頼らず生活していました。
+    「まだ大丈夫」と言いながら、<br>
+    誰にも頼らず生活していました。
   </div>
 
   <div class="card">
-    しかしある日、父は一人で亡くなっていました。<br><br>
+    しかしある日、<br>
+    一人で亡くなっていました。
+  </div>
+
+  <div class="card">
     もっと早く相談できる場所があれば。<br>
     もっと早くつながれる場所があれば。
   </div>
 
   <div class="card">
-    お金も暮らしも、<br>
-    本来は一人で抱えるものではありません。
-  </div>
-
-  <div class="card">
-    地域の中に顔の見える関係があり、<br>
-    すぐに相談できる場所がある。<br><br>
-    そんな場所を作りたい。<br>
-    それがこのサロンです。
+    <span class="highlight">一人で抱えなくていい</span><br><br>
+    そう思える場所を作りたい。
   </div>
 
 </div>
@@ -239,8 +223,8 @@ body{
   <h2>最後に</h2>
 
   <div class="card card-main">
-    一人や家族だけで抱え込まなくて大丈夫です。<br><br>
-    小さな一歩が、これからの大きな安心につながります。
+    小さな一歩が、<br>
+    これからの大きな安心につながります。
   </div>
 
 </div>
@@ -251,9 +235,10 @@ body{
   </a>
 </div>
 
-<!-- 追尾LINE -->
-<a href="https://lin.ee/n37s4pB" class="floating-btn">
-  友だち追加して無料体験・質問はこちら
+<!-- 🔥 追尾LINE（トップ完全一致） -->
+<a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;">
+  友だち追加して無料体験・質問もこちら
 </a>
 
 </body>
