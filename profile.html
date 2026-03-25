@@ -90,7 +90,7 @@ body{
   justify-content:center;
 }
 
-/* 追尾LINE */
+/* 🔥 追尾LINE（トップ完全一致） */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -106,22 +106,15 @@ body{
   font-weight:bold;
   text-decoration:none;
   z-index:999;
-
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:8px;
 
   animation:floaty 2.5s ease-in-out infinite,
              pulse 2.5s ease-in-out infinite;
 }
 
-/* LINEアイコン白化 */
-.floating-btn img{
-  filter: brightness(0) invert(1);
-}
-
-/* アニメーション */
 @keyframes floaty{
   0%,100%{transform:translateX(-50%) translateY(0);}
   50%{transform:translateX(-50%) translateY(-6px);}
@@ -219,10 +212,10 @@ body{
   </a>
 </div>
 
-<!-- 追尾LINE -->
-<a href="https://lin.ee/n37s4pB" class="floating-btn">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg">
-  友だち追加して無料体験・質問はこちら
+<!-- 🔥 追尾LINE（トップ完全一致） -->
+<a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;">
+  友だち追加して無料体験・質問もこちら
 </a>
 
 </body>
