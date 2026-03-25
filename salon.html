@@ -16,21 +16,25 @@ body{
   padding-bottom:120px;
 }
 
-.header{
+/* 🔥 ヒーロー */
+.hero{
   text-align:center;
-  padding:50px 20px 20px;
+  padding:60px 20px 40px;
 }
 
-.header h1{
-  font-size:28px;
+.hero h1{
+  font-size:30px;
+  line-height:1.5;
   font-weight:bold;
 }
 
+/* セクション */
 .section{
-  padding:40px 20px;
+  padding:60px 20px;
   text-align:center;
 }
 
+/* カード */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -42,6 +46,12 @@ body{
   font-size:18px;
   line-height:1.9;
   font-weight:500;
+}
+
+/* 強調 */
+.card-main{
+  font-size:20px;
+  font-weight:bold;
 }
 
 .btn{
@@ -61,6 +71,7 @@ body{
   justify-content:center;
 }
 
+/* 🔥 追尾LINE */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -76,25 +87,45 @@ body{
   font-weight:bold;
   text-decoration:none;
   z-index:999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+
+  animation:floaty 2.5s ease-in-out infinite,
+             pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes floaty{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(-6px);}
+}
+
+@keyframes pulse{
+  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>サロン内容</h1>
+<!-- 🔥 ヒーロー -->
+<div class="hero">
+  <h1>
+    将来の不安を減らし、<br>
+    安心して暮らすために
+  </h1>
 </div>
 
 <div class="section">
 
+  <!-- 強調 -->
+  <div class="card card-main">
+    このサロンは、<br>
+    お金と暮らしの不安を減らすための場所です。
+  </div>
+
   <div class="card">
     将来のお金や生活に不安を感じていませんか。<br><br>
     日々の暮らしに関わる知識を整理しながら、<br>
-    これからの生活に向けた考え方を学んでいきます。
+    これからの生活に向けた考え方を学びます。
   </div>
 
   <div class="card">
@@ -130,6 +161,7 @@ body{
     基礎から順番に学び、<br>
     分からないことを共有しながら理解を深めます。
   </div>
+
 </div>
 
 <div class="section">
@@ -157,7 +189,7 @@ body{
 <div class="section">
   <h2>料金</h2>
 
-  <div class="card">
+  <div class="card card-main">
     月額 22,000円（税込）
   </div>
 </div>
