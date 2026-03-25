@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>講師プロフィール｜くらしとお金サロン</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -13,7 +13,7 @@ body{
   font-family:"Noto Sans JP",sans-serif;
   background:#1E5BB8;
   color:#fff;
-  padding-bottom:100px;
+  padding-bottom:120px;
 }
 
 .header{
@@ -22,7 +22,8 @@ body{
 }
 
 .header h1{
-  font-size:26px;
+  font-size:28px;
+  font-weight:bold;
 }
 
 .section{
@@ -34,12 +35,17 @@ body{
   background:#fff;
   color:#1E5BB8;
   border-radius:20px;
-  padding:20px;
+  padding:22px;
   margin:15px auto;
   width:90%;
   max-width:500px;
-  font-size:16px;
-  line-height:1.8;
+  font-size:18px;
+  line-height:1.9;
+  font-weight:500;
+}
+
+.left{
+  text-align:left;
 }
 
 .highlight{
@@ -48,13 +54,11 @@ body{
 }
 
 .profile-img{
-  width:180px;
-  height:180px;
-  object-fit:cover;
-  border-radius:50%;
+  width:220px;
+  height:auto;
   margin:0 auto 20px;
   display:block;
-  border:4px solid #D4AF37;
+  border-radius:12px;
 }
 
 .btn{
@@ -73,6 +77,26 @@ body{
   align-items:center;
   justify-content:center;
 }
+
+.floating-btn{
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:420px;
+  background:#00C300;
+  color:#fff;
+  padding:16px;
+  border-radius:50px;
+  font-size:17px;
+  font-weight:bold;
+  text-decoration:none;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 </style>
 </head>
 
@@ -84,10 +108,9 @@ body{
 
 <div class="section">
 
-  <!-- 🔥 写真 -->
+  <!-- 写真 -->
   <img src="IMG_3616.png" class="profile-img">
 
-  <!-- 名前 -->
   <div class="card">
     平松 広大（36歳）<br>
     くらしとお金サロン代表
@@ -95,53 +118,46 @@ body{
 
   <div class="card">
     福岡県北九州市小倉南区出身。<br>
-    小倉南区で生まれ育ち、社会に出てからも<br>
-   この地域で人と向き合い続けてきました。
+    地元で生まれ育ち、社会に出てからも人と向き合い続けてきました。
   </div>
 
   <div class="card">
-    これまで約15年間、飲食業界にて<br>
-    店長・エリア管理職・営業部長補佐・広報・商品開発・人事・マーケティングなど、<br>
-    幅広い業務を経験してきました。
+    約15年間、飲食業界にて<br>
+    店長・エリア管理職・営業部長補佐・広報・商品開発・人事・マーケティングなど幅広く経験。
   </div>
 
   <div class="card">
-    最大で<br>
-    <span class="highlight">約200店舗・年商約200億円・従業員約6,000名</span>の<br>
-    西日本エリアを担当。
+    <span class="highlight">約200店舗・年商約200億円・従業員約6,000名</span>のエリアを担当。
   </div>
 
   <div class="card">
-    他エリアや他社の方、お取引先様を含めると<br>
-    <span class="highlight">約10,000名以上</span>の方と関わってきました。
+    関わってきた人数は<br>
+    <span class="highlight">約10,000名以上</span>にのぼります。
   </div>
 
   <div class="card">
-    現場では常に<br>
     人と向き合い、数字と向き合い、<br>
-    課題を一つずつ解決してきました。
+    現場の課題を一つずつ解決してきました。
   </div>
 
   <div class="card">
-    その後、フランチャイズ制度で独立し<br>
-    社長として<span class="highlight">年商約4億円規模の複数店舗経営</span>を実践しました。
+    その後、独立し<br>
+    <span class="highlight">年商約4億円規模の店舗経営</span>を経験。
   </div>
 
   <div class="card">
     金融業界出身ではなく、<br>
-    <span class="highlight">自身で学び、実践してきた立場</span>です。
+    自身で学び、実践してきた立場です。
   </div>
 
   <div class="card">
-    だからこそ、<br>
-    皆様と同じように悩み、考えてきた経験があります。<br>
-    これも私の強みです。
+    同じように悩み、考えてきた経験があるからこそ、<br>
+    皆様に寄り添えると考えています。
   </div>
 
   <div class="card">
     現在はFP3級技能士として、<br>
-    株式投資や新規事業にも取り組みながら、<br>
-    地元で「くらしとお金サロン」を運営しています。
+    投資・事業を行いながらサロンを運営しています。
   </div>
 
   <div class="card">
@@ -149,16 +165,7 @@ body{
     <span class="highlight">人の不安や想いに寄り添うこと</span>を大切にしています。
   </div>
 
-  <div class="card">
-    現在は、詐欺対策や金融リテラシー向上をテーマに<br>
-    地域の皆様と関わっています。
-  </div>
-
-  <div class="card">
-    ※当サロンでは金融商品の販売や勧誘は一切行っておりません。
-  </div>
-
-  <div class="card">
+  <div class="card left">
     【バックアップ体制】<br><br>
     ・税理士法人松本会計<br>
     ・日本FP協会<br>
@@ -168,21 +175,15 @@ body{
 </div>
 
 <div class="section">
-  <h2>まずは無料体験から</h2>
-
-  <div class="card">
-    無理な勧誘は一切ありません。<br>
-    安心してご参加ください。
-  </div>
-
-  <a href="https://lin.ee/n37s4pB" class="btn">
-    無料体験はこちら
-  </a>
-
   <a href="index.html" class="btn" style="background:#555;">
     トップページへ戻る
   </a>
 </div>
+
+<!-- 追尾LINE -->
+<a href="https://lin.ee/n37s4pB" class="floating-btn">
+  友だち追加して無料体験・質問はこちら
+</a>
 
 </body>
 </html>
