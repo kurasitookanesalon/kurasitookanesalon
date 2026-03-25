@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>サロン内容｜くらしとお金サロン</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -13,7 +13,7 @@ body{
   font-family:"Noto Sans JP",sans-serif;
   background:#1E5BB8;
   color:#fff;
-  padding-bottom:100px;
+  padding-bottom:120px;
 }
 
 .header{
@@ -22,7 +22,8 @@ body{
 }
 
 .header h1{
-  font-size:26px;
+  font-size:28px;
+  font-weight:bold;
 }
 
 .section{
@@ -34,17 +35,13 @@ body{
   background:#fff;
   color:#1E5BB8;
   border-radius:20px;
-  padding:20px;
+  padding:22px;
   margin:15px auto;
   width:90%;
   max-width:500px;
-  font-size:16px;
-  line-height:1.8;
-}
-
-.highlight{
-  color:#D4AF37;
-  font-weight:bold;
+  font-size:18px;
+  line-height:1.9;
+  font-weight:500;
 }
 
 .btn{
@@ -63,6 +60,26 @@ body{
   align-items:center;
   justify-content:center;
 }
+
+.floating-btn{
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:420px;
+  background:#00C300;
+  color:#fff;
+  padding:16px;
+  border-radius:50px;
+  font-size:17px;
+  font-weight:bold;
+  text-decoration:none;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 </style>
 </head>
 
@@ -76,24 +93,22 @@ body{
 
   <div class="card">
     将来のお金や生活に不安を感じていませんか。<br><br>
-    このサロンでは、日々の暮らしに関わる知識を<br>
-    分かりやすく整理しながら、<br>
+    日々の暮らしに関わる知識を整理しながら、<br>
     これからの生活に向けた考え方を学んでいきます。
   </div>
 
   <div class="card">
     難しい言葉を使わず、ゆっくり丁寧に理解することで、<br>
-    不安を減らし、安心して考えられる力を身につけていきます。
+    不安を減らし、安心して考えられる力を身につけます。
   </div>
 
   <div class="card">
     一人で抱え込まず、<br>
-    同じ地域の方と顔を合わせて話せる場として、<br>
-    少人数で落ち着いて学べる環境を大切にしています。
+    同じ地域の方と話せる環境を大切にしています。
   </div>
 
   <div class="card">
-    ※金融商品やサービスの販売・勧誘は一切行っておりません
+    ※金融商品の販売・勧誘は一切行っておりません
   </div>
 
 </div>
@@ -112,8 +127,8 @@ body{
   </div>
 
   <div class="card">
-    基礎から順番に学びながら、<br>
-    分からないことを共有し、理解を深めていきます。
+    基礎から順番に学び、<br>
+    分からないことを共有しながら理解を深めます。
   </div>
 </div>
 
@@ -123,8 +138,8 @@ body{
   <div class="card">
     ・生活に関わる基礎知識<br>
     ・家計の考え方<br>
-    ・将来に向けた備え<br>
-    ・詐欺やトラブルの対策<br>
+    ・将来への備え<br>
+    ・詐欺対策<br>
     ・安心して暮らすための知識
   </div>
 </div>
@@ -133,7 +148,7 @@ body{
   <h2>特徴</h2>
 
   <div class="card">
-    ・少人数制（定員あり）<br>
+    ・少人数制<br>
     ・地域コミュニティ<br>
     ・安心して話せる環境
   </div>
@@ -148,21 +163,15 @@ body{
 </div>
 
 <div class="section">
-  <h2>まずは無料体験から</h2>
-
-  <div class="card">
-    無理な勧誘は一切ありません。<br>
-    安心してご参加ください。
-  </div>
-
-  <a href="https://lin.ee/n37s4pB" class="btn">
-    無料体験はこちら
-  </a>
-
   <a href="index.html" class="btn" style="background:#555;">
     トップページへ戻る
   </a>
 </div>
+
+<!-- 追尾LINE -->
+<a href="https://lin.ee/n37s4pB" class="floating-btn">
+  友だち追加して無料体験・質問はこちら
+</a>
 
 </body>
 </html>
