@@ -16,7 +16,7 @@ body{
   padding-bottom:120px;
 }
 
-/* 🔥 ヒーロー */
+/* ヒーロー */
 .hero{
   text-align:center;
   padding:60px 20px 40px;
@@ -48,12 +48,19 @@ body{
   font-weight:500;
 }
 
-/* 強調 */
+/* 強調カード */
 .card-main{
   font-size:20px;
   font-weight:bold;
 }
 
+/* 金字 */
+.highlight{
+  color:#D4AF37;
+  font-weight:bold;
+}
+
+/* ボタン */
 .btn{
   display:flex;
   width:90%;
@@ -71,7 +78,7 @@ body{
   justify-content:center;
 }
 
-/* 🔥 追尾LINE */
+/* 追尾LINE */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -88,10 +95,21 @@ body{
   text-decoration:none;
   z-index:999;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
   animation:floaty 2.5s ease-in-out infinite,
              pulse 2.5s ease-in-out infinite;
 }
 
+/* LINEアイコン白化 */
+.floating-btn img{
+  filter: brightness(0) invert(1);
+}
+
+/* アニメーション */
 @keyframes floaty{
   0%,100%{transform:translateX(-50%) translateY(0);}
   50%{transform:translateX(-50%) translateY(-6px);}
@@ -106,11 +124,11 @@ body{
 
 <body>
 
-<!-- 🔥 ヒーロー -->
+<!-- ヒーロー -->
 <div class="hero">
   <h1>
     将来の不安を減らし、<br>
-    安心して暮らすために
+    <span class="highlight">安心して暮らすために</span>
   </h1>
 </div>
 
@@ -118,8 +136,7 @@ body{
 
   <!-- 強調 -->
   <div class="card card-main">
-    このサロンは、<br>
-    お金と暮らしの不安を減らすための場所です。
+    <span class="highlight">お金と暮らしの不安を減らすための場所</span>です。
   </div>
 
   <div class="card">
@@ -134,8 +151,7 @@ body{
   </div>
 
   <div class="card">
-    一人で抱え込まず、<br>
-    同じ地域の方と話せる環境を大切にしています。
+    <span class="highlight">少人数で安心して話せる環境</span>を大切にしています。
   </div>
 
   <div class="card">
@@ -202,6 +218,7 @@ body{
 
 <!-- 追尾LINE -->
 <a href="https://lin.ee/n37s4pB" class="floating-btn">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg">
   友だち追加して無料体験・質問はこちら
 </a>
 
