@@ -16,7 +16,7 @@ body{
   padding-bottom:120px;
 }
 
-/* 🔥 ヒーロー */
+/* ヒーロー */
 .hero{
   text-align:center;
   padding:60px 20px 40px;
@@ -48,7 +48,7 @@ body{
   font-weight:500;
 }
 
-/* 強調カード */
+/* 強調 */
 .card-main{
   font-size:20px;
   font-weight:bold;
@@ -90,7 +90,7 @@ body{
   justify-content:center;
 }
 
-/* 🔥 追尾LINE */
+/* 追尾LINE */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -107,8 +107,18 @@ body{
   text-decoration:none;
   z-index:999;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
   animation:floaty 2.5s ease-in-out infinite,
              pulse 2.5s ease-in-out infinite;
+}
+
+/* LINEアイコン白化 */
+.floating-btn img{
+  filter: brightness(0) invert(1);
 }
 
 /* アニメーション */
@@ -126,11 +136,11 @@ body{
 
 <body>
 
-<!-- 🔥 ヒーロー -->
+<!-- ヒーロー -->
 <div class="hero">
   <h1>
     地域に寄り添い、<br>
-    お金と暮らしの不安を減らすために
+    <span class="highlight">お金と暮らしの不安を減らすために</span>
   </h1>
 </div>
 
@@ -139,7 +149,7 @@ body{
   <!-- 写真 -->
   <img src="IMG_3616.png" class="profile-img">
 
-  <!-- 強調 -->
+  <!-- 名前 -->
   <div class="card card-main">
     平松 広大（36歳）<br>
     くらしとお金サロン代表
@@ -176,7 +186,7 @@ body{
 
   <div class="card">
     金融業界出身ではなく、<br>
-    自身で学び、実践してきた立場です。
+    <span class="highlight">自身で学び、実践してきた立場</span>です。
   </div>
 
   <div class="card">
@@ -211,6 +221,7 @@ body{
 
 <!-- 追尾LINE -->
 <a href="https://lin.ee/n37s4pB" class="floating-btn">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg">
   友だち追加して無料体験・質問はこちら
 </a>
 
