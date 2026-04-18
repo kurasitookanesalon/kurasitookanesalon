@@ -3,67 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>サロン内容｜くらしとお金サロン</title>
+    <title>サロンの内容 | くらしとお金サロン</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #D4AF37; }
+        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-white: #FFFFFF; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body {
-            margin: 0; padding: 0;
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: var(--main-blue);
-            color: #fff;
-            line-height: 1.8;
-            overflow-x: hidden;
-            padding-bottom: 0; /* 修正：外側の余白をゼロに */
-        }
-        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.8; overflow-x: hidden; }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .hero { padding: 80px 24px 40px; text-align: center; background: #fff; color: var(--sub-blue); border-radius: 0 0 40px 40px; }
-        .top-logo { width: 80px; height: auto; margin-bottom: 20px; }
-        .hero h1 { font-family: 'Noto Serif JP', serif; font-size: 26px; line-height: 1.5; margin: 0; }
-        .highlight { color: var(--gold); font-weight: 900; }
-        .section { padding: 40px 20px 0; max-width: 600px; margin: 0 auto; }
-        .section h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; text-align: center; margin-bottom: 25px; color: var(--gold); display: flex; align-items: center; justify-content: center; }
-        .section h2::before, .section h2::after { content: ""; width: 20px; height: 1px; background: var(--gold); margin: 0 15px; }
-        .card { background: #fff; color: var(--sub-blue); border-radius: 20px; padding: 24px; margin-bottom: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); position: relative; overflow: hidden; }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--gold); }
-        .card-center { text-align: center; }
-        .card-main { font-size: 19px; font-weight: 700; color: var(--main-blue); line-height: 1.5; }
-        .card-text { font-size: 16px; text-align: left; }
-        .price-text { font-size: 32px; font-weight: 900; color: var(--sub-blue); }
-        .price-sub { font-size: 14px; font-weight: 700; color: #666; margin-top: 5px; }
-        .btn-back { display: flex; width: 90%; max-width: 300px; margin: 40px auto 20px; background: rgba(255,255,255,0.1); color: #fff; padding: 16px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.4); text-decoration: none; align-items: center; justify-content: center; font-weight: bold; }
-        .btn-line { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 360px; height: 68px; background: #06C755; color: #fff; border-radius: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700; font-size: 18px; z-index: 5000; box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
-        footer { 
-            text-align: center; 
-            padding: 40px 20px 110px; /* 修正：ボタンと被らないための「壁」 */
-            color: rgba(255,255,255,0.6); 
-            font-size: 12px; 
-            position: relative;
-        }
+
+        header { padding: 30px 0 10px; text-align: center; }
+        .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
+
+        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 120px; }
+
+        /* 統一見出しスタイル */
+        .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
+        .page-sub { font-size: 17px; font-weight: 700; color: var(--gold); text-align: center; margin-bottom: 50px; display: block; }
+
+        .text-p { font-size: 16px; font-weight: 500; margin-bottom: 25px; color: #444; }
+        .bold-blue { color: var(--sub-blue); font-weight: 900; }
+
+        /* 内容エリアのデザインボックス */
+        .content-box { border-radius: 12px; padding: 25px; margin: 30px 0; }
+        .content-box.blue-border { border: 2.5px solid var(--main-blue); background: #f0f5ff; }
+        .content-box.gold-border { border: 2.5px solid var(--gold); background: #fffdf5; }
+
+        .box-title { font-size: 19px; font-weight: 900; color: var(--sub-blue); margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; }
+        .box-title i { margin-right: 10px; color: var(--gold); }
+
+        /* 箇条書きスタイル */
+        .point-list { list-style: none; padding: 0; margin: 0; }
+        .point-list li { position: relative; padding-left: 25px; margin-bottom: 10px; font-size: 16px; font-weight: 700; }
+        .point-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--red); }
+
+        /* 料金エリア */
+        .price-card { border: 3px solid var(--sub-blue); background: #fff; border-radius: 12px; padding: 30px; text-align: center; margin: 50px 0; }
+        .price-card h3 { color: var(--sub-blue); margin-top: 0; font-size: 18px; }
+        .price-val { font-size: 32px; font-weight: 900; color: var(--sub-blue); }
+
+        .note-p { font-size: 14px; color: #666; margin-top: 20px; text-align: center; }
+
+        .btn-back { display: block; width: 100%; max-width: 300px; margin: 60px auto 0; padding: 18px; border: 2px solid var(--sub-blue); color: var(--sub-blue); border-radius: 12px; text-align: center; text-decoration: none; font-weight: 900; }
+
+        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 12px; }
     </style>
 </head>
 <body>
-    <div class="hero"><img src="ロゴ浮き.png" alt="logo" class="top-logo"><h1>将来の不安を減らし、<br><span class="highlight">安心して暮らすために</span></h1></div>
-    <div class="section reveal">
-        <div class="card card-center card-main">お金と暮らしの不安を減らすための場所です</div>
-        <div class="card card-text">将来のお金や生活に、不安を感じていませんか。</div>
-        <div class="card card-text">日々の暮らしに関わる知識を整理しながら、これからの生活に向けた考え方を学びます。</div>
-        <div class="card card-text">難しい言葉を使わず、ゆっくり丁寧に理解することで、安心して考えられる力を身につけます。</div>
-        <div class="card card-center card-main">少人数で安心して話せる環境です</div>
-        <div class="card card-center" style="font-size: 14px; color: #888; padding: 15px; background: #f9f9f9; border-radius: 10px;">※金融商品の販売・勧誘は一切行っておりません</div>
+
+    <header><img src="ロゴ浮き.png" class="top-logo"></header>
+
+    <div class="container">
+        
+        <h1 class="reveal page-title">サロンの内容</h1>
+        <span class="reveal page-sub">焦らず、ゆっくり。日々の暮らしに安心の知恵を。</span>
+
+        <section class="reveal">
+            <p class="text-p">将来のお金や生活に、漠然とした不安を感じていませんか？</p>
+            <p class="text-p">「くらしとお金サロン」では、日々の暮らしに関わる基礎知識を分かりやすく整理しながら、これからの生活に向けた考え方を学んでいきます。</p>
+            <p class="text-p">難しい専門用語は使いません。<span class="bold-blue">ゆっくり、丁寧に理解していくこと</span>で、不安を減らし、自分自身で安心して将来を考えられる力を身につけていきます。</p>
+            <p class="text-p">一人で抱え込まず、同じ地域の方と顔を合わせて話せる場として、<span class="bold-blue">少人数で落ち着いて学べる環境</span>を大切にしています。</p>
+        </section>
+
+        <section class="reveal content-box blue-border">
+            <h2 class="box-title"><i class="fa-solid fa-calendar-days"></i> 開催概要</h2>
+            <p class="text-p" style="margin-bottom: 10px;"><b>● 開催リズム</b><br>週1回（120分）× 月4回</p>
+            <p class="text-p" style="margin-bottom: 10px;"><b>● タイムスケジュール</b><br>前半：講義（60分）＋ 後半：座談会（60分）</p>
+            <p class="text-p" style="margin-bottom: 0;"><b>● 開催場所</b><br>守恒みらいホール<br><span style="font-size:0.9em; color:#666;">（北九州市小倉南区守恒本町2丁目2-11）</span></p>
+        </section>
+
+        <section class="reveal content-box gold-border">
+            <h2 class="box-title"><i class="fa-solid fa-book-open-reader"></i> サロンで学べる「安心の知恵」</h2>
+            <p class="text-p">基礎から順番に学びながら、分からないことをその場で共有し、理解を深めていきます。</p>
+            <ul class="point-list">
+                <li>生活に関わるお金の基礎知識</li>
+                <li>流行りに流されない「家計の考え方」</li>
+                <li>老後、介護など「将来に向けた備え」</li>
+                <li>増え続ける「詐欺やトラブル」の対策</li>
+                <li>自分と家族が「安心して暮らすための知識」</li>
+            </ul>
+        </section>
+
+        <section class="reveal">
+            <h2 class="box-title" style="margin-top:50px;"><i class="fa-solid fa-star"></i> サロンの3つの特徴</h2>
+            <p class="text-p"><b>1. 完全少人数制（定員あり）</b><br>顧問FPがメンバー様一人ひとりに寄り添い、併走します。</p>
+            <p class="text-p"><b>2. 地域コミュニティ</b><br>北九州市小倉南区に根差した、顔の見える関係を作ります。</p>
+            <p class="text-p" style="margin-bottom:0;"><b>3. 安心して話せる環境</b><br>困った時にすぐ聞けるプロと、共に学ぶ温かい仲間がいます。</p>
+        </section>
+
+        <section class="reveal price-card">
+            <h3>サロン会費</h3>
+            <span class="price-val">月額 22,000円</span><span style="font-size:16px; font-weight:700;">（税込）</span>
+        </section>
+
+        <section class="reveal note-p">
+            ※当サロンは純粋な学びと交流の場です。<br>
+            <span style="color:var(--red); font-weight:900;">金融商品やサービスの販売・勧誘は一切行っておりません。</span><br>
+            安心してご参加ください。
+        </section>
+
+        <div class="reveal">
+            <a href="index.html" class="btn-back">トップページへ戻る</a>
+        </div>
+
     </div>
-    <div class="section reveal"><h2>開催内容</h2><div class="card card-center card-main">週1回（120分）開催</div><div class="card card-text">守恒みらいホールで開催しています。</div><div class="card card-text">前半は講義（60分）、後半は座談会（60分）です。</div><div class="card card-text">基礎から順番に学び、分からないことを共有しながら理解を深めます。</div></div>
-    <div class="section reveal"><h2>学べる内容</h2><div class="card card-center card-main">生活・家計・将来・詐欺対策など</div><div class="card card-text">身近な家計の管理から、将来の資産凍結対策、巧妙化する詐欺への防衛策まで、幅広く学べます。</div></div>
-    <div class="section reveal"><h2>特徴</h2><div class="card card-center card-main">少人数制</div><div class="card card-center card-main">地域コミュニティ</div><div class="card card-center card-main">安心して話せる環境</div></div>
-    <div class="section reveal"><h2>料金</h2><div class="card card-center"><div class="price-sub">月額（税込）</div><div class="price-text">22,000円</div><div style="font-size: 13px; color: #999; margin-top: 10px;">※入会金・教材費等は別途お問い合わせください</div></div></div>
-    <div class="section reveal"><a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> トップページへ戻る</a></div>
-    <footer>© くらしとお金サロン All Rights Reserved.</footer>
-    <a href="https://lin.ee/n37s4pB" class="btn-line" target="_blank"><i class="fa-brands fa-line" style="font-size:28px; margin-right:10px;"></i> 無料体験・質問はこちら</a>
+
+    <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
+
     <script>
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
