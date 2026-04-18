@@ -17,7 +17,7 @@
         header { padding: 30px 0 10px; text-align: center; }
         .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
 
-        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 120px; }
+        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 150px; } /* LINEボタン用に余白確保 */
 
         /* 統一見出しスタイル */
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
@@ -48,7 +48,33 @@
 
         .btn-back { display: block; width: 100%; max-width: 300px; margin: 60px auto 0; padding: 18px; border: 2px solid var(--sub-blue); color: var(--sub-blue); border-radius: 12px; text-align: center; text-decoration: none; font-weight: 900; }
 
-        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 12px; }
+        /* 追跡型LINEボタン */
+        .line-float-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background-color: #06C755;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .line-float-btn i { font-size: 24px; margin-right: 10px; }
+        .line-float-btn:active { transform: translateX(-50%) scale(0.95); }
+
+        footer { text-align: center; padding: 40px 20px 100px; color: #999; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -61,10 +87,8 @@
         <span class="reveal page-sub">焦らず、ゆっくり。日々の暮らしに安心の知恵を。</span>
 
         <section class="reveal">
-            <p class="text-p">将来のお金や生活に、漠然とした不安を感じていませんか？</p>
-            <p class="text-p">「くらしとお金サロン」では、日々の暮らしに関わる基礎知識を分かりやすく整理しながら、これからの生活に向けた考え方を学んでいきます。</p>
-            <p class="text-p">難しい専門用語は使いません。<span class="bold-blue">ゆっくり、丁寧に理解していくこと</span>で、不安を減らし、自分自身で安心して将来を考えられる力を身につけていきます。</p>
-            <p class="text-p">一人で抱え込まず、同じ地域の方と顔を合わせて話せる場として、<span class="bold-blue">少人数で落ち着いて学べる環境</span>を大切にしています。</p>
+            <p class="text-p">「くらしとお金サロン」では、日々の暮らしに関わる基礎知識を整理しながら、これからの生活に向けた考え方を学んでいきます。</p>
+            <p class="text-p">難しい専門用語は使いません。<span class="bold-blue">ゆっくり、丁寧に理解していくこと</span>で、不安を減らし、自分自身で将来を考えられる力を身につけていきます。</p>
         </section>
 
         <section class="reveal content-box blue-border">
@@ -75,8 +99,7 @@
         </section>
 
         <section class="reveal content-box gold-border">
-            <h2 class="box-title"><i class="fa-solid fa-book-open-reader"></i> サロンで学べる「安心の知恵」</h2>
-            <p class="text-p">基礎から順番に学びながら、分からないことをその場で共有し、理解を深めていきます。</p>
+            <h2 class="box-title"><i class="fa-solid fa-book-open-reader"></i> サロンで学べること</h2>
             <ul class="point-list">
                 <li>生活に関わるお金の基礎知識</li>
                 <li>流行りに流されない「家計の考え方」</li>
@@ -86,13 +109,6 @@
             </ul>
         </section>
 
-        <section class="reveal">
-            <h2 class="box-title" style="margin-top:50px;"><i class="fa-solid fa-star"></i> サロンの3つの特徴</h2>
-            <p class="text-p"><b>1. 完全少人数制（定員あり）</b><br>顧問FPがメンバー様一人ひとりに寄り添い、併走します。</p>
-            <p class="text-p"><b>2. 地域コミュニティ</b><br>北九州市小倉南区に根差した、顔の見える関係を作ります。</p>
-            <p class="text-p" style="margin-bottom:0;"><b>3. 安心して話せる環境</b><br>困った時にすぐ聞けるプロと、共に学ぶ温かい仲間がいます。</p>
-        </section>
-
         <section class="reveal price-card">
             <h3>サロン会費</h3>
             <span class="price-val">月額 22,000円</span><span style="font-size:16px; font-weight:700;">（税込）</span>
@@ -100,8 +116,7 @@
 
         <section class="reveal note-p">
             ※当サロンは純粋な学びと交流の場です。<br>
-            <span style="color:var(--red); font-weight:900;">金融商品やサービスの販売・勧誘は一切行っておりません。</span><br>
-            安心してご参加ください。
+            <span style="color:var(--red); font-weight:900;">金融商品やサービスの販売・勧誘は一切行っておりません。</span>
         </section>
 
         <div class="reveal">
@@ -109,6 +124,11 @@
         </div>
 
     </div>
+
+    <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
+        <i class="fa-brands fa-line"></i>
+        <span>LINEで無料相談・入会申込</span>
+    </a>
 
     <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
 
