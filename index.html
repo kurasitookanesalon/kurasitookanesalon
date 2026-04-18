@@ -4,100 +4,85 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>くらしとお金サロン | 小倉南校</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Noto+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 :root {
-  --apple-bg-blue: #1E5BB8; /* 元データの色 */
-  --apple-text-white: #FFFFFF;
-  --accent-gold: #D4AF37; /* 強調色（ゴールド） */
-  --card-bg: #FFFFFF;
-  --text-main: #1D1D1F; /* 黒すぎないグレー */
+  --apple-blue: #1E5BB8;
+  --apple-gold: #D4AF37;
+  --apple-gray: #86868B;
+  --bg-light: #F5F5F7;
+  --text-dark: #1D1D1F;
 }
 
-/* 基本リセット */
+/* 全体設定 */
 html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+body { font-family: -apple-system, "SF Pro Display", "Noto Sans JP", sans-serif; background-color: var(--apple-blue); color: #fff; line-height: 1.6; }
 
-body {
-  font-family: "SF Pro Display", "Noto Sans JP", sans-serif;
-  background-color: var(--apple-bg-blue);
-  color: var(--apple-text-white);
-  line-height: 1.6;
-}
-
-/* アニメーション：ふわっと登場 */
-.reveal { opacity: 0; transform: translateY(20px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+/* アニメーション：Apple風のゆったりした浮上 */
+.reveal { opacity: 0; transform: translateY(50px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* ヘッダー：Apple風の透明感 */
+/* ヘッダー：極薄の透明 */
 header {
-  height: 52px; background: rgba(255, 255, 255, 0.85);
+  height: 52px; background: rgba(30, 91, 184, 0.8);
   backdrop-filter: saturate(180%) blur(20px);
-  display: flex; align-items: center; padding: 0 20px;
-  position: sticky; top: 0; z-index: 9999;
-  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  display: flex; align-items: center; padding: 0 22px;
+  position: sticky; top: 0; z-index: 9999; border-bottom: 0.5px solid rgba(255,255,255,0.1);
 }
-.header-logo { height: 28px; width: 28px; margin-right: 12px; }
-.header-name { font-size: 13px; font-weight: 700; color: var(--apple-bg-blue); }
+.header-logo { height: 24px; margin-right: 12px; }
+.header-name { font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
 
-/* セクション設定 */
-section { width: 100%; padding: 100px 24px; }
+/* ヒーロー：画面全体を贅沢に使う */
+.hero {
+  height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 24px;
+}
+.hero-copy { font-size: 14px; letter-spacing: 0.2em; margin-bottom: 20px; color: rgba(255,255,255,0.7); }
+.hero-title { font-family: 'Noto Serif JP', serif; font-size: 10vw; line-height: 1.1; font-weight: 900; }
+.hero-title strong { display: block; font-size: 14vw; color: var(--apple-gold); margin-top: 10px; }
 
-/* HERO (元データの内容) */
-.hero { padding: 120px 24px 80px; text-align: center; }
-.hero-tag { font-size: 15px; font-weight: 600; color: var(--apple-text-white); opacity: 0.9; margin-bottom: 20px; display: block; }
-.hero-main {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 8.5vw; line-height: 1.2; margin: 0;
-}
-.hero-main strong {
-  display: block; font-size: 11.5vw; color: var(--accent-gold); /* 強調色ゴールド */
-  margin-top: 10px; letter-spacing: -0.02em;
-}
-
-/* SLIDER：完全復旧 */
-.slider-container { padding: 60px 0; background: rgba(0,0,0,0.1); }
-.slider {
-  display: flex; overflow-x: auto; padding: 0 20px; gap: 15px;
-  -webkit-overflow-scrolling: touch; /* 滑らかスクロール */
-}
+/* スライダー：製品ギャラリー風 */
+.slider-wrap { background: #fff; padding: 80px 0; border-radius: 40px; margin: 0 12px; }
+.slider { display: flex; overflow-x: auto; padding: 0 24px; gap: 20px; scroll-snap-type: x mandatory; }
 .slider::-webkit-scrollbar { display: none; }
-.slider img {
-  width: 85vw; flex-shrink: 0; border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15); background: #f0f0f0;
+.slider img { width: 85vw; flex-shrink: 0; border-radius: 28px; scroll-snap-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+/* セクション：1つのセクションで1つの強いメッセージ */
+.section { padding: 120px 24px; text-align: center; max-width: 800px; margin: 0 auto; }
+.section-title { font-family: 'Noto Serif JP', serif; font-size: 28px; margin-bottom: 60px; }
+
+/* Apple風グリッドカード */
+.card-stack { display: flex; flex-direction: column; gap: 24px; }
+.glass-card {
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); border-radius: 32px; padding: 48px 32px; text-align: center;
 }
+.card-num { font-size: 4rem; font-weight: 700; color: var(--apple-gold); display: block; margin-bottom: 10px; }
+.card-label { font-size: 20px; font-weight: 700; }
 
-/* カード：元データの白背景に、少し高級感をプラス */
-.card-grid { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
-.card {
-  background: var(--card-bg); color: var(--text-main);
-  border-radius: 24px; padding: 30px; text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.03);
+/* 白セクション：情報の視認性を上げる */
+.light-section { background: #fff; color: var(--text-dark); border-radius: 48px; margin: 0 12px; }
+.point-card { background: var(--bg-light); border-radius: 28px; padding: 40px 24px; margin-bottom: 20px; text-align: left; }
+.point-card h3 { color: var(--apple-blue); margin-top: 0; font-size: 22px; }
+
+/* 価格：圧倒的なスケール感 */
+.price-box { padding: 100px 24px; text-align: center; }
+.price-main { font-size: 5.5rem; font-weight: 700; color: var(--apple-gold); line-height: 1; }
+.price-sub { font-size: 16px; opacity: 0.7; display: block; margin-top: 15px; }
+
+/* 地図：デザインに溶け込ませる */
+.map-frame { width: 100%; height: 450px; border-radius: 32px; overflow: hidden; margin-top: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+
+/* LINE：追従型・高級感 */
+.cta-float {
+  position: fixed; bottom: 30px; left: 20px; right: 20px;
+  background: #00C300; color: #fff; height: 64px; border-radius: 32px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 18px; text-decoration: none; z-index: 10000;
+  box-shadow: 0 15px 35px rgba(0, 195, 0, 0.3);
 }
-.crisis-data { font-size: 3.5rem; font-weight: 700; color: #CC0000; display: block; line-height: 1; } /* 警告の赤 */
-.crisis-desc { font-size: 19px; font-weight: 700; color: var(--text-main); margin: 10px 0 0; }
-
-/* 料金・得られること */
-.price-val { font-size: 4.5rem; font-weight: 700; color: var(--accent-gold); display: block; line-height: 1; }
-.price-unit { font-size: 1.2rem; color: rgba(255,255,255,0.7); }
-.benefit-title { font-size: 20px; color: var(--accent-gold); margin-bottom: 10px; font-weight: 700; }
-
-/* 地図：バグ修正済み */
-.map-wrap { width: 100%; height: 350px; border-radius: 24px; overflow: hidden; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-
-/* 下部固定LINEボタン：追跡型・プルプル */
-@keyframes apple-shake { 0%, 90% { transform: translateX(-50%) scale(1); } 92%, 96% { transform: translateX(-50%) scale(1.03) rotate(1deg); } 94%, 98% { transform: translateX(-50%) scale(1.03) rotate(-1deg); } }
-.floating-line {
-  position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-  width: 90%; max-width: 400px; background: #00C300; color: #FFF;
-  padding: 18px; border-radius: 50px; font-size: 18px; font-weight: 700;
-  text-decoration: none; z-index: 99999; text-align: center;
-  box-shadow: 0 10px 30px rgba(0,195,0,0.4);
-  animation: apple-shake 5s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
-}
-.floating-line i { font-size: 24px; margin-right: 10px; }
 
 </style>
 </head>
@@ -110,98 +95,103 @@ section { width: 100%; padding: 100px 24px; }
 
 <main>
   <section class="hero reveal">
-    <span class="hero-tag">増やす知識 × 守る知恵 ＋ 地域の仲間 ＝</span>
-    <h1 class="hero-main">
+    <p class="hero-copy">増やす知識 × 守る知恵 ＋ 地域の仲間</p>
+    <h1 class="hero-title">
       安心・安定の<br>
       <strong>くらし</strong>
     </h1>
   </section>
 
-  <div class="slider-container reveal">
+  <div class="slider-wrap reveal">
     <div class="slider">
-      <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png" alt="実績1">
-      <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png" alt="実績2">
-      <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png" alt="実績3">
-      <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png" alt="実績4">
+      <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+      <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+      <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+      <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
     </div>
   </div>
 
-  <section class="reveal">
-    <h2 style="font-family:'Noto Serif JP',serif; font-size:26px; text-align:center;">知らないだけで起きている現実</h2>
-    
-    <div class="card-grid">
-      <div class="card">
-        <span class="crisis-data">1.2億円</span>
-        <p class="crisis-desc">特殊詐欺、毎日の被害額。</p>
-        <p style="font-size:14px; color:#86868B; margin-top:5px;">あなたの善意が、海外組織に飲み込まれています。</p>
+  <section class="section reveal">
+    <h2 class="section-title">知らないだけで<br>起きている現実</h2>
+    <div class="card-stack">
+      <div class="glass-card">
+        <span class="card-num">1.2<small style="font-size:1.5rem">億円</small></span>
+        <span class="card-label">特殊詐欺被害、毎日。</span>
       </div>
-
-      <div class="card">
-        <span class="crisis-data">800人</span>
-        <p class="crisis-desc">資産凍結、新たに毎日。</p>
-        <p style="font-size:14px; color:#86868B; margin-top:5px;">認知症と診断された瞬間、生活費が引き出せなくなる。それが日本の現実です。</p>
+      <div class="glass-card">
+        <span class="card-num">800<small style="font-size:1.5rem">人</small></span>
+        <span class="card-label">資産凍結、新たに毎日。</span>
+      </div>
+      <div class="glass-card">
+        <span class="card-num">30<small style="font-size:1.5rem">件</small></span>
+        <span class="card-label">相続トラブル裁判、毎日。</span>
       </div>
     </div>
   </section>
 
-  <section class="reveal" style="background:#FFF; color:var(--text-main); border-radius:40px;">
-    <h2 style="font-family:'Noto Serif JP',serif; font-size:28px; text-align:center;">ですがご安心ください。</h2>
+  <section class="section light-section reveal">
+    <h2 class="section-title" style="color:var(--apple-blue)">ですが、ご安心ください。</h2>
+    <div class="point-card">
+      <h3>防衛学を、その手に。</h3>
+      <p>金融機関は教えない「守り方」を習得。詐欺・インフレ・制度の罠から資産を鉄壁に守ります。</p>
+    </div>
+    <div class="point-card">
+      <h3>勧誘、販売 0%。</h3>
+      <p>営業活動は一切ありません。あなたが正しく判断するための「知恵」だけを提供します。</p>
+    </div>
+  </section>
+
+  <section class="price-box reveal">
+    <h2 class="section-title">価値の対価。</h2>
+    <span class="price-main">22,000<small style="font-size:1.5rem">円</small></span>
+    <span class="price-sub">月額（週1回学習 ＋ 24時間相談し放題）</span>
     
-    <div style="background:var(--apple-bg-blue); color:#FFF; padding:40px 24px; border-radius:24px; margin-top:40px;">
-      <p class="benefit-title">「防衛学」を学ぶ。</p>
-      <p style="font-size:15px;">金融機関は「増やし方」は教えても、「守り方」は教えてくれません。詐欺・インフレ・制度の罠から資産を鉄壁に守る技術を伝えます。</p>
-    </div>
-
-    <div style="border:1px dashed var(--accent-gold); padding:30px; border-radius:24px; text-align:center; margin-top:20px;">
-      <p style="font-size:18px; font-weight:700; margin:0; line-height:1.6;">金融機関の営業ではありません。販売も、勧誘も、一切ありません。提供するのは、あなたが正しく判断するための「知恵」だけです。</p>
+    <div style="margin-top:60px;">
+      <img src="IMG_4157.png" style="width:100%; border-radius:24px;">
+      <img src="IMG_4156.png" style="width:100%; border-radius:24px; margin-top:15px;">
     </div>
   </section>
 
-  <section class="reveal">
-    <h2 style="font-family:'Noto Serif JP',serif; font-size:26px; text-align:center; margin-bottom:40px;">この価値は、高いでしょうか。</h2>
-    <div style="text-align:center; margin-bottom:60px;">
-      <span class="price-val">22,000<span class="price-unit">/ 月（税込）</span></span>
-      <p style="font-weight:700; margin-top:10px;">週1回の対面学習 × 24時間個別相談</p>
+  <section class="section reveal">
+    <h2 class="section-title">Access</h2>
+    <div class="glass-card">
+      <p style="font-size:24px; font-weight:700; margin:0;">守恒みらいホール</p>
+      <p style="color:rgba(255,255,255,0.7); font-size:14px; margin-top:5px;">北九州市小倉南区守恒2-1-40</p>
     </div>
-    
-    <img src="IMG_4157.png" style="width:100%; border-radius:16px;">
-    <img src="IMG_4156.png" style="width:100%; border-radius:16px; margin-top:10px;">
-  </section>
-
-  <section class="reveal">
-    <h2 style="font-family:'Noto Serif JP',serif; font-size:28px; text-align:center;">Access</h2>
-    <p style="text-align:center; font-weight:700;">守恒みらいホール</p>
-    <p style="text-align:center; color:rgba(255,255,255,0.7); font-size:14px; margin-top:5px;">北九州市小倉南区守恒2-1-40</p>
-    <div class="map-wrap">
-      <iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.435864115165!2d130.8804!3d33.8341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf0000000001%3A0x0000000000000000!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v17000000000002" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
-  <section class="reveal" style="text-align:center; padding-bottom:180px; background:rgba(0,0,0,0.1); border-radius:40px 40px 0 0;">
-    <h2 style="font-family:'Noto Serif JP',serif; font-size:28px; margin-bottom:40px;">その一歩で、未来は変わる。</h2>
-    <div style="background:#FFF; display:inline-block; padding:15px; border-radius:24px; margin-bottom:24px;">
-      <img src="IMG_2124.png" style="width:140px; height:140px;" alt="LINE QR">
-    </div>
+  <section class="section reveal" style="padding-bottom:200px;">
+    <h2 class="section-title">その一歩で、<br>未来は変わる。</h2>
+    <img src="IMG_2124.png" style="width:180px; border:8px solid #fff; border-radius:28px; margin-bottom:30px;">
     <p style="font-weight:700;">まずはLINEで無料体験予約を</p>
-    <p style="font-size:14px; color:rgba(255,255,255,0.7); margin-top:20px;">代表：平松 広大 (Hiramatsu Kodai)</p>
+    <p style="font-size:14px; color:rgba(255,255,255,0.6); margin-top:20px;">代表：平松 広大 (Hiramatsu Kodai)</p>
   </section>
 </main>
 
-<a href="https://lin.ee/n37s4pB" class="floating-line">
-  <i class="fa-brands fa-line"></i>
+<a href="https://lin.ee/n37s4pB" class="cta-float">
+  <i class="fa-brands fa-line" style="font-size:24px; margin-right:12px;"></i>
   無料体験・質問はこちら
 </a>
 
 <script>
-  window.addEventListener('load', () => {
-    // 登場アニメーション
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('active'); }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  });
+  // スクロールでふわっと出す
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('active'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // スライダー（JS制御でバグ回避）
+  const track = document.querySelector('.slider');
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+  track.addEventListener('mouseleave', () => { isDown = false; });
+  track.addEventListener('mouseup', () => { isDown = false; });
+  track.addEventListener('mousemove', (e) => { if(!isDown) return; e.preventDefault(); const x = e.pageX - track.offsetLeft; const walk = (x - startX) * 2; track.scrollLeft = scrollLeft - walk; });
 </script>
 
 </body>
