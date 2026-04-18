@@ -28,25 +28,20 @@
         .accent-box-blue { border: 1.5px solid #d1d9e6; background: #fcfdfe; border-radius: 12px; padding: 25px; margin: 30px 0; }
 
         .text-p { font-size: 16px; font-weight: 500; margin-bottom: 25px; color: #444; text-align: justify; }
-        .bold-blue { color: var(--sub-blue); font-weight: 900; }
-
         .point-list { padding: 0; list-style: none; margin: 25px 0; text-align: center; }
         .point-list li { font-weight: 900; font-size: 19px; color: var(--sub-blue); margin-bottom: 12px; }
 
-        .btn-back { display: block; width: 100%; max-width: 280px; margin: 60px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; font-size: 15px; }
+        .btn-back { display: block; width: 100%; max-width: 280px; margin: 60px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
 
-        .disclaimer { font-size: 13px; color: #777; background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 15px; line-height: 1.6; border: 1px solid #e0e0e0; }
-
-        /* LINEボタン：控えめな「静かな輝き」 */
-        @keyframes subtle-glow {
-            0% { box-shadow: 0 4px 15px rgba(6, 199, 85, 0.2); }
-            50% { box-shadow: 0 4px 25px rgba(6, 199, 85, 0.5); }
-            100% { box-shadow: 0 4px 15px rgba(6, 199, 85, 0.2); }
+        @keyframes fuwafuwa {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+            100% { transform: translateX(-50%) translateY(0); }
         }
 
         .line-float-btn {
             position: fixed;
-            bottom: 25px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             width: 88%;
@@ -54,7 +49,7 @@
             background-color: #06C755;
             color: white;
             text-align: center;
-            padding: 14px;
+            padding: 16px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
@@ -63,28 +58,23 @@
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            animation: subtle-glow 3s infinite ease-in-out;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            animation: fuwafuwa 3s infinite ease-in-out;
         }
-        .line-float-btn i { font-size: 24px; margin-right: 10px; }
+        .line-float-btn i { font-size: 26px; margin-right: 12px; }
 
         footer { text-align: center; padding: 40px 20px 120px; color: #999; font-size: 12px; }
     </style>
 </head>
 <body>
-
     <header><img src="ロゴ浮き.png" class="top-logo"></header>
-
     <div class="container">
-        
         <h1 class="reveal page-title">サロン理念</h1>
         <span class="reveal page-sub">増やす知識と守る知恵で、人生に安心を。</span>
-
         <section class="reveal">
             <p class="text-p">くらしとお金サロンは、<br>これからの人生を「安心」を土台にして<br>前向きに生きていくためのコミュニティです。</p>
             <p class="text-p">今の日本では、孤独死やセルフネグレクトが<br>決して珍しい話ではなくなっています。<br>知らない専門家に任せるだけで、<br>本当に本人の幸せにつながっているのか。<br>考えさせられる現実が、すぐそばにあります。</p>
         </section>
-
         <section class="reveal accent-box-red">
             <h2 style="color:var(--red); font-size: 20px; margin-top: 0; text-align: center; font-family: 'Noto Serif JP', serif;">このサロンを作った理由</h2>
             <p class="text-p" style="margin-bottom: 0;">
@@ -93,7 +83,6 @@
                 もっと早く、誰かに相談できる場所があったら。<br>地域の中で、顔の見えるつながりがあったら。<br>その強い後悔が、活動の原動力となっています。
             </p>
         </section>
-
         <section class="reveal">
             <h2 class="section-title">地域の中に「3つの場所」を</h2>
             <p class="text-p">「まだ平気だ」と思っているうちに、<br>気づけば一人で抱え込んでしまう。<br>そんな連鎖を止めるために、<br>地域の中にこそ、これらが必要だと確信しています。</p>
@@ -102,45 +91,16 @@
                 <li>【信頼できる専門家】</li>
                 <li>【同じ地域の仲間】</li>
             </ul>
-            <p class="text-p">不安を放置せず、向き合い、整理し、備える。<br>メンバー様一人ひとりに寄り添い、<br>「地域の顧問FP」として共に歩むことを<br>何よりも大切にしています。</p>
         </section>
-
-        <section class="reveal accent-box-blue">
-            <h2 style="color:var(--sub-blue); font-size: 20px; margin-top: 0; text-align: center; font-family: 'Noto Serif JP', serif;">私たちが解決をお手伝いする不安</h2>
-            <p class="text-p"><b>● お金の不安</b><br>老後資金、物価高、新NISAの活用法、<br>そして巧妙化する特殊詐欺への対策。<br>「何から手をつければいいか分からない」という<br>根本的な不安を解消します。</p>
-            <p class="text-p" style="margin-bottom: 0;"><b>● 住まい・将来の不安</b><br>今の家での暮らし、施設選び、実家じまい、<br>そして家族に負担をかけたくないという想い。<br>相続の問題も含め、中立な立場で整理します。</p>
-        </section>
-
-        <section class="reveal">
-            <h2 class="section-title">投資についての考え方</h2>
-            <p class="text-p">「増やす力」と「守る知識」。<br>この両輪を身につけることが、<br>これからの時代を生き抜く安心に直結します。<br>株式市場の成長を正しく活用する知恵を、<br>基礎から一緒に学んでいきます。</p>
-            <div class="disclaimer">
-                ※投資の最終判断は必ずご自身で行っていただきます。<br>私たちは商品の販売や投資助言を行う立場ではありません。<br>納得して判断できる力を養う場所でありたいと考えています。
-            </div>
-        </section>
-
-        <section class="reveal" style="text-align: center; margin-top: 80px;">
-            <p class="text-p" style="font-weight: 900; color: var(--sub-blue);">地域の中で、顔の見える関係を大切に。<br>安心して本音を話せる場所を、守り続けます。</p>
-            <p class="text-p" style="color: var(--red); font-weight: 900;">お一人で、ご家族だけで、<br>抱え込まなくて大丈夫です。</p>
-            <a href="index.html" class="btn-back">トップページへ戻る</a>
-        </section>
-
+        <div class="reveal"><a href="index.html" class="btn-back" style="margin: 60px auto 0;">トップページへ戻る</a></div>
     </div>
-
     <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
         <span>LINEで無料体験・ご相談</span>
     </a>
-
-    <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
-
     <script>
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { 
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
