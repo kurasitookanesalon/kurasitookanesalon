@@ -15,13 +15,25 @@
             position: relative; width: 100%; min-height: 380px; 
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             overflow: hidden;
+            background-color: #000; /* 文字の視認性確保の土台 */
         }
-        /* 背景画像の透明度を修正（0.3 -> 0.6へ引き上げ） */
+        
+        /* 背景画像の修正：
+           1. opacityを0.85にアップしてお城をはっきり見せる
+           2. object-positionを左寄りに調整し、お城をメインに、橋をサブ（右側へ）に配置
+        */
         .bg-image { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; opacity: 0.6; z-index: 1; 
+            object-fit: cover; 
+            object-position: 20% center; 
+            opacity: 0.85; 
+            z-index: 1; 
         }
-        .content-on-bg { position: relative; z-index: 2; width: 100%; text-align: center; padding: 40px 24px; }
+
+        .content-on-bg { 
+            position: relative; z-index: 2; width: 100%; text-align: center; padding: 40px 24px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.5); /* 画像が濃いため文字の可読性を保持 */
+        }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -32,7 +44,6 @@
         .hero-title { font-family: 'Noto Serif JP', serif; font-size: 36px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
         .hero-sub { font-size: 18px; font-weight: 700; color: var(--gold); margin-top: 8px; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
 
-        /* スライドショー：7枚が滑らかにループするように調整 */
         .slideshow-container { width: 100%; overflow: hidden; padding: 20px 0; border-bottom: 1px solid #f2f2f2; }
         .slideshow-track { display: flex; width: calc(280px * 14 + 224px); animation: scroll 50s linear infinite; }
         .slideshow-track img { width: 280px; height: auto; border-radius: 12px; margin: 0 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); flex-shrink: 0; }
@@ -180,7 +191,7 @@
 
     <div class="bg-overlay-section" style="min-height: 500px;">
         <img src="IMG_4224.png" class="bg-image">
-        <div class="content-on-bg" style="padding: 40px 24px;">
+        <div class="content-on-bg">
             <div class="reveal final-card">
                 <p class="final-text">
                     身近にはまだ感じにくい問題かも知れません。<br>
