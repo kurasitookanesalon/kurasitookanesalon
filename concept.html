@@ -27,11 +27,17 @@ body{
   font-weight:bold;
 }
 
+/* 🔥修正 */
 .section{
   padding:60px 20px;
+  text-align:left;
+}
+
+.section h2{
   text-align:center;
 }
 
+/* 🔥完全安定 */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -39,11 +45,16 @@ body{
   padding:22px;
   margin:15px auto;
   width:90%;
-  max-width:22em; /* 🔥ここ変更 */
+  max-width:22em;
+
   font-size:18px;
-  line-height:1.9;
+  line-height:1.7;
   font-weight:500;
-  text-wrap:balance; /* 🔥自然改行 */
+
+  text-align:left;
+
+  word-break:keep-all;
+  overflow-wrap:break-word;
 }
 
 .card-main{
