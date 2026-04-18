@@ -4,229 +4,206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>くらしとお金サロン 小倉南校</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-/* --- 正式ブランドカラーの厳密な定義 --- */
 :root {
-  --main-blue: #1E5BB8;      /* メイン：全体の軸 */
-  --sub-blue: #163E7A;       /* サブ：高級感・締め・濃淡 */
-  --accent-gold: #D4AF37;    /* ゴールド：枠・強調・信頼感 */
-  --text-dark: #333333;
+  --main-blue: #1E5BB8;
+  --sub-blue: #163E7A;
+  --gold: #D4AF37;
+  --bg-white: #FFFFFF;
+  --text-main: #222222;
 }
 
 body {
   margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  background-color: var(--main-blue);
-  /* メインブルーからサブブルーへのグラデーションで高級感を演出 */
-  background: linear-gradient(180deg, var(--main-blue) 0%, var(--sub-blue) 100%);
-  color: #fff;
-  padding-bottom: 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-main);
   line-height: 1.8;
   overflow-x: hidden;
 }
 
-/* ヒーローエリア */
-.hero {
-  text-align: center;
-  padding: 80px 20px 60px;
-}
-
-.hero-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-
-.hero-header img {
-  width: 65px;
-  margin-right: 15px;
-}
-
-.hero-title {
-  font-size: 26px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-}
-
-.formula {
-  font-size: 20px;
-  margin-bottom: 40px;
-}
-
-.formula strong {
-  display: block;
-  font-size: 46px;
-  color: var(--accent-gold);
-  margin-top: 15px;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-}
-
-/* ボタン（サブブルー背景 × ゴールド枠） */
-.btn-common {
-  display: flex;
-  background-color: var(--sub-blue);
-  color: var(--accent-gold);
-  border: 2px solid var(--accent-gold);
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-}
-
-.btn-common:active {
-  transform: scale(0.96);
-}
-
-.btn {
-  width: 90%;
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 22px;
-  font-size: 18px;
-}
-
-/* スライダー（ゴールドの上下枠） */
-.slider {
-  width: 100%;
-  overflow: hidden;
-  background: #fff;
-  border-top: 3px solid var(--accent-gold);
-  border-bottom: 3px solid var(--accent-gold);
-}
-
-.slide-track {
-  display: flex;
-}
-
-.slide-track img {
-  width: 100vw;
-  height: 56.25vw;
-  max-height: 500px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-/* セクション */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.section-alt {
-  background: rgba(22, 62, 122, 0.5); /* サブブルーを活用した背景 */
-}
-
-.section h2 {
-  font-size: 28px;
-  margin-bottom: 40px;
-  position: relative;
-  display: inline-block;
-}
-
-.section h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--accent-gold);
-  margin: 15px auto 0;
-}
-
-/* カード（白背景・ゴールド左枠） */
-.card {
-  background: #fff;
-  color: var(--text-dark);
-  border-radius: 12px;
-  padding: 35px 25px;
-  margin: 25px auto;
-  width: 90%;
-  max-width: 550px;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  border-left: 8px solid var(--accent-gold);
-  box-sizing: border-box;
-}
-
-/* 案内用カード（マンション・エレベーター強調） */
-.guide-card {
-  background: var(--sub-blue);
-  color: #fff;
-  border: 2px solid var(--accent-gold);
-  border-radius: 12px;
+/* --- Navigation --- */
+nav {
   padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 550px;
-  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
+.nav-logo { font-weight: 700; color: var(--main-blue); font-size: 18px; }
 
-.card-highlight {
-  color: var(--accent-gold);
-  font-size: 26px;
-  display: block;
-  margin-top: 10px;
+/* --- Hero Section --- */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--sub-blue) 0%, var(--main-blue) 100%);
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
 }
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, var(--bg-white), transparent);
+}
+.hero img { width: 80px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.5)); }
+.hero h1 { 
+  font-family: 'Noto Serif JP', serif; 
+  font-size: 32px; 
+  margin: 0; 
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+}
+.hero p { font-size: 16px; font-weight: 300; margin: 20px 0; opacity: 0.9; }
+.hero .gold-text { color: var(--gold); font-size: 42px; font-weight: 700; display: block; margin-top: 10px; }
 
-/* 地図 */
-.map-container {
+/* --- Slider --- */
+.slider-container {
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
   width: 90%;
-  max-width: 550px;
-  margin: 30px auto;
-  border-radius: 15px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  border: 3px solid var(--accent-gold);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border: 4px solid white;
+}
+.slide-track { display: flex; animation: scroll 40s linear infinite; width: calc(250px * 10); }
+.slide-track img { width: 300px; height: 200px; object-fit: cover; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-300px * 5)); } }
+
+/* --- Values (Facts) --- */
+.section { padding: 100px 20px; max-width: 800px; margin: 0 auto; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title span { color: var(--gold); font-size: 14px; letter-spacing: 0.3em; text-transform: uppercase; display: block; margin-bottom: 10px; }
+.section-title h2 { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--sub-blue); margin: 0; }
+
+.fact-grid { display: grid; gap: 20px; }
+.fact-item {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 0 20px 20px 0;
+  border-left: 4px solid var(--gold);
+  transition: 0.3s;
+}
+.fact-item:hover { transform: translateX(10px); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.fact-item h3 { margin: 0; font-size: 18px; color: #555; }
+.fact-item .value { font-size: 28px; color: var(--main-blue); font-weight: 700; }
+
+/* --- Price Section --- */
+.price-box {
+  background: var(--sub-blue);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.price-box::before {
+  content: "OFFER";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 100px;
+  font-weight: 900;
+  opacity: 0.05;
+}
+.price-main { font-size: 48px; color: var(--gold); font-weight: 700; margin: 10px 0; }
+.price-sub { font-size: 16px; opacity: 0.8; }
+
+/* --- Access Map --- */
+.access-info {
+  margin-top: 40px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+}
+.elevator-badge {
+  display: inline-block;
+  padding: 5px 15px;
+  background: var(--gold);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-/* フローティングボタン */
-.floating-btn {
+.map-frame {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 20px;
+  filter: grayscale(0.2);
+}
+
+/* --- CTA Button --- */
+.cta-fixed {
   position: fixed;
-  bottom: 20px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 92%;
-  max-width: 420px;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1000;
+}
+.btn-line {
+  background: #06C755;
+  color: white;
+  text-align: center;
   padding: 20px;
-  font-size: 18px;
-  z-index: 9999;
-  animation: floaty 3s ease-in-out infinite;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  display: block;
+  box-shadow: 0 10px 30px rgba(6,199,85,0.4);
+  transition: 0.3s;
 }
+.btn-line:hover { transform: scale(1.05); }
 
-@keyframes floaty {
-  0%, 100% { transform: translateX(-50%) translateY(0); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); }
-  50% { transform: translateX(-50%) translateY(-10px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6); }
-}
 </style>
 </head>
-
 <body>
 
-<div class="hero">
-  <div class="hero-header">
-    <img src="ロゴ浮き.png" alt="ロゴ">
-    <div class="hero-title">くらしとお金サロン<br>（小倉南校）</div>
-  </div>
+<nav>
+  <div class="nav-logo">くらしとお金サロン</div>
+  <div style="font-size:12px; color:var(--gold);">小倉南校</div>
+</nav>
 
+<section class="hero">
+  <img src="ロゴ浮き.png" alt="Logo">
+  <h1>守り、増やし、繋ぐ。<br>未来を創るお金の学び舎</h1>
+  <p>北九州で、安心できる豊かな暮らしを。</p>
   <div class="formula">
-    増やす知識 × 守る知恵 ＋ 地域の仲間 ＝
-    <strong>安心・安定のくらし</strong>
+    安心・安定のくらしを、今ここから。
+    <span class="gold-text">無料体験 実施中</span>
   </div>
+</section>
 
-  <a href="https://lin.ee/n37s4pB" class="btn-common btn" target="_blank">
-    まずは無料体験で雰囲気を確認
-  </a>
-</div>
-
-<div class="slider">
-  <div class="slide-track" id="slideTrack">
+<div class="slider-container">
+  <div class="slide-track">
+    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
     <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
     <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
     <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
@@ -235,75 +212,61 @@ body {
   </div>
 </div>
 
-<div class="section">
-  <h2>知らないだけで起きている現実</h2>
-  <div class="card">特殊詐欺被害は毎日<br><span class="card-highlight">約50件 / 約1.2億円</span></div>
-  <div class="card">認知症診断は毎日<br><span class="card-highlight">約800人</span></div>
-  <div class="card">相続トラブルで裁判<br><span class="card-highlight">毎日 約30件</span></div>
-</div>
-
-<div class="section section-alt">
-  <h2>ですがご安心ください</h2>
-  <div class="card">将来の問題に<br>備えることができます</div>
-  <div class="card">大切なお金を<br>守る知恵も学べます</div>
-  <div class="card">大切なお金を<br>増やす知識も学べます</div>
-  <div class="card">繰り返し学びながら<br>理解を深めていけます</div>
-</div>
-
-<div class="section">
-  <h2>開催場所</h2>
-  <div class="card">
-    守恒みらいホール<br>
-    <span style="font-size: 16px; font-weight: normal; color: #666; display: block; margin-top: 10px;">
-      福岡県北九州市小倉南区守恒本町2丁目2-11 <br>
-      サン・ラポール守恒 <strong>3〜4階</strong>
-    </span>
+<section class="section">
+  <div class="section-title">
+    <span>Reality</span>
+    <h2>知らないだけで、<br>失っているもの。</h2>
   </div>
-
-  <div class="guide-card">
-    🏢 <strong>マンション内エレベーター完備</strong><br>
-    エレベーターで直接3階または4階へお越しいただけます。足腰に不安がある方もご安心ください。
+  <div class="fact-grid">
+    <div class="fact-item">
+      <h3>毎日奪われる資産</h3>
+      <div class="value">約 1.2 億円</div>
+      <p style="font-size:12px; color:#888; margin:0;">※国内の特殊詐欺被害額（1日平均）</p>
+    </div>
+    <div class="fact-item">
+      <h3>誰にでも訪れるリスク</h3>
+      <div class="value">毎日 約 800 人</div>
+      <p style="font-size:12px; color:#888; margin:0;">※新たに認知症と診断される人数</p>
+    </div>
   </div>
+</section>
 
-  <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.717647248107!2d130.87522547634423!3d33.821495429315344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c6d5b080c13f%3A0xcb77d8d66b776996!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1715671234567!5m2!1sja!2sjp" 
-      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
+<section class="section" style="background:#fcfcfc;">
+  <div class="price-box">
+    <span>Subscription Plan</span>
+    <h2>受講料のご案内</h2>
+    <div class="price-main">¥22,000 <span style="font-size:20px;">/ 月額</span></div>
+    <p class="price-sub">週1回の対面授業 ＋ いつでも何度でも専門家へ相談可能</p>
+    <div style="margin-top:30px; font-size:14px; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
+      一回使い切りの講座ではありません。<br>一生モノの知識を、伴走型で身につけます。
+    </div>
   </div>
+</section>
+
+<section class="section">
+  <div class="section-title">
+    <span>Access</span>
+    <h2>アクセス</h2>
+  </div>
+  <div class="access-info">
+    <div class="elevator-badge">エレベーター完備</div>
+    <h3 style="margin:0 0 10px 0;">守恒みらいホール</h3>
+    <p style="margin:0; font-size:14px; color:#666;">
+      北九州市小倉南区守恒本町2-2-11 サン・ラポール守恒 3〜4階
+    </p>
+    <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.502808293931!2d130.871583!3d33.825222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c6d5b080c13f%3A0xcb77d8d669776996!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="section" style="text-align:center; padding-bottom:150px;">
+  <p style="font-size:14px; color:var(--main-blue); font-weight:700;">金融商品の販売・勧誘は一切ありません</p>
+  <h2 style="font-family: 'Noto Serif JP', serif;">まずは、お茶を飲む感覚で。</h2>
+  <p>あなたの不安を安心に変える準備は、<br>すでに整っています。</p>
+</section>
+
+<div class="cta-fixed">
+  <a href="https://lin.ee/n37s4pB" class="btn-line">LINEで無料体験を申し込む</a>
 </div>
-
-<div class="section section-alt">
-  <h2>一歩踏み出してみませんか？</h2>
-  <div class="card">
-    知らないまま不安でいるよりも、<br>
-    知って安心できる方が<br>
-    良いと思いませんか？<br><br>
-    小さな一歩が、<br>
-    これからの大きな安心につながります。
-  </div>
-  <img src="IMG_2124.png" style="width:220px; margin:30px auto; display:block; border: 4px solid #fff; border-radius: 12px;">
-  <p style="font-size: 14px; opacity: 0.8; text-align: center;">※金融商品の販売・勧誘は一切ありません</p>
-</div>
-
-<a href="https://lin.ee/n37s4pB" class="btn-common floating-btn" target="_blank">
-  LINEで無料体験・質問をする
-</a>
-
-<script>
-const track = document.getElementById("slideTrack");
-window.addEventListener('load', () => {
-  track.innerHTML += track.innerHTML;
-  let x = 0;
-  function slide() {
-    x += 0.8;
-    if (x >= track.scrollWidth / 2) { x = 0; }
-    track.style.transform = `translateX(-${x}px)`;
-    requestAnimationFrame(slide);
-  }
-  slide();
-});
-</script>
 
 </body>
 </html>
