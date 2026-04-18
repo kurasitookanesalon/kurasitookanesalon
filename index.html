@@ -16,6 +16,7 @@ body{
   padding-bottom:100px;
 }
 
+/* ヒーロー */
 .hero{
   text-align:center;
   padding:60px 20px 40px;
@@ -38,7 +39,6 @@ body{
 .hero-title{
   font-size:28px;
   font-weight:bold;
-  text-align:center;
   width:100%;
 }
 
@@ -68,19 +68,18 @@ body{
   text-decoration:none;
   align-items:center;
   justify-content:center;
-  gap:8px;
 }
 
 .note{
   font-size:12px;
-  opacity:0.9;
   text-align:center;
 }
 
+/* スライダー */
 .slider{
   width:100%;
   overflow:hidden;
-  margin-top:15px;
+  margin-top:30px;
 }
 
 .slide-track{
@@ -95,41 +94,48 @@ body{
   flex-shrink:0;
 }
 
+/* セクション */
 .section{
-  padding:30px 20px;
+  padding:40px 20px;
   text-align:center;
 }
 
 .section h2{
   font-size:28px;
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
+/* カード */
 .card{
   background:#fff;
-  color:#1E5BB8;
+  color:#D4AF37;
   border-radius:20px;
   padding:22px;
-  margin:10px auto;
+  margin:15px auto;
   width:90%;
   max-width:500px;
-  font-size:18px;
-  line-height:1.8;
+  font-size:22px;
+  font-weight:bold;
+  line-height:1.6;
   white-space:pre-line;
 }
 
-.nowrap{
-  white-space:nowrap;
+.card-text{
+  color:#1E5BB8;
+  font-size:18px;
+  font-weight:500;
 }
 
+/* 画像 */
 .compare-img{
   width:90%;
   max-width:500px;
-  margin:10px auto;
+  margin:20px auto;
   display:block;
   border-radius:20px;
 }
 
+/* フローティング */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -144,11 +150,9 @@ body{
   font-size:17px;
   font-weight:bold;
   text-decoration:none;
-  z-index:999;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
 }
 </style>
 </head>
@@ -159,8 +163,7 @@ body{
   <div class="hero-header">
     <img src="ロゴ浮き.png">
     <div class="hero-title">
-      くらしとお金サロン
-      <span style="font-size:18px;">（小倉南校）</span>
+      くらしとお金サロン（小倉南校）
     </div>
   </div>
 
@@ -170,12 +173,8 @@ body{
   </div>
 
   <a href="https://lin.ee/n37s4pB" class="btn" target="_blank">
-    まずは内容を見てみる
+    まずは無料体験で雰囲気をご確認ください
   </a>
-
-  <div class="note">
-    まずは無料体験で、雰囲気をご確認ください
-  </div>
 </div>
 
 <div class="slider">
@@ -189,29 +188,29 @@ body{
 </div>
 
 <div class="section">
-  <div class="card">
+<div class="card">
 くらしとお金サロン（小倉南校）
 増やす知識 × 守る知恵
 ＋ 地域の仲間
 安心・安定のくらし
 まずは無料体験で雰囲気をご確認ください
-  </div>
+</div>
 </div>
 
 <div class="section">
-  <h2>知らないだけで起きている現実</h2>
-  <div class="card">
+<h2>知らないだけで起きている現実</h2>
+<div class="card">
 特殊詐欺被害は毎日
 約50件　約1.2億円
 認知症診断は毎日 約800人
 相続トラブルで裁判
 毎日 約30件
-  </div>
+</div>
 </div>
 
 <div class="section">
-  <h2>ですがご安心ください</h2>
-  <div class="card">
+<h2>ですがご安心ください</h2>
+<div class="card">
 ですがご安心ください
 将来の問題に
 備えることができます
@@ -221,22 +220,23 @@ body{
 増やす知識も学べます
 繰り返し学びながら
 理解を深めていきます
-  </div>
+</div>
 </div>
 
 <div class="section">
-  <h2>運営について</h2>
-  <div class="card">
+<h2>運営について</h2>
+<div class="card">
 金融機関の営業ではありません
 販売や勧誘は一切ありません
 投資の判断は
 必ずご自身でしていただきます
-  </div>
+</div>
 </div>
 
 <div class="section">
-  <h2>料金について</h2>
-  <div class="card">
+<h2>料金について</h2>
+
+<div class="card">
 月額 22,000円（週1回＋相談し放題）
 一般的な講座は
 1回参加して終わることが多いです
@@ -245,43 +245,48 @@ body{
 いつでも相談できる環境です
 1回あたり 約5,500円で
 安心して続けられます
-  </div>
+</div>
 
-  <img src="IMG_4157.png" class="compare-img">
-  <img src="IMG_4156.png" class="compare-img">
+<img src="IMG_4157.png" class="compare-img">
+<img src="IMG_4156.png" class="compare-img">
 </div>
 
 <div class="section">
-  <h2>このサロンで得られること</h2>
-  <div class="card">
+<h2>このサロンで得られること</h2>
+<div class="card">
 一人で悩まず
 地域の仲間と一緒に
 学べる場所です
-  </div>
+</div>
 </div>
 
 <div class="section">
-  <h2>開催場所</h2>
-  <div class="card">
+<h2>開催場所</h2>
+<div class="card">
 守恒みらいホール
 北九州市小倉南区守恒
-  </div>
+</div>
+
+<div style="width:90%;max-width:500px;margin:20px auto;border-radius:20px;overflow:hidden;">
+<iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed"
+width="100%" height="300" style="border:0;"></iframe>
+</div>
 </div>
 
 <div class="section">
-  <h2>ご参加方法</h2>
-  <div class="card">
+<h2>ご参加方法</h2>
+<div class="card">
 QRコードを読み取るか
 下のボタンからご参加ください
 友だち追加後
 「体験」または「質問」
 とお送りください
-  </div>
+</div>
 </div>
 
 <div class="section">
-  <h2>一歩踏み出してみませんか？</h2>
-  <div class="card">
+<h2>一歩踏み出してみませんか？</h2>
+<div class="card">
 一歩踏み出してみませんか？
 知らないまま不安でいるよりも
 知って安心できる方が
@@ -290,7 +295,7 @@ QRコードを読み取るか
 これからの大きな安心につながります
 ※金融商品の販売・勧誘など
 一切行っておりません
-  </div>
+</div>
 </div>
 
 <a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
