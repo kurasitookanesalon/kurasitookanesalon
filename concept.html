@@ -7,48 +7,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-gray: #f8f9fa; --bg-white: #FFFFFF; }
+        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-white: #FFFFFF; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-gray); color: #333; line-height: 1.8; overflow-x: hidden; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.6; overflow-x: hidden; }
 
-        /* ヘッダー：お城なし、ロゴとタイトルで統一 */
-        header { padding: 40px 0 20px; text-align: center; background-color: var(--bg-white); border-bottom: 1px solid #eee; }
-        .top-logo { width: 100px; height: auto; margin: 0 auto 15px; display: block; }
+        /* ヘッダー：背景画像なしのクリーンな構成 */
+        header { padding: 40px 0 20px; text-align: center; background-color: var(--bg-white); border-bottom: 1px solid #f2f2f2; }
+        .top-logo { width: 110px; height: auto; margin: 0 auto 15px; display: block; }
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--sub-blue); margin: 0; }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         .section { padding: 40px 24px 60px; max-width: 650px; margin: 0 auto; }
-        
-        /* セクション見出し：金色の下線も含め統一 */
-        .section-title { text-align: center; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin-bottom: 30px; font-family: 'Noto Serif JP', serif; }
+        .section-title { text-align: center; font-size: 26px; font-weight: 900; color: var(--sub-blue); margin-bottom: 30px; font-family: 'Noto Serif JP', serif; position: relative; }
         .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold); margin: 10px auto; }
 
-        /* コンテンツカード（囲い）：他ページと共通のデザイン */
-        .concept-card { background: var(--bg-white); padding: 30px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--sub-blue); margin-bottom: 30px; }
-        .concept-card h3 { color: var(--sub-blue); font-size: 20px; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: 900; }
-        .concept-text { font-size: 16px; font-weight: 700; color: #333; margin: 0; }
-        
-        /* 強調色とマーカー：他ページと共通のトーン */
+        /* トップページと共通の「しっかり囲った」カードデザイン */
+        .concept-card { 
+            border: 2.5px solid var(--sub-blue); 
+            background: #fff; 
+            border-radius: 12px; 
+            padding: 24px; 
+            margin-bottom: 16px; 
+            box-shadow: 0 4px 15px rgba(22, 62, 122, 0.08); 
+        }
+        .concept-card h3 { color: var(--sub-blue); font-size: 20px; margin-top: 0; border-bottom: 2px solid #f0f5ff; padding-bottom: 10px; font-weight: 900; }
+        .concept-text { font-size: 16px; font-weight: 700; color: #333; margin: 0; line-height: 1.8; }
+
+        /* 不安リスト専用の赤い囲み */
+        .reality-list-card { 
+            border: 2.5px solid var(--red); 
+            background: #fff; 
+            border-radius: 12px; 
+            padding: 24px; 
+            margin-bottom: 16px; 
+            box-shadow: 0 4px 15px rgba(229, 0, 18, 0.08); 
+        }
+        .reality-list-card h3 { color: var(--red); font-size: 20px; margin-top: 0; margin-bottom: 15px; font-weight: 900; border-bottom: 2px solid #ffecec; padding-bottom: 10px;}
+        .reality-list-card ul { padding-left: 20px; margin: 0; }
+        .reality-list-card li { margin-bottom: 12px; font-weight: 700; color: #333; font-size: 15px; line-height: 1.6; }
+
+        /* 最終メッセージ用の金の囲み */
+        .gold-card { border: 2.5px solid var(--gold); box-shadow: 0 4px 15px rgba(184, 148, 54, 0.1); }
+
         .highlight-blue { color: var(--sub-blue); font-weight: 900; }
         .marker { background: linear-gradient(transparent 60%, #e8f0ff 60%); }
-        
-        /* 不安リストのスタイル */
-        .list-box { background: #fff; padding: 25px; border-radius: 12px; border: 1.5px solid #ddd; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
-        .list-box h3 { color: var(--sub-blue); font-size: 19px; margin-top: 0; margin-bottom: 15px; font-weight: 900; border-bottom: 1px solid #eee; padding-bottom: 10px;}
-        .list-box ul { padding-left: 20px; margin: 0; }
-        .list-box li { margin-bottom: 10px; font-weight: 700; color: #444; font-size: 15px; line-height: 1.6; }
-        .list-box li:last-child { margin-bottom: 0; }
 
-        /* 戻るボタン：他ページのリンクボタンとデザインを統一 */
-        .back-btn { display: flex; align-items: center; justify-content: center; padding: 18px; background: var(--bg-white); color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2.5px solid var(--sub-blue); border-radius: 12px; margin: 40px 0; font-size: 16px; transition: 0.3s; }
-        .back-btn:active { transform: scale(0.98); background: #f0f5ff; }
+        .nav-link { display: flex; align-items: center; justify-content: center; position: relative; padding: 20px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2.5px solid var(--sub-blue); border-radius: 12px; margin: 40px 0; font-size: 16px; }
 
-        /* LINEボタン：全ページ共通の固定ボタン */
         .btn-line-fix { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff; border-radius: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 19px; z-index: 9999; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
         
-        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; background: #fff; border-top: 1px solid #eee; }
+        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; border-top: 1px solid #f2f2f2; }
     </style>
 </head>
 <body>
@@ -60,8 +70,8 @@
 
     <section class="section">
         <div class="reveal concept-card">
-            <h2 style="text-align:center; color:var(--sub-blue); font-family:'Noto Serif JP'; font-weight: 900; margin-top: 0;">増やす知識と守る知恵で、<br>人生に安心を。</h2>
-            <p class="concept-text">
+            <h2 style="text-align:center; color:var(--sub-blue); font-family:'Noto Serif JP'; font-weight: 900; margin: 0; line-height: 1.4;">増やす知識と守る知恵で、<br>人生に安心を。</h2>
+            <p class="concept-text" style="text-align:center; margin-top: 20px;">
                 くらしとお金サロンは、これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。
             </p>
         </div>
@@ -78,7 +88,7 @@
             </p>
         </div>
 
-        <div class="reveal list-box">
+        <div class="reveal reality-list-card">
             <h3>暮らしとお金の不安</h3>
             <ul>
                 <li>老後のお金は足りるのか、年金だけで本当に大丈夫なのか</li>
@@ -106,19 +116,19 @@
         <div class="reveal concept-card">
             <p class="concept-text">
                 当サロンでは投資についても学びます。増やす力と守る知識、その両方を身につけることがこれからの安心に繋がると考えています。<br><br>
-                ただし、<small>※投資の最終判断は必ずご自身で行っていただきます。私たちは商品の販売や投資助言を行う立場ではありません。納得して判断できる力を身につけていただく場所でありたいと考えています。</small>
+                <small style="display:block; margin-top:10px; line-height:1.4;">※投資の最終判断は必ずご自身で行っていただきます。私たちは商品の販売や投資助言を行う立場ではありません。納得して判断できる力を身につけていただく場所でありたいと考えています。</small>
             </p>
         </div>
 
-        <div class="reveal concept-card" style="border-left-color: var(--gold);">
+        <div class="reveal concept-card gold-card">
             <p class="concept-text" style="text-align:center; font-size: 17px;">
                 一人や家族だけで抱え込まなくて大丈夫です。<br>
                 <span class="highlight-blue" style="font-size:1.2em;">小さな一歩が、これからの大きな安心に。</span>
             </p>
         </div>
 
-        <a href="index.html" class="back-btn">
-            <i class="fa-solid fa-chevron-left" style="margin-right: 10px;"></i> トップページへ戻る
+        <a href="index.html" class="nav-link">
+            <i class="fa-solid fa-chevron-left" style="margin-right: 15px;"></i> トップページへ戻る
         </a>
     </section>
 
@@ -129,7 +139,6 @@
     </a>
 
     <script>
-        /* スクロール時の浮き上がり演出も統一 */
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { 
                 if (entry.isIntersecting) entry.target.classList.add('active'); 
