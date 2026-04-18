@@ -2,19 +2,19 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>くらしとお金サロン | 小倉南校</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 :root {
-  --bg-base: #F5F5F7; /* Apple的な洗練されたグレー白 */
-  --text-main: #1D1D1F;
-  --text-sub: #86868B;
-  --accent-blue: #0066CC;
-  --accent-gold: #BF9B30;
-  --alert-red: #D70015;
+  --apple-bg: #F5F5F7;
+  --apple-text: #1D1D1F;
+  --apple-blue: #0066CC;
+  --deep-navy: #001D42; /* 高級感のある深い紺 */
+  --accent-gold: #D4AF37;
+  --alert-red: #FF3B30;
 }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
@@ -22,128 +22,93 @@
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  background-color: var(--bg-base);
-  color: var(--text-main);
-  line-height: 1.6;
+  background-color: #FFF;
+  color: var(--apple-text);
+  line-height: 1.5;
 }
 
-/* ヘッダー：極限までシンプルに */
+/* Apple風シンプルヘッダー */
 header {
-  height: 60px;
+  height: 52px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: saturate(180%) blur(20px);
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  position: sticky; top: 0; z-index: 1000;
   border-bottom: 0.5px solid rgba(0,0,0,0.1);
 }
-.header-logo { height: 32px; width: 32px; object-fit: contain; margin-right: 12px; }
-.header-name { font-size: 14px; font-weight: 700; letter-spacing: -0.02em; }
+.header-logo { height: 28px; margin-right: 10px; }
+.header-title { font-size: 14px; font-weight: 700; letter-spacing: -0.02em; }
 
-/* ヒーロー：言葉を叩きつける */
+/* ヒーロー：Apple Storeの巨大パネル風 */
 .hero {
-  padding: 100px 30px 60px;
-  text-align: left;
+  padding: 80px 30px;
+  text-align: center;
   background: #FFF;
 }
-.hero-tag { font-size: 16px; font-weight: 700; color: var(--accent-blue); margin-bottom: 20px; display: block; }
+.hero-tag { font-size: 18px; font-weight: 700; color: var(--apple-blue); margin-bottom: 10px; display: block; }
 .hero-main {
   font-family: 'Noto Serif JP', serif;
-  font-size: 12vw; /* スマホ幅でどかんと出す */
+  font-size: 13vw; /* スマホで最大級のインパクト */
   line-height: 1.1;
   margin: 0;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
-.hero-main strong {
-  display: block;
-  color: var(--accent-gold);
-  font-size: 16vw;
-  margin-top: 5px;
+.hero-main strong { color: var(--accent-gold); display: block; font-size: 15vw; }
+
+/* フェーズ1：ドキッ（深い紺で緊張感を） */
+.phase-ドキ {
+  background: var(--deep-navy);
+  color: #FFF;
+  padding: 100px 30px;
+  text-align: left;
 }
+.crisis-label { color: var(--alert-red); font-weight: 700; font-size: 14px; letter-spacing: 0.1em; }
+.crisis-title { font-size: 36px; font-family: 'Noto Serif JP', serif; margin: 20px 0; }
+.huge-num { font-size: 60px; font-weight: 700; display: block; line-height: 1; margin: 20px 0 10px; color: #FFF; }
+
+/* フェーズ2：安心（圧倒的な白の空間） */
+.phase-安心 {
+  padding: 100px 30px;
+  background: #FFF;
+  text-align: center;
+}
+.safe-statement { font-family: 'Noto Serif JP', serif; font-size: 32px; line-height: 1.3; margin-bottom: 50px; }
+.safe-card {
+  text-align: left; background: var(--apple-bg); border-radius: 24px; padding: 30px; margin-bottom: 20px;
+}
+.safe-card i { font-size: 24px; color: var(--apple-blue); margin-bottom: 15px; }
+.safe-card h3 { font-size: 22px; margin: 0 0 10px; }
+
+/* フェーズ3：損得（論理的に納得させる） */
+.phase-損得 {
+  padding: 100px 30px;
+  background: var(--apple-bg);
+}
+.price-tag { font-size: 64px; font-weight: 700; display: block; text-align: center; }
+.price-sub { text-align: center; color: var(--apple-text); font-weight: 700; font-size: 18px; margin-bottom: 40px; }
+.logic-box { background: #FFF; border-radius: 24px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
 /* スライダー */
-.slider-container { background: #FFF; padding-bottom: 60px; }
+.slider-wrap { padding: 40px 0; background: #FFF; }
 .slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 20px; gap: 15px; }
 .slider::-webkit-scrollbar { display: none; }
-.slider img {
-  width: 85vw;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+.slider img { width: 85vw; flex-shrink: 0; scroll-snap-align: center; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+
+/* 下部固定LINEボタン：プルプル震える */
+@keyframes shake {
+  0%, 90% { transform: translateX(-50%) scale(1); }
+  92%, 96% { transform: translateX(-50%) scale(1.05) rotate(1deg); }
+  94%, 98% { transform: translateX(-50%) scale(1.05) rotate(-1deg); }
 }
-
-/* セクション：余白を贅沢に使う */
-.section { padding: 100px 30px; }
-.section-label { font-size: 14px; font-weight: 700; color: var(--text-sub); display: block; margin-bottom: 10px; }
-.section-title { font-size: 32px; font-family: 'Noto Serif JP', serif; margin: 0 0 40px; line-height: 1.2; }
-
-/* 危機フェーズ：赤の緊張感 */
-.crisis-box {
-  background: #000;
-  color: #FFF;
-  border-radius: 30px;
-  padding: 50px 30px;
-  margin-bottom: 20px;
-}
-.crisis-item { margin-bottom: 40px; }
-.crisis-item:last-child { margin-bottom: 0; }
-.crisis-num { font-size: 48px; font-weight: 700; color: var(--alert-red); display: block; line-height: 1; }
-.crisis-text { font-size: 14px; color: #AAA; margin-top: 10px; display: block; }
-
-/* 安心フェーズ：洗練されたリスト */
-.safe-list { list-style: none; padding: 0; }
-.safe-list li {
-  padding: 30px 0;
-  border-bottom: 0.5px solid rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.safe-list li div { width: 85%; }
-.safe-list h3 { font-size: 20px; margin: 0 0 10px; }
-.safe-list p { font-size: 15px; color: var(--text-sub); margin: 0; }
-.safe-list i { color: var(--accent-blue); font-size: 20px; }
-
-/* 料金：価値を提示する */
-.price-section { background: #FFF; border-radius: 40px 40px 0 0; text-align: center; padding: 100px 30px; }
-.price-main { font-size: 64px; font-weight: 700; letter-spacing: -0.05em; margin: 20px 0; }
-.price-main span { font-size: 20px; font-weight: 400; color: var(--text-sub); }
-
-.compare-img { width: 100%; border-radius: 20px; margin-top: 40px; }
-
-/* LINEボタン：震動と追跡 */
-@keyframes shake-and-shine {
-  0%, 80%, 100% { transform: scale(1); }
-  85%, 95% { transform: scale(1.05) rotate(1deg); }
-  90% { transform: scale(1.05) rotate(-1deg); }
-}
-
 .floating-line {
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  left: 20px;
-  background: #00C300;
-  color: #FFF;
-  text-decoration: none;
-  height: 64px;
-  border-radius: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 17px;
-  box-shadow: 0 15px 40px rgba(0,195,0,0.4);
-  z-index: 2000;
-  animation: shake-and-shine 5s infinite;
+  position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
+  width: 90%; max-width: 400px; background: #00C300; color: #FFF;
+  padding: 20px; border-radius: 50px; font-size: 18px; font-weight: 700;
+  text-decoration: none; z-index: 2000; text-align: center;
+  box-shadow: 0 10px 30px rgba(0,195,0,0.4);
+  animation: shake 4s infinite;
 }
-.floating-line i { font-size: 24px; margin-right: 12px; }
 
-/* ヘルパー */
 .ib { display: inline-block; }
 </style>
 </head>
@@ -151,7 +116,7 @@ header {
 
 <header>
   <img src="ロゴ浮き.png" class="header-logo">
-  <span class="header-name">くらしとお金サロン（小倉南校）</span>
+  <span class="header-title">くらしとお金サロン（小倉南校）</span>
 </header>
 
 <main>
@@ -163,7 +128,7 @@ header {
     </h1>
   </section>
 
-  <div class="slider-container">
+  <div class="slider-wrap">
     <div class="slider">
       <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
       <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
@@ -172,94 +137,75 @@ header {
     </div>
   </div>
 
-  <section class="section">
-    <span class="section-label">THE REALITY</span>
-    <h2 class="section-title">知らないうちに、<br>奪われている。</h2>
+  <section class="phase-ドキ">
+    <span class="crisis-label">THE REALITY</span>
+    <h2 class="crisis-title">知らないうちに、<br>奪われている。</h2>
     
-    <div class="crisis-box">
-      <div class="crisis-item">
-        <span class="crisis-num">1.2億円</span>
-        <span style="font-weight: 700;">特殊詐欺、毎日の被害額。</span>
-        <span class="crisis-text">あなたの「増やしたい」という善意が、海外の犯罪組織に飲み込まれています。</span>
-      </div>
-      <div class="crisis-item">
-        <span class="crisis-num">800人</span>
-        <span style="font-weight: 700;">認知症で口座が凍結。毎日、新たに。</span>
-        <span class="crisis-text">本人の通帳であっても、診断一つで引き出せない。それが今の制度の「現実」です。</span>
-      </div>
+    <span class="huge-num">1.2億円</span>
+    <p style="font-weight: 700; font-size: 20px;">特殊詐欺、毎日の被害額。</p>
+    <p style="color: #CCC; font-size: 16px;">あなたの「増やしたい」という善意が、海外の犯罪組織に飲み込まれています。</p>
+
+    <div style="height: 60px;"></div>
+
+    <span class="huge-num">800人</span>
+    <p style="font-weight: 700; font-size: 20px;">資産凍結、新たに毎日。</p>
+    <p style="color: #CCC; font-size: 16px;">認知症と診断された瞬間、本人の口座であっても生活費すら引き出せなくなる。それが今の制度の「現実」です。</p>
+  </section>
+
+  <section class="phase-安心">
+    <h2 class="safe-statement">「起きてから」では、<br>もう遅いから。</h2>
+    
+    <div class="safe-card">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>資産を鉄壁に守る</h3>
+      <p>巧妙な詐欺やインフレから、あなたの大切なお金を防衛する「技術」を身につけます。</p>
+    </div>
+
+    <div class="safe-card">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+      <h3>家族に迷惑をかけない</h3>
+      <p>資産凍結や相続トラブルを未然に防ぎ、次世代へ確実につなぐ準備を整えます。</p>
+    </div>
+
+    <div class="safe-card" style="background: var(--deep-navy); color: #FFF;">
+      <p style="margin: 0; font-weight: 700;">金融機関の営業ではありません。販売も、勧誘も、一切ありません。提供するのは、あなたが正しく判断するための「知恵」だけです。</p>
     </div>
   </section>
 
-  <section class="section" style="background: #FFF;">
-    <span class="section-label">OUR MISSION</span>
-    <h2 class="section-title">「知る」ことが、<br>最強の盾になる。</h2>
+  <section class="phase-損得">
+    <h2 style="text-align: center; font-family: 'Noto Serif JP', serif; font-size: 28px; margin-bottom: 40px;">この価値は、<br>高いでしょうか。</h2>
     
-    <ul class="safe-list">
-      <li>
-        <div>
-          <h3>将来の問題に備える</h3>
-          <p>起きる前に知る。それだけで防げるトラブルは無数にあります。</p>
-        </div>
-        <i class="fa-solid fa-chevron-right"></i>
-      </li>
-      <li>
-        <div>
-          <h3>資産を守る鉄壁の知恵</h3>
-          <p>巧妙な詐欺やインフレから、あなたの大切なお金を防衛する技術を。</p>
-        </div>
-        <i class="fa-solid fa-chevron-right"></i>
-      </li>
-      <li>
-        <div>
-          <h3>お金を育てる確かな知識</h3>
-          <p>新NISA等を活用し、世界経済の成長を家計の味方につけます。</p>
-        </div>
-        <i class="fa-solid fa-chevron-right"></i>
-      </li>
-    </ul>
-  </section>
+    <span class="price-tag">22,000<span style="font-size: 20px;"> / 月(税込)</span></span>
+    <p class="price-sub">週1回の対面学習 × 24時間個別相談</p>
 
-  <section class="section" style="text-align: center;">
-    <div style="background: #FFF; padding: 60px 20px; border-radius: 40px;">
-      <i class="fa-solid fa-user-slash" style="font-size: 40px; color: var(--accent-blue); margin-bottom: 20px;"></i>
-      <p style="font-size: 20px; font-weight: 700; margin: 0;">
-        金融機関の営業ではありません。<br>販売や勧誘も、一切ありません。
+    <div class="logic-box">
+      <p style="font-weight: 700; border-bottom: 1px solid #EEE; padding-bottom: 15px; margin-bottom: 15px;">
+        <i class="fa-solid fa-calculator" style="color: var(--apple-blue); margin-right: 10px;"></i>
+        損をしないための投資
       </p>
-      <p style="color: var(--text-sub); margin-top: 15px; font-size: 14px;">
-        私たちが提供するのは、あなた自身が正しく判断するための「知恵」そのものです。
+      <p style="font-size: 15px; line-height: 1.8;">
+        1回あたり約5,500円。無駄な保険料を1つ見直すだけで、あるいは一度の詐欺被害を防ぐだけで、このサロンの費用は何倍にもなって返ってきます。
+        <strong>「知らないこと」が、人生で最も高いコストになります。</strong>
       </p>
     </div>
-  </section>
-
-  <section class="price-section">
-    <span class="section-label">MEMBERSHIP</span>
-    <h2 class="section-title">一生続く安心を、<br>共につくる。</h2>
-    
-    <div class="price-main">22,000<span> / 月(税込)</span></div>
-    <p style="font-weight: 700; color: var(--accent-gold);">週1回の対面学習 × 24時間個別相談</p>
-    
-    <p style="font-size: 15px; color: var(--text-sub); max-width: 300px; margin: 30px auto;">
-      1回あたり約5,500円。単発のセミナーでは決して得られない、専門家が常に隣にいる安心感。
-    </p>
 
     <img src="IMG_4157.png" class="compare-img">
     <img src="IMG_4156.png" class="compare-img">
   </section>
 
-  <section class="section">
-    <h2 class="section-title">ACCESS</h2>
-    <p style="font-weight: 700; margin-bottom: 5px;">守恒みらいホール</p>
-    <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 20px;">北九州市小倉南区守恒</p>
-    <div style="border-radius: 25px; overflow: hidden; height: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-      <iframe src="http://googleusercontent.com/maps.google.com/5" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <section style="padding: 100px 30px; background: #FFF;">
+    <h2 style="font-family: 'Noto Serif JP', serif; font-size: 32px; margin-bottom: 10px;">ACCESS</h2>
+    <p style="font-weight: 700; margin-bottom: 30px;">守恒みらいホール（北九州市小倉南区守恒）</p>
+    <div style="border-radius: 30px; overflow: hidden; height: 350px; box-shadow: 0 15px 45px rgba(0,0,0,0.1);">
+      <iframe src="http://googleusercontent.com/maps.google.com/6" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
-  <section class="section" style="text-align: center; padding-bottom: 180px;">
-    <h2 class="section-title">まずは、<br>扉を叩いてください。</h2>
-    <img src="IMG_2124.png" style="width: 200px; border-radius: 20px; margin-bottom: 20px;">
-    <p style="font-weight: 700;">LINE公式アカウントを友だち追加</p>
-    <p style="font-size: 14px; color: var(--text-sub);">「体験」または「質問」とメッセージを送るだけです。</p>
+  <section style="padding: 100px 30px 200px; text-align: center; background: var(--apple-bg);">
+    <h2 style="font-family: 'Noto Serif JP', serif; font-size: 32px; margin-bottom: 40px;">その一歩で、<br>未来が変わる。</h2>
+    <img src="IMG_2124.png" style="width: 200px; border-radius: 24px; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+    <p style="font-weight: 700;">まずはLINEで無料体験予約を</p>
+    <p style="font-size: 14px; color: var(--apple-text); opacity: 0.6;">「体験希望」と送るだけで、専門家との対話が始まります。</p>
   </section>
 </main>
 
@@ -267,6 +213,10 @@ header {
   <i class="fa-brands fa-line"></i>
   無料体験・質問はこちら
 </a>
+
+<script>
+// スライダーの挙動を調整したい場合はここ
+</script>
 
 </body>
 </html>
