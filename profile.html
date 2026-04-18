@@ -29,6 +29,10 @@
         .history-title i { margin-right: 10px; color: var(--gold); }
 
         .text-p { font-size: 16px; font-weight: 500; margin-bottom: 30px; color: #333; }
+        
+        /* リストスタイル */
+        .career-list { padding-left: 1.2em; margin-bottom: 20px; font-size: 15px; color: #444; }
+        .career-list li { margin-bottom: 5px; list-style: square; }
 
         .support-box { border: 2px solid #d1d9e6; border-radius: 15px; padding: 30px 25px; margin: 50px 0; background-color: #fcfdfe; position: relative; }
         .support-box::before { content: '強力なバックアップ体制'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--sub-blue); color: #fff; padding: 2px 20px; font-size: 14px; font-weight: 900; border-radius: 20px; }
@@ -37,36 +41,23 @@
         .support-list li::before { content: '■'; color: var(--gold); font-size: 10px; margin-right: 12px; }
         .support-list li:last-child { border-bottom: none; }
 
+        /* ナビゲーションリンク：文字中央・矢印右寄り */
+        .btn-back { display: flex; align-items: center; justify-content: center; position: relative; width: 100%; max-width: 280px; margin: 80px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
+        .btn-back i { position: absolute; right: 20px; }
+
         @keyframes fuwafuwa {
             0%, 100% { transform: translateX(-50%) translateY(0); }
             50% { transform: translateX(-50%) translateY(-12px); }
         }
 
         .line-float-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 400px;
-            background-color: #06C755;
-            color: white;
-            text-align: center;
-            padding: 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            animation: fuwafuwa 3s infinite ease-in-out;
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 400px; background-color: #06C755; color: white;
+            text-align: center; padding: 18px; border-radius: 50px; text-decoration: none;
+            font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center;
+            z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.15); animation: fuwafuwa 3s infinite ease-in-out;
         }
         .line-float-btn i { font-size: 28px; margin-right: 12px; }
-
-        .btn-back { display: block; width: 100%; max-width: 280px; margin: 80px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; transition: all 0.3s; }
     </style>
 </head>
 <body>
@@ -86,21 +77,36 @@
             <p class="text-p">福岡県北九州市小倉南区出身。<br>この街で生まれ、地元の学校を卒業し、<br>社会人としての歩みを始めました。</p>
             
             <div class="history-box">
-                <h3 class="history-title"><i class="fa-solid fa-chart-line"></i> 現場で培った「圧倒的な解決力」</h3>
+                <h3 class="history-title"><i class="fa-solid fa-chart-line"></i> 組織・経営の全枢軸を担った経歴</h3>
+                <p class="text-p" style="margin-bottom:10px; font-size: 15px; line-height: 1.8;">
+                    約15年間、大手飲食業界の最前線に身を置き、店長・エリアマネージャー・ブロック長を歴任。最終的には<b>西日本営業本部長補佐</b>として、西日本エリア全ての県を統括。最大で<b>約200店舗、年商200億円規模</b>の運営責任を担いました。
+                </p>
+                <p class="text-p" style="margin-bottom:10px; font-size: 15px; line-height: 1.8;">
+                    マネジメントのみならず、企業の心臓部となるあらゆる部署で実務を経験：
+                </p>
+                <ul class="career-list">
+                    <li>広告宣伝室 室長（集客・マーケティング）</li>
+                    <li>商品開発・業態開発（付加価値の創造）</li>
+                    <li>物件開発（不動産・立地選定）</li>
+                    <li>経営企画室（事業戦略の立案）</li>
+                </ul>
                 <p class="text-p" style="margin-bottom:0; font-size: 15px; line-height: 1.8;">
-                    約15年間、飲食業界の最前線に身を置き、<br>店長からエリア統括、営業部長補佐まで歴任。<br>最大で<b>約200店舗、年商200億円規模</b>の運営を担い、<br><b>10,000名を超えるスタッフと向き合いマネジメントしてきました。</b><br><br>
-                    その後、独立して自ら店舗経営を実践。<br>常に数字と、それ以上に「人」を大切にし、<br>目の前の課題を一つひとつ解決してきた自負があります。
+                    現場から経営の最上流までを網羅し、10,000名を超えるスタッフと向き合ってきた経験が、今の私の解決力の土台となっています。
                 </p>
             </div>
 
-            <p class="text-p">私は、最初から金融業界にいた人間ではありません。<br>皆様と同じように悩み、働き、<br>自分の足で一歩ずつ学びを積み上げてきました。<br><br>
-            <span style="color: var(--sub-blue); font-weight: 900; border-bottom: 2px solid var(--gold);">「生活者の実感」を持ちながら、プロとして伴走できること</span>。<br>それが、私の提供できる最大の価値です。</p>
+            <div class="history-box" style="border-left-color: var(--sub-blue); background: #f0f5ff;">
+                <h3 class="history-title" style="color: var(--sub-blue);"><i class="fa-solid fa-briefcase"></i> 独立・経営者としての実践</h3>
+                <p class="text-p" style="margin-bottom:0; font-size: 15px; line-height: 1.8;">
+                    会社員時代の実績を経て独立。自ら<b>代表として複数店舗を経営し、年商5億円規模</b>まで成長させました。一経営者として、自らの足で歩み、数字の責任を負い続けてきたからこそ、綺麗事ではない「生活者の実感」をプロの知見として提供できます。
+                </p>
+            </div>
         </section>
 
         <section class="reveal" style="margin-top: 60px;">
             <h2 style="font-size: 22px; color: var(--sub-blue); border-bottom: 2px solid #d1d9e6; display: inline-block; padding-bottom: 5px; margin-bottom: 25px; font-family: 'Noto Serif JP';">現在の活動</h2>
-            <p class="text-p">現在は<b>国家資格ファイナンシャルプランニング技能士3級を取得</b>。<br><b>投資家・起業家として知見を活かしながら</b>、<br>地元・小倉南区で「くらしとお金サロン」を運営しています。</p>
-            <p class="text-p">各種詐欺対策や金融リテラシーの向上を通じ、<br>地域の皆様が将来への不安を解消し、<br>安心して暮らせる環境づくりに全力を注いでいます。</p>
+            <p class="text-p">現在は<b>国家資格ファイナンシャルプランニング技能士3級を取得</b>。<br><b>投資家・起業家として知見を活かしながら</b>、地元・小倉南区で「くらしとお金サロン」を運営しています。</p>
+            <p class="text-p">各種詐欺対策や金融リテラシーの向上を通じ、地域の皆様が将来への不安を解消し、安心して暮らせる環境づくりに全力を注いでいます。</p>
             <p class="text-p" style="color: var(--red); font-weight: 700; font-size: 15px; background: #fff5f5; padding: 15px; border-radius: 8px;">※中立性を保つため、金融商品の販売や<br>特定の投資勧誘は一切行っておりません。</p>
         </section>
 
@@ -114,12 +120,12 @@
             </ul>
         </section>
 
-        <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る</a></div>
+        <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る <i class="fa-solid fa-chevron-right"></i></a></div>
     </div>
 
-    <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
+    <a href="https://lin.ee/n37s4pB" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
-        <span>LINEで無料体験・入会申込</span>
+        <span>LINEで無料体験・ご相談</span>
     </a>
 
     <script>
