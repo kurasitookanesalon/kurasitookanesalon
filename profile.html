@@ -25,8 +25,8 @@
             color: #fff;
             line-height: 1.8;
             overflow-x: hidden;
-            /* ボタン被り防止のための大きな余白 */
-            padding-bottom: 220px;
+            /* 余計なスクロールを防ぐため、LINEボタン分のみ確保 */
+            padding-bottom: 120px; 
         }
 
         .reveal {
@@ -89,12 +89,19 @@
             color: var(--sub-blue);
             line-height: 1.5;
         }
+        .card-sub-title {
+            font-size: 16px;
+            color: var(--main-blue);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
         .card-text { font-size: 16px; text-align: left; }
 
         .highlight-blue { color: var(--main-blue); font-weight: 700; }
 
         /* 専門家リスト */
-        ul { list-style: none; padding: 0; margin: 15px 0 0; }
+        ul { list-style: none; padding: 0; margin: 0; }
         li { 
             padding: 10px 0; 
             border-bottom: 1px dashed #eee; 
@@ -114,7 +121,7 @@
             display: flex;
             width: 90%;
             max-width: 300px;
-            margin: 40px auto;
+            margin: 40px auto 20px;
             background: rgba(255,255,255,0.1);
             color: #fff;
             padding: 16px;
@@ -137,9 +144,10 @@
 
         footer { 
             text-align: center; 
-            padding: 20px 20px 100px; 
+            padding: 20px 20px 20px; 
             color: rgba(255,255,255,0.6); 
             font-size: 12px; 
+            position: relative;
         }
 
         .nowrap { white-space: nowrap; }
@@ -156,17 +164,23 @@
 <div class="section reveal">
     <img src="IMG_3616.png" class="profile-img">
 
-    <div class="card card-center card-main">
-        平松 広大<small style="font-size: 14px; margin-left: 8px;">（36歳）</small><br>
-        <span style="font-size: 16px; color: var(--main-blue);">くらしとお金サロン代表</span>
+    <div class="card card-center">
+        <span class="card-main">平松 広大<small style="font-size: 14px; margin-left: 8px;">（36歳）</small></span>
+        <span style="font-size: 16px; color: var(--main-blue); display: block; font-weight: 700;">くらしとお金サロン代表</span>
     </div>
 
     <div class="card card-text">
-        福岡県北九州市小倉南区出身。地元で生まれ育ち、今もこの地域で活動しています。<br><br>
+        <span class="card-sub-title">出身地</span>
+        福岡県北九州市小倉南区出身。地元で生まれ育ち、今もこの地域で活動しています。
+    </div>
+
+    <div class="card card-text">
+        <span class="card-sub-title">経歴</span>
         約15年間、飲食業界にて経験を積み、店長・エリア管理職・営業部長補佐などを歴任。広報・商品開発・人事・マーケティングなど幅広い分野で実務を経験してきました。
     </div>
 
     <div class="card card-center">
+        <span class="card-sub-title">マネジメント実績</span>
         <span class="highlight-blue" style="font-size: 19px;">
             約<span class="nowrap">200店舗</span>・
             年商<span class="nowrap">約200億円</span>規模の管理
@@ -174,11 +188,15 @@
     </div>
 
     <div class="card card-text">
-        営業部長補佐として、延べ<span class="nowrap">10,000名以上</span>のマネジメントを経験。人と向き合い、数字と向き合い、現場の課題を一つずつ解決してきました。<br><br>
+        営業部長補佐として、延べ<span class="nowrap">10,000名以上</span>のマネジメントを経験。人と向き合い、数字と向き合い、現場の課題を一つずつ解決してきました。
+    </div>
+
+    <div class="card card-text">
         独立後、年商<span class="nowrap">約4億円</span>規模の店舗経営を経て、「くらしとお金サロン」を立ち上げました。
     </div>
 
     <div class="card card-text">
+        <span class="card-sub-title">皆様への想い</span>
         金融業界出身ではなく、自身で学び、実践してきた立場です。同じように悩み、考えてきた経験があるからこそ、皆様に寄り添えると考えています。
     </div>
 
@@ -186,8 +204,8 @@
         FP3級技能士として、<br>投資・事業を行いながら運営
     </div>
 
-    <div class="card card-text">
-        <span class="highlight-blue" style="font-size: 18px; display: block; margin-bottom: 10px; border-bottom: 2px solid var(--gold); width: fit-content;">バックアップ体制</span>
+    <div class="card">
+        <span class="highlight-blue" style="font-size: 18px; display: block; margin-bottom: 12px; border-bottom: 2px solid var(--gold); width: fit-content;">バックアップ体制</span>
         <ul>
             <li>税理士法人松本会計</li>
             <li>日本FP協会</li>
@@ -204,11 +222,11 @@
     </a>
 </div>
 
+<footer>© くらしとお金サロン All Rights Reserved.</footer>
+
 <a href="https://lin.ee/n37s4pB" class="btn-line" target="_blank">
     <i class="fa-brands fa-line" style="font-size:28px; margin-right:10px;"></i> 無料体験・質問はこちら
 </a>
-
-<footer>© くらしとお金サロン All Rights Reserved.</footer>
 
 <script>
     const observer = new IntersectionObserver((entries) => {
