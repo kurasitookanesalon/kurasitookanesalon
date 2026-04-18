@@ -5,271 +5,285 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>くらしとお金サロン 小倉南校</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 :root {
-  --main-blue: #0A2558;
+  --apple-black: #000000;
+  --apple-dark-gray: #1D1D1F;
+  --apple-gray: #86868B;
+  --apple-blue: #0066CC;
   --accent-gold: #D4AF37;
-  --soft-bg: #F8F9FA;
-  --text-main: #1D1D1F;
 }
 
 body {
   margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  background-color: var(--soft-bg);
-  color: var(--text-main);
-  line-height: 1.8;
-  padding-bottom: 100px;
+  font-family: "SF Pro Display", "Noto Sans JP", sans-serif;
+  background-color: var(--apple-black);
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ヘッダー */
-.header-nav {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
+/* 商品ページ特有のフローティングナビ */
+.local-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 10px 20px;
+  height: 52px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 22px;
+  justify-content: space-between;
 }
-.header-nav img { width: 30px; margin-right: 10px; }
-.header-nav span { font-weight: 700; font-size: 14px; color: var(--main-blue); }
+.local-nav span { font-weight: 700; font-size: 14px; letter-spacing: 0.1em; }
 
-/* ヒーロー */
+/* ヒーロー：製品発表のようなインパクト */
 .hero {
-  background: linear-gradient(135deg, var(--main-blue) 0%, #164291 100%);
-  color: #fff;
-  padding: 80px 24px 60px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  border-radius: 0 0 40px 40px;
+  padding: 0 20px;
 }
 
-.formula {
+.hero-formula {
+  font-size: clamp(14px, 4vw, 18px);
+  color: var(--apple-gray);
+  margin-bottom: 20px;
+}
+
+.hero-main {
   font-family: "Noto Serif JP", serif;
-  font-size: 18px;
-  opacity: 0.9;
-  letter-spacing: 0.05em;
+  font-size: clamp(32px, 8vw, 56px);
+  line-height: 1.2;
+  font-weight: 900;
+  background: linear-gradient(180deg, #fff 0%, #888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.formula strong {
-  display: block;
-  font-size: 38px;
+.hero-gold {
   color: var(--accent-gold);
-  margin-top: 15px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  -webkit-text-fill-color: var(--accent-gold);
+  display: block;
+  margin-top: 10px;
 }
 
-/* スライダー */
-.slider {
-  width: 90%;
-  margin: -40px auto 40px;
-  overflow: hidden;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  background: #fff;
-}
-
-.slide-track { display: flex; }
+/* スライダー：製品ギャラリー風 */
+.slider-container { background: #161617; padding: 60px 0; }
+.slide-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 20px; padding: 0 20px; }
+.slide-track::-webkit-scrollbar { display: none; }
 .slide-track img {
-  width: 100%;
-  height: 60vw;
-  max-height: 450px;
+  width: 85vw;
+  height: 50vh;
   object-fit: cover;
+  border-radius: 20px;
+  scroll-snap-align: center;
   flex-shrink: 0;
 }
 
-/* セクション */
-.section { padding: 60px 24px; max-width: 800px; margin: 0 auto; }
+/* セクション：情報の重みを出す */
+.section { padding: 100px 24px; max-width: 1000px; margin: 0 auto; }
 .section h2 {
   font-family: "Noto Serif JP", serif;
-  font-size: 24px;
+  font-size: clamp(24px, 6vw, 40px);
+  margin-bottom: 60px;
   text-align: center;
-  margin-bottom: 40px;
-  position: relative;
-  color: var(--main-blue);
 }
-.section h2::after {
-  content: "";
+
+/* カード：製品スペックのように見せる */
+.spec-card {
+  background: var(--apple-dark-gray);
+  border-radius: 28px;
+  padding: 40px 30px;
+  margin-bottom: 24px;
+}
+
+.spec-val {
+  font-size: clamp(32px, 10vw, 64px);
+  font-weight: 700;
   display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--accent-gold);
-  margin: 15px auto 0;
+  margin-bottom: 10px;
+  color: #fff;
 }
 
-/* カード */
-.card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 30px 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-  border: 1px solid rgba(0,0,0,0.03);
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text-main);
-}
+.crisis .spec-val { color: #FF3B30; } /* 警告色 */
 
-.crisis-card {
-  border-left: 4px solid #E63946;
-  text-align: left;
-}
-.crisis-card b { color: #E63946; font-size: 22px; }
-
-/* 画像 */
+/* 比較画像 */
 .compare-img {
   width: 100%;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* 地図 */
-.map-container {
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 28px;
   margin-top: 20px;
 }
 
+/* 地図：暗めのトーンに馴染ませる */
+.map-box {
+  width: 100%;
+  height: 400px;
+  border-radius: 28px;
+  overflow: hidden;
+  filter: grayscale(0.2) invert(0) contrast(1.1); /* 若干シックに */
+}
+
 /* フローティングボタン */
-.floating-btn {
+.cta-btn {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 400px;
+  bottom: 24px;
+  left: 20px;
+  right: 20px;
   background: #00C300;
   color: #fff;
-  padding: 18px;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
+  height: 64px;
+  border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  box-shadow: 0 10px 25px rgba(0,195,0,0.4);
-  animation: floaty 3s ease-in-out infinite;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  z-index: 10000;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-@keyframes floaty {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
-}
+/* アニメーション */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
 </style>
 </head>
 
 <body>
 
-<div class="header-nav">
-  <img src="ロゴ浮き.png">
+<div class="local-nav">
+  <img src="ロゴ浮き.png" style="height:28px;">
   <span>くらしとお金サロン（小倉南校）</span>
 </div>
 
-<div class="hero">
-  <div class="formula">
-    増やす知識 × 守る知恵 ＋ 地域の仲間 ＝
-    <strong>安心・安定のくらし</strong>
+<main>
+  <section class="hero reveal">
+    <p class="hero-formula">増やす知識 × 守る知恵 ＋ 地域の仲間 ＝</p>
+    <h1 class="hero-main">
+      安心・安定の<br>
+      <span class="hero-gold">くらし</span>
+    </h1>
+  </section>
+
+  <div class="slider-container reveal">
+    <div class="slide-track" id="slideTrack">
+      <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
+      <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
+      <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
+      <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+      <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
+    </div>
   </div>
-</div>
 
-<div class="slider">
-  <div class="slide-track" id="slideTrack">
-    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
-    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
-    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
-  </div>
-</div>
+  <section class="section crisis">
+    <h2 class="reveal">知らないだけで<br>起きている現実</h2>
+    
+    <div class="spec-card reveal">
+      <span class="spec-val">1.2億円</span>
+      <p style="color:var(--apple-gray)">特殊詐欺被害、毎日約50件。</p>
+    </div>
 
-<div class="section">
-  <h2>知らないだけで起きている現実</h2>
-  <div class="card crisis-card">特殊詐欺被害は毎日<br><b>約50件 / 約1.2億円</b></div>
-  <div class="card crisis-card">認知症診断は毎日 <b>約800人</b></div>
-  <div class="card crisis-card">相続トラブルで裁判 <b>毎日 約30件</b></div>
-</div>
+    <div class="spec-card reveal">
+      <span class="spec-val">800人</span>
+      <p style="color:var(--apple-gray)">認知症診断、毎日。</p>
+    </div>
 
-<div class="section" style="background: #fff; border-radius: 40px 40px 0 0;">
-  <h2>ですがご安心ください</h2>
-  <div class="card">将来の問題に備えることができます</div>
-  <div class="card">大切なお金を守る知恵も学べます</div>
-  <div class="card">大切なお金を増やす知識も学べます</div>
-  <div class="card" style="border: 1px solid var(--accent-gold);">繰り返し学びながら理解を深めていきます</div>
-</div>
+    <div class="spec-card reveal">
+      <span class="spec-val">30件</span>
+      <p style="color:var(--apple-gray)">相続トラブルによる裁判、毎日。</p>
+    </div>
+  </section>
 
-<div class="section">
-  <h2>運営について</h2>
-  <div class="card">金融機関の営業ではありません<br>販売や勧誘は一切ありません</div>
-  <div class="card">投資の判断は必ずご自身でしていただきます</div>
-</div>
+  <section class="section" style="background:#fff; color:var(--apple-black); border-radius:40px;">
+    <h2 class="reveal">ですが、ご安心ください。</h2>
+    <div style="font-size:20px; font-weight:700; text-align:center;">
+      <p class="reveal">将来の問題に備えることができます。</p>
+      <p class="reveal">大切なお金を守る知恵も学べます。</p>
+      <p class="reveal">大切なお金を増やす知識も学べます。</p>
+      <p class="reveal" style="color:var(--apple-blue); margin-top:40px;">繰り返し学びながら、<br>理解を深めていく場所です。</p>
+    </div>
+  </section>
 
-<div class="section" style="background: var(--main-blue); color: #fff; border-radius: 40px;">
-  <h2 style="color: #fff;">料金について</h2>
-  <div class="card" style="font-size: 24px; color: var(--main-blue); border: none;">月額 22,000円<br><small style="font-size: 14px;">（週1回＋相談し放題）</small></div>
-  <div class="card" style="text-align: left; font-size: 15px; color: #555;">
-    一般的な講座は1回参加して終わることが多いです。<br>
-    くらしとお金サロンは毎週継続して学べ、いつでも相談できる環境です。<br>
-    1回あたり<b>約5,500円</b>で安心して続けられます。
-  </div>
-  <img src="IMG_4157.png" class="compare-img">
-  <img src="IMG_4156.png" class="compare-img">
-</div>
+  <section class="section">
+    <h2 class="reveal">運営について</h2>
+    <div class="spec-card reveal">
+      <p style="font-size:20px; font-weight:700; margin:0;">金融機関の営業ではありません。</p>
+      <p style="color:var(--apple-gray); margin-top:10px;">商品の販売や勧誘は一切ありません。投資の判断は、必ずご自身でしていただきます。</p>
+    </div>
+  </section>
 
-<div class="section">
-  <h2>開催場所</h2>
-  <div class="card">
-    <strong>守恒みらいホール</strong><br>
-    <small>北九州市小倉南区守恒</small>
-  </div>
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.7258245840334!2d130.87105281165337!3d33.84521402851493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf02967667d5%3A0x82b2d07521e11440!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712815500000!5m2!1sja!2sjp" 
-    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </div>
-</div>
+  <section class="section reveal">
+    <h2>料金について</h2>
+    <div style="text-align:center;">
+      <span style="font-size:64px; font-weight:700; color:var(--accent-gold);">22,000円</span>
+      <p style="color:var(--apple-gray); font-size:14px;">月額（週1回学習 ＋ 個別相談し放題）</p>
+    </div>
+    <div class="spec-card" style="margin-top:40px;">
+      <p style="font-size:16px;">
+        1回あたり約5,500円。いつでもプロに相談できる環境が、あなたのこれからの安心を支えます。
+      </p>
+    </div>
+    <img src="IMG_4157.png" class="compare-img">
+    <img src="IMG_4156.png" class="compare-img">
+  </section>
 
-<div class="section" style="text-align: center;">
-  <h2>ご参加方法</h2>
-  <div class="card">
-    友だち追加後、<b>「体験」</b>または<b>「質問」</b>とお送りください。
-  </div>
-  <img src="IMG_2124.png" style="width:200px; margin:0 auto; border: 10px solid #fff; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-</div>
+  <section class="section">
+    <h2 class="reveal">開催場所</h2>
+    <div class="spec-card reveal" style="text-align:center;">
+      <p style="font-size:24px; font-weight:700; margin:0;">守恒みらいホール</p>
+      <p style="color:var(--apple-gray);">北九州市小倉南区守恒</p>
+    </div>
+    <div class="map-box reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.120614867727!2d130.87235027581703!3d33.83711647323871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c6d5b080c13f%3A0xcb77d8d66b776996!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712345678901" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
 
-<div class="section" style="padding-bottom: 120px;">
-  <h2>一歩踏み出してみませんか？</h2>
-  <div class="card" style="background: none; border: 1px dashed var(--accent-gold);">
-    知らないまま不安でいるよりも、知って安心できる方が良いと思いませんか？<br>
-    小さな一歩がこれからの大きな安心につながります。
-  </div>
-</div>
+  <section class="section" style="text-align:center; padding-bottom:200px;">
+    <h2 class="reveal">ご参加方法</h2>
+    <p class="reveal">QRコードを読み取るか、<br>下のボタンから追加してください。</p>
+    <img src="IMG_2124.png" class="reveal" style="width:200px; border-radius:24px; border:1px solid #333; margin:40px 0;">
+    <p class="reveal" style="font-size:14px; color:var(--apple-gray);">友だち追加後、「体験」または「質問」と<br>メッセージをお送りください。</p>
+  </section>
+</main>
 
-<a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
-  <i class="fab fa-line" style="font-size: 24px; margin-right: 10px;"></i>
-  無料体験・質問はこちらから
+<a href="https://lin.ee/n37s4pB" class="cta-btn">
+  <i class="fab fa-line" style="font-size:24px; margin-right:12px;"></i>
+  無料体験・質問はこちら
 </a>
 
 <script>
-const track=document.getElementById("slideTrack");
-track.innerHTML+=track.innerHTML;
-let x=0;
-function slide(){
-  x+=0.6;
-  if(x>=track.scrollWidth/2){x=0;}
-  track.style.transform=`translateX(-${x}px)`;
-  requestAnimationFrame(slide);
-}
-slide();
+  // スクロールアニメーション
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // 無限スライダー
+  const track = document.getElementById("slideTrack");
+  track.innerHTML += track.innerHTML;
+  let x = 0;
+  function slide() {
+    x += 0.8;
+    if (x >= track.scrollWidth / 2) { x = 0; }
+    track.style.transform = `translateX(-${x}px)`;
+    requestAnimationFrame(slide);
+  }
+  slide();
 </script>
 
 </body>
