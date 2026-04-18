@@ -7,34 +7,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* トップページと完全に共通のカラー設定 */
         :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-gray: #f8f9fa; --bg-white: #FFFFFF; }
-        
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-gray); color: #333; line-height: 1.6; overflow-x: hidden; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-gray); color: #333; line-height: 1.8; overflow-x: hidden; }
 
-        /* ヘッダー：お城なしのクリーンなデザイン。ロゴとタイトルは統一 */
+        /* ヘッダー：お城なし、ロゴとタイトルで統一 */
         header { padding: 40px 0 20px; text-align: center; background-color: var(--bg-white); border-bottom: 1px solid #eee; }
         .top-logo { width: 100px; height: auto; margin: 0 auto 15px; display: block; }
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--sub-blue); margin: 0; }
 
-        /* アニメーション：統一した浮き上がり演出 */
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         .section { padding: 40px 24px 60px; max-width: 650px; margin: 0 auto; }
         
         /* セクション見出し：金色の下線も含め統一 */
-        .section-title { text-align: center; font-size: 22px; font-weight: 900; color: var(--sub-blue); margin-bottom: 30px; font-family: 'Noto Serif JP', serif; }
+        .section-title { text-align: center; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin-bottom: 30px; font-family: 'Noto Serif JP', serif; }
         .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold); margin: 10px auto; }
 
-        /* 理念用カード：左の濃紺ラインで高級感を統一 */
-        .concept-card { background: var(--bg-white); padding: 30px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--sub-blue); margin-bottom: 25px; }
-        .concept-text { font-size: 16px; font-weight: 700; line-height: 1.9; color: #333; margin: 0; }
+        /* コンテンツカード（囲い）：他ページと共通のデザイン */
+        .concept-card { background: var(--bg-white); padding: 30px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--sub-blue); margin-bottom: 30px; }
+        .concept-card h3 { color: var(--sub-blue); font-size: 20px; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: 900; }
+        .concept-text { font-size: 16px; font-weight: 700; color: #333; margin: 0; }
         
         /* 強調色とマーカー：他ページと共通のトーン */
-        .highlight-blue { color: var(--sub-blue); font-weight: 900; font-size: 1.1em; }
+        .highlight-blue { color: var(--sub-blue); font-weight: 900; }
         .marker { background: linear-gradient(transparent 60%, #e8f0ff 60%); }
+        
+        /* 不安リストのスタイル */
+        .list-box { background: #fff; padding: 25px; border-radius: 12px; border: 1.5px solid #ddd; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .list-box h3 { color: var(--sub-blue); font-size: 19px; margin-top: 0; margin-bottom: 15px; font-weight: 900; border-bottom: 1px solid #eee; padding-bottom: 10px;}
+        .list-box ul { padding-left: 20px; margin: 0; }
+        .list-box li { margin-bottom: 10px; font-weight: 700; color: #444; font-size: 15px; line-height: 1.6; }
+        .list-box li:last-child { margin-bottom: 0; }
 
         /* 戻るボタン：他ページのリンクボタンとデザインを統一 */
         .back-btn { display: flex; align-items: center; justify-content: center; padding: 18px; background: var(--bg-white); color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2.5px solid var(--sub-blue); border-radius: 12px; margin: 40px 0; font-size: 16px; transition: 0.3s; }
@@ -43,7 +48,7 @@
         /* LINEボタン：全ページ共通の固定ボタン */
         .btn-line-fix { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff; border-radius: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 19px; z-index: 9999; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
         
-        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; background: var(--bg-white); border-top: 1px solid #eee; }
+        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; background: #fff; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -54,31 +59,61 @@
     </header>
 
     <section class="section">
-        <h2 class="reveal section-title">私たちが大切にしていること</h2>
+        <div class="reveal concept-card">
+            <h2 style="text-align:center; color:var(--sub-blue); font-family:'Noto Serif JP'; font-weight: 900; margin-top: 0;">増やす知識と守る知恵で、<br>人生に安心を。</h2>
+            <p class="concept-text">
+                くらしとお金サロンは、これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。
+            </p>
+        </div>
+
+        <h2 class="reveal section-title">私たちが向き合う現実</h2>
         
         <div class="reveal concept-card">
+            <h3>見えない不安の正体</h3>
             <p class="concept-text">
-                「くらしとお金サロン」が最も大切にしているのは、単なる投資のテクニックではありません。<br><br>
-                私たちが提供したいのは、溢れる情報に惑わされない<br>
-                <span class="highlight-blue">一生モノの「判断基準」</span>です。
+                今の日本では、孤独死やセルフネグレクトが珍しい話ではなくなっています。<br><br>
+                成年後見制度などの仕組みもありますが、知らない専門家に任せるだけで本当に本人の幸せに繋がっているのか、考えさせられる現実もあります。<br><br>
+                「まだ大丈夫」「自分は関係ない」<br>
+                そう思っているうちに、気づけば一人で、あるいは家族だけで抱え込んでしまうことが少なくありません。
             </p>
         </div>
 
-        <div class="reveal concept-card">
-            <p class="concept-text">
-                お金の不安の正体は「知らないこと」と「孤独」にあります。<br><br>
-                地域の仲間と共に学び、正しい知識を共有し合うことで、<br>
-                誰一人としてお金の不安に怯えることのない、<br>
-                <span class="marker">安心できるコミュニティ</span>を目指しています。
-            </p>
+        <div class="reveal list-box">
+            <h3>暮らしとお金の不安</h3>
+            <ul>
+                <li>老後のお金は足りるのか、年金だけで本当に大丈夫なのか</li>
+                <li>物価は上がり続けているのに、預金の金利は増えない</li>
+                <li>新NISAが始まったけれど、何をすればいいのか分からない</li>
+                <li>投資は気になるけれど、詐欺にあってお金が無くなるのが怖い</li>
+                <li>体が不自由になったとき、この家で暮らせるか、施設はどう選ぶか</li>
+                <li>終活や相続、実家じまい・墓じまいで家族に負担をかけたくない</li>
+            </ul>
         </div>
+
+        <h2 class="reveal section-title">このサロンを作った理由</h2>
 
         <div class="reveal concept-card">
             <p class="concept-text">
-                「守る」ことができて初めて、攻めることができます。<br>
-                大切な家族、自分自身の未来、そして地域。<br><br>
-                <span class="highlight-blue">「知恵」を武器に、人生を豊かにする。</span><br>
-                それが、私たちの存在意義です。
+                大きなきっかけは、<span class="highlight-blue">父の孤独死</span>でした。<br><br>
+                父は一人で暮らし「自分は平気だ」と言いながら、誰にも頼らず生活していました。しかしある日、一人で亡くなっていました。<br><br>
+                <span class="marker">「もっと早く誰かに相談できる場所があったら、地域の中で繋がれる場所があったら」</span><br><br>
+                お金の問題も、暮らしの問題も、本来は一人で抱えるものではありません。地域の中に顔の見える関係があり、何でも相談できる場所を作りたい。それが「くらしとお金サロン」です。
+            </p>
+        </div>
+
+        <h2 class="reveal section-title">投資についての考え方</h2>
+
+        <div class="reveal concept-card">
+            <p class="concept-text">
+                当サロンでは投資についても学びます。増やす力と守る知識、その両方を身につけることがこれからの安心に繋がると考えています。<br><br>
+                ただし、<small>※投資の最終判断は必ずご自身で行っていただきます。私たちは商品の販売や投資助言を行う立場ではありません。納得して判断できる力を身につけていただく場所でありたいと考えています。</small>
+            </p>
+        </div>
+
+        <div class="reveal concept-card" style="border-left-color: var(--gold);">
+            <p class="concept-text" style="text-align:center; font-size: 17px;">
+                一人や家族だけで抱え込まなくて大丈夫です。<br>
+                <span class="highlight-blue" style="font-size:1.2em;">小さな一歩が、これからの大きな安心に。</span>
             </p>
         </div>
 
