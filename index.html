@@ -49,14 +49,14 @@
         /* 固定ナビボタン */
         .nav-link { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2px solid var(--sub-blue); border-radius: 12px; margin-bottom: 10px; font-size: 17px; }
 
-        /* 場所とマップ */
+        /* 場所とマップ修正 */
         .map-wrapper { border: 5px solid var(--sub-blue); border-radius: 18px; overflow: hidden; height: 320px; margin-top: 15px; }
         
         /* 参加方法 */
         .qr-section { text-align: center; background: #f8f9fa; padding: 35px 22px; border-radius: 25px; border: 1px solid #eee; }
         .qr-img { width: 150px; height: auto; margin-top: 12px; background: #fff; padding: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-        /* LINEボタン（シャマー・ライト実装） */
+        /* LINEボタン（シャマー・ライト） */
         .btn-line-fix {
             position: fixed;
             bottom: 15px;
@@ -76,20 +76,19 @@
             font-size: 18px;
             z-index: 9999;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            overflow: hidden; /* 光をはみ出させないために必須 */
+            overflow: hidden;
         }
 
-        /* 光の筋（擬似要素） */
         .btn-line-fix::after {
             content: "";
             position: absolute;
             top: -50%;
-            left: -150%; /* 画面外からスタート */
+            left: -150%;
             width: 20%;
             height: 200%;
-            background: rgba(255, 255, 255, 0.4); /* 白い光 */
+            background: rgba(255, 255, 255, 0.4);
             transform: rotate(30deg);
-            animation: shimmer-light 4s infinite; /* 4秒おきにキラリ */
+            animation: shimmer-light 4s infinite;
         }
 
         @keyframes shimmer-light {
@@ -168,7 +167,7 @@
         <p style="font-size: 20px; font-weight: 900; color: var(--sub-blue); margin: 0;">守恒みらいホール 3階 または 4階</p>
         <p style="font-size: 13px; color: #666; margin-bottom: 8px;">北九州市小倉南区守恒2丁目2-11</p>
         <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.155797171542!2d130.88450227570757!3d33.834079873239414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf417a869389%3A0xb1f907727181c9a6!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712800000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.128766158223!2d130.88059537659556!3d33.83481262883398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543b92209d0092f%3A0x6b16eb30740942d6!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1713439400000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
