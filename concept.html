@@ -29,16 +29,15 @@ body{
 
 .section{
   padding:60px 20px;
-  text-align:left;
+  text-align:center;
 }
 
 .section h2{
-  text-align:center;
   font-size:26px;
   margin-bottom:30px;
 }
 
-/* 🔥改行制御のみ修正 */
+/* 共通 */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -47,21 +46,22 @@ body{
   margin:20px auto;
   width:90%;
   max-width:500px;
-
   font-size:17px;
   line-height:1.85;
   font-weight:500;
 
-  text-align:left;
-
   word-break:keep-all;
   line-break:strict;
-  overflow-wrap:break-word;
 }
 
-/* 固定（今回は未使用だが統一） */
-.nowrap{
-  white-space:nowrap;
+/* 中央 */
+.card-center{
+  text-align:center;
+}
+
+/* 文章 */
+.card-text{
+  text-align:left;
 }
 
 .card-main{
@@ -81,7 +81,6 @@ body{
   margin:30px auto;
   background:#555;
   color:#fff;
-  text-align:center;
   padding:16px;
   border-radius:40px;
   font-size:16px;
@@ -109,20 +108,6 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-
-  animation:floaty 2.5s ease-in-out infinite,
-             pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes floaty{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(-6px);}
-}
-
-@keyframes pulse{
-  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
-  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
 }
 </style>
 </head>
@@ -138,28 +123,49 @@ body{
 
 <div class="section">
 
-  <div class="card card-main">
-    人生を安心を土台に、前向きに生きていくためのコミュニティです。
+  <div class="card card-center card-main">
+    人生を安心を土台に、
+    前向きに生きていくためのコミュニティです
   </div>
 
-  <div class="card">
-    今の日本では、孤独死やセルフネグレクトが珍しくない時代になっています。
+  <div class="card card-text">
+    今の日本では、
+    孤独死やセルフネグレクトが珍しくない時代です。
   </div>
 
-  <div class="card">
-    「まだ大丈夫」「自分は関係ない」と思っているうちに、一人で抱え込んでしまうことも少なくありません。
+  <div class="card card-text">
+    「まだ大丈夫」「自分は関係ない」と思っているうちに、
+    一人で抱え込んでしまうことも少なくありません。
   </div>
 
-  <div class="card">
-    年齢を重ねるほど、お金や暮らしの不安は増えていきます。しかし、相談できる相手は少なくなります。
+  <div class="card card-text">
+    年齢を重ねるほど、
+    お金や暮らしの不安は増えていきます。
   </div>
 
-  <div class="card">
-    だからこそ、<span class="highlight">所属できる場所・いつでも相談できる人・同じ地域の仲間</span>が必要だと考えています。
+  <div class="card card-text">
+    しかし、
+    相談できる相手は少なくなります。
   </div>
 
-  <div class="card">
-    不安を放置するのではなく、向き合い、整理し、備える。それを支える場所が、くらしとお金サロンです。
+  <div class="card card-center">
+    所属できる場所<br>
+    いつでも相談できる人<br>
+    同じ地域の仲間
+  </div>
+
+  <div class="card card-center">
+    それが必要だと考えています
+  </div>
+
+  <div class="card card-text">
+    不安を放置するのではなく、
+    向き合い、整理し、備える。
+  </div>
+
+  <div class="card card-center">
+    それを支える場所が
+    くらしとお金サロンです
   </div>
 
 </div>
@@ -167,12 +173,29 @@ body{
 <div class="section">
   <h2>よくある不安</h2>
 
-  <div class="card">
-    老後のお金は足りるのか、年金だけで大丈夫なのか、投資は気になるけれど怖い、詐欺にあわないか不安など、「何から始めればいいか分からない」という悩みが多くあります。
+  <div class="card card-text">
+    老後のお金は足りるのか、
+    年金だけで大丈夫なのか。
   </div>
 
-  <div class="card">
-    住まいはこのままで大丈夫か、家族に負担をかけていないかなど、将来の問題も一人で抱えるには大きすぎます。
+  <div class="card card-text">
+    投資は気になるけれど怖い、
+    詐欺にあわないか不安。
+  </div>
+
+  <div class="card card-center">
+    「何から始めればいいか分からない」
+    という悩みが多くあります
+  </div>
+
+  <div class="card card-text">
+    住まいはこのままで大丈夫か、
+    家族に負担をかけていないか。
+  </div>
+
+  <div class="card card-text">
+    将来の問題も、
+    一人で抱えるには大きすぎます。
   </div>
 
 </div>
@@ -180,24 +203,31 @@ body{
 <div class="section">
   <h2>このサロンを作った理由</h2>
 
-  <div class="card card-main">
-    父の孤独死がきっかけでした。
+  <div class="card card-center card-main">
+    父の孤独死がきっかけでした
   </div>
 
-  <div class="card">
-    「まだ大丈夫」と言いながら、誰にも頼らず生活していました。
+  <div class="card card-text">
+    「まだ大丈夫」と言いながら、
+    誰にも頼らず生活していました。
   </div>
 
-  <div class="card">
-    しかしある日、一人で亡くなっていました。
+  <div class="card card-text">
+    しかしある日、
+    一人で亡くなっていました。
   </div>
 
-  <div class="card">
-    もっと早く相談できる場所があれば、もっと早くつながれる場所があればと感じました。
+  <div class="card card-text">
+    もっと早く相談できる場所があれば、
+    もっと早くつながれる場所があればと感じました。
   </div>
 
-  <div class="card">
-    <span class="highlight">一人で抱えなくていい</span>、そう思える場所を作りたいと考えました。
+  <div class="card card-center">
+    一人で抱えなくていい
+  </div>
+
+  <div class="card card-center">
+    そう思える場所を作りたい
   </div>
 
 </div>
@@ -205,8 +235,9 @@ body{
 <div class="section">
   <h2>最後に</h2>
 
-  <div class="card card-main">
-    小さな一歩が、これからの大きな安心につながります。
+  <div class="card card-center card-main">
+    小さな一歩が、
+    これからの大きな安心につながります
   </div>
 
 </div>
