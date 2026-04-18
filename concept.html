@@ -7,144 +7,98 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-pale: #fdfdfd; }
+        /* トップページと完全に共通のカラー設定 */
+        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-gray: #f8f9fa; --bg-white: #FFFFFF; }
+        
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-pale); color: #333; line-height: 2.2; overflow-x: hidden; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-gray); color: #333; line-height: 1.6; overflow-x: hidden; }
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 1.2s ease-out; }
+        /* ヘッダー：お城なしのクリーンなデザイン。ロゴとタイトルは統一 */
+        header { padding: 40px 0 20px; text-align: center; background-color: var(--bg-white); border-bottom: 1px solid #eee; }
+        .top-logo { width: 100px; height: auto; margin: 0 auto 15px; display: block; }
+        .page-title { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--sub-blue); margin: 0; }
+
+        /* アニメーション：統一した浮き上がり演出 */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        header { padding: 40px 0 20px; text-align: center; }
-        .top-logo { width: 100px; height: auto; }
-
-        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 180px; }
+        .section { padding: 40px 24px 60px; max-width: 650px; margin: 0 auto; }
         
-        .page-title { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--sub-blue); text-align: center; margin: 40px 0 60px; font-weight: 900; line-height: 1.5; }
+        /* セクション見出し：金色の下線も含め統一 */
+        .section-title { text-align: center; font-size: 22px; font-weight: 900; color: var(--sub-blue); margin-bottom: 30px; font-family: 'Noto Serif JP', serif; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold); margin: 10px auto; }
 
-        /* 導入エピソード */
-        .story-section { margin-bottom: 80px; position: relative; }
-        .story-text { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 40px; }
-        .accent-phrase { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--sub-blue); font-weight: 900; display: block; margin: 50px 0; border-left: 3px solid var(--gold); padding-left: 20px; line-height: 1.6; }
-
-        /* 使命セクション */
-        .mission-box { background: #fff; border: 1.5px solid #eee; border-radius: 20px; padding: 40px 25px; margin-bottom: 60px; box-shadow: 0 5px 20px rgba(0,0,0,0.02); }
-        .mission-h3 { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--sub-blue); margin-bottom: 25px; text-align: center; }
+        /* 理念用カード：左の濃紺ラインで高級感を統一 */
+        .concept-card { background: var(--bg-white); padding: 30px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--sub-blue); margin-bottom: 25px; }
+        .concept-text { font-size: 16px; font-weight: 700; line-height: 1.9; color: #333; margin: 0; }
         
-        /* 3つの誓い */
-        .pledge-item { margin-bottom: 45px; }
-        .pledge-item b { font-size: 18px; color: var(--gold); display: block; margin-bottom: 12px; font-family: 'Noto Serif JP', serif; }
-        .pledge-item p { font-size: 15px; margin: 0; color: #555; }
+        /* 強調色とマーカー：他ページと共通のトーン */
+        .highlight-blue { color: var(--sub-blue); font-weight: 900; font-size: 1.1em; }
+        .marker { background: linear-gradient(transparent 60%, #e8f0ff 60%); }
 
-        /* 最後に */
-        .closing-text { font-size: 17px; font-weight: 700; color: var(--sub-blue); text-align: center; margin-top: 100px; line-height: 2.0; }
+        /* 戻るボタン：他ページのリンクボタンとデザインを統一 */
+        .back-btn { display: flex; align-items: center; justify-content: center; padding: 18px; background: var(--bg-white); color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2.5px solid var(--sub-blue); border-radius: 12px; margin: 40px 0; font-size: 16px; transition: 0.3s; }
+        .back-btn:active { transform: scale(0.98); background: #f0f5ff; }
 
-        /* LINEボタン：ふわふわ浮遊 */
-        @keyframes fuwafuwa {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-12px); }
-        }
-        .line-float-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 400px;
-            background-color: #06C755;
-            color: white;
-            text-align: center;
-            padding: 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            animation: fuwafuwa 3s infinite ease-in-out;
-        }
-        .line-float-btn i { font-size: 28px; margin-right: 12px; }
-
-        .btn-back { display: block; width: 100%; max-width: 280px; margin: 80px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
+        /* LINEボタン：全ページ共通の固定ボタン */
+        .btn-line-fix { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff; border-radius: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 19px; z-index: 9999; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
+        
+        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; background: var(--bg-white); border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
-    <header><img src="ロゴ浮き.png" class="top-logo"></header>
+    <header>
+        <a href="index.html"><img src="ロゴ浮き.png" class="top-logo"></a>
+        <h1 class="page-title">サロンの理念</h1>
+    </header>
 
-    <div class="container">
-        <h1 class="reveal page-title">父の孤独死が教えてくれた、<br>「相談できる場所」の尊さ。</h1>
-
-        <section class="reveal story-section">
-            <p class="story-text">
-                「どうして、もっと早く気づけなかったのか」<br>
-                私の活動の原点は、父との別れにあります。
+    <section class="section">
+        <h2 class="reveal section-title">私たちが大切にしていること</h2>
+        
+        <div class="reveal concept-card">
+            <p class="concept-text">
+                「くらしとお金サロン」が最も大切にしているのは、単なる投資のテクニックではありません。<br><br>
+                私たちが提供したいのは、溢れる情報に惑わされない<br>
+                <span class="highlight-blue">一生モノの「判断基準」</span>です。
             </p>
-            <p class="story-text">
-                ある日突然、父は一人でこの世を去りました。<br>
-                誰にも看取られることのない、孤独な最期でした。<br>
-                遺品を整理する中で見つかったのは、<br>
-                誰にも相談できず、一人で抱え込んでいた<br>
-                お金の悩み、将来への不安、そして孤独の跡でした。
+        </div>
+
+        <div class="reveal concept-card">
+            <p class="concept-text">
+                お金の不安の正体は「知らないこと」と「孤独」にあります。<br><br>
+                地域の仲間と共に学び、正しい知識を共有し合うことで、<br>
+                誰一人としてお金の不安に怯えることのない、<br>
+                <span class="marker">安心できるコミュニティ</span>を目指しています。
             </p>
-            <span class="accent-phrase">
-                もしあの時、父のそばに、<br>
-                利害関係なく「何でも話せる相手」が<br>
-                一人でもいたなら。
-            </span>
-            <p class="story-text">
-                その悔いが、私の胸から消えることはありません。<br>
-                15年間のキャリアを経て、私が地元・小倉南区で<br>
-                このサロンを立ち上げたのは、<br>
-                父のような悲劇を、この街で二度と繰り返さないためです。
+        </div>
+
+        <div class="reveal concept-card">
+            <p class="concept-text">
+                「守る」ことができて初めて、攻めることができます。<br>
+                大切な家族、自分自身の未来、そして地域。<br><br>
+                <span class="highlight-blue">「知恵」を武器に、人生を豊かにする。</span><br>
+                それが、私たちの存在意義です。
             </p>
-        </section>
+        </div>
 
-        <section class="reveal mission-box">
-            <h3 class="mission-h3">私たちが大切にしていること</h3>
-            
-            <div class="pledge-item">
-                <b>1. 「中立」こそが、誠実さの証です</b>
-                <p>商品を売るための「相談」はもういりません。私たちは金融商品を一切販売しません。あなたの人生にとって、本当に正しい選択肢だけを一緒に考えます。</p>
-            </div>
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-chevron-left" style="margin-right: 10px;"></i> トップページへ戻る
+        </a>
+    </section>
 
-            <div class="pledge-item">
-                <b>2. 些細な「困った」が、大きな不幸を防ぐ</b>
-                <p>スマホの見直しや家計の相談。そんな小さな一歩が、将来の詐欺や孤独を防ぐ防波堤になります。私たちは、暮らしのあらゆる「窓口」であり続けます。</p>
-            </div>
+    <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
 
-            <div class="pledge-item">
-                <b>3. 孤独を、地域の「繋がり」で溶かす</b>
-                <p>お金の知識を得るだけでなく、毎週会える仲間がいる。顔の見える関係がある。その安心感こそが、未来への最大のリスク管理になると信じています。</p>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <p class="story-text">
-                「くらしとお金サロン」は、単なる勉強会ではありません。<br>
-                あなたが明日への不安を脱ぎ捨て、<br>
-                夜ぐっすり眠れるようになるための「第3の家族」のような場所です。
-            </p>
-            <p class="closing-text">
-                もう、一人で悩まないでください。<br>
-                あなたのこれからの人生を、<br>
-                この街で、共に歩んでいきましょう。
-            </p>
-        </section>
-
-        <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る</a></div>
-    </div>
-
-    <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
-        <i class="fa-brands fa-line"></i>
-        <span>LINEで無料体験・ご相談</span>
+    <a href="https://lin.ee/n37s4pB" class="btn-line-fix" target="_blank">
+        <i class="fa-brands fa-line" style="font-size:32px; margin-right:12px;"></i> 無料体験・ご相談をLINEでする
     </a>
 
     <script>
+        /* スクロール時の浮き上がり演出も統一 */
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('active'); 
+            });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
