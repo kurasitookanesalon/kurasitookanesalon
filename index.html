@@ -8,18 +8,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --main-blue: #1E5BB8;
+  --accent-gold: #D4AF37;
+  --line-green: #00C300;
+  --line-green-light: #00E600;
+}
+
 body{
   margin:0;
   font-family:"Noto Sans JP",sans-serif;
-  background:#1E5BB8;
+  background: var(--main-blue);
   color:#fff;
-  padding-bottom:0;
+  padding-bottom: 80px; /* フローティングボタン用の余白 */
+  line-height: 1.6;
 }
 
 /* ヒーロー */
 .hero{
   text-align:center;
-  padding:60px 20px 30px;
+  padding:60px 20px 40px;
+  background: linear-gradient(180deg, #256ad1 0%, #1E5BB8 100%);
 }
 
 .hero-header{
@@ -27,52 +36,66 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
 .hero-header img{
-  width:50px;
-  position:absolute;
-  left:10px;
+  width:55px;
+  margin-right: 10px;
 }
 
 .hero-title{
-  font-size:28px;
+  font-size:26px;
   font-weight:bold;
+  letter-spacing: 0.05em;
 }
 
 .formula{
-  font-size:22px;
+  font-size:20px;
   line-height:1.8;
 }
 
 .formula strong{
   display:block;
-  font-size:42px;
-  color:#D4AF37;
+  font-size:44px;
+  color: var(--accent-gold);
   margin-top:10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.btn{
+/* 共通ボタンスタイル */
+.btn-common {
   display:flex;
-  width:90%;
-  max-width:420px;
-  margin:20px auto 10px;
-  background:#00C300;
+  background: linear-gradient(to bottom, var(--line-green-light), var(--line-green));
   color:#fff;
-  padding:18px;
-  border-radius:40px;
-  font-size:18px;
+  border-radius:50px;
   font-weight:bold;
   text-decoration:none;
   align-items:center;
   justify-content:center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-common:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn{
+  width:90%;
+  max-width:420px;
+  margin:30px auto 10px;
+  padding:20px;
+  font-size:18px;
 }
 
 /* スライダー */
 .slider{
   width:100%;
   overflow:hidden;
+  background: #fff;
 }
 
 .slide-track{
@@ -81,48 +104,60 @@ body{
 
 .slide-track img{
   width:100vw;
-  height:50vw;
-  max-height:400px;
+  height:55vw;
+  max-height:450px;
   object-fit:cover;
   flex-shrink:0;
 }
 
 /* セクション */
 .section{
-  padding:30px 20px;
+  padding:50px 20px;
   text-align:center;
 }
 
 .section h2{
   font-size:26px;
-  margin-bottom:15px;
+  margin-bottom:30px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-gold);
 }
 
 /* カード */
 .card{
   background:#fff;
-  color:#D4AF37;
-  border-radius:20px;
-  padding:20px;
-  margin:10px auto;
+  color: #333; /* テキストを濃いグレーにして可読性アップ */
+  border-radius:15px;
+  padding:25px 20px;
+  margin:15px auto;
   width:90%;
   max-width:500px;
-  font-size:22px;
+  font-size:20px;
   font-weight:bold;
   line-height:1.6;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  border-left: 6px solid var(--accent-gold);
   text-align:center;
-
-  white-space:pre-line;
+  box-sizing: border-box;
 }
 
-/* 最後の余白 */
-.section:last-of-type{
-  padding-bottom:40px;
+.card-highlight {
+  color: var(--accent-gold);
+  font-size: 24px;
+  display: block;
+  margin-top: 5px;
 }
 
 /* 画像 */
@@ -131,40 +166,37 @@ body{
   max-width:500px;
   margin:15px auto;
   display:block;
-  border-radius:20px;
+  border-radius:15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* フローティング */
+/* フローティングボタン */
 .floating-btn{
   position:fixed;
-  bottom:10px;
+  bottom:15px;
   left:50%;
   transform:translateX(-50%);
   width:92%;
   max-width:420px;
-  background:#00C300;
-  color:#fff;
-  padding:16px;
-  border-radius:50px;
+  padding:18px;
   font-size:17px;
-  font-weight:bold;
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  animation:floaty 2.5s ease-in-out infinite,
-             pulse 2.5s ease-in-out infinite;
+  z-index: 100;
+  animation: floaty 3s ease-in-out infinite;
 }
 
 @keyframes floaty{
   0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(-6px);}
+  50%{transform:translateX(-50%) translateY(-8px);}
 }
 
-@keyframes pulse{
-  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
-  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
+/* マップ */
+.map-container {
+  width:90%;
+  max-width:500px;
+  margin:25px auto;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -173,9 +205,9 @@ body{
 
 <div class="hero">
   <div class="hero-header">
-    <img src="ロゴ浮き.png">
+    <img src="ロゴ浮き.png" alt="ロゴ">
     <div class="hero-title">
-      くらしとお金サロン（小倉南校）
+      くらしとお金サロン<br>（小倉南校）
     </div>
   </div>
 
@@ -184,8 +216,8 @@ body{
     <strong>安心・安定のくらし</strong>
   </div>
 
-  <a href="https://lin.ee/n37s4pB" class="btn" target="_blank">
-    まずは無料体験で雰囲気をご確認ください
+  <a href="https://lin.ee/n37s4pB" class="btn-common btn" target="_blank">
+    まずは無料体験で雰囲気を確認
   </a>
 </div>
 
@@ -200,147 +232,70 @@ body{
 </div>
 
 <div class="section">
-<h2>知らないだけで起きている現実</h2>
-
-<div class="card">
-特殊詐欺被害は毎日
-約50件　約1.2億円
+  <h2>知らないだけで起きている現実</h2>
+  <div class="card">特殊詐欺被害は毎日<br><span class="card-highlight">約50件 / 約1.2億円</span></div>
+  <div class="card">認知症診断は毎日<br><span class="card-highlight">約800人</span></div>
+  <div class="card">相続トラブルで裁判<br><span class="card-highlight">毎日 約30件</span></div>
 </div>
 
-<div class="card">
-認知症診断は毎日 約800人
-</div>
-
-<div class="card">
-相続トラブルで裁判
-毎日 約30件
-</div>
-
+<div class="section" style="background: rgba(255,255,255,0.05);">
+  <h2>ですがご安心ください</h2>
+  <div class="card">将来の問題に<br>備えることができます</div>
+  <div class="card">大切なお金を<br>守る知恵も学べます</div>
+  <div class="card">大切なお金を<br>増やす知識も学べます</div>
+  <div class="card">繰り返し学びながら<br>理解を深めていけます</div>
 </div>
 
 <div class="section">
-<h2>ですがご安心ください</h2>
-
-<div class="card">
-将来の問題に
-備えることができます
+  <h2>運営について</h2>
+  <div class="card">金融機関の営業ではありません<br>販売や勧誘は一切ありません</div>
+  <div class="card">投資の判断は<br>必ずご自身でしていただきます</div>
 </div>
 
-<div class="card">
-大切なお金を
-守る知恵も学べます
-</div>
-
-<div class="card">
-大切なお金を
-増やす知識も学べます
-</div>
-
-<div class="card">
-繰り返し学びながら
-理解を深めていきます
-</div>
-
-</div>
-
-<div class="section">
-<h2>運営について</h2>
-
-<div class="card">
-金融機関の営業ではありません
-販売や勧誘は一切ありません
-</div>
-
-<div class="card">
-投資の判断は
-必ずご自身でしていただきます
-</div>
-
+<div class="section" style="background: rgba(255,255,255,0.05);">
+  <h2>料金について</h2>
+  <div class="card">
+    <span style="font-size: 16px; color: #666;">週1回 ＋ 相談し放題</span><br>
+    月額 22,000円
+  </div>
+  <div class="card" style="font-size: 18px;">
+    一般的な講座は1回で終了ですが…<br><br>
+    当サロンは毎週継続して学べ、<br>
+    <span style="color: #e64a19;">いつでも何度でも相談可能！</span><br>
+    1回あたり約5,500円で<br>
+    安心して続けられます。
+  </div>
+  <img src="IMG_4157.png" class="compare-img">
+  <img src="IMG_4156.png" class="compare-img">
 </div>
 
 <div class="section">
-<h2>料金について</h2>
-
-<div class="card">
-月額 22,000円（週1回＋相談し放題）
-</div>
-
-<div class="card">
-一般的な講座は
-1回参加して終わることが多いです
-くらしとお金サロンは
-毎週継続して学べます
-いつでも相談できる環境です
-1回あたり 約5,500円で
-安心して続けられます
-</div>
-
-<img src="IMG_4157.png" class="compare-img">
-<img src="IMG_4156.png" class="compare-img">
-
+  <h2>開催場所</h2>
+  <div class="card">
+    守恒みらいホール<br>
+    <span style="font-size: 16px; font-weight: normal;">北九州市小倉南区守恒</span>
+  </div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.123456789!2d130.871234567!3d33.831234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf0000000000%3A0x0000000000000000!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1234567890" 
+    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 </div>
 
 <div class="section">
-<h2>このサロンで得られること</h2>
-
-<div class="card">
-一人で悩まず
-地域の仲間と一緒に
-学べる場所です
+  <h2>一歩踏み出してみませんか？</h2>
+  <div class="card">
+    知らないまま不安でいるよりも、<br>
+    知って安心できる方が<br>
+    良いと思いませんか？<br><br>
+    小さな一歩が、<br>
+    これからの大きな安心につながります。
+  </div>
+  <img src="IMG_2124.png" style="width:200px; margin:20px auto; display:block; border: 4px solid #fff; border-radius: 10px;">
+  <p style="font-size: 14px; opacity: 0.8;">※金融商品の販売・勧誘は一切ありません</p>
 </div>
 
-</div>
-
-<div class="section">
-<h2>開催場所</h2>
-
-<div class="card">
-守恒みらいホール
-北九州市小倉南区守恒
-</div>
-
-<div style="width:90%;max-width:500px;margin:20px auto;border-radius:20px;overflow:hidden;">
-<iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed"
-width="100%" height="300" style="border:0;"></iframe>
-</div>
-
-</div>
-
-<div class="section">
-<h2>ご参加方法</h2>
-
-<div class="card">
-QRコードを読み取るか
-下のボタンからご参加ください
-友だち追加後
-「体験」または「質問」
-とお送りください
-</div>
-
-<img src="IMG_2124.png" style="width:220px;margin:20px auto;display:block;">
-
-</div>
-
-<div class="section">
-<h2>一歩踏み出してみませんか？</h2>
-
-<div class="card">
-知らないまま不安でいるよりも
-知って安心できる方が
-良いと思いませんか？
-小さな一歩が
-これからの大きな安心につながります
-</div>
-
-<div class="card">
-※金融商品の販売・勧誘など
-一切行っておりません
-</div>
-
-</div>
-
-<a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
-友だち追加して無料体験・質問もこちら
+<a href="https://lin.ee/n37s4pB" class="btn-common floating-btn" target="_blank">
+  LINEで無料体験・質問をする
 </a>
 
 <script>
@@ -348,7 +303,7 @@ const track=document.getElementById("slideTrack");
 track.innerHTML+=track.innerHTML;
 let x=0;
 function slide(){
-  x+=0.6;
+  x+=0.7; // スピードをわずかに調整
   if(x>=track.scrollWidth/2){x=0;}
   track.style.transform=`translateX(-${x}px)`;
   requestAnimationFrame(slide);
