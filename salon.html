@@ -28,8 +28,8 @@ body{
 }
 
 .section{
-  padding:60px 20px;
-  text-align:left;
+  padding:40px 20px;
+  text-align:center;
 }
 
 .section h2{
@@ -38,7 +38,7 @@ body{
   margin-bottom:30px;
 }
 
-/* 🔥完全安定カード */
+/* 🔥改行制御 */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -55,8 +55,14 @@ body{
 
   text-align:left;
 
-  word-break:normal;
+  word-break:keep-all;
+  line-break:strict;
   overflow-wrap:break-word;
+}
+
+/* 🔥単語固定 */
+.nowrap{
+  white-space:nowrap;
 }
 
 .card-main{
@@ -213,7 +219,7 @@ body{
   <h2>料金</h2>
 
   <div class="card card-main">
-    月額 22,000円（税込）
+    月額 <span class="nowrap">22,000円（税込）</span>
   </div>
 </div>
 
