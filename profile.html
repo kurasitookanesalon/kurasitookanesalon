@@ -39,10 +39,11 @@ body{
   padding:22px;
   margin:15px auto;
   width:90%;
-  max-width:500px;
+  max-width:22em; /* 🔥ここが核心（折れ位置固定） */
   font-size:18px;
   line-height:1.9;
   font-weight:500;
+  text-wrap:balance; /* 🔥自然改行 */
 }
 
 .card-main{
@@ -117,6 +118,16 @@ body{
   0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
   50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
 }
+
+/* 🔥リスト整形 */
+.card ul{
+  padding-left:20px;
+  margin-top:10px;
+}
+
+.card li{
+  margin-bottom:6px;
+}
 </style>
 </head>
 
@@ -178,15 +189,19 @@ body{
   </div>
 
   <div class="card left">
-    【バックアップ体制】
+    <p>【バックアップ体制】</p>
 
-    当サロンでは、必要に応じて専門家やスポンサー様やお取引先様と提携しています。
+    <p>
+      当サロンでは、必要に応じて専門家やスポンサー様、お取引先様と提携しています。
+    </p>
 
-    ・税理士法人松本会計（当社顧問税理士事務所）
-    ・日本FP協会
-    ・山口フィナンシャルグループ 北九州銀行 守恒支店
-    ・北九州商工会議所 所属
-    ・日本政策金融公庫 北九州支店
+    <ul>
+      <li>税理士法人松本会計（当社顧問税理士事務所）</li>
+      <li>日本FP協会</li>
+      <li>山口フィナンシャルグループ 北九州銀行 守恒支店</li>
+      <li>北九州商工会議所 所属</li>
+      <li>日本政策金融公庫 北九州支店</li>
+    </ul>
   </div>
 
 </div>
