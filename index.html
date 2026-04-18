@@ -9,7 +9,7 @@
     <style>
         :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-white: #FFFFFF; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.5; overflow-x: hidden; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.6; overflow-x: hidden; }
 
         .bg-overlay-section { 
             position: relative; width: 100%; min-height: 380px; 
@@ -26,42 +26,49 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         header { padding: 20px 0 10px; text-align: center; }
-        .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
+        .top-logo { width: 110px; height: auto; margin: 0 auto; display: block; }
 
         .hero-title { font-family: 'Noto Serif JP', serif; font-size: 36px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
-        .hero-sub { font-size: 17px; font-weight: 700; color: var(--gold); margin-top: 8px; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+        .hero-sub { font-size: 18px; font-weight: 700; color: var(--gold); margin-top: 8px; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
 
         .slideshow-container { width: 100%; overflow: hidden; padding: 20px 0; border-bottom: 1px solid #f2f2f2; }
         .slideshow-track { display: flex; width: calc(280px * 8); animation: scroll 30s linear infinite; }
         .slideshow-track img { width: 280px; border-radius: 12px; margin: 0 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-280px * 4 - 64px)); } }
 
-        .section { padding: 45px 24px; max-width: 650px; margin: 0 auto; border-bottom: 1px solid #f2f2f2; }
-        .section-title { text-align: center; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin-bottom: 25px; font-family: 'Noto Serif JP', serif; }
+        .section { padding: 50px 24px; max-width: 650px; margin: 0 auto; border-bottom: 1px solid #f2f2f2; }
+        .section-title { text-align: center; font-size: 26px; font-weight: 900; color: var(--sub-blue); margin-bottom: 30px; font-family: 'Noto Serif JP', serif; position: relative; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold); margin: 10px auto; }
 
-        .reality-card { border: 2.5px solid var(--red); background: #fff; border-radius: 10px; padding: 16px; margin-bottom: 12px; text-align: center; }
-        .stat-val { font-size: 18px; font-weight: 900; color: var(--red); display: block; line-height: 1.4; }
-        .stat-desc { font-size: 12px; font-weight: 700; color: #555; margin-top: 5px; }
+        /* 現実カードデザイン刷新 */
+        .reality-card { border: 2.5px solid var(--red); background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; position: relative; box-shadow: 0 4px 15px rgba(229, 0, 18, 0.08); }
+        .stat-val { font-size: 20px; font-weight: 900; color: var(--red); display: block; line-height: 1.3; margin-bottom: 8px; }
+        .stat-desc { font-size: 14px; font-weight: 700; color: #444; line-height: 1.5; }
+        .stat-highlight { color: var(--red); border-bottom: 1px solid var(--red); }
 
-        .solution-box { background: #f0f5ff; border: 2.5px solid var(--main-blue); border-radius: 15px; padding: 20px; margin-bottom: 15px; text-align: left; }
-        .solution-title { color: var(--sub-blue); font-weight: 900; font-size: 18px; margin-bottom: 10px; display: flex; align-items: center; }
-        .solution-title i { color: var(--main-blue); margin-right: 12px; }
-        .solution-text { font-size: 14px; font-weight: 700; line-height: 1.6; color: #444; margin: 0; }
+        .solution-box { background: #f0f5ff; border: 2.5px solid var(--main-blue); border-radius: 15px; padding: 24px; margin-bottom: 15px; text-align: left; }
+        .solution-title { color: var(--sub-blue); font-weight: 900; font-size: 19px; margin-bottom: 12px; display: flex; align-items: center; }
+        .solution-title i { color: var(--main-blue); margin-right: 12px; font-size: 22px; }
+        .solution-text { font-size: 15px; font-weight: 700; line-height: 1.7; color: #333; margin: 0; }
 
-        .price-area { border: 2.5px solid var(--sub-blue); border-radius: 20px; padding: 30px 20px; text-align: center; background: #f9fbff; }
-        .price-main { font-size: 32px; font-weight: 900; color: var(--sub-blue); display: block; }
-        .price-detail { font-weight: bold; color: #444; margin: 10px 0; font-size: 16px; }
-        .compare-img { width: 100%; border-radius: 8px; border: 1px solid #ddd; margin: 10px 0; }
+        .price-area { border: 2.5px solid var(--sub-blue); border-radius: 20px; padding: 35px 20px; text-align: center; background: #f9fbff; }
+        .price-main { font-size: 34px; font-weight: 900; color: var(--sub-blue); display: block; }
+        .price-detail { font-weight: bold; color: #444; margin: 12px 0; font-size: 17px; }
+        .compare-img { width: 100%; border-radius: 8px; border: 1px solid #ddd; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         
-        .nav-link { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2px solid var(--sub-blue); border-radius: 12px; margin-bottom: 12px; }
+        .nav-link { display: flex; align-items: center; justify-content: center; position: relative; padding: 20px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2.5px solid var(--sub-blue); border-radius: 12px; margin-bottom: 15px; font-size: 16px; }
         .nav-link i { position: absolute; right: 22px; }
 
-        .map-wrapper { border: 5px solid var(--sub-blue); border-radius: 18px; overflow: hidden; height: 320px; margin-top: 15px; }
+        .map-wrapper { border: 5px solid var(--sub-blue); border-radius: 18px; overflow: hidden; height: 320px; margin-top: 20px; }
         .qr-section { text-align: center; background: #f8f9fa; padding: 40px 22px; border-radius: 25px; border: 1px solid #eee; }
-        .qr-img { width: 160px; height: auto; margin: 15px 0; background: #fff; padding: 10px; border-radius: 12px; }
+        .qr-img { width: 180px; height: auto; margin: 15px 0; background: #fff; padding: 12px; border-radius: 15px; border: 1px solid #ddd; }
 
-        .btn-line-fix { position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 64px; background: #06C755; color: #fff; border-radius: 32px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 18px; z-index: 9999; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        footer { text-align: center; padding: 40px 20px 120px; color: #999; font-size: 12px; }
+        /* 最終メッセージカード */
+        .final-card { background: rgba(255, 255, 255, 0.9); border: 3px solid var(--sub-blue); border-radius: 15px; padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .final-text { font-size: 18px; font-weight: 900; color: #111; line-height: 1.8; margin: 0; }
+
+        .btn-line-fix { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff; border-radius: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 19px; z-index: 9999; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
+        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; }
     </style>
 </head>
 <body>
@@ -85,24 +92,24 @@
     <section class="section">
         <h2 class="reveal section-title">知らないだけで起きている現実</h2>
         <div class="reveal reality-card">
-            <span class="stat-val">【インフレ】20年後、お金の価値は半分に。</span>
-            <p class="stat-desc">今の100万円で買えるものが、20年後には50万円分しか買えなくなります。</p>
+            <span class="stat-val">【インフレ】20年後、価値は半分に。</span>
+            <p class="stat-desc">今の100万円で買えるものが、20年後には<span class="stat-highlight">実質50万円分</span>しか買えなくなります。預けているだけで資産は目減りしています。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【詐欺被害】1日あたり 約1.2億円</span>
-            <p class="stat-desc">「自分だけは」と思っている人が、今この瞬間も被害に遭っています。</p>
+            <span class="stat-val">【詐欺被害】1日 約100人が被害に。</span>
+            <p class="stat-desc">被害額は<span class="stat-highlight">1日 約1.2億円</span>。「自分だけは」と思っている人こそ、巧妙な手口のターゲットになっています。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【認知症】1日あたり 約800人が新規診断</span>
-            <p class="stat-desc">明日は我が身。資産が凍結され、誰にも動かせなくなるリスクです。</p>
+            <span class="stat-val">【認知症】1日 約800人が新規診断。</span>
+            <p class="stat-desc">診断された瞬間、<span class="stat-highlight">自分のお金が自由に扱えなくなります</span>。家族であっても資金移動が困難になる「資産凍結」のリスクです。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【相続裁判】1日あたり 約40件</span>
-            <p class="stat-desc">仲の良かった家族が、お金をきっかけにバラバラになる悲劇。</p>
+            <span class="stat-val">【相続裁判】1日 約40件の泥沼争い。</span>
+            <p class="stat-desc">一件あたり<span class="stat-highlight">数百万円の裁判費用</span>と長い年月、そして壊れた家族仲。仲の良い家族が、お金でバラバラになる悲劇です。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【孤独死】1日あたり 約200人</span>
-            <p class="stat-desc">地域の繋がりの欠如が招く、あまりに過酷な現実です。</p>
+            <span class="stat-val">【孤独死】1日 約200人の孤立。</span>
+            <p class="stat-desc">誰にも気づかれず最期を迎える。地域の繋がりの欠如が招く、あまりに過酷な現実が今この瞬間も起きています。</p>
         </div>
     </section>
 
@@ -110,15 +117,15 @@
         <h2 class="reveal section-title">サロンで得られる「安心」</h2>
         <div class="reveal solution-box">
             <span class="solution-title"><i class="fa-solid fa-shield-halved"></i> 資産を守る「防御の知恵」</span>
-            <p class="solution-text">詐欺の手口やインフレのリスクを学び、自分と家族の資産を「守り抜く力」を養います。</p>
+            <p class="solution-text">詐欺の手口やインフレのリスクを体系的に学び、自分と大切な家族の資産を「守り抜く力」を養います。</p>
         </div>
         <div class="reveal solution-box">
             <span class="solution-title"><i class="fa-solid fa-chart-line"></i> 資産を増やす「攻めの知識」</span>
-            <p class="solution-text">流行りに流されない、本質的な資産運用の知識を専門家と一緒にゼロから身につけます。</p>
+            <p class="solution-text">流行に左右されない、本質的な資産運用の知識を専門家と一緒にゼロから、何度でも身につけます。</p>
         </div>
         <div class="reveal solution-box">
-            <span class="solution-title"><i class="fa-solid fa-users"></i> 地域の繋がり</span>
-            <p class="solution-text">同じ想いを持つ地域の仲間と繋がり、孤独のリスクを解消します。</p>
+            <span class="solution-title"><i class="fa-solid fa-users"></i> 地域の確かな繋がり</span>
+            <p class="solution-text">同じ想いを持つ地域の仲間と繋がり、情報の孤立を防ぐことで、将来の孤独リスクを解消します。</p>
         </div>
     </section>
 
@@ -140,44 +147,46 @@
 
     <section class="section reveal">
         <h2 class="section-title">開催場所</h2>
-        <p style="text-align:center; font-size: 20px; font-weight: 900; color: var(--sub-blue); margin: 0;">守恒みらいホール 3階または4階</p>
-        <p style="text-align:center; color: #444; font-weight: 700; margin-top: 5px;">モノレール守恒駅より徒歩3分</p>
-        <p style="text-align:center; font-size: 13px; color: #666; margin-top: 3px;">※駐車場をご利用の場合は近隣の駐車場をご利用ください</p>
-        <p style="text-align:center; color: var(--red); font-weight: 900; margin-top: 5px;">＼ サンリブもりつねの目の前です ／</p>
+        <p style="text-align:center; font-size: 21px; font-weight: 900; color: var(--sub-blue); margin: 0;">守恒みらいホール 3階または4階</p>
+        <p style="text-align:center; color: #333; font-weight: 700; margin-top: 8px;">モノレール守恒駅より徒歩3分</p>
+        <p style="text-align:center; font-size: 14px; color: #666; margin-top: 5px;">※近隣のコインパーキングをご利用ください</p>
+        <p style="text-align:center; color: var(--red); font-weight: 900; margin-top: 8px; font-size: 18px;">＼ サンリブもりつねの目の前です ／</p>
         <div class="map-wrapper">
-            <iframe src="http://googleusercontent.com/maps.google.com/9" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.123456789!2d130.871234567!3d33.831234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ5JzUyLjQiTiAxMzDCsDUyJzE2LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <section class="section reveal">
         <div class="qr-section">
             <h2 class="section-title">公式LINE</h2>
-            <p style="font-size: 14px; font-weight: 700; color: #333; margin: 0;">下のQRコードを読み取っていただき<br>友達追加をお願いします</p>
+            <p style="font-size: 15px; font-weight: 700; color: #333; margin: 0; line-height: 1.6;">カメラでQRコードを読み取って<br>友達追加をお願いします</p>
             <img src="IMG_2124.png" class="qr-img">
-            <p style="font-size: 14px; font-weight: 700; color: #333; margin-top: 10px;">もしくは、下の友達追加ボタンより<br>友達追加していただき</p>
-            <p style="font-size: 16px; font-weight: 900; color: var(--red); margin-top: 5px;">「体験」または「質問」</p>
-            <p style="font-size: 14px; font-weight: 700; color: #333; margin-top: 0;">とお送りください</p>
+            <p style="font-size: 16px; font-weight: 900; color: var(--red); margin-top: 10px;">「体験希望」または「質問」</p>
+            <p style="font-size: 15px; font-weight: 700; color: #333; margin-top: 5px;">とメッセージをお送りください</p>
         </div>
     </section>
 
-    <div class="bg-overlay-section" style="min-height: 450px;">
+    <div class="bg-overlay-section" style="min-height: 500px;">
         <img src="IMG_4224.png" class="bg-image">
         <div class="content-on-bg" style="padding: 40px 24px;">
-            <p style="font-size: 18px; font-weight: 900; color: #111; line-height: 1.8; margin: 0; text-align: left;">
-                <span style="border-left: 5px solid var(--sub-blue); padding-left: 10px;">身近にはまだ感じにくい問題かも知れません。</span><br>
-                <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ですが数字は証明しています。</span><br><br>
-                身近ではないと感じるのは、<br>
-                <span style="color: var(--red); font-size: 1.1em;">まだ順番が回ってきていないだけです。</span><br><br>
-                何かある前に準備をしましょう。<br>
-                それは、<span style="color: var(--sub-blue); font-size: 1.2em; border-bottom: 3px solid var(--sub-blue);">増やす知識</span>と<span style="color: var(--main-blue); font-size: 1.2em; border-bottom: 3px solid var(--main-blue);">守る知恵</span>です。
-            </p>
+            <div class="reveal final-card">
+                <p class="final-text">
+                    身近にはまだ感じにくい問題かも知れません。<br>
+                    ですが、<span style="color: var(--red); border-bottom: 3px solid var(--red);">数字は残酷なまでに証明しています。</span><br><br>
+                    他人事だと思ってしまうのは、<br>
+                    <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">まだあなたの順番が来ていないだけです。</span><br><br>
+                    手遅れになる前に、準備を始めましょう。<br>
+                    それが、あなたと家族を守る<br>
+                    <span style="color: var(--sub-blue); font-size: 1.2em;">「増やす知識」</span>と<span style="color: var(--sub-blue); font-size: 1.2em;">「守る知恵」</span>です。
+                </p>
+            </div>
         </div>
     </div>
 
     <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
 
     <a href="https://lin.ee/n37s4pB" class="btn-line-fix" target="_blank">
-        <i class="fa-brands fa-line" style="font-size:28px; margin-right:10px;"></i> 友だち追加して体験・質問する
+        <i class="fa-brands fa-line" style="font-size:32px; margin-right:12px;"></i> 無料体験・ご相談をLINEでする
     </a>
 
     <script>
