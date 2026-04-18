@@ -15,7 +15,6 @@
             --gold: #D4AF37;
             --red: #E50012;
             --bg-white: #FFFFFF;
-            --text-dark: #222222;
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -24,12 +23,11 @@
             margin: 0; padding: 0;
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-white);
-            color: var(--text-dark);
+            color: #222;
             line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* スクロールで浮き上がる演出 */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -37,14 +35,14 @@
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* ヘッダー削除につき、ヒーローの余白を調整 */
+        /* ヒーロー */
         .hero { padding: 100px 24px 40px; text-align: center; }
         .hero-title { font-family: 'Noto Serif JP', serif; font-size: 56px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
         .hero-title span { color: var(--gold); display: block; font-size: 1.1em; }
         .hero-tag { font-size: 14px; color: var(--main-blue); font-weight: 700; margin-bottom: 20px; }
 
-        /* 自動再生スライドショー */
-        .slideshow-container { width: 100%; overflow: hidden; position: relative; padding: 20px 0 60px; }
+        /* スライドショー */
+        .slideshow-container { width: 100%; overflow: hidden; padding: 20px 0 60px; }
         .slideshow-track { display: flex; width: calc(280px * 8); animation: scroll 25s linear infinite; }
         .slideshow-track img { width: 280px; height: auto; border-radius: 12px; margin: 0 10px; border: 1px solid #eee; }
         @keyframes scroll {
@@ -52,38 +50,34 @@
             100% { transform: translateX(calc(-280px * 4 - 80px)); }
         }
 
-        /* コンテンツセクション */
+        /* セクション */
         .section { padding: 60px 24px; max-width: 600px; margin: 0 auto; }
-        .section-label { font-family: 'Noto Serif JP', serif; font-size: 26px; color: var(--sub-blue); text-align: center; margin-bottom: 40px; }
-
         .info-card {
             border: 1px solid #eee; background: #fff; border-radius: 20px; padding: 40px 24px; margin-bottom: 25px;
             text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.02); position: relative; overflow: hidden;
         }
         .info-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--main-blue); }
         .card-num { font-size: 52px; font-weight: 900; color: var(--red); line-height: 1; }
-        .card-unit { font-size: 20px; color: var(--red); }
 
         .solution-wrap { background-color: #f4f8fc; border-radius: 30px; padding: 60px 24px; }
         .sol-head { font-size: 18px; font-weight: 700; color: var(--sub-blue); display: flex; align-items: center; margin-bottom: 10px; }
         .sol-head i { color: var(--red); margin-right: 12px; }
 
-        /* 料金：画像を巨大化 */
+        /* 料金画像巨大化 */
         .price-box { background: var(--main-blue); color: #fff; padding: 60px 0 0; border-radius: 40px 40px 0 0; text-align: center; }
         .price-main { font-size: 52px; font-weight: 700; color: var(--gold); }
         .price-imgs { display: flex; flex-direction: column; margin-top: 40px; }
         .price-imgs img { width: 100%; height: auto; display: block; border-bottom: 1px solid rgba(255,255,255,0.2); }
 
-        /* アクセス */
+        /* アクセス：地図の修正 */
         .access { padding: 80px 24px; text-align: center; }
         .map { width: 100%; height: 350px; border-radius: 20px; overflow: hidden; border: 5px solid var(--sub-blue); margin-top: 30px; }
 
-        /* 代表・QRコード */
+        /* 代表・QR：バグ修正 */
         .rep-msg { padding: 80px 24px 140px; text-align: center; }
         .rep-img { width: 140px; height: 140px; border-radius: 50%; border: 5px solid var(--gold); margin-bottom: 25px; object-fit: cover; }
-        .rep-name { font-weight: 700; font-size: 20px; color: var(--sub-blue); margin-bottom: 5px; }
-        .qr-area { margin: 40px auto; width: 200px; }
-        .qr-area img { width: 100%; height: auto; border: 1px solid #ddd; padding: 10px; background: #fff; }
+        .qr-area { margin: 40px auto; width: 220px; text-align: center; }
+        .qr-area img { width: 100%; height: auto; display: block; margin: 0 auto; border: 1px solid #eee; padding: 5px; background: #fff; }
 
         /* 下固定LINEボタン */
         .btn-line {
@@ -119,13 +113,12 @@
     </div>
 
     <section class="section">
-        <h2 class="reveal section-label">知らないだけで<br>起きている現実。</h2>
         <div class="reveal info-card">
-            <span class="card-num">1.2<small class="card-unit">億円</small></span>
+            <span class="card-num">1.2<small style="font-size:20px; color:var(--red);">億円</small></span>
             <p style="font-weight:700; margin-top:10px;">特殊詐欺被害、毎日。</p>
         </div>
         <div class="reveal info-card">
-            <span class="card-num">800<small class="card-unit">人</small></span>
+            <span class="card-num">800<small style="font-size:20px; color:var(--red);">人</small></span>
             <p style="font-weight:700; margin-top:10px;">資産凍結、新たに毎日。</p>
         </div>
     </section>
@@ -133,37 +126,33 @@
     <section class="section">
         <div class="solution-wrap">
             <div class="reveal sol-head"><i class="fa-solid fa-shield-halved"></i>鉄壁の「防衛学」</div>
-            <div class="reveal" style="font-size:15px; margin-bottom:30px; padding-left:30px;">インフレや法制度の罠から、あなたの大切な資産を徹底的に守り抜きます。</div>
+            <div class="reveal" style="font-size:15px; margin-bottom:30px; padding-left:30px;">インフレや法制度の罠から、大切な資産を徹底的に守り抜きます。</div>
             <div class="reveal sol-head"><i class="fa-solid fa-ban"></i>販売・勧誘 <span style="color:var(--red);">0%</span></div>
-            <div class="reveal" style="font-size:15px; padding-left:30px;">商品の販売は一切ありません。あなたが正しく判断するための知恵を磨く場所です。</div>
+            <div class="reveal" style="font-size:15px; padding-left:30px;">商品の販売は一切ありません。中立な立場で知恵を磨く場所です。</div>
         </div>
     </section>
 
     <section class="price-box reveal">
-        <h2 style="font-family: 'Noto Serif JP', serif; color: var(--gold); margin-bottom:20px;">価値の対価。</h2>
         <div class="price-main">22,000<small style="font-size:20px; color:#fff; margin-left:10px;">円 / 月</small></div>
-        <p style="margin-top:10px; opacity:0.8;">週1回の学習 ＋ 個別相談し放題</p>
         <div class="price-imgs">
-            <img src="IMG_4157.png" alt="比較表">
-            <img src="IMG_4156.png" alt="単価比較">
+            <img src="IMG_4157.png">
+            <img src="IMG_4156.png">
         </div>
     </section>
 
     <section class="access reveal">
-        <h2 class="section-label">Access</h2>
-        <p style="font-weight:700; font-size:20px; color:var(--sub-blue); margin:0;">守恒みらいホール</p>
+        <p style="font-weight:700; font-size:20px; color:var(--sub-blue);">守恒みらいホール</p>
         <p style="font-size:14px; color:#666;">北九州市小倉南区守恒2-1-40</p>
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.524458535099!2d130.8718!3d33.8248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf6800000001%3a0x28f7d98305c45e64!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1710000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.7126126620955!2d130.87326887570656!3d33.819717073245455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf46e01297e5%3A0xc6c768994539659b!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1713428000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <section class="rep-msg reveal">
         <img src="IMG_2124.png" class="rep-img">
-        <p class="rep-name">平松 広大</p>
-        <p style="font-size:13px; color:#999;">サロン代表 / あなたの未来を守るパートナー</p>
+        <p style="font-weight:700; font-size:20px; color:var(--sub-blue); margin:0;">平松 広大</p>
         <div class="qr-area">
-            <img src="IMG_2131.png" alt="LINE QR">
+            <img src="IMG_2131.png" alt="LINE公式アカウント">
         </div>
         <p style="font-weight:500; font-size:16px;">未来を変える一歩を、ここから。</p>
     </section>
