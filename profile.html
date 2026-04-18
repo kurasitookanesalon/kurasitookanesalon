@@ -17,14 +17,22 @@
         header { padding: 40px 0 20px; text-align: center; }
         .top-logo { width: 110px; height: auto; }
 
-        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 180px; }
+        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 100px; }
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
         .page-sub { font-size: 16px; font-weight: 700; color: var(--gold); text-align: center; margin-bottom: 60px; display: block; letter-spacing: 0.05em; }
 
         .profile-img { width: 100%; max-width: 380px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: block; margin: 0 auto 40px; }
         .name-area { text-align: center; margin-bottom: 50px; }
 
-        .history-box { border-left: 4px solid var(--gold); background: #fdfaf0; padding: 30px 25px; margin: 45px 0; border-radius: 0 12px 12px 0; }
+        /* 経歴・独立のボックスを枠線で囲む修正 */
+        .history-box { 
+            border: 2px solid var(--gold); /* 枠線を追加 */
+            background: #fdfaf0; 
+            padding: 30px 25px; 
+            margin: 45px 0; 
+            border-radius: 12px; 
+            border-left: 6px solid var(--gold); /* 左側のアクセントを強調 */
+        }
         .history-title { font-size: 19px; font-weight: 900; color: var(--sub-blue); margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; }
         .history-title i { margin-right: 10px; color: var(--gold); }
 
@@ -44,6 +52,8 @@
 
         .btn-back { display: flex; align-items: center; justify-content: center; position: relative; width: 100%; max-width: 280px; margin: 80px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
         .btn-back i { position: absolute; right: 20px; }
+
+        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; border-top: 1px solid #f2f2f2; margin-top: 80px; }
 
         @keyframes fuwafuwa {
             0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -95,7 +105,7 @@
                 </ul>
             </div>
 
-            <div class="history-box" style="border-left-color: var(--sub-blue); background: #f0f5ff;">
+            <div class="history-box" style="border-color: var(--sub-blue); border-left-width: 6px; background: #f0f5ff;">
                 <h3 class="history-title" style="color: var(--sub-blue);"><i class="fa-solid fa-briefcase"></i> 独立・経営者としての実践</h3>
                 <p class="text-p" style="margin-bottom:0; font-size: 15px; line-height: 1.8;">
                     会社員時代の実績を経て独立。自ら<b>代表として複数店舗を経営し、年商5億円規模</b>まで成長させました。一経営者として、自らの足で歩み、数字の責任を負い続けてきたからこそ、綺麗事ではない「生活者の実感」をプロの知見として提供できます。
@@ -123,6 +133,8 @@
 
         <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る <i class="fa-solid fa-chevron-right"></i></a></div>
     </div>
+
+    <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
 
     <a href="https://lin.ee/n37s4pB" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
