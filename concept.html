@@ -25,7 +25,8 @@
             color: #fff;
             line-height: 1.8;
             overflow-x: hidden;
-            padding-bottom: 120px;
+            /* ボタン被り防止のための大きな余白 */
+            padding-bottom: 240px; 
         }
 
         .reveal {
@@ -53,12 +54,12 @@
         .highlight { color: var(--gold); font-weight: 900; }
 
         /* セクション設定 */
-        .section { padding: 40px 20px 20px; max-width: 600px; margin: 0 auto; }
+        .section { padding: 40px 20px 0; max-width: 600px; margin: 0 auto; }
         .section h2 {
             font-family: 'Noto Serif JP', serif;
-            font-size: 26px;
+            font-size: 24px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: var(--gold);
             display: flex;
             align-items: center;
@@ -68,14 +69,14 @@
             content: ""; width: 20px; height: 1px; background: var(--gold); margin: 0 15px;
         }
 
-        /* カードデザイン */
+        /* 1トピック1カード */
         .card {
             background: #fff;
             color: var(--sub-blue);
             border-radius: 20px;
-            padding: 30px 24px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 24px;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             position: relative;
             overflow: hidden;
         }
@@ -84,14 +85,13 @@
         }
 
         .card-center { text-align: center; }
-        .card-text { text-align: left; }
-        
         .card-main {
             font-size: 20px;
             font-weight: 700;
             color: var(--main-blue);
             line-height: 1.6;
         }
+        .card-text { font-size: 16px; text-align: left; }
 
         .highlight-blue { color: var(--main-blue); font-weight: 700; }
 
@@ -103,24 +103,29 @@
             margin: 40px auto;
             background: rgba(255,255,255,0.1);
             color: #fff;
-            padding: 15px;
+            padding: 16px;
             border-radius: 40px;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.4);
             text-decoration: none;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            transition: 0.3s;
         }
-        .btn-back:hover { background: #fff; color: var(--main-blue); }
 
-        /* 下部固定LINEボタン */
+        /* LINEボタン */
         .btn-line {
             position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-            width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff;
+            width: 90%; max-width: 360px; height: 68px; background: #06C755; color: #fff;
             border-radius: 34px; display: flex; align-items: center; justify-content: center;
             text-decoration: none; font-weight: 700; font-size: 18px; z-index: 5000;
             box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 20px 20px 100px; 
+            color: rgba(255,255,255,0.6); 
+            font-size: 12px; 
         }
     </style>
 </head>
@@ -138,13 +143,15 @@
     </div>
 
     <div class="card card-text">
-        今の日本では、孤独死やセルフネグレクトが珍しくない時代です。<br><br>
+        今の日本では、孤独死やセルフネグレクトが珍しくない時代です。
+    </div>
+
+    <div class="card card-text">
         「まだ大丈夫」「自分は関係ない」と思っているうちに、一人で抱え込んでしまうことも少なくありません。
     </div>
 
     <div class="card card-text">
-        年齢を重ねるほど、お金や暮らしの不安は増えていきます。
-        しかし、相談できる相手は少なくなります。
+        年齢を重ねるほど、お金や暮らしの不安は増えていきます。しかし、相談できる相手は少なくなります。
     </div>
 
     <div class="card card-center card-main" style="font-size: 18px;">
@@ -170,17 +177,19 @@
     <h2>よくある不安</h2>
 
     <div class="card card-text">
-        老後のお金は足りるのか、年金だけで大丈夫なのか。<br><br>
+        老後のお金は足りるのか、年金だけで大丈夫なのか。
+    </div>
+
+    <div class="card card-text">
         投資は気になるけれど怖い、詐欺にあわないか不安です。
     </div>
 
-    <div class="card card-center card-main" style="font-size: 18px; color: var(--gold); background: var(--sub-blue);">
+    <div class="card card-center card-main" style="font-size: 18px;">
         「何から始めればいいか分からない」<br>という悩みが多くあります
     </div>
 
     <div class="card card-text">
-        住まいはこのままで大丈夫か、家族に負担をかけていないか。<br><br>
-        将来の問題も、一人で抱えるには大きすぎます。
+        住まいはこのままで大丈夫か、家族に負担をかけていないか。将来の問題も、一人で抱えるには大きすぎます。
     </div>
 </div>
 
@@ -192,8 +201,7 @@
     </div>
 
     <div class="card card-text">
-        「まだ大丈夫」と言いながら、誰にも頼らず生活していました。<br><br>
-        しかしある日、一人で亡くなっていました。
+        「まだ大丈夫」と言いながら、誰にも頼らず生活していました。しかしある日、一人で亡くなっていました。
     </div>
 
     <div class="card card-text">
@@ -225,6 +233,8 @@
 <a href="https://lin.ee/n37s4pB" class="btn-line" target="_blank">
     <i class="fa-brands fa-line" style="font-size:28px; margin-right:10px;"></i> 無料体験・質問はこちら
 </a>
+
+<footer>© くらしとお金サロン All Rights Reserved.</footer>
 
 <script>
     const observer = new IntersectionObserver((entries) => {
