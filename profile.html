@@ -9,28 +9,38 @@
     <style>
         :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-white: #FFFFFF; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.9; overflow-x: hidden; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 2.0; overflow-x: hidden; }
 
-        .reveal { opacity: 0; transform: translateY(15px); transition: all 1.2s ease-out; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 1.2s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        header { padding: 30px 0 10px; text-align: center; }
-        .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
+        header { padding: 40px 0 20px; text-align: center; }
+        .top-logo { width: 110px; height: auto; }
 
         .container { max-width: 650px; margin: 0 auto; padding: 0 24px 180px; }
-
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
-        .page-sub { font-size: 16px; font-weight: 700; color: var(--gold); text-align: center; margin-bottom: 50px; display: block; }
+        .page-sub { font-size: 16px; font-weight: 700; color: var(--gold); text-align: center; margin-bottom: 60px; display: block; letter-spacing: 0.05em; }
 
-        .profile-img { width: 100%; max-width: 380px; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); display: block; margin: 0 auto 40px; }
+        .profile-img { width: 100%; max-width: 380px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: block; margin: 0 auto 40px; }
+        .name-area { text-align: center; margin-bottom: 50px; }
 
-        .name-area { text-align: center; margin-bottom: 45px; }
-        .name-area h2 { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--sub-blue); margin: 0; }
+        .history-box { border-left: 4px solid var(--gold); background: #fdfaf0; padding: 30px 25px; margin: 45px 0; border-radius: 0 12px 12px 0; }
+        .history-title { font-size: 19px; font-weight: 900; color: var(--sub-blue); margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; }
+        .history-title i { margin-right: 10px; color: var(--gold); }
 
+        .text-p { font-size: 16px; font-weight: 500; margin-bottom: 30px; color: #333; }
+
+        .support-box { border: 2px solid #d1d9e6; border-radius: 15px; padding: 30px 25px; margin: 50px 0; background-color: #fcfdfe; position: relative; }
+        .support-box::before { content: '強力なバックアップ体制'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--sub-blue); color: #fff; padding: 2px 20px; font-size: 14px; font-weight: 900; border-radius: 20px; }
+        .support-list { list-style: none; padding: 0; margin: 10px 0 0; }
+        .support-list li { font-weight: 700; padding: 12px 0; border-bottom: 1px solid #edf1f7; font-size: 15px; color: #444; display: flex; align-items: center; }
+        .support-list li::before { content: '■'; color: var(--gold); font-size: 10px; margin-right: 12px; }
+        .support-list li:last-child { border-bottom: none; }
+
+        /* LINEボタン：ふわふわ浮遊 */
         @keyframes fuwafuwa {
-            0% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-            100% { transform: translateX(-50%) translateY(0); }
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-12px); }
         }
 
         .line-float-btn {
@@ -38,28 +48,26 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 88%;
-            max-width: 380px;
+            width: 90%;
+            max-width: 400px;
             background-color: #06C755;
             color: white;
             text-align: center;
-            padding: 16px;
+            padding: 18px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 900;
+            font-size: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             animation: fuwafuwa 3s infinite ease-in-out;
         }
-        .line-float-btn i { font-size: 26px; margin-right: 12px; }
+        .line-float-btn i { font-size: 28px; margin-right: 12px; }
 
-        .btn-back { display: block; width: 100%; max-width: 280px; margin: 60px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
-
-        footer { text-align: center; padding: 40px 20px 120px; color: #999; font-size: 12px; }
+        .btn-back { display: block; width: 100%; max-width: 280px; margin: 80px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; transition: all 0.3s; }
     </style>
 </head>
 <body>
@@ -67,20 +75,54 @@
     <div class="container">
         <h1 class="reveal page-title">講師プロフィール</h1>
         <span class="reveal page-sub">地域に寄り添い、共に歩む伴走者として。</span>
+
         <div class="reveal"><img src="IMG_3616.png" class="profile-img" alt="平松 広大"></div>
+        
         <div class="reveal name-area">
-            <span style="font-size: 14px; color: var(--gold); font-weight: 700; letter-spacing: 0.1em;">くらしとお金サロン 代表</span>
-            <h2>平松 広大 <span style="font-size: 18px; font-family: 'Noto Sans JP';">(36歳)</span></h2>
+            <span style="font-size: 14px; color: var(--gold); font-weight: 700; display: block; margin-bottom: 8px;">くらしとお金サロン 代表</span>
+            <h2 style="font-family:'Noto Serif JP'; font-size:30px; margin:0; letter-spacing: 0.1em;">平松 広大 <span style="font-size: 18px; font-family: 'Noto Sans JP';">(36歳)</span></h2>
         </div>
+
         <section class="reveal">
-            <p>北九州市小倉南区出身。約15年間、飲食業界で200店舗規模の運営やマネジメントを経験。現在は国家資格FP技能士として、地域の皆様の「安心」を中立な立場でサポートしています。</p>
+            <p class="text-p">福岡県北九州市小倉南区出身。<br>この街で生まれ、地元の学校を卒業し、<br>社会人としての歩みを始めました。</p>
+            
+            <div class="history-box">
+                <h3 class="history-title"><i class="fa-solid fa-chart-line"></i> 現場で培った「圧倒的な解決力」</h3>
+                <p class="text-p" style="margin-bottom:0; font-size: 15px; line-height: 1.8;">
+                    約15年間、飲食業界の最前線に身を置き、<br>店長からエリア統括、営業部長補佐まで歴任。<br>最大で<b>約200店舗、年商200億円規模</b>の運営を担い、<br><b>10,000名を超えるスタッフ</b>と向き合ってきました。<br><br>
+                    その後、独立して自ら店舗経営を実践。<br>常に数字と、それ以上に「人」を大切にし、<br>目の前の課題を一つひとつ解決してきた自負があります。
+                </p>
+            </div>
+
+            <p class="text-p">私は、最初から金融業界にいた人間ではありません。<br>皆様と同じように悩み、働き、<br>自分の足で一歩ずつ学びを積み上げてきました。<br><br>
+            <span style="color: var(--sub-blue); font-weight: 900; border-bottom: 2px solid var(--gold);">「生活者の実感」を持ちながら、プロとして伴走できること</span>。<br>それが、私の提供できる最大の価値です。</p>
         </section>
+
+        <section class="reveal" style="margin-top: 60px;">
+            <h2 style="font-size: 22px; color: var(--sub-blue); border-bottom: 2px solid #d1d9e6; display: inline-block; padding-bottom: 5px; margin-bottom: 25px; font-family: 'Noto Serif JP';">現在の活動</h2>
+            <p class="text-p">現在は<b>国家資格FP（ファイナンシャル・プランニング）技能士</b>を保有。<br>投資家としての実体験と知見を活かしながら、<br>地元・小倉南区で「くらしとお金サロン」を運営しています。</p>
+            <p class="text-p">各種詐欺対策や金融リテラシーの向上を通じ、<br>地域の皆様が将来への不安を解消し、<br>安心して暮らせる環境づくりに全力を注いでいます。</p>
+            <p class="text-p" style="color: var(--red); font-weight: 700; font-size: 15px; background: #fff5f5; padding: 15px; border-radius: 8px;">※中立性を保つため、金融商品の販売や<br>特定の投資勧誘は一切行っておりません。</p>
+        </section>
+
+        <section class="reveal support-box">
+            <ul class="support-list">
+                <li>税理士法人松本会計（当社顧問税理士事務所）</li>
+                <li>北九州商工会議所</li>
+                <li>日本FP協会</li>
+                <li>日本政策金融公庫 北九州支店</li>
+                <li>山口フィナンシャルグループ 北九州銀行 守恒支店</li>
+            </ul>
+        </section>
+
         <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る</a></div>
     </div>
+
     <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
-        <span>LINEで無料体験・ご相談</span>
+        <span>LINEで無料体験・入会申込</span>
     </a>
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
