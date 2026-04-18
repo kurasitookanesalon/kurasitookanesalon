@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-white: #FFFFFF; }
+        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --bg-white: #FFFFFF; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.9; overflow-x: hidden; }
 
@@ -15,26 +15,35 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         header { padding: 30px 0 10px; text-align: center; }
-        .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
+        .top-logo { width: 100px; height: auto; }
 
         .container { max-width: 650px; margin: 0 auto; padding: 0 24px 180px; }
+        .page-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
 
-        .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
-        .page-sub { font-size: 16px; font-weight: 700; color: var(--gold); text-align: center; margin-bottom: 50px; display: block; }
+        /* スケジュール・場所 */
+        .info-section { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        .icon-text { display: flex; align-items: flex-start; margin-bottom: 15px; font-weight: 700; }
+        .icon-text i { margin-right: 12px; margin-top: 5px; color: #555; }
+        .red-note { color: #E50012; font-size: 14px; font-weight: 700; margin-top: 5px; }
 
-        .content-box { border-radius: 12px; padding: 25px; margin: 30px 0; border: 2px solid var(--main-blue); background: #f0f5ff; }
-        .box-title { font-size: 19px; font-weight: 900; color: var(--sub-blue); margin-top: 0; display: flex; align-items: center; }
-        .box-title i { margin-right: 10px; color: var(--gold); }
+        /* 安心のカリキュラム（完全復元） */
+        .curriculum-box { border: 2px solid var(--gold); border-radius: 12px; padding: 25px; margin: 40px 0; background: #fff; }
+        .curriculum-title { color: var(--sub-blue); font-size: 20px; font-weight: 900; margin-bottom: 25px; display: flex; align-items: center; }
+        .curriculum-title i { color: var(--gold); margin-right: 12px; font-size: 24px; }
+        
+        .curriculum-list { list-style: none; padding: 0; margin: 0; }
+        .curriculum-list li { position: relative; padding-left: 30px; margin-bottom: 20px; font-weight: 700; font-size: 16px; color: #333; line-height: 1.5; }
+        .curriculum-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: #E50012; }
+        .curriculum-list li b { display: block; color: #333; font-size: 17px; margin-bottom: 2px; }
 
+        /* 会費 */
         .price-card { border: 3px solid var(--sub-blue); background: #fff; border-radius: 12px; padding: 30px; text-align: center; margin: 50px 0; }
         .price-val { font-size: 32px; font-weight: 900; color: var(--sub-blue); }
 
-        .access-info { background: #f8f9fa; padding: 20px; border-radius: 12px; font-size: 15px; font-weight: 700; color: #444; }
-
+        /* LINEボタン：ふわふわ浮遊 */
         @keyframes fuwafuwa {
-            0% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-            100% { transform: translateX(-50%) translateY(0); }
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-12px); }
         }
 
         .line-float-btn {
@@ -42,56 +51,75 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 88%;
-            max-width: 380px;
+            width: 90%;
+            max-width: 400px;
             background-color: #06C755;
             color: white;
             text-align: center;
-            padding: 16px;
+            padding: 18px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 900;
+            font-size: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             animation: fuwafuwa 3s infinite ease-in-out;
         }
         .line-float-btn i { font-size: 26px; margin-right: 12px; }
 
         .btn-back { display: block; width: 100%; max-width: 280px; margin: 60px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
-
-        footer { text-align: center; padding: 40px 20px 120px; color: #999; font-size: 12px; }
     </style>
 </head>
 <body>
     <header><img src="ロゴ浮き.png" class="top-logo"></header>
     <div class="container">
         <h1 class="reveal page-title">サロンの内容</h1>
-        <span class="reveal page-sub">「知る」が「安心」に変わる、特別な120分。</span>
-        <section class="reveal content-box">
-            <h2 class="box-title"><i class="fa-solid fa-calendar-check"></i> 開催スケジュール</h2>
-            <p><b>毎週月曜日 9:00 〜 11:00</b></p>
-            <p>前半：最新の金融・くらし講義（60分）<br>後半：お悩み解決・座談会（60分）</p>
-        </section>
-        <section class="reveal">
-            <div class="access-info">
-                <b>開催場所：守恒みらいホール 3階 もしくは 4階</b><br>
-                <span>（サンリブもりつね目の前 / モノレール守恒駅より徒歩3分）</span>
+
+        <section class="reveal info-section" style="margin-top:40px;">
+            <div class="icon-text">
+                <i class="fa-solid fa-train-subway"></i>
+                <div>モノレール守恒駅より 徒歩3分</div>
             </div>
+            <div class="red-note">※予約状況によりフロアが変更になる場合があります。</div>
         </section>
+
+        <section class="reveal curriculum-box">
+            <div class="curriculum-title">
+                <i class="fa-solid fa-user-graduate"></i>
+                <div>本質を学ぶ「安心のカリキュラム」</div>
+            </div>
+            <p style="font-size:15px; margin-bottom:25px; font-weight:500;">流行りの情報に惑わされず、一生使える知識を<br>身につけます。</p>
+            
+            <ul class="curriculum-list">
+                <li><b>家計の守り方：物価高に負けない資産の防御力</b></li>
+                <li><b>攻めの投資術：新NISA・iDeCoの正しい活用法</b></li>
+                <li><b>防犯リテラシー：巧妙な詐欺から資産を守る知恵</b></li>
+                <li><b>将来の備え：後悔しない介護・施設・終活の知識</b></li>
+                <li><b>相続と家族：トラブルを未然に防ぐ整理のコツ</b></li>
+            </ul>
+        </section>
+
+        <section class="reveal">
+            <h2 style="font-size: 24px; font-weight: 900; color: #333; margin-bottom: 20px;">入会のメリット</h2>
+            <p style="font-size:16px; margin-bottom: 40px;">個人的なお悩みも、いつでも個別に相談可能です。</p>
+        </section>
+
         <section class="reveal price-card">
-            <h3>サロン月会費</h3>
+            <h3 style="margin-top:0; font-size: 18px;">サロン月会費</h3>
             <span class="price-val">22,000円</span><span style="font-size:16px;">（税込）</span>
         </section>
+
         <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る</a></div>
     </div>
+
     <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
-        <span>LINEで無料体験・ご相談</span>
+        <span>LINEで無料体験・入会申込</span>
     </a>
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
