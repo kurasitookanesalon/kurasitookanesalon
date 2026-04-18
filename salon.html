@@ -9,7 +9,7 @@
     <style>
         :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-white: #FFFFFF; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.8; overflow-x: hidden; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.9; overflow-x: hidden; }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -17,16 +17,15 @@
         header { padding: 30px 0 10px; text-align: center; }
         .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
 
-        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 150px; } /* LINEボタン用に余白確保 */
+        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 180px; }
 
-        /* 統一見出しスタイル */
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
         .page-sub { font-size: 17px; font-weight: 700; color: var(--gold); text-align: center; margin-bottom: 50px; display: block; }
 
         .text-p { font-size: 16px; font-weight: 500; margin-bottom: 25px; color: #444; }
         .bold-blue { color: var(--sub-blue); font-weight: 900; }
 
-        /* 内容エリアのデザインボックス */
+        /* デザインボックス */
         .content-box { border-radius: 12px; padding: 25px; margin: 30px 0; }
         .content-box.blue-border { border: 2.5px solid var(--main-blue); background: #f0f5ff; }
         .content-box.gold-border { border: 2.5px solid var(--gold); background: #fffdf5; }
@@ -34,21 +33,26 @@
         .box-title { font-size: 19px; font-weight: 900; color: var(--sub-blue); margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; }
         .box-title i { margin-right: 10px; color: var(--gold); }
 
-        /* 箇条書きスタイル */
         .point-list { list-style: none; padding: 0; margin: 0; }
-        .point-list li { position: relative; padding-left: 25px; margin-bottom: 10px; font-size: 16px; font-weight: 700; }
+        .point-list li { position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 16px; font-weight: 700; }
         .point-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--red); }
 
         /* 料金エリア */
         .price-card { border: 3px solid var(--sub-blue); background: #fff; border-radius: 12px; padding: 30px; text-align: center; margin: 50px 0; }
-        .price-card h3 { color: var(--sub-blue); margin-top: 0; font-size: 18px; }
+        .price-card h3 { color: var(--sub-blue); margin-top: 0; font-size: 18px; margin-bottom: 10px;}
         .price-val { font-size: 32px; font-weight: 900; color: var(--sub-blue); }
 
-        .note-p { font-size: 14px; color: #666; margin-top: 20px; text-align: center; }
+        /* アクセス情報 */
+        .access-info { background: #f8f9fa; padding: 20px; border-radius: 12px; font-size: 15px; font-weight: 700; color: #444; }
+        .access-tag { display: inline-block; background: var(--red); color: #fff; padding: 2px 10px; border-radius: 4px; font-size: 12px; margin-bottom: 8px; }
 
-        .btn-back { display: block; width: 100%; max-width: 300px; margin: 60px auto 0; padding: 18px; border: 2px solid var(--sub-blue); color: var(--sub-blue); border-radius: 12px; text-align: center; text-decoration: none; font-weight: 900; }
+        /* LINEボタン：光るアニメーション */
+        @keyframes pulse-white {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
 
-        /* 追跡型LINEボタン */
         .line-float-btn {
             position: fixed;
             bottom: 20px;
@@ -69,10 +73,11 @@
             justify-content: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             z-index: 1000;
-            transition: transform 0.3s ease;
+            animation: pulse-white 2s infinite;
         }
-        .line-float-btn i { font-size: 24px; margin-right: 10px; }
-        .line-float-btn:active { transform: translateX(-50%) scale(0.95); }
+        .line-float-btn i { font-size: 26px; margin-right: 12px; }
+
+        .btn-back { display: block; width: 100%; max-width: 300px; margin: 60px auto 0; padding: 18px; border: 2px solid var(--sub-blue); color: var(--sub-blue); border-radius: 12px; text-align: center; text-decoration: none; font-weight: 900; }
 
         footer { text-align: center; padding: 40px 20px 100px; color: #999; font-size: 12px; }
     </style>
@@ -84,39 +89,56 @@
     <div class="container">
         
         <h1 class="reveal page-title">サロンの内容</h1>
-        <span class="reveal page-sub">焦らず、ゆっくり。日々の暮らしに安心の知恵を。</span>
+        <span class="reveal page-sub">「知る」が「安心」に変わる、特別な120分。</span>
 
         <section class="reveal">
-            <p class="text-p">「くらしとお金サロン」では、日々の暮らしに関わる基礎知識を整理しながら、これからの生活に向けた考え方を学んでいきます。</p>
-            <p class="text-p">難しい専門用語は使いません。<span class="bold-blue">ゆっくり、丁寧に理解していくこと</span>で、不安を減らし、自分自身で将来を考えられる力を身につけていきます。</p>
+            <p class="text-p">将来のお金や生活に漠然とした不安を感じる、<br>その原因は「正しい情報の不足」にあります。</p>
+            <p class="text-p">当サロンは、単に知識を詰め込む場所ではありません。<br>日々の暮らしに関わるお金の基礎を 丁寧に紐解き、<br>ご自身の家計や将来に活かせる「知恵」に変える場所です。</p>
+            <p class="text-p"><span class="bold-blue">「プロが隣にいて、いつでも聞ける安心感」</span>。<br>そして同じ地域で、共に高め合える仲間がいること。<br>この環境が、あなたの将来を劇的に変えていきます。</p>
         </section>
 
         <section class="reveal content-box blue-border">
-            <h2 class="box-title"><i class="fa-solid fa-calendar-days"></i> 開催概要</h2>
-            <p class="text-p" style="margin-bottom: 10px;"><b>● 開催リズム</b><br>週1回（120分）× 月4回</p>
-            <p class="text-p" style="margin-bottom: 10px;"><b>● タイムスケジュール</b><br>前半：講義（60分）＋ 後半：座談会（60分）</p>
-            <p class="text-p" style="margin-bottom: 0;"><b>● 開催場所</b><br>守恒みらいホール<br><span style="font-size:0.9em; color:#666;">（北九州市小倉南区守恒本町2丁目2-11）</span></p>
+            <h2 class="box-title"><i class="fa-solid fa-calendar-check"></i> 開催スケジュール</h2>
+            <p class="text-p" style="margin-bottom: 10px;"><b>● 開催日時</b><br>毎週月曜日 9:00 〜 11:00</p>
+            <p class="text-p" style="margin-bottom: 0;"><b>● タイムスケジュール</b><br>前半：最新の金融・くらし講義（60分）<br>後半：お悩み解決・座談会（60分）</p>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">開催場所とアクセス</h2>
+            <div class="access-info">
+                <span class="access-tag">サンリブもりつね目の前</span><br>
+                <b style="font-size: 18px; color: var(--sub-blue);">守恒みらいホール 3階 もしくは 4階</b><br>
+                <span style="font-size: 13px; color: #666;">（北九州市小倉南区守恒本町2丁目2-11）</span>
+                <p style="margin-top: 10px; margin-bottom: 0;">
+                    <i class="fa-solid fa-train-subway"></i> モノレール守恒駅より 徒歩3分<br>
+                    <span style="color:var(--red); font-size: 13px;">※予約状況によりフロアが変更になる場合があります。</span>
+                </p>
+            </div>
         </section>
 
         <section class="reveal content-box gold-border">
-            <h2 class="box-title"><i class="fa-solid fa-book-open-reader"></i> サロンで学べること</h2>
+            <h2 class="box-title"><i class="fa-solid fa-graduation-cap"></i> 本質を学ぶ「安心のカリキュラム」</h2>
+            <p class="text-p">流行りの情報に惑わされず、一生使える知識を身につけます。</p>
             <ul class="point-list">
-                <li>生活に関わるお金の基礎知識</li>
-                <li>流行りに流されない「家計の考え方」</li>
-                <li>老後、介護など「将来に向けた備え」</li>
-                <li>増え続ける「詐欺やトラブル」の対策</li>
-                <li>自分と家族が「安心して暮らすための知識」</li>
+                <li><b>家計の守り方：</b>物価高に負けない資産の防御力</li>
+                <li><b>攻めの投資術：</b>新NISA・iDeCoの正しい活用法</li>
+                <li><b>防犯リテラシー：</b>巧妙な詐欺から資産を守る知恵</li>
+                <li><b>将来の備え：</b>後悔しない介護・施設・終活の知識</li>
+                <li><b>相続と家族：</b>トラブルを未然に防ぐ整理のコツ</li>
             </ul>
         </section>
 
-        <section class="reveal price-card">
-            <h3>サロン会費</h3>
-            <span class="price-val">月額 22,000円</span><span style="font-size:16px; font-weight:700;">（税込）</span>
+        <section class="reveal">
+            <h2 class="section-title">入会のメリット</h2>
+            <p class="text-p"><b>1. 顧問FPによる個別相談し放題</b><br>個人的なお悩みも、いつでも個別に相談可能です。</p>
+            <p class="text-p"><b>2. 専門家ネットワークの活用</b><br>税理士や銀行等、提携機関との連携で深くサポートします。</p>
+            <p class="text-p"><b>3. 地域に根ざした「心の居場所」</b><br>同じ地域に住む仲間と、将来の希望を語り合えます。</p>
         </section>
 
-        <section class="reveal note-p">
-            ※当サロンは純粋な学びと交流の場です。<br>
-            <span style="color:var(--red); font-weight:900;">金融商品やサービスの販売・勧誘は一切行っておりません。</span>
+        <section class="reveal price-card">
+            <h3>サロン月会費</h3>
+            <span class="price-val">22,000円</span><span style="font-size:16px; font-weight:700;">（税込）</span>
+            <p style="font-size: 13px; color: #666; margin-top: 10px; margin-bottom: 0;">月4回の講義・座談会 ＋ 個別相談権利含む</p>
         </section>
 
         <div class="reveal">
@@ -127,7 +149,7 @@
 
     <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
-        <span>LINEで無料相談・入会申込</span>
+        <span>LINEで無料体験・入会申込</span>
     </a>
 
     <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
