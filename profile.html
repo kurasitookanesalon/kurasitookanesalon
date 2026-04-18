@@ -1,215 +1,229 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>講師プロフィール｜くらしとお金サロン</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>講師プロフィール｜くらしとお金サロン</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-blue: #1E5BB8;
+            --sub-blue: #163E7A;
+            --gold: #D4AF37;
+            --bg-white: #FFFFFF;
+        }
 
-<style>
-body{
-  margin:0;
-  font-family:"Noto Sans JP",sans-serif;
-  background:#1E5BB8;
-  color:#fff;
-  padding-bottom:120px;
-}
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-.hero{
-  text-align:center;
-  padding:60px 20px 40px;
-}
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--main-blue);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+            padding-bottom: 120px;
+        }
 
-.hero h1{
-  font-size:28px;
-  line-height:1.5;
-  font-weight:bold;
-}
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-.section{
-  padding:60px 20px;
-  text-align:center;
-}
+        /* ヒーローエリア */
+        .hero { 
+            padding: 80px 24px 40px; 
+            text-align: center; 
+            background: #fff;
+            color: var(--sub-blue);
+            border-radius: 0 0 40px 40px;
+        }
+        .top-logo { width: 80px; height: auto; margin-bottom: 20px; }
+        .hero h1 { 
+            font-family: 'Noto Serif JP', serif; 
+            font-size: 26px; 
+            line-height: 1.5; 
+            margin: 0;
+        }
+        .highlight { color: var(--gold); font-weight: 900; }
 
-.card{
-  background:#fff;
-  color:#1E5BB8;
-  border-radius:20px;
-  padding:22px;
-  margin:20px auto;
-  width:90%;
-  max-width:500px;
-  font-size:17px;
-  line-height:1.85;
-  font-weight:500;
+        /* セクション設定 */
+        .section { padding: 40px 20px 20px; max-width: 600px; margin: 0 auto; }
 
-  word-break:keep-all;
-  line-break:strict;
-}
+        /* プロフィール画像 */
+        .profile-img {
+            width: 240px;
+            height: auto;
+            margin: 0 auto 30px;
+            display: block;
+            border-radius: 20px;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-.card-center{
-  text-align:center;
-}
+        /* カードデザイン */
+        .card {
+            background: #fff;
+            color: var(--sub-blue);
+            border-radius: 20px;
+            padding: 30px 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--gold);
+        }
 
-.card-text{
-  text-align:left;
-}
+        .card-center { text-align: center; }
+        .card-text { text-align: left; }
+        
+        .card-main {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--sub-blue);
+            line-height: 1.4;
+        }
 
-.card-main{
-  font-size:19px;
-  font-weight:bold;
-}
+        .highlight-blue { color: var(--main-blue); font-weight: 700; }
 
-.highlight{
-  color:#D4AF37;
-  font-weight:bold;
-}
+        /* 専門家リスト */
+        ul { list-style: none; padding: 0; margin-top: 15px; }
+        li { 
+            padding: 8px 0; 
+            border-bottom: 1px dashed #eee; 
+            font-weight: 700; 
+            color: var(--sub-blue);
+            display: flex;
+            align-items: center;
+        }
+        li::before {
+            content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            margin-right: 10px; color: var(--gold); font-size: 14px;
+        }
+        li:last-child { border-bottom: none; }
 
-.nowrap{
-  white-space:nowrap;
-}
+        /* 戻るボタン */
+        .btn-back {
+            display: flex;
+            width: 90%;
+            max-width: 300px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 15px;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; color: var(--main-blue); }
 
-.profile-img{
-  width:220px;
-  margin:0 auto 20px;
-  display:block;
-  border-radius:12px;
-}
+        /* 下部固定LINEボタン */
+        .btn-line {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff;
+            border-radius: 34px; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-weight: 700; font-size: 18px; z-index: 5000;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
 
-.btn{
-  display:flex;
-  width:90%;
-  max-width:420px;
-  margin:30px auto;
-  background:#555;
-  color:#fff;
-  padding:16px;
-  border-radius:40px;
-  font-size:16px;
-  font-weight:bold;
-  text-decoration:none;
-  align-items:center;
-  justify-content:center;
-}
-
-.floating-btn{
-  position:fixed;
-  bottom:15px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  max-width:420px;
-  background:#00C300;
-  color:#fff;
-  padding:16px;
-  border-radius:50px;
-  font-size:16px;
-  font-weight:bold;
-  text-decoration:none;
-  z-index:999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-</style>
+        .nowrap { white-space: nowrap; }
+    </style>
 </head>
 
 <body>
 
 <div class="hero">
-  <h1>
-    地域に寄り添い、
-    <span class="highlight">お金と暮らしの不安を減らすために</span>
-  </h1>
+    <img src="ロゴ浮き.png" alt="logo" class="top-logo">
+    <h1>地域に寄り添い、<br><span class="highlight">お金と暮らしの不安を減らすために</span></h1>
 </div>
 
-<div class="section">
+<div class="section reveal">
+    <img src="IMG_3616.png" class="profile-img">
 
-  <img src="IMG_3616.png" class="profile-img">
+    <div class="card card-center card-main">
+        平松 広大<small style="font-size: 14px; margin-left: 8px;">（36歳）</small><br>
+        <span style="font-size: 16px; color: var(--main-blue);">くらしとお金サロン代表</span>
+    </div>
 
-  <div class="card card-center card-main">
-    平松 広大（36歳）<br>
-    くらしとお金サロン代表
-  </div>
+    <div class="card card-text">
+        福岡県北九州市小倉南区出身。地元で生まれ育ち、今もこの地域で活動しています。
+    </div>
 
-  <div class="card card-text">
-    福岡県北九州市小倉南区出身。地元で生まれ育ち、
-    今もこの地域で活動しています。
-  </div>
+    <div class="card card-text">
+        約15年間、飲食業界にて経験を積み、店長・エリア管理職・営業部長補佐などを歴任。
+        広報・商品開発・人事・マーケティングにも関わり、幅広い分野で実務を経験してきました。
+    </div>
 
-  <div class="card card-text">
-    約15年間、飲食業界にて経験を積み、
-    店長・エリア管理職・営業部長補佐などを歴任。
+    <div class="card card-center">
+        <span class="highlight-blue" style="font-size: 20px;">
+            約<span class="nowrap">200店舗</span>・
+            年商<span class="nowrap">約200億円</span>規模
+        </span>
+    </div>
 
-    広報・商品開発・人事・マーケティングにも関わり、
-    幅広い分野で実務を経験してきました。
-  </div>
+    <div class="card card-text">
+        西日本エリアを営業部長補佐として統括・管理し、延べ<span class="nowrap">10,000名以上</span>のマネジメントを経験。
+        人と向き合い、数字と向き合い、現場の課題を一つずつ解決してきました。
+    </div>
 
-  <div class="card card-center">
-    <span class="highlight">
-      約<span class="nowrap">200店舗</span>・
-      年商<span class="nowrap">約200億円</span>規模
-    </span>
-  </div>
+    <div class="card card-center card-main" style="font-size: 18px;">
+        独立後、年商<span class="nowrap">約4億円</span>規模の店舗経営を経験
+    </div>
 
-  <div class="card card-text">
-    西日本エリアを営業部長補佐として統括・管理し、
-    延べ<span class="nowrap">10,000名以上</span>のマネジメントを経験。
-  </div>
+    <div class="card card-text">
+        金融業界出身ではなく、自身で学び、実践してきた立場です。<br><br>
+        同じように悩み、考えてきた経験があるからこそ、皆様に寄り添えると考えています。
+    </div>
 
-  <div class="card card-text">
-    人と向き合い、数字と向き合い、
-    現場の課題を一つずつ解決してきました。
-  </div>
+    <div class="card card-center card-main" style="font-size: 18px;">
+        FP3級技能士として、<br>投資・事業を行いながら運営
+    </div>
 
-  <div class="card card-center">
-    独立後、年商<span class="nowrap">約4億円</span>規模の店舗経営を経験
-  </div>
+    <div class="card card-text">
+        数字だけでなく、人の不安や想いに寄り添うことを大切にしています。
+    </div>
 
-  <div class="card card-text">
-    金融業界出身ではなく、
-    自身で学び、実践してきた立場です。
-
-    同じように悩み、考えてきた経験があるからこそ、
-    皆様に寄り添えると考えています。
-  </div>
-
-  <div class="card card-center">
-    FP3級技能士として、
-    投資・事業を行いながら運営
-  </div>
-
-  <div class="card card-text">
-    数字だけでなく、
-    人の不安や想いに寄り添うことを大切にしています。
-  </div>
-
-  <div class="card card-text">
-    <span class="highlight">バックアップ体制</span><br><br>
-
-    必要に応じて専門家・スポンサー様・お取引先様と提携しています。
-
-    <ul>
-      <li>税理士法人松本会計</li>
-      <li>日本FP協会</li>
-      <li>北九州銀行 守恒支店</li>
-      <li>北九州商工会議所</li>
-      <li>日本政策金融公庫</li>
-    </ul>
-  </div>
-
+    <div class="card card-text">
+        <span class="highlight-blue" style="font-size: 19px; border-bottom: 2px solid var(--gold);">バックアップ体制</span>
+        <ul>
+            <li>税理士法人松本会計</li>
+            <li>日本FP協会</li>
+            <li>北九州銀行 守恒支店</li>
+            <li>北九州商工会議所</li>
+            <li>日本政策金融公庫</li>
+        </ul>
+    </div>
 </div>
 
-<div class="section">
-  <a href="index.html" class="btn">
-    トップページへ戻る
-  </a>
+<div class="section reveal">
+    <a href="index.html" class="btn-back">
+        <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> トップページへ戻る
+    </a>
 </div>
 
-<a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
-  友だち追加して無料体験・質問もこちら
+<a href="https://lin.ee/n37s4pB" class="btn-line" target="_blank">
+    <i class="fa-brands fa-line" style="font-size:28px; margin-right:10px;"></i> 友だち追加して無料体験・質問はこちら
 </a>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
