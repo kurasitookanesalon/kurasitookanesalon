@@ -26,8 +26,8 @@
             color: #222;
             line-height: 1.8;
             overflow-x: hidden;
-            /* 下部に巨大な余白を設定（ボタン被り防止） */
-            padding-bottom: 220px; 
+            /* 下部ボタン分の余白のみ確保 */
+            padding-bottom: 120px; 
         }
 
         .reveal {
@@ -54,41 +54,40 @@
         }
 
         /* 統計データ */
-        .section { padding: 40px 24px; max-width: 600px; margin: 0 auto; }
+        .section { padding: 40px 24px 0; max-width: 600px; margin: 0 auto; }
         .info-card {
-            border: 1px solid #eee; background: #fff; border-radius: 20px; padding: 40px 24px; margin-bottom: 25px;
-            text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.02); position: relative; overflow: hidden;
+            border: 1px solid #eee; background: #fff; border-radius: 20px; padding: 30px 24px; margin-bottom: 20px;
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; overflow: hidden;
         }
         .info-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--main-blue); }
         .card-num { font-size: 52px; font-weight: 900; color: var(--red); line-height: 1; }
 
-        /* 料金画像 */
-        .price-imgs { padding: 40px 0; text-align: center; }
-        .price-imgs img { width: 100%; max-width: 600px; display: block; margin: 0 auto 10px; border-radius: 12px; }
+        /* 比較表 */
+        .price-imgs { padding: 40px 0 0; text-align: center; }
+        .price-imgs img { width: 100%; max-width: 600px; display: block; margin: 0 auto 15px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
         /* ナビゲーションボタン */
-        .main-nav { padding: 20px 24px 40px; text-align: center; display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto; }
+        .main-nav { padding: 40px 24px; text-align: center; display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto; }
         .nav-btn {
             display: block;
-            padding: 16px;
+            padding: 18px;
             background: #fff;
             color: var(--sub-blue);
             text-decoration: none;
             font-weight: bold;
             border: 2px solid var(--sub-blue);
-            border-radius: 12px;
+            border-radius: 15px;
             transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .nav-btn:hover { background: var(--sub-blue); color: #fff; }
 
         /* アクセス */
         .access { padding: 60px 24px; text-align: center; }
         .map-frame { width: 100%; max-width: 600px; height: 350px; border-radius: 20px; overflow: hidden; border: 5px solid var(--sub-blue); margin: 30px auto; }
 
         /* お問い合わせ */
-        .qr-section { padding: 60px 24px 20px; text-align: center; background: #f9f9f9; }
-        .qr-box { width: 220px; margin: 40px auto; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 12px; }
+        .qr-section { padding: 60px 24px 40px; text-align: center; background: #f9f9f9; }
+        .qr-box { width: 200px; margin: 30px auto; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 12px; }
         .qr-box img { width: 100%; height: auto; display: block; }
 
         /* LINEボタン */
@@ -100,13 +99,13 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
 
-        /* フッターの余白をさらに強化 */
         footer { 
             text-align: center; 
-            padding: 60px 20px 100px; /* 下側を100pxあけてボタンに被らせない */
+            padding: 20px 20px 20px; 
             color: #999; 
             font-size: 12px; 
             background: #f9f9f9; 
+            position: relative;
         }
     </style>
 </head>
@@ -151,8 +150,8 @@
     </section>
 
     <nav class="main-nav reveal">
-        <a href="profile.html" class="nav-btn">プロフィールを見る</a>
-        <a href="salon.html" class="nav-btn">サロンの内容を見る</a>
+        <a href="profile.html" class="nav-btn">講師プロフィール</a>
+        <a href="service.html" class="nav-btn">サロンの内容を見る</a>
         <a href="concept.html" class="nav-btn">サロンの理念を見る</a>
     </nav>
 
@@ -160,7 +159,7 @@
         <p style="font-weight:700; font-size:22px; color:var(--sub-blue); margin:0;">守恒みらいホール</p>
         <p style="font-size:14px; color:#666;">北九州市小倉南区守恒2-1-40</p>
         <div class="map-frame">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.153915152822!2d130.87102607619213!3d33.83411477324009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf461d337f7f%3A0xc367612f00a4df75!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1713431189456!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.156565152843!2d130.8719543!3d33.8340454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf42065f4997%3A0xc0761e065363391d!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1711111111111!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -169,15 +168,15 @@
         <div class="qr-box">
             <img src="IMG_2124.png" alt="LINE公式アカウント">
         </div>
-        <p style="font-weight:700;">未来を変える一歩を、ここから。</p>
+        <p style="font-weight:700; color:var(--sub-blue);">未来を変える一歩を、ここから。</p>
     </section>
 </main>
+
+<footer>© くらしとお金サロン All Rights Reserved.</footer>
 
 <a href="https://lin.ee/n37s4pB" class="btn-line">
     <i class="fa-brands fa-line" style="font-size:30px; margin-right:10px;"></i> 無料体験・質問はこちら
 </a>
-
-<footer>© くらしとお金サロン All Rights Reserved.</footer>
 
 <script>
     const observer = new IntersectionObserver((entries) => {
