@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン 小倉南校 | 平松 広大（Koudai Hiramatsu）</title>
+<title>くらしとお金サロン 小倉南校</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -14,6 +14,7 @@
   --accent-gold: #DAA520; 
   --bg-white: #FFFFFF;
   --bg-light: #F1F5F9;
+  --card-bg: #F8FAFC;
   --text-main: #111827; 
   --text-sub: #4B5563;
   --alert-red: #E11D48; 
@@ -26,54 +27,59 @@ body {
   color: var(--text-main);
   line-height: 1.8;
   font-size: 17px;
-  overflow-x: hidden; /* 横揺れ防止 */
+  overflow-x: hidden;
 }
 
-/* ヘッダー */
+/* ヘッダー：ロゴ配置 */
 header {
   background: var(--bg-white);
-  padding: 15px 10px;
-  text-align: center;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 5px solid var(--main-blue);
+  border-bottom: 4px solid var(--main-blue);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-.header-tag { font-size: 12px; color: var(--main-blue); font-weight: bold; display: block; letter-spacing: 0.1em; margin-bottom: 2px; }
-.header-title { font-size: 19px; font-weight: bold; margin: 0; color: var(--text-main); }
+.header-logo-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+}
+.header-text-wrap {
+  text-align: left;
+}
+.header-tag { font-size: 11px; color: var(--main-blue); font-weight: bold; display: block; margin-bottom: 2px; }
+.header-title { font-size: 17px; font-weight: bold; margin: 0; color: var(--text-main); }
 
-/* ヒーロー：改行バグ対策 */
+/* ヒーロー：改行対策済み */
 .hero {
   text-align: center;
-  padding: 60px 15px 40px;
+  padding: 50px 15px 40px;
   background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 100%);
 }
-.formula { font-size: 16px; color: var(--text-sub); margin-bottom: 20px; font-weight: 500; }
+.formula { font-size: 16px; color: var(--text-sub); margin-bottom: 15px; font-weight: 500; }
 .hero-main {
   font-family: 'Noto Serif JP', serif;
-  font-size: 26px; /* 基本サイズ */
-  font-size: 7.2vw; /* スマホ幅に連動 */
+  font-size: 7.2vw;
   line-height: 1.5;
   color: var(--dark-blue);
   margin: 0;
-  word-break: keep-all; /* 単語の途中で切らない */
-  overflow-wrap: break-word;
 }
 .hero-main strong {
   color: var(--accent-gold);
-  font-size: 38px; /* 基本サイズ */
-  font-size: 10.5vw; /* スマホ幅に連動 */
+  font-size: 10.5vw;
   display: block;
   margin-top: 10px;
   text-shadow: 1px 1px 0 #fff;
-  white-space: nowrap; /* 絶対に一行に収める */
+  white-space: nowrap;
 }
 
-.line-btn {
+.line-btn-top {
   display: flex;
-  width: 90%; max-width: 440px;
-  margin: 35px auto 0;
+  width: 90%; max-width: 400px;
+  margin: 30px auto 0;
   background: #00C300;
   color: #fff;
   padding: 18px;
@@ -81,67 +87,78 @@ header {
   font-size: 17px; font-weight: bold;
   text-decoration: none;
   align-items: center; justify-content: center;
-  box-shadow: 0 10px 20px rgba(0,195,0,0.3);
+  box-shadow: 0 10px 20px rgba(0,195,0,0.2);
 }
 
 /* スライダー */
-.slider { width: 100%; overflow: hidden; margin: 30px 0; background: #fff; }
+.slider { width: 100%; overflow: hidden; margin: 30px 0; }
 .slide-track { display: flex; align-items: center; }
-.slide-track img { width: 88vw; border-radius: 15px; margin: 0 10px; flex-shrink: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.slide-track img { width: 85vw; border-radius: 12px; margin: 0 10px; flex-shrink: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-/* セクション共通 */
-.section { padding: 60px 20px; max-width: 680px; margin: 0 auto; }
+/* セクション・カード */
+.section { padding: 50px 20px; max-width: 680px; margin: 0 auto; }
 .section-title {
   font-family: 'Noto Serif JP', serif;
   font-size: 26px;
   text-align: center;
   color: var(--dark-blue);
   margin-bottom: 40px;
-  position: relative; padding-bottom: 15px;
+  position: relative; padding-bottom: 12px;
 }
 .section-title::after {
   content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 60px; height: 4px; background: var(--accent-gold);
+  width: 50px; height: 4px; background: var(--accent-gold);
 }
 
-/* 現実パネル：改行対策 */
-.reality-panel { background: var(--bg-light); border-radius: 25px; padding: 30px 20px; margin-bottom: 40px; border-top: 8px solid var(--alert-red); }
-.reality-item { text-align: center; margin-bottom: 30px; border-bottom: 1px solid #CBD5E1; padding-bottom: 30px; }
+/* カード：しっかり囲むデザインに統一 */
+.custom-card {
+  background: var(--card-bg);
+  border: 2px solid var(--main-blue);
+  border-radius: 15px;
+  padding: 25px 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.reality-item { text-align: center; margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #CBD5E1; }
 .reality-item:last-child { margin-bottom: 0; border: none; padding-bottom: 0; }
-.reality-label { font-size: 18px; font-weight: bold; color: var(--text-main); display: block; margin-bottom: 8px; }
-.reality-num { font-size: 28px; font-weight: bold; color: var(--alert-red); display: block; line-height: 1.2; white-space: nowrap; }
-.reality-desc { font-size: 16px; color: var(--text-sub); text-align: left; margin-top: 12px; display: block; }
+.reality-label { font-size: 18px; font-weight: bold; color: var(--text-main); display: block; margin-bottom: 5px; }
+.reality-num { font-size: 28px; font-weight: bold; color: var(--alert-red); display: block; white-space: nowrap; }
+.reality-desc { font-size: 16px; color: var(--text-sub); text-align: left; margin-top: 10px; display: block; }
 
-/* 解決カード */
-.solution-card {
-  background: var(--bg-white); color: var(--text-main); border-radius: 20px; padding: 25px; margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06); text-align: left; border: 1px solid #E2E8F0;
-}
-.solution-card h3 {
-  margin: 0 0 10px 0; font-size: 19px; color: var(--main-blue);
+/* 解決・メリット系 */
+.solution-title {
+  margin: 0 0 10px 0; font-size: 19px; color: var(--main-blue); font-weight: bold;
   display: flex; align-items: center;
 }
-.solution-card h3 i { margin-right: 10px; font-size: 18px; color: var(--accent-gold); }
+.solution-title i { margin-right: 10px; color: var(--accent-gold); }
 
-/* 料金・運営 */
+/* 料金ボックス */
 .price-box {
-  background: #fff; border: 3px solid var(--accent-gold); padding: 40px 20px; border-radius: 25px; text-align: center;
+  background: #fff; border: 3px solid var(--accent-gold); padding: 35px 20px; border-radius: 20px; text-align: center;
 }
-.price-main { font-size: 38px; font-weight: bold; color: var(--text-main); position: relative; display: inline-block; }
+.price-main { font-size: 38px; font-weight: bold; color: var(--text-main); display: inline-block; }
 .price-main::after { content: "(税込)"; font-size: 13px; font-weight: normal; margin-left: 5px; }
 
-/* フローティングLINE */
+/* LINEボタンのアニメーション（震える） */
+@keyframes shake {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  10%, 20% { transform: translateX(-50%) scale(1.05) rotate(1deg); }
+  30%, 50%, 70% { transform: translateX(-50%) scale(1.05) rotate(-1deg); }
+  40%, 60% { transform: translateX(-50%) scale(1.05) rotate(1deg); }
+  80% { transform: translateX(-50%) scale(1.05) rotate(0); }
+}
+
 .floating-line {
   position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%);
-  width: 92%; max-width: 440px; background: #00C300; color: #fff;
+  width: 92%; max-width: 420px; background: #00C300; color: #fff;
   padding: 16px; border-radius: 50px; font-size: 17px; font-weight: bold;
   text-decoration: none; z-index: 2000; text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: shake 5s infinite; /* 5秒おきに震える */
 }
 
-.compare-img { width: 100%; border-radius: 15px; margin: 15px 0; border: 1px solid #E2E8F0; }
-
-/* 文字の「泣き別れ改行」を防ぐためのヘルパークラス */
+.compare-img { width: 100%; border-radius: 12px; margin: 15px 0; border: 1px solid #E2E8F0; }
 .ib { display: inline-block; }
 </style>
 </head>
@@ -149,8 +166,11 @@ header {
 <body>
 
 <header>
-  <span class="header-tag">小倉南区のお金の教育コミュニティ</span>
-  <h1 class="header-title">くらしとお金サロン（小倉南校）</h1>
+  <img src="ロゴ浮き.png" class="header-logo-img" alt="ロゴ">
+  <div class="header-text-wrap">
+    <span class="header-tag">小倉南区のお金の教育コミュニティ</span>
+    <h1 class="header-title">くらしとお金サロン（小倉南校）</h1>
+  </div>
 </header>
 
 <div class="hero">
@@ -162,7 +182,7 @@ header {
     <span class="ib">自分と家族を守る、</span>
     <strong>安心・安定のくらし</strong>
   </h1>
-  <a href="https://lin.ee/n37s4pB" class="line-btn" target="_blank">
+  <a href="https://lin.ee/n37s4pB" class="line-btn-top">
     まずは無料体験で雰囲気をご確認ください
   </a>
 </div>
@@ -179,8 +199,7 @@ header {
 
 <div class="section">
   <h2 class="section-title">知らないだけで起きている現実</h2>
-
-  <div class="reality-panel">
+  <div class="custom-card">
     <div class="reality-item">
       <span class="reality-label">特殊詐欺被害（毎日）</span>
       <span class="reality-num">約50件 / 約1.2億円</span>
@@ -199,48 +218,49 @@ header {
   </div>
 </div>
 
-<div class="section" style="background:var(--bg-light); border-radius:50px 50px 0 0;">
-  <h2 class="section-title" style="color:var(--accent-gold);">ですが、ご安心ください</h2>
+<div class="section" style="background:var(--bg-light); border-radius:40px 40px 0 0;">
+  <h2 class="section-title">ですが、ご安心ください</h2>
+  
+  <div class="custom-card">
+    <div class="solution-title"><i class="fa-solid fa-lightbulb"></i>将来の問題に備えられます</div>
+    <p style="margin:0; font-size:16px;">「起きる前に知る」。それだけで防げるトラブルは無数にあります。最悪の事態を想定した準備を整えましょう。</p>
+  </div>
 
-  <div class="solution-card">
-    <h3><i class="fa-solid fa-lightbulb"></i>将来の問題に備えることができます</h3>
-    <p>「起きる前に知る」。それだけで防げるトラブルは無数にあります。最悪の事態を想定した準備を共に整えましょう。</p>
+  <div class="custom-card">
+    <div class="solution-title"><i class="fa-solid fa-shield-halved"></i>お金を守る知恵も学べます</div>
+    <p style="margin:0; font-size:16px;">巧妙化する詐欺や、物価上昇（インフレ）から、あなたの資産を鉄壁に守る技術を身につけます。</p>
   </div>
-  <div class="solution-card">
-    <h3><i class="fa-solid fa-shield-halved"></i>大切なお金を守る知恵も学べます</h3>
-    <p>日々巧妙化する詐欺や、物価上昇（インフレ）から、あなたの資産を鉄壁に守る技術を身につけます。</p>
-  </div>
-  <div class="solution-card">
-    <h3><i class="fa-solid fa-chart-line"></i>大切なお金を増やす知識も学べます</h3>
-    <p>新NISA等を賢く活用し、世界経済全体の成長をあなたの家計の味方につけます。</p>
-  </div>
-  <div class="solution-card">
-    <h3><i class="fa-solid fa-arrows-spin"></i>繰り返し学びながら理解を深めます</h3>
-    <p>一度きりのセミナーで終わらせない。毎週の継続的な学びが、一生揺るがない確かな自信へと変わります。</p>
+
+  <div class="custom-card">
+    <div class="solution-title"><i class="fa-solid fa-chart-line"></i>お金を増やす知識も学べます</div>
+    <p style="margin:0; font-size:16px;">新NISA等を賢く活用し、世界経済全体の成長をあなたの家計の味方につけます。</p>
   </div>
 </div>
 
 <div class="section">
   <h2 class="section-title">運営の透明性</h2>
-  <div style="background:#fff; border:3px dashed var(--main-blue); padding:25px; border-radius:20px; text-align:left; color:var(--main-blue);">
-    <p style="margin-top:0; font-weight:bold; font-size:18px;"><i class="fa-solid fa-circle-check"></i> 金融機関の営業ではありません</p>
-    <p style="margin-bottom:0; font-weight:bold; font-size:18px;"><i class="fa-solid fa-circle-check"></i> 販売や勧誘は一切ありません</p>
+  <div class="custom-card" style="border-style: dashed; text-align: center;">
+    <p style="margin:0; font-weight:bold; font-size:18px; color:var(--main-blue);">
+      <i class="fa-solid fa-circle-check"></i> 金融機関の営業ではありません<br>
+      <i class="fa-solid fa-circle-check"></i> 販売や勧誘は一切ありません
+    </p>
   </div>
-  <div style="font-size:17px; color:var(--text-main); background:var(--bg-light); padding:20px; border-radius:15px; margin-top:20px; text-align:left;">
-    投資の判断は、学びを通じて<br><strong>必ずご自身で</strong>していただきます。<br>Koudai Hiramatsuが提供するのは、判断するための「知恵」です。
+  <div class="custom-card">
+    <p style="margin:0; font-size:16px;">
+      投資の判断は、学びを通じて<strong>必ずご自身で</strong>していただきます。提供するのは、判断するための「知恵」です。
+    </p>
   </div>
 </div>
 
-<div class="section" style="background:var(--bg-white); border-radius:50px;">
-  <h2 class="section-title" style="color:var(--main-blue);">料金と学習環境</h2>
+<div class="section">
+  <h2 class="section-title">料金と学習環境</h2>
   <div class="price-box">
     <p style="margin:0; font-weight:bold; color:var(--main-blue); font-size:18px;">安心の伴走型・継続スタイル</p>
     <div class="price-main">月額 22,000円</div>
-    <p style="font-size:16px; color:var(--text-sub); margin-top:10px;">（週1回開催 ＋ 24時間相談し放題）</p>
+    <p style="font-size:15px; color:var(--text-sub); margin-top:5px;">（週1回開催 ＋ 24時間相談し放題）</p>
     
-    <div style="text-align:left; margin-top:30px; border-top:1px solid #E2E8F0; padding-top:25px;">
-      <p>一般的な講座は一度参加して終了。しかし当サロンは<strong>毎週継続</strong>して学べる場所です。</p>
-      <p>1回あたり<strong>約5,500円</strong>。いつでも専門家に相談できる、地域で最も身近な学びの環境です。</p>
+    <div style="text-align:left; margin-top:25px; border-top:1px solid #E2E8F0; padding-top:20px; font-size:15px;">
+      <p>一般的な講座は一度で終了ですが、当サロンは<strong>毎週継続</strong>して学べる場所です。1回あたり<strong>約5,500円</strong>。いつでも専門家に相談できる、最も身近な環境です。</p>
     </div>
   </div>
   <img src="IMG_4157.png" class="compare-img">
@@ -249,20 +269,20 @@ header {
 
 <div class="section">
   <h2 class="section-title">開催場所・アクセス</h2>
-  <div style="background:var(--bg-white); border-radius:20px; padding:20px; border-left:8px solid var(--accent-gold); box-shadow:0 5px 15px rgba(0,0,0,0.08);">
+  <div class="custom-card">
     <strong style="font-size:19px; color:var(--main-blue);">守恒みらいホール</strong><br>
     <span style="font-size:15px;">北九州市小倉南区守恒</span>
-    <div style="width:100%; border-radius:15px; overflow:hidden; margin-top:15px; border:1px solid #E2E8F0;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.123456789!2d130.865!3d33.825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v123456789" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div style="width:100%; border-radius:10px; overflow:hidden; margin-top:15px; border:1px solid #E2E8F0;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.542898132913!2d130.8752837!3d33.8241088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf084968f869%3A0xc682245b0f49c09c!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712741580221!5m2!1sja!2sjp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 </div>
 
 <div class="section" style="text-align:center;">
   <h2 class="section-title">ご参加方法</h2>
-  <p style="font-weight:500;">QRコード、または下のボタンからLINE追加を。</p>
-  <img src="IMG_2124.png" style="width:180px; margin:20px auto; display:block; border:8px solid #fff; border-radius:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-  <div style="font-size:17px; color:var(--text-main); background:var(--bg-light); padding:20px; border-radius:15px; font-weight:bold;">
+  <p style="font-size:16px;">QRコード、またはボタンからLINE追加を。</p>
+  <img src="IMG_2124.png" style="width:180px; margin:20px auto; display:block; border:8px solid #fff; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+  <div class="custom-card" style="font-weight:bold; text-align:center;">
     友だち追加後、トーク画面で<br>「体験」または「質問」<br>とお送りください。
   </div>
 </div>
@@ -273,10 +293,9 @@ header {
     <span class="ib">知らないまま不安でいるよりも、</span><br>
     <span class="ib">知って安心できる方が</span><br>
     <span class="ib">良いと思いませんか？</span><br><br>
-    その小さな一歩が、<br>これからの大きな安心につながります。
+    小さな一歩が、大きな安心につながります。
   </p>
-  <p style="font-size:14px; opacity:0.6; margin-top:50px;">
-    ※代表：平松 広大（Koudai Hiramatsu）<br>
+  <p style="font-size:13px; opacity:0.6; margin-top:40px;">
     ※金融商品の販売・勧誘などは一切行っておりません。
   </p>
 </div>
