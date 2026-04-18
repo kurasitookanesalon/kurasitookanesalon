@@ -38,7 +38,7 @@ body{
   text-align:center;
 }
 
-/* カード（完全安定版） */
+/* カード */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -54,8 +54,14 @@ body{
 
   text-align:left;
 
-  word-break:normal;
+  word-break:keep-all;
+  line-break:strict;
   overflow-wrap:break-word;
+}
+
+/* 固定 */
+.nowrap{
+  white-space:nowrap;
 }
 
 /* 強調 */
@@ -169,11 +175,11 @@ body{
   </div>
 
   <div class="card">
-    <span class="highlight">約200店舗・年商約200億円規模の西日本エリア</span>を営業部長補佐として統括・管理してきました。
+    <span class="highlight">約<span class="nowrap">200店舗</span>・年商<span class="nowrap">約200億円</span>規模の西日本エリア</span>を営業部長補佐として統括・管理してきました。
   </div>
 
   <div class="card">
-    これまでに関わってきた人数は、<span class="highlight">延べ10,000名以上のマネジメントを経験</span>しています。
+    これまでに関わってきた人数は、<span class="highlight">延べ<span class="nowrap">10,000名以上</span>のマネジメントを経験</span>しています。
   </div>
 
   <div class="card">
@@ -181,7 +187,7 @@ body{
   </div>
 
   <div class="card">
-    その後独立し、<span class="highlight">年商約4億円規模の店舗経営</span>を経験しました。
+    その後独立し、<span class="highlight">年商<span class="nowrap">約4億円</span>規模の店舗経営</span>を経験しました。
   </div>
 
   <div class="card">
