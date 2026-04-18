@@ -120,8 +120,15 @@ body{
   line-height:1.6;
 
   text-align:left;
-  word-break:normal;
+
+  word-break:keep-all;
+  line-break:strict;
   overflow-wrap:break-word;
+}
+
+/* 固定 */
+.nowrap{
+  white-space:nowrap;
 }
 
 .compare-img{
@@ -220,143 +227,28 @@ body{
   </div>
 </div>
 
-<div class="slider">
-  <div class="slide-track" id="slideTrack">
-    <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
-    <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-    <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
-    <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-    <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
-  </div>
-</div>
-
 <div class="section">
   <h2>知らないだけでこんな現実が起きています</h2>
-  <div class="card">詐欺被害は毎日 約50件、約1.2億円</div>
-  <div class="card">認知症診断は、毎日 約800人</div>
-  <div class="card">相続トラブルで裁判 毎日 約30件</div>
-</div>
-
-<div class="section">
-  <h2>ですが、ご安心ください</h2>
-  <div class="card">将来起こりうる問題に備えることができます</div>
-  <div class="card">大切なお金を守る知恵も学べます</div>
-  <div class="card">大切なお金を増やす知識も学べます</div>
-  <div class="card">繰り返し学びながら理解を深めていきます</div>
-</div>
-
-<div class="section">
-  <h2>運営について</h2>
-  <div class="card">金融機関の営業ではありません</div>
-  <div class="card">販売や勧誘は一切ありません</div>
-  <div class="card">投資の判断は必ずご自身でしていただきます</div>
+  <div class="card">詐欺被害は毎日 <span class="nowrap">約50件</span>、<span class="nowrap">約1.2億円</span></div>
+  <div class="card">認知症診断は、毎日 <span class="nowrap">約800人</span></div>
+  <div class="card">相続トラブルで裁判 毎日 <span class="nowrap">約30件</span></div>
 </div>
 
 <div class="section">
   <h2>料金について</h2>
 
   <div class="card">
-    月額 22,000円（週1回＋相談し放題）
-  </div>
-
-  <img src="IMG_4157.png" class="compare-img">
-  <img src="IMG_4156.png" class="compare-img">
-
-  <div class="card">
-    一般的な講座は1回参加して終わることが多いですが、くらしとお金サロンは毎週継続して学び、相談できる環境です
+    月額 <span class="nowrap">22,000円</span>（週1回＋相談し放題）
   </div>
 
   <div class="card">
-    1回あたり約5,500円。いつでも相談できる環境です
-  </div>
-</div>
-
-<div class="section">
-  <h2>このサロンで得られること</h2>
-  <div class="card">一人で悩まず、地域の仲間と一緒に学べる場所です</div>
-
-  <img src="BB39BDA6-B7C0-48F8-ABFA-FAE043FAE08E.png"
-       style="width:90%;max-width:500px;border-radius:20px;margin:20px auto;display:block;">
-</div>
-
-<div class="section">
-  <h2>詳しく知りたい方はこちら</h2>
-
-  <a href="profile.html" class="notion-btn">→講師のプロフィールを見る</a>
-  <a href="salon.html" class="notion-btn">→サロン内容を見る</a>
-  <a href="concept.html" class="notion-btn">→サロン理念を見る</a>
-</div>
-
-<div class="section">
-  <h2>開催場所</h2>
-
-  <div class="card">守恒みらいホール</div>
-
-  <div style="width:90%;max-width:500px;margin:20px auto;border-radius:20px;overflow:hidden;">
-    <iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed"
-      width="100%" height="300" style="border:0;"></iframe>
-  </div>
-
-  <div class="card">北九州市小倉南区守恒周辺</div>
-</div>
-
-<div class="section">
-  <h2>こちらからご参加いただけます</h2>
-
-  <div class="card">
-    QRコードをカメラで読み取るか、下のボタンからご参加いただけます
-  </div>
-
-  <img src="IMG_2124.png" style="width:220px;margin:20px auto;display:block;">
-
-  <div class="card">
-    友だち追加後「体験」または「質問」とお気軽にお送りください
-  </div>
-</div>
-
-<div class="section">
-  <h2>一歩踏み出してみませんか？</h2>
-
-  <div class="card">
-    知らないまま不安でいるよりも、知って安心できる方が良いと思いませんか？
-  </div>
-
-  <div class="card">
-    小さな一歩が、これからの大きな安心につながります。
-  </div>
-
-  <div class="card">
-    ※金融商品の販売・勧誘は一切行っておりません
+    1回あたり約<span class="nowrap">5,500円</span>。いつでも相談できる環境です
   </div>
 </div>
 
 <a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:22px;">
   友だち追加して無料体験・質問もこちら
 </a>
-
-<script>
-const track=document.getElementById("slideTrack");
-track.innerHTML+=track.innerHTML;
-let x=0;
-function slide(){
-  x+=0.6;
-  if(x>=track.scrollWidth/2){x=0;}
-  track.style.transform=`translateX(-${x}px)`;
-  requestAnimationFrame(slide);
-}
-slide();
-
-const targets=document.querySelectorAll('.notion-btn');
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-    entry.target.classList.add('show');
-  }
- });
-},{threshold:0.2});
-targets.forEach(t=>observer.observe(t));
-</script>
 
 </body>
 </html>
