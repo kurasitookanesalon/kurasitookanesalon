@@ -3,110 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン 小倉南校</title>
+<title>くらしとお金サロン 小倉南校 | 資産防衛の学び場</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 :root {
-  --main-blue: #1E5BB8;
-  --accent-gold: #B8860B;
-  --text-dark: #222;
-  --text-light: #666;
-  --bg-soft: #f9f9f9;
+  /* 見やすく、かつメリハリのある色合い */
+  --main-blue: #0047AB; /* 鮮やかなロイヤルブルー（信頼・知性） */
+  --dark-blue: #002F75;
+  --accent-gold: #DAA520; /* 深みのあるゴールド（豊かさ・警告の緩和） */
+  --bg-white: #FFFFFF;
+  --bg-light: #F8FAFC;
+  --text-main: #1A1A1A; /* 真っ黒ではなく、目に優しい濃いグレー */
+  --text-sub: #4B5563;
+  --alert-red: #DC2626; /* 警告用 */
 }
 
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  background: #fff;
-  color: var(--text-dark);
-  line-height: 1.9;
+  background: var(--bg-white);
+  color: var(--text-main);
+  line-height: 1.8; /* 読みやすい行間 */
+  font-size: 17px; /* 全体的に文字を大きく */
 }
 
-/* ニュースレター風ヘッダー */
+/* ヘッダー：公共性と屋号を明確に */
 header {
-  padding: 30px 20px;
+  background: var(--bg-white);
+  padding: 15px 20px;
   text-align: center;
-  border-bottom: 5px solid var(--main-blue);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid var(--main-blue);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
-.header-tag { font-size: 13px; letter-spacing: 0.2em; color: var(--main-blue); font-weight: bold; }
-.header-logo { width: 60px; margin: 15px 0; }
-.header-title { font-family: 'Noto Serif JP', serif; font-size: 24px; margin: 0; }
+.header-tag { font-size: 13px; color: var(--main-blue); font-weight: bold; display: block; letter-spacing: 0.1em; }
+.header-title { font-size: 20px; font-weight: bold; margin: 5px 0 0 0; color: var(--text-main); }
+.header-logo { width: 45px; vertical-align: middle; margin-right: 8px; }
 
-/* ヒーローセクション */
-.hero-box {
-  background: var(--bg-soft);
-  padding: 40px 20px;
-  margin: 20px;
-  border-radius: 5px;
+/* ヒーローセクション：インパクトと中央配置 */
+.hero {
   text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--bg-light) 0%, #EDF2F7 100%);
 }
-.formula-text { font-size: 16px; margin-bottom: 20px; }
-.hero-main { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--main-blue); }
+.formula { font-size: 19px; color: var(--text-main); margin-bottom: 15px; }
+.hero-main {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 34px;
+  line-height: 1.5;
+  color: var(--dark-blue);
+  margin: 0;
+}
+.hero-main strong { color: var(--accent-gold); font-size: 46px; display: block; margin-top: 10px; }
+
+/* LINEボタン：派手に、かつ公式の緑 */
+.line-btn {
+  display: flex;
+  width: 90%; max-width: 400px;
+  margin: 30px auto 10px;
+  background: #00C300;
+  color: #fff;
+  padding: 18px;
+  border-radius: 50px;
+  font-size: 18px; font-weight: bold;
+  text-decoration: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,195,0,0.3);
+  transition: transform 0.2s;
+}
+.line-btn:active { transform: scale(0.97); }
 
 /* スライダー */
-.slider { width: 100%; overflow: hidden; margin: 30px 0; }
-.slide-track { display: flex; }
-.slide-track img { width: 90vw; border-radius: 2px; margin: 0 5px; flex-shrink: 0; filter: grayscale(20%); }
+.slider { width: 100%; overflow: hidden; margin: 30px 0; background: #fff; padding: 10px 0; }
+.slide-track { display: flex; align-items: center; }
+.slide-track img { width: 85vw; border-radius: 15px; margin: 0 10px; flex-shrink: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-/* 数字の衝撃セクション */
+/* セクション共通 */
 .section { padding: 60px 20px; max-width: 650px; margin: 0 auto; }
-.section-label { color: var(--main-blue); font-weight: bold; font-size: 14px; text-transform: uppercase; }
-.section-title { font-family: 'Noto Serif JP', serif; font-size: 28px; margin-top: 5px; margin-bottom: 40px; }
-
-/* スタッツカード */
-.stat-item {
-  border-top: 1px solid #ddd;
-  padding: 30px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px;
+  text-align: center;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+  position: relative; padding-bottom: 15px;
 }
-.stat-desc { flex: 1; padding-right: 20px; }
-.stat-desc strong { font-size: 18px; display: block; margin-bottom: 5px; }
-.stat-num { font-size: 28px; font-weight: bold; color: var(--main-blue); white-space: nowrap; line-height: 1; }
+.section-title::after {
+  content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 4px; background: var(--accent-gold);
+}
 
-/* 比較データエリア */
-.data-table { background: var(--main-blue); color: #fff; padding: 30px; border-radius: 4px; margin: 40px 0; }
-.data-row { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 15px 0; }
+/* 現実パネル：中央の数字強調と左寄せの説明 */
+.reality-panel { background: var(--bg-light); border-radius: 20px; padding: 30px; margin-bottom: 30px; border-left: 8px solid var(--alert-red); }
+.reality-item { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 25px; }
+.reality-item:last-child { margin-bottom: 0; border: none; padding-bottom: 0; }
+.reality-label { font-size: 18px; font-weight: bold; color: var(--text-main); display: block; margin-bottom: 5px; }
+.reality-num { font-size: 40px; font-weight: bold; color: var(--alert-red); display: block; line-height: 1.2; }
+.reality-desc { font-size: 16px; color: var(--text-sub); text-align: left; margin-top: 10px; display: block; }
+
+/* データ比較エリア：表形式で左寄せ×右寄せ */
+.data-box { background: var(--main-blue); color: #fff; border-radius: 20px; padding: 30px; margin-top: 40px; }
+.data-header { font-size: 19px; font-weight: bold; text-align: center; margin-bottom: 20px; color: var(--bg-white); }
+.data-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 15px 0; }
 .data-row:last-child { border: none; }
+.data-label { font-size: 16px; font-weight: bold; flex: 1; text-align: left; }
+.data-val { font-size: 18px; font-weight: bold; text-align: right; color: var(--bg-white); }
 
-/* 解決カード */
-.solution-panel { margin-bottom: 30px; }
-.solution-num { color: var(--accent-gold); font-family: 'Noto Serif JP', serif; font-size: 40px; float: left; margin-right: 20px; line-height: 1; }
-.solution-content { overflow: hidden; }
-.solution-content h3 { margin: 0 0 10px; font-size: 19px; }
+/* 解決カード：左寄せで読みやすく */
+.solution-card {
+  background: var(--bg-white); color: var(--text-main); border-radius: 20px; padding: 25px; margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08); text-align: left;
+  border: 1px solid #e2e8f0;
+}
+.solution-card h3 {
+  margin: 0 0 10px 0; font-size: 20px; color: var(--main-blue);
+  display: flex; align-items: center;
+}
+.solution-card h3 i { margin-right: 10px; font-size: 18px; }
 
 /* 料金セクション */
-.price-section { background: var(--bg-soft); border: 1px solid #eee; padding: 40px 20px; border-radius: 4px; }
-.price-main { font-size: 36px; font-weight: bold; color: var(--text-dark); border-bottom: 2px solid var(--main-blue); display: inline-block; }
-
-/* フローティングボタン */
-.line-fixed {
-  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-  width: 90%; max-width: 400px; background: #000; color: #fff;
-  padding: 20px; border-radius: 0; font-size: 16px; font-weight: bold;
-  text-decoration: none; text-align: center; z-index: 1000;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+.price-box {
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+  border: 2px solid var(--accent-gold); padding: 40px 20px; border-radius: 20px; text-align: center;
+}
+.price-main { font-size: 42px; font-weight: bold; color: var(--text-main); position: relative; display: inline-block; }
+.price-main::after {
+  content: "(税込)"; font-size: 14px; font-weight: normal; position: absolute; bottom: 8px; right: -45px;
 }
 
-.compare-img { width: 100%; margin: 20px 0; border: 1px solid #eee; }
+/* 下層ナビ */
+.nav-panel {
+  display: block; text-decoration: none; background: var(--bg-white); border-radius: 15px;
+  padding: 20px; margin-bottom: 15px; border-left: 8px solid var(--accent-gold);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: left;
+}
+.nav-panel strong { font-size: 19px; color: var(--main-blue); }
+
+/* フローティングLINE */
+.floating-line {
+  position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%);
+  width: 92%; max-width: 420px; background: #00C300; color: #fff;
+  padding: 18px; border-radius: 50px; font-size: 17px; font-weight: bold;
+  text-decoration: none; z-index: 1000; text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.compare-img { width: 100%; border-radius: 15px; margin: 15px 0; border: 1px solid #e2e8f0; }
 </style>
 </head>
 
 <body>
 
 <header>
-  <span class="header-tag">LOCAL GROUP LEARNING</span>
-  <div class="header-logo"><img src="ロゴ浮き.png" style="width:100%;"></div>
-  <h1 class="header-title">くらしとお金サロン（小倉南校）</h1>
+  <div class="brand-wrapper">
+    <img src="ロゴ浮き.png" class="header-logo" alt="Logo">
+    <div style="display:inline-block; vertical-align:middle; text-align:left;">
+      <span class="header-tag">小倉南区の地域コミュニティ</span>
+      <h1 class="header-title">くらしとお金サロン（小倉南校）</h1>
+    </div>
+  </div>
 </header>
 
-<div class="hero-box">
-  <div class="formula-text">増やす知識 × 守る知恵 ＋ 地域の仲間</div>
-  <div class="hero-main">安心・安定のくらしを、<br>自らの手で。</div>
-  <a href="https://lin.ee/n37s4pB" style="display:inline-block; margin-top:30px; color:var(--main-blue); font-weight:bold; text-decoration:underline;">無料体験の予約はこちら</a>
+<div class="hero">
+  <div class="formula">増やす知識 × 守る知恵 ＋ 地域の仲間 ＝</div>
+  <h1 class="hero-main">
+    自分と家族を守る、<br>
+    <strong>安心・安定のくらし</strong>
+  </h1>
+  <a href="https://lin.ee/n37s4pB" class="line-btn" target="_blank">
+    まずは無料体験で雰囲気をご確認ください
+  </a>
 </div>
 
 <div class="slider">
@@ -120,121 +190,128 @@ header {
 </div>
 
 <div class="section">
-  <span class="section-label">The Reality</span>
-  <h2 class="section-title">知らないだけで、<br>起きている現実。</h2>
+  <h2 class="section-title">知らないだけで起きている現実</h2>
 
-  <div class="stat-item">
-    <div class="stat-desc">
-      <strong>特殊詐欺被害</strong>
-      <p style="font-size:14px; margin:0;">毎日繰り返される巧妙な手口。善意が奪われています。</p>
+  <div class="reality-panel">
+    <div class="reality-item">
+      <span class="reality-label">特殊詐欺被害（毎日）</span>
+      <span class="reality-num">約50件 / 約1.2億円</span>
+      <span class="reality-desc">あなたの「増やしたい」という善意が、海外犯罪組織へ流れています。</span>
     </div>
-    <div class="stat-num">1.2億円 <small style="font-size:12px;">/ day</small></div>
+    <div class="reality-item">
+      <span class="reality-label">認知症に伴う資産凍結（毎日）</span>
+      <span class="reality-num">新たに 約800人</span>
+      <span class="reality-desc">診断され判断能力を失えば、本人であっても口座は凍結。生活費も引き出せなくなります。</span>
+    </div>
+    <div class="reality-item">
+      <span class="reality-label">相続トラブルで裁判（毎日）</span>
+      <span class="reality-num">新たに 約30件</span>
+      <span class="reality-desc">「うちは仲が良いから大丈夫」という過信が、家族を分断させます。</span>
+    </div>
   </div>
 
-  <div class="stat-item">
-    <div class="stat-desc">
-      <strong>認知症に伴う資産凍結</strong>
-      <p style="font-size:14px; margin:0;">ある日突然、銀行口座は誰の手にも触れなくなります。</p>
-    </div>
-    <div class="stat-num">800人 <small style="font-size:12px;">/ day</small></div>
-  </div>
-
-  <div class="stat-item">
-    <div class="stat-desc">
-      <strong>相続トラブル（家庭裁判所）</strong>
-      <p style="font-size:14px; margin:0;">「うちは大丈夫」という過信が、家族を分断させます。</p>
-    </div>
-    <div class="stat-num">30件 <small style="font-size:12px;">/ day</small></div>
-  </div>
-
-  <div class="data-table">
-    <h3 style="margin-top:0; font-size:18px;">データで見る「日本と世界の差」</h3>
+  <div class="data-box">
+    <div class="data-header">データで見る「縮む日本」と「増える世界」</div>
     <div class="data-row">
-      <span>人口推移（2070年）</span>
-      <strong>日本30%減 / 世界25%増</strong>
+      <span class="data-label">人口推移（2070年）</span>
+      <span class="data-val">日本30%減 / 世界25%増</span>
     </div>
     <div class="data-row">
-      <span>過去20年の資産増加率</span>
-      <strong>日本1.6倍 / 米国3.4倍</strong>
+      <span class="data-label">過去20年の資産増加率</span>
+      <span class="data-val">日本1.6倍 / 米国3.4倍</span>
     </div>
     <div class="data-row">
-      <span>高齢者を支える人数</span>
-      <strong>現在2.0人 / 未来1.2人</strong>
+      <span class="data-label">高齢者1人を支える人数</span>
+      <span class="data-val">現在2.0人 / 未来1.2人</span>
     </div>
-    <p style="font-size:12px; margin-top:15px; opacity:0.8;">※インフレの時代、日本円だけを持つことは「静かなリスク」です。</p>
+    <p style="font-size:15px; text-align:center; color:rgba(255,255,255,0.9); margin-top:20px;">
+      現役世代の負担増とインフレ。銀行預金だけでは資産は守れません。
+    </p>
   </div>
 </div>
 
-<div class="section" style="background:#fff;">
-  <span class="section-label">Solution</span>
-  <h2 class="section-title">ですが、ご安心ください。<br>対策は、今すぐ始められます。</h2>
+<div class="section" style="background:var(--bg-light); border-radius:50px 50px 0 0;">
+  <h2 class="section-title" style="color:var(--accent-gold);">ですがご安心ください</h2>
 
-  <div class="solution-panel">
-    <span class="solution-num">01</span>
-    <div class="solution-content">
-      <h3>将来の問題に備える</h3>
-      <p style="font-size:15px; color:var(--text-light);">「起きる前に知る」ことが最大の防衛です。リスクを可視化し、家族を守る準備を整えます。</p>
-    </div>
+  <div class="solution-card">
+    <h3><i class="fa-solid fa-lightbulb"></i>将来の問題に備えることができます</h3>
+    <p>起きる前に知る。それだけで防げるトラブルは無数にあります。</p>
   </div>
-
-  <div class="solution-panel">
-    <span class="solution-num">02</span>
-    <div class="solution-content">
-      <h3>お金を守る知恵を習得</h3>
-      <p style="font-size:15px; color:var(--text-light);">最新の詐欺手口からインフレまで。時代に合わせてアップデートされる防御技術を身につけます。</p>
-    </div>
+  <div class="solution-card">
+    <h3><i class="fa-solid fa-shield-halved"></i>大切なお金を守る知恵も学べます</h3>
+    <p>巧妙な詐欺やインフレから資産を鉄壁に守る方法を身につけます。</p>
   </div>
-
-  <div class="solution-panel">
-    <span class="solution-num">03</span>
-    <div class="solution-content">
-      <h3>正しい増やし方を学ぶ</h3>
-      <p style="font-size:15px; color:var(--text-light);">世界経済の成長を味方につけるインデックス投資。感情に左右されない科学的な資産形成を伝えます。</p>
-    </div>
+  <div class="solution-card">
+    <h3><i class="fa-solid fa-chart-line"></i>大切なお金を増やす知識も学べます</h3>
+    <p>新NISA等を活用し、世界経済の成長を家計に取り入れます。</p>
   </div>
-
-  <div style="background:var(--bg-soft); padding:20px; border-left:4px solid var(--main-blue); margin-top:40px;">
-    <p style="margin:0; font-weight:bold;">金融機関の営業ではありません。販売や勧誘は一切ありません。</p>
-    <p style="font-size:14px; margin-top:10px;">投資の判断は、学びを通じて必ずご自身でしていただきます。私たちは「判断基準」を教える場所です。</p>
+  <div class="solution-card">
+    <h3><i class="fa-solid fa-repeat"></i>繰り返し学びながら理解を深めます</h3>
+    <p>一度で終わらせない。毎週の習慣が、一生モノの力に変わります。</p>
   </div>
 </div>
 
 <div class="section">
-  <span class="section-label">Price & System</span>
-  <h2 class="section-title">継続できる、理由。</h2>
-  
-  <div class="price-section">
-    <p style="margin:0; font-weight:bold; color:var(--main-blue);">月額受講料</p>
-    <div class="price-main">22,000円 <small style="font-size:14px; font-weight:normal;">(税込)</small></div>
-    <p style="font-size:15px; margin-top:20px;">
-      週1回の対面講義 ＋ 24時間相談し放題。<br>
-      1回あたり約5,500円。単発のセミナーでは決して得られない、**「伴走型」**の環境です。
-    </p>
+  <h2 class="section-title">運営の透明性</h2>
+  <div style="background:var(--bg-white); border:2px dashed var(--main-blue); padding:25px; border-radius:15px; text-align:left; color:var(--main-blue);">
+    <p style="margin-top:0; font-weight:bold; font-size:19px;"><i class="fa-solid fa-circle-check"></i> 金融機関の営業ではありません</p>
+    <p style="margin-bottom:0; font-weight:bold; font-size:19px;"><i class="fa-solid fa-circle-check"></i> 販売や勧誘は一切ありません</p>
   </div>
+  <div class="card" style="font-size:17px; color:var(--text-main); background:var(--bg-light); padding:20px; border-radius:15px; margin-top:20px; text-align:left;">
+    投資の判断は、学びを通じて<br><strong>必ずご自身で</strong>していただきます。<br>私たちは「判断するための知恵」を共有します。
+  </div>
+</div>
 
+<div class="section" style="background:var(--bg-white); color:var(--text-main); border-radius:50px;">
+  <h2 class="section-title" style="color:var(--main-blue);">料金と環境について</h2>
+  <div class="price-box">
+    <p style="margin:0; font-weight:bold; color:var(--main-blue);">安心の伴走学習スタイル</p>
+    <div class="price-main">月額 22,000円</div>
+    <p style="font-size:16px; color:var(--text-sub); margin-top:10px;">（週1回開催 ＋ 24時間相談し放題）</p>
+    
+    <div style="text-align:left; margin-top:30px; border-top:1px solid #e2e8f0; padding-top:25px;">
+      <p>一般的な講座は1回参加して終わることが多いです。くらしとお金サロンは<strong>毎週継続</strong>して学べます。</p>
+      <p>いつでも相談できる環境です。1回あたり<strong>約5,500円</strong>で、安心して続けられます。</p>
+    </div>
+  </div>
   <img src="IMG_4157.png" class="compare-img">
   <img src="IMG_4156.png" class="compare-img">
 </div>
 
-<div class="section" style="text-align:center;">
-  <span class="section-label">Location</span>
-  <h2 class="section-title">開催場所</h2>
-  <p><strong>守恒みらいホール</strong><br>北九州市小倉南区守恒</p>
-  <div style="width:100%; height:300px; background:#eee; margin-top:20px;">
-    <iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed" width="100%" height="100%" style="border:0;"></iframe>
+<div class="section">
+  <h2 class="section-title">開催場所・アクセス</h2>
+  <div class="solution-card">
+    <strong style="color:var(--main-blue); font-size:19px;">守恒みらいホール</strong><br>
+    <small style="font-size:15px;">北九州市小倉南区守恒</small>
+    <div style="width:100%; border-radius:15px; overflow:hidden; margin-top:15px; border:1px solid #e2e8f0;">
+      <iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed" width="100%" height="280" style="border:0;"></iframe>
+    </div>
   </div>
 </div>
 
-<div class="section" style="text-align:center; padding-bottom:150px;">
-  <span class="section-label">Join us</span>
-  <h2 class="section-title">一歩、踏み出す。</h2>
-  <p>QRコード、またはボタンより友だち追加を。</p>
-  <img src="IMG_2124.png" style="width:180px; margin:20px 0;">
-  <p style="font-size:15px; color:var(--text-light);">追加後、「体験」または「質問」とお送りください。</p>
+<div class="section" style="text-align:center;">
+  <h2 class="section-title">ご参加方法</h2>
+  <p>QRコードを読み取るか、下のボタンから友だち追加してください。</p>
+  <img src="IMG_2124.png" style="width:190px; margin:20px auto; display:block; border:10px solid #fff; border-radius:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+  <div class="card" style="font-size:17px; color:var(--text-main); background:var(--bg-light); padding:20px; border-radius:15px;">
+    友だち追加後、メッセージで<br><strong>「体験」</strong>または<strong>「質問」</strong><br>とお送りください。
+  </div>
 </div>
 
-<a href="https://lin.ee/n37s4pB" class="line-fixed">
-  LINEで無料体験を申し込む
+<div class="section" style="padding-bottom:120px;">
+  <h2 class="section-title">一歩踏み出してみませんか？</h2>
+  <p style="font-size:19px; line-height:1.9;">
+    知らないまま不安でいるよりも、<br>知って安心できる方が良いと思いませんか？<br><br>
+    小さな一歩が、これからの大きな安心につながります。
+  </p>
+  <p style="font-size:14px; opacity:0.7; margin-top:40px;">
+    ※金融商品の販売・勧誘などは一切行っておりません。
+  </p>
+</div>
+
+<a href="https://lin.ee/n37s4pB" class="floating-line">
+  <i class="fa-brands fa-line" style="font-size:24px; margin-right:12px;"></i>
+  LINEで無料体験・質問はこちら
 </a>
 
 <script>
@@ -242,7 +319,7 @@ const track = document.getElementById("slideTrack");
 track.innerHTML += track.innerHTML;
 let x = 0;
 function slide() {
-  x += 0.5;
+  x += 0.8;
   if (x >= track.scrollWidth / 2) { x = 0; }
   track.style.transform = `translateX(-${x}px)`;
   requestAnimationFrame(slide);
