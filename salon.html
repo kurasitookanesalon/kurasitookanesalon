@@ -21,14 +21,17 @@
         
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--sub-blue); text-align: center; margin: 40px 0 30px; font-weight: 900; }
 
-        /* 信頼の基本情報 */
+        /* 基本情報 */
         .trust-box { border: 1.5px solid #e0e6ed; border-radius: 12px; padding: 25px; margin-bottom: 50px; background: #fff; }
         .trust-item { display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 15px; }
         .trust-item i { color: var(--main-blue); width: 28px; margin-top: 5px; }
         .trust-item div { font-weight: 700; }
         .red-note { color: var(--red); font-size: 13px; font-weight: 700; display: block; margin-top: 5px; }
 
-        /* カリキュラム：情報の復元と整理 */
+        /* 「なんでも相談」セクション */
+        .consult-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 40px; }
+        .consult-tag { background: var(--bg-pale); border: 1px solid #dce4ee; border-radius: 6px; padding: 10px; font-size: 14px; font-weight: 700; color: var(--sub-blue); text-align: center; }
+
         .section-h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--sub-blue); text-align: center; margin: 60px 0 30px; font-weight: 900; }
         
         .curriculum-card { border: 2.5px solid var(--gold); border-radius: 15px; padding: 30px 20px; margin-bottom: 60px; }
@@ -38,21 +41,21 @@
         .curriculum-list b { display: block; font-size: 17px; color: #333; margin-bottom: 4px; }
         .curriculum-list p { font-size: 14px; margin: 0; color: #666; line-height: 1.6; }
 
-        /* 当サロンの強み：誠実な表現へ */
+        /* 特長 */
         .strength-box { background: var(--bg-pale); border-radius: 15px; padding: 35px 25px; margin-bottom: 60px; }
         .strength-item { margin-bottom: 25px; }
         .strength-item:last-child { margin-bottom: 0; }
         .strength-item b { font-size: 17px; color: var(--sub-blue); display: block; margin-bottom: 8px; border-left: 4px solid var(--gold); padding-left: 12px; }
         .strength-item p { font-size: 14px; margin: 0; color: #444; padding-left: 16px; }
 
-        /* 会費と補足 */
+        /* 会費 */
         .price-area { text-align: center; border: 2px solid var(--sub-blue); border-radius: 15px; padding: 40px 20px; margin-bottom: 60px; }
         .price-label { font-size: 15px; font-weight: 700; color: var(--sub-blue); margin-bottom: 5px; display: block; }
         .price-main { font-size: 36px; font-weight: 900; color: var(--sub-blue); }
         .price-sub { font-size: 16px; color: var(--sub-blue); }
         .disclaimer-box { font-size: 13px; color: #666; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px; line-height: 1.7; }
 
-        /* LINEボタン：ふわふわ浮遊 */
+        /* ふわふわLINEボタン */
         @keyframes fuwafuwa {
             0%, 100% { transform: translateX(-50%) translateY(0); }
             50% { transform: translateX(-50%) translateY(-12px); }
@@ -107,9 +110,26 @@
             </div>
             <div class="trust-item" style="margin-bottom: 0;">
                 <i class="fa-solid fa-user-check"></i>
-                <div>主宰：3級ファイナンシャル・プランニング技能士</div>
+                <div>3級ファイナンシャル・プランニング技能士</div>
             </div>
         </section>
+
+        <h2 class="reveal section-h2">「なんでも」ご相談ください</h2>
+        <div class="reveal consult-grid">
+            <div class="consult-tag">保険料見直し</div>
+            <div class="consult-tag">スマホ代見直し</div>
+            <div class="consult-tag">光熱費の見直し</div>
+            <div class="consult-tag">家計費の見直し</div>
+            <div class="consult-tag">不動産売却</div>
+            <div class="consult-tag">介護ホーム紹介</div>
+            <div class="consult-tag">遺言作成</div>
+            <div class="consult-tag">実家・お墓じまい</div>
+            <div class="consult-tag">相続・節税相談</div>
+            <div class="consult-tag">将来の年金計算</div>
+            <div class="consult-tag">積立・NISA</div>
+            <div class="consult-tag">株の売り買い</div>
+        </div>
+        <p class="reveal" style="font-size: 14px; color: #666; text-align: center; margin-top: -20px; font-weight: 700;">※行政依頼の講演実績も多数ございます。</p>
 
         <h2 class="reveal section-h2">安心のカリキュラム</h2>
         <section class="reveal curriculum-card">
@@ -119,8 +139,8 @@
                     <p>インフレ時代の家計管理と、資産を減らさないための基礎知識を学びます。</p>
                 </li>
                 <li>
-                    <b>攻めの投資術：新NISA・iDeCoの活用法</b>
-                    <p>制度の仕組みを正しく理解し、ご自身に合った活用方法を検討します。</p>
+                    <b>攻めの投資術：インデックス・積立投資の活用</b>
+                    <p>新NISAの仕組みから、具体的な株の買い方・売り方まで実践的に解説します。</p>
                 </li>
                 <li>
                     <b>防犯リテラシー：巧妙な詐欺から資産を守る知恵</b>
@@ -140,16 +160,16 @@
         <h2 class="reveal section-h2">当サロンの特長</h2>
         <section class="reveal strength-box">
             <div class="strength-item">
-                <b>1. いつでも、どんなことでも相談できる安心</b>
-                <p>日々の生活の中での疑問や不安を、その場ですぐに相談いただけます。継続的に関わるからこそできる、お一人おひとりに寄り添ったサポートが強みです。</p>
+                <b>1. 暮らしの「困った」をすべて解決</b>
+                <p>日々の些細な疑問から、人生の大きな決断まで。特定の金融機関に属さない立場だからこそ、あなたにとって最適な解決策を提示します。</p>
             </div>
             <div class="strength-item">
-                <b>2. 中立・公正な立場を徹底</b>
-                <p>金融商品の販売や特定の投資勧誘は一切行いません。利害関係のない第三者の立場から、客観的な情報を提供いたします。</p>
+                <b>2. 専門家ネットワークとの連携</b>
+                <p>税務や法務など、対応範囲を超える専門的な課題については、信頼できる士業（税理士・弁護士等）を適切にご紹介し、解決まで共に歩みます。</p>
             </div>
             <div class="strength-item">
-                <b>3. 専門外の課題にも誠実に対応</b>
-                <p>税務や法務など、私共の対応範囲を超える専門的な課題については、信頼できる士業の方々を適切にご紹介し、解決への道筋を共に考えます。</p>
+                <b>3. 地域の皆様に寄り添う「継続」の安心</b>
+                <p>一度きりの相談で終わりではありません。毎週のサロンを通じて、時代の変化に合わせたアドバイスを継続的に提供いたします。</p>
             </div>
         </section>
 
@@ -158,8 +178,8 @@
             <div><span class="price-main">22,000</span><span class="price-sub">円（税込）</span></div>
             <div class="disclaimer-box">
                 ※入会金・教材費などは不要です。<br>
-                ※当サロンは教育とコミュニティを目的としており、投資の最終判断はご自身で行っていただきます。<br>
-                ※「地域の顧問FP」として、生活全般の安心をサポートいたします。
+                ※当サロンは教育とコミュニティを目的としており、特定の投資勧誘や金融商品の販売は一切行いません。<br>
+                ※「地域の顧問FP」として、生活全般の安心を全力でサポートいたします。
             </div>
         </section>
 
