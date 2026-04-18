@@ -28,13 +28,29 @@
             overflow-x: hidden;
         }
 
-        /* ヒーロー：人物写真は排除 */
-        .hero { padding: 100px 24px 40px; text-align: center; }
-        .hero-tag { font-size: 14px; color: var(--main-blue); font-weight: 700; margin-bottom: 20px; }
-        .hero-title { font-family: 'Noto Serif JP', serif; font-size: 56px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
+        /* じわっと浮き上がるアニメーション */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        /* ヒーロー：一番上ど真ん中にロゴ */
+        .hero { padding: 60px 24px 40px; text-align: center; background: #fff; }
+        .top-logo { 
+            width: 120px; /* ロゴの大きさ */
+            height: auto;
+            margin-bottom: 25px; /* ロゴとテキストの間 */
+            display: inline-block;
+        }
+        .hero-tag { font-size: 14px; color: var(--main-blue); font-weight: 700; margin-bottom: 15px; letter-spacing: 0.05em; }
+        .hero-title { font-family: 'Noto Serif JP', serif; font-size: 52px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
         .hero-title span { color: var(--gold); display: block; font-size: 1.1em; }
 
-        /* スライドショー復活 */
+        /* 自動再生スライドショー（復活済） */
         .slideshow-container { width: 100%; overflow: hidden; padding: 40px 0 60px; }
         .slideshow-track { display: flex; width: calc(280px * 8); animation: scroll 25s linear infinite; }
         .slideshow-track img { width: 280px; height: auto; border-radius: 12px; margin: 0 10px; border: 1px solid #eee; }
@@ -43,9 +59,21 @@
             100% { transform: translateX(calc(-280px * 4 - 80px)); }
         }
 
-        /* 料金画像 */
-        .price-box { background: var(--main-blue); padding: 40px 0 0; text-align: center; }
-        .price-imgs img { width: 100%; max-width: 600px; display: block; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        /* 統計データ（復活済） */
+        .section { padding: 60px 24px; max-width: 600px; margin: 0 auto; }
+        .info-card {
+            border: 1px solid #eee; background: #fff; border-radius: 20px; padding: 40px 24px; margin-bottom: 25px;
+            text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.02); position: relative; overflow: hidden;
+        }
+        .info-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--main-blue); }
+        .card-num { font-size: 52px; font-weight: 900; color: var(--red); line-height: 1; }
+        .card-unit { font-size: 20px; color: var(--red); }
+
+        /* 料金画像（表示崩れ修正） */
+        .price-box { background: var(--main-blue); color: #fff; padding: 60px 0 0; border-radius: 40px 40px 0 0; text-align: center; }
+        .price-main { font-size: 52px; font-weight: 700; color: var(--gold); }
+        .price-imgs { display: flex; flex-direction: column; margin-top: 40px; }
+        .price-imgs img { width: 100%; height: auto; display: block; border-bottom: 1px solid rgba(255,255,255,0.2); }
 
         /* アクセス：守恒みらいホールにピン */
         .access { padding: 80px 24px; text-align: center; }
@@ -56,7 +84,7 @@
         .qr-box { width: 220px; margin: 40px auto; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 12px; }
         .qr-box img { width: 100%; height: auto; display: block; }
 
-        /* LINEボタン */
+        /* 下部固定LINEボタン */
         .btn-line {
             position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
             width: 90%; max-width: 360px; height: 68px; background: #06C755; color: #fff;
@@ -72,11 +100,14 @@
 
 <main>
     <section class="hero">
-        <div class="hero-tag">増やす知識 × 守る知恵 ＋ 地域の仲間</div>
-        <h1 class="hero-title">くらしとお金<br><span>サロン</span></h1>
+        <div class="reveal top-logo">
+            <img src="ロゴ浮き.png" alt="logo" style="width:100%; height:auto;">
+        </div>
+        <div class="reveal delay-1 hero-tag">増やす知識 × 守る知恵 ＋ 地域の仲間</div>
+        <h1 class="reveal delay-1 hero-title">くらしとお金<br><span>サロン</span></h1>
     </section>
 
-    <div class="slideshow-container">
+    <div class="slideshow-container reveal delay-2">
         <div class="slideshow-track">
             <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
             <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
@@ -89,25 +120,33 @@
         </div>
     </div>
 
-    <section class="price-box">
-        <div class="price-imgs">
-            <img src="IMG_4157.png">
-            <img src="IMG_4156.png">
+    <section class="section">
+        <div class="reveal info-card">
+            <span class="card-num">1.2<small class="card-unit">億円</small></span>
+            <p style="font-weight:700; margin-top:10px;">特殊詐欺被害、毎日。</p>
+        </div>
+        <div class="reveal info-card">
+            <span class="card-num">800<small class="card-unit">人</small></span>
+            <p style="font-weight:700; margin-top:10px;">資産凍結、新たに毎日。</p>
         </div>
     </section>
 
-    <section class="access">
+    <section class="price-box reveal">
+        <div class="price-imgs">
+            <img src="IMG_4157.png" alt="比較表1">
+            <img src="IMG_4156.png" alt="比較表2">
+        </div>
+    </section>
+
+    <section class="access reveal">
         <p style="font-weight:700; font-size:22px; color:var(--sub-blue); margin:0;">守恒みらいホール</p>
         <p style="font-size:14px; color:#666;">北九州市小倉南区守恒2-1-40</p>
         <div class="map-frame">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.417277647248!2d130.87107877626357!3d33.827361773242095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf42426f0e47%3A0x868427f71b9c1d0!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1713430000000!5m2!1sja!2sjp" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.120614867727!2d130.87235027581703!3d33.83711647323871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c6d5b080c13f%3A0xcb77d8d66b776996!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712345678901" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <section class="qr-section">
+    <section class="qr-section reveal">
         <h3 style="font-size:24px; color:var(--sub-blue); margin:0;">お問い合わせ</h3>
         <div class="qr-box">
             <img src="IMG_2124.png" alt="LINE公式アカウント">
@@ -122,5 +161,12 @@
 
 <footer>© くらしとお金サロン All Rights Reserved.</footer>
 
+<script>
+    // スクロール検知
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
