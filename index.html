@@ -61,7 +61,6 @@ body{
   margin:25px auto 10px;
   background:#00C300;
   color:#fff;
-  text-align:center;
   padding:18px;
   border-radius:40px;
   font-size:18px;
@@ -78,7 +77,6 @@ body{
   text-align:center;
 }
 
-/* スライダー */
 .slider{
   width:100%;
   overflow:hidden;
@@ -97,7 +95,6 @@ body{
   flex-shrink:0;
 }
 
-/* セクション */
 .section{
   padding:60px 20px;
   text-align:center;
@@ -108,7 +105,6 @@ body{
   margin-bottom:30px;
 }
 
-/* カード */
 .card{
   background:#fff;
   color:#D4AF37;
@@ -120,17 +116,14 @@ body{
   font-size:22px;
   font-weight:bold;
   line-height:1.6;
-
   word-break:keep-all;
   line-break:strict;
 }
 
-/* 中央 */
 .card-center{
   text-align:center;
 }
 
-/* 説明文 */
 .card-text{
   text-align:left;
   font-size:18px;
@@ -150,7 +143,6 @@ body{
   border-radius:20px;
 }
 
-/* リンクボタン */
 .notion-btn{
   display:block;
   width:90%;
@@ -168,7 +160,6 @@ body{
   line-height:1.4;
 }
 
-/* フローティング */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -188,17 +179,6 @@ body{
   align-items:center;
   justify-content:center;
   gap:8px;
-}
-
-/* アニメーション */
-@keyframes floaty{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(-6px);}
-}
-
-@keyframes pulse{
-  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
-  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
 }
 </style>
 </head>
@@ -242,26 +222,32 @@ body{
 <div class="section">
   <h2>知らないだけで起きている現実</h2>
 
-  <div class="card card-center">詐欺被害 毎日 約50件<br>約1.2億円</div>
-  <div class="card card-center">認知症診断 毎日 約800人</div>
-  <div class="card card-center">相続トラブル 毎日 約30件</div>
+  <div class="card card-center">
+    詐欺被害 毎日 約50件・約1.2億円<br>
+    認知症診断 毎日 約800人<br>
+    相続トラブル 毎日 約30件
+  </div>
 </div>
 
 <div class="section">
   <h2>ですが、ご安心ください</h2>
 
-  <div class="card card-center">将来の問題に備えることができます</div>
-  <div class="card card-center">大切なお金を守る知恵も学べます</div>
-  <div class="card card-center">大切なお金を増やす知識も学べます</div>
-  <div class="card card-center">繰り返し学びながら理解を深めていきます</div>
+  <div class="card card-center">
+    将来の問題に備え、
+    大切なお金を守りながら増やす知識を学べます。
+
+    繰り返し学びながら理解を深めていきます。
+  </div>
 </div>
 
 <div class="section">
   <h2>運営について</h2>
 
-  <div class="card card-center">金融機関の営業ではありません</div>
-  <div class="card card-center">販売や勧誘は一切ありません</div>
-  <div class="card card-center">投資の判断は必ずご自身でしていただきます</div>
+  <div class="card card-center">
+    金融機関の営業ではありません。<br>
+    販売や勧誘は一切ありません。<br>
+    投資の判断は必ずご自身で行っていただきます。
+  </div>
 </div>
 
 <div class="section">
@@ -277,12 +263,11 @@ body{
 
   <div class="card card-text">
     一般的な講座は1回参加して終わることが多いですが、
-    くらしとお金サロンは毎週継続して学び、相談できる環境です。
-  </div>
-
-  <div class="card card-text">
-    1回あたり約<span class="nowrap">5,500円</span>で、
+    くらしとお金サロンは毎週継続して学び、
     いつでも相談できる環境です。
+
+    1回あたり約<span class="nowrap">5,500円</span>で、
+    安心して続けられる仕組みになっています。
   </div>
 </div>
 
@@ -308,28 +293,27 @@ body{
 <div class="section">
   <h2>開催場所</h2>
 
-  <div class="card card-center">守恒みらいホール</div>
+  <div class="card card-center">
+    守恒みらいホール<br>
+    北九州市小倉南区守恒
+  </div>
 
   <div style="width:90%;max-width:500px;margin:20px auto;border-radius:20px;overflow:hidden;">
     <iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed"
       width="100%" height="300" style="border:0;"></iframe>
   </div>
-
-  <div class="card card-center">北九州市小倉南区守恒</div>
 </div>
 
 <div class="section">
   <h2>こちらからご参加いただけます</h2>
 
   <div class="card card-center">
-    QRコードを読み取るか、下のボタンからご参加ください
+    QRコードを読み取るか、下のボタンからご参加ください。
+
+    友だち追加後「体験」または「質問」とお送りください。
   </div>
 
   <img src="IMG_2124.png" style="width:220px;margin:20px auto;display:block;">
-
-  <div class="card card-center">
-    「体験」または「質問」とお気軽にお送りください
-  </div>
 </div>
 
 <div class="section">
@@ -338,10 +322,8 @@ body{
   <div class="card card-center">
     知らないまま不安でいるよりも、
     知って安心できる方が良いと思いませんか？
-  </div>
 
-  <div class="card card-center">
-    小さな一歩が、これからの大きな安心につながります
+    小さな一歩が、これからの大きな安心につながります。
   </div>
 
   <div class="card card-center">
