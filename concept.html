@@ -9,94 +9,96 @@
     <style>
         :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-white: #FFFFFF; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.8; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.8; overflow-x: hidden; }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        header { padding: 20px 0; text-align: center; border-bottom: 1px solid #eee; }
-        .top-logo { width: 80px; height: auto; }
+        header { padding: 30px 0 10px; text-align: center; }
+        .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
 
-        .concept-hero { background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://www.transparenttextures.com/patterns/white-wall.png'); padding: 60px 24px; text-align: center; }
-        .concept-hero h1 { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--sub-blue); margin-bottom: 15px; }
-        .catchphrase { font-size: 20px; font-weight: 900; color: var(--main-blue); line-height: 1.4; }
+        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 120px; }
 
-        .container { max-width: 650px; margin: 0 auto; padding: 40px 24px 100px; }
-        
-        h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; color: var(--sub-blue); border-left: 4px solid var(--gold); padding-left: 15px; margin: 50px 0 25px; }
-        
-        p { margin-bottom: 25px; font-size: 16px; font-weight: 500; }
-        
-        .highlight-box { background: #f9f9f9; border-radius: 15px; padding: 25px; margin: 30px 0; border: 1px solid #eee; }
-        .highlight-box ul { list-style: none; padding: 0; margin: 0; }
-        .highlight-box li { font-weight: 900; color: var(--sub-blue); font-size: 18px; margin-bottom: 10px; text-align: center; }
+        /* トップページと共通の見出しスタイル */
+        .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 10px; }
+        .page-sub { font-size: 17px; font-weight: 700; color: var(--gold); text-align: center; margin-bottom: 50px; display: block; }
 
-        .story-box { background: #fff5f5; border-radius: 15px; padding: 25px; border-left: 5px solid var(--red); margin: 40px 0; }
-        .story-box h3 { font-size: 18px; color: var(--red); margin-top: 0; }
+        .section-title { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin: 60px 0 25px; text-align: center; }
 
-        .note-box { font-size: 14px; color: #666; background: #f0f0f0; padding: 15px; border-radius: 8px; margin-top: 40px; }
+        /* トップページの reality-card デザインを継承 */
+        .accent-box-red { border: 3px solid var(--red); background: #fff; border-radius: 12px; padding: 25px; margin: 30px 0; }
+        .accent-box-blue { border: 2.5px solid var(--main-blue); background: #f0f5ff; border-radius: 12px; padding: 25px; margin: 30px 0; }
 
-        .back-btn { display: inline-block; margin-top: 40px; color: var(--main-blue); text-decoration: none; font-weight: 700; }
+        .text-p { font-size: 16px; font-weight: 500; margin-bottom: 20px; }
+        .bold-blue { color: var(--sub-blue); font-weight: 900; }
 
-        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 12px; border-top: 1px solid #eee; }
+        /* 箇条書き */
+        .point-list { padding: 0; list-style: none; margin: 25px 0; text-align: center; }
+        .point-list li { font-weight: 900; font-size: 19px; color: var(--sub-blue); margin-bottom: 10px; }
+
+        .btn-back { display: block; width: 100%; max-width: 300px; margin: 60px auto 0; padding: 18px; border: 2px solid var(--sub-blue); color: var(--sub-blue); border-radius: 12px; text-align: center; text-decoration: none; font-weight: 900; }
+
+        .disclaimer { font-size: 13px; color: #777; background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 15px; line-height: 1.6; }
+
+        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 12px; }
     </style>
 </head>
 <body>
 
-    <header><a href="index.html"><img src="ロゴ浮き.png" class="top-logo"></a></header>
-
-    <div class="concept-hero">
-        <h1 class="reveal">サロン理念</h1>
-        <p class="reveal catchphrase">増やす知識と守る知恵で、<br>人生に安心を。</p>
-    </div>
+    <header><img src="ロゴ浮き.png" class="top-logo"></header>
 
     <div class="container">
+        
+        <h1 class="reveal page-title">サロン理念</h1>
+        <span class="reveal page-sub">増やす知識と守る知恵で、人生に安心を。</span>
+
         <section class="reveal">
-            <p>くらしとお金サロンは、これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。</p>
-            <p>今の日本では、孤独死やセルフネグレクトが決して珍しい話ではなくなっています。成年後見制度などの仕組みもありますが、知らない専門家に任せるだけで本当に本人の幸せにつながっているのか考えさせられる現実もあります。</p>
-            <p>「まだ大丈夫」「自分は関係ない」<br>そう思っているうちに、気づけば一人で、あるいは家族だけで抱え込んでしまうことも少なくありません。</p>
-            <p>年齢を重ねるほど、暮らしやお金のことを考える時間は増えていきます。しかし同時に、相談できる相手は少なくなっていきます。</p>
+            <p class="text-p">くらしとお金サロンは、これからの人生を、安心を土台に前向きに生きていくためのコミュニティです。</p>
+            <p class="text-p">今の日本では、孤独死やセルフネグレクトが決して珍しい話ではなくなっています。知らない専門家に任せるだけで本当に本人の幸せにつながっているのか考えさせられる現実もあります。</p>
+        </section>
+
+        <section class="reveal accent-box-red">
+            <h2 style="color:var(--red); font-size: 20px; margin-top: 0; text-align: center;">このサロンを作った理由</h2>
+            <p class="text-p" style="margin-bottom: 0;">
+                このサロンを作ろうと思った理由の一つに、<b>父の孤独死</b>があります。<br><br>
+                父は「まだ大丈夫」「自分は平気」そう言いながら誰にも頼らず生活していました。しかしある日、父は一人で亡くなっていました。<br><br>
+                もっと早く誰かに相談できる場所があったら。もっと早く地域の中でつながれる場所があったら。そう思ったことが、このサロンを作る大きなきっかけになりました。
+            </p>
         </section>
 
         <section class="reveal">
-            <h2>地域の中に必要なもの</h2>
-            <p>だからこそ地域の中に、以下の場所が必要だと考えています。</p>
-            <div class="highlight-box">
-                <ul>
-                    <li>【所属できる場所】</li>
-                    <li>【いつでも相談できる信頼できる人】</li>
-                    <li>【同じ地域の仲間】</li>
-                </ul>
-            </div>
-            <p>いつでも何でも話せるコミュニティがあること。それが、将来の安心を大きく左右します。不安を放置するのではなく、向き合い、整理し、備える。そのためのコミュニティが、くらしとお金サロンです。</p>
-            <p>そのため、当サロンは少人数制の高密度な併走型コミュニティとして運営しています。メンバー様一人ひとりに寄り添い、顧問FPとして伴走することを大切にしています。</p>
+            <h2 class="section-title">地域の中に「3つの場所」を</h2>
+            <p class="text-p">「まだ大丈夫」「自分は関係ない」と思っているうちに、気づけば一人で抱え込んでしまうことも少なくありません。だからこそ地域の中に、これらが必要だと考えています。</p>
+            <ul class="point-list">
+                <li>【所属できる場所】</li>
+                <li>【信頼できる専門家】</li>
+                <li>【同じ地域の仲間】</li>
+            </ul>
+            <p class="text-p">不安を放置するのではなく、向き合い、整理し、備える。当サロンはメンバー様一人ひとりに寄り添い、顧問FPとして伴走することを大切にしています。</p>
+        </section>
+
+        <section class="reveal accent-box-blue">
+            <h2 style="color:var(--sub-blue); font-size: 20px; margin-top: 0; text-align: center;">私たちが解決をお手伝いする不安</h2>
+            <p class="text-p"><b>● お金の不安</b><br>老後の資金、物価高、新NISA、そして増え続ける特殊詐欺被害。何から始めればいいか分からないこと自体が大きな不安になります。</p>
+            <p class="text-p"><b>● 住まい・将来の不安</b><br>今の家に住み続けられるか、施設選び、実家じまい、墓じまい。相続で家族に負担をかけたくないという悩み。</p>
+            <p class="text-p" style="margin-bottom: 0;"><b>● 将来と家族の不安</b><br>終活、遺言、自分の思いが伝わっているか。私たちは問題を一つひとつ整理し、解決していくお手伝いをします。</p>
         </section>
 
         <section class="reveal">
-            <h2>このサロンを作った理由</h2>
-            <div class="story-box">
-                <h3>父の孤独死</h3>
-                <p>このサロンを作ろうと思った理由の一つに、父の孤独死があります。父は一人で暮らしていました。「まだ大丈夫」「自分は平気」そう言いながら、誰にも頼らず生活していました。</p>
-                <p>しかしある日、父は一人で亡くなっていました。もっと早く誰かに相談できる場所があったら。もっと早く地域の中でつながれる場所があったら。そう思ったことが、このサロンを作る大きなきっかけになりました。</p>
-            </div>
-            <p>お金の問題も、暮らしの問題も本来は、一人で抱えるものではありません。地域の中に顔の見える関係があり、何かあればすぐに相談できる場所がある。そんな場所を作りたい。それが、くらしとお金サロンです。</p>
-        </section>
-
-        <section class="reveal">
-            <h2>投資についての考え方</h2>
-            <p>サロンでは投資についても学びます。株式市場は長い目で見れば成長を続けてきました。制度も整い、NISAのような活用しやすい仕組みも始まっています。</p>
-            <p>「増やす力」と「守る知識」。その両方を身につけることが、これからの安心につながると考えています。</p>
-            <div class="note-box">
+            <h2 class="section-title">投資についての考え方</h2>
+            <p class="text-p">「増やす力」と「守る知識」。その両方を身につけることが、これからの安心につながると考えています。株式市場の成長やNISAを正しく活用する知恵を学びます。</p>
+            <div class="disclaimer">
                 ※投資の最終判断は必ずご自身で行っていただきます。私たちは商品の販売や、投資助言を行う立場ではありません。理解し、納得して判断できる力を身につけていただく場所でありたいと考えています。
             </div>
         </section>
 
-        <section class="reveal" style="text-align: center; margin-top: 60px;">
-            <h2 style="border: none; padding: 0;">最後に</h2>
-            <p>地域の中で、顔の見える関係を大切にしながら、安心して話せる場所を作ります。一人や家族だけで抱え込まなくて大丈夫です。小さな一歩が、これからの大きな安心につながります。</p>
-            
-            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> トップページへ戻る</a>
+        <section class="reveal" style="text-align: center; margin-top: 80px;">
+            <p class="text-p" style="font-weight: 900;">地域の中で、顔の見える関係を大切にしながら、<br>安心して話せる場所を作ります。</p>
+            <p class="text-p" style="color: var(--red); font-weight: 900;">一人や家族だけで抱え込まなくて大丈夫です。</p>
+            <p class="text-p">小さな一歩が、これからの大きな安心につながります。</p>
+            <a href="index.html" class="btn-back">トップページへ戻る</a>
         </section>
+
     </div>
 
     <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
