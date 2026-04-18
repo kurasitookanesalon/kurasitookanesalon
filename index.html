@@ -19,7 +19,7 @@ body{
 /* ヒーロー */
 .hero{
   text-align:center;
-  padding:60px 20px 40px;
+  padding:60px 20px 30px;
 }
 
 .hero-header{
@@ -39,7 +39,6 @@ body{
 .hero-title{
   font-size:28px;
   font-weight:bold;
-  width:100%;
 }
 
 .formula{
@@ -51,14 +50,14 @@ body{
   display:block;
   font-size:42px;
   color:#D4AF37;
-  margin-top:15px;
+  margin-top:10px;
 }
 
 .btn{
   display:flex;
   width:90%;
   max-width:420px;
-  margin:25px auto 10px;
+  margin:20px auto 10px;
   background:#00C300;
   color:#fff;
   padding:18px;
@@ -70,16 +69,10 @@ body{
   justify-content:center;
 }
 
-.note{
-  font-size:12px;
-  text-align:center;
-}
-
 /* スライダー */
 .slider{
   width:100%;
   overflow:hidden;
-  margin-top:30px;
 }
 
 .slide-track{
@@ -96,13 +89,13 @@ body{
 
 /* セクション */
 .section{
-  padding:40px 20px;
+  padding:30px 20px;
   text-align:center;
 }
 
 .section h2{
-  font-size:28px;
-  margin-bottom:20px;
+  font-size:26px;
+  margin-bottom:15px;
 }
 
 /* カード */
@@ -110,8 +103,8 @@ body{
   background:#fff;
   color:#D4AF37;
   border-radius:20px;
-  padding:22px;
-  margin:15px auto;
+  padding:20px;
+  margin:10px auto;
   width:90%;
   max-width:500px;
   font-size:22px;
@@ -130,7 +123,7 @@ body{
 .compare-img{
   width:90%;
   max-width:500px;
-  margin:20px auto;
+  margin:15px auto;
   display:block;
   border-radius:20px;
 }
@@ -153,6 +146,19 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+
+  animation:floaty 2.5s ease-in-out infinite,
+             pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes floaty{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(-6px);}
+}
+
+@keyframes pulse{
+  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
 }
 </style>
 </head>
@@ -199,103 +205,100 @@ body{
 
 <div class="section">
 <h2>知らないだけで起きている現実</h2>
-<div class="card">
-特殊詐欺被害は毎日
-約50件　約1.2億円
-認知症診断は毎日 約800人
-相続トラブルで裁判
-毎日 約30件
-</div>
+
+<div class="card">特殊詐欺被害は毎日</div>
+<div class="card">約50件　約1.2億円</div>
+<div class="card">認知症診断は毎日 約800人</div>
+<div class="card">相続トラブルで裁判</div>
+<div class="card">毎日 約30件</div>
+
 </div>
 
 <div class="section">
 <h2>ですがご安心ください</h2>
-<div class="card">
-ですがご安心ください
-将来の問題に
-備えることができます
-大切なお金を
-守る知恵も学べます
-大切なお金を
-増やす知識も学べます
-繰り返し学びながら
-理解を深めていきます
-</div>
+
+<div class="card">将来の問題に</div>
+<div class="card">備えることができます</div>
+<div class="card">大切なお金を</div>
+<div class="card">守る知恵も学べます</div>
+<div class="card">大切なお金を</div>
+<div class="card">増やす知識も学べます</div>
+<div class="card">繰り返し学びながら</div>
+<div class="card">理解を深めていきます</div>
+
 </div>
 
 <div class="section">
 <h2>運営について</h2>
-<div class="card">
-金融機関の営業ではありません
-販売や勧誘は一切ありません
-投資の判断は
-必ずご自身でしていただきます
-</div>
+
+<div class="card">金融機関の営業ではありません</div>
+<div class="card">販売や勧誘は一切ありません</div>
+<div class="card">投資の判断は</div>
+<div class="card">必ずご自身でしていただきます</div>
+
 </div>
 
 <div class="section">
 <h2>料金について</h2>
 
-<div class="card">
-月額 22,000円（週1回＋相談し放題）
-一般的な講座は
-1回参加して終わることが多いです
-くらしとお金サロンは
-毎週継続して学べます
-いつでも相談できる環境です
-1回あたり 約5,500円で
-安心して続けられます
-</div>
+<div class="card">月額 22,000円（週1回＋相談し放題）</div>
+<div class="card">一般的な講座は</div>
+<div class="card">1回参加して終わることが多いです</div>
+<div class="card">くらしとお金サロンは</div>
+<div class="card">毎週継続して学べます</div>
+<div class="card">いつでも相談できる環境です</div>
+<div class="card">1回あたり 約5,500円で</div>
+<div class="card">安心して続けられます</div>
 
 <img src="IMG_4157.png" class="compare-img">
 <img src="IMG_4156.png" class="compare-img">
+
 </div>
 
 <div class="section">
 <h2>このサロンで得られること</h2>
-<div class="card">
-一人で悩まず
-地域の仲間と一緒に
-学べる場所です
-</div>
+
+<div class="card">一人で悩まず</div>
+<div class="card">地域の仲間と一緒に</div>
+<div class="card">学べる場所です</div>
+
 </div>
 
 <div class="section">
 <h2>開催場所</h2>
-<div class="card">
-守恒みらいホール
-北九州市小倉南区守恒
-</div>
+
+<div class="card">守恒みらいホール</div>
+<div class="card">北九州市小倉南区守恒</div>
 
 <div style="width:90%;max-width:500px;margin:20px auto;border-radius:20px;overflow:hidden;">
 <iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed"
 width="100%" height="300" style="border:0;"></iframe>
 </div>
+
 </div>
 
 <div class="section">
 <h2>ご参加方法</h2>
-<div class="card">
-QRコードを読み取るか
-下のボタンからご参加ください
-友だち追加後
-「体験」または「質問」
-とお送りください
-</div>
+
+<div class="card">QRコードを読み取るか</div>
+<div class="card">下のボタンからご参加ください</div>
+<div class="card">友だち追加後</div>
+<div class="card">「体験」または「質問」</div>
+<div class="card">とお送りください</div>
+
 </div>
 
 <div class="section">
 <h2>一歩踏み出してみませんか？</h2>
-<div class="card">
-一歩踏み出してみませんか？
-知らないまま不安でいるよりも
-知って安心できる方が
-良いと思いませんか？
-小さな一歩が
-これからの大きな安心につながります
-※金融商品の販売・勧誘など
-一切行っておりません
-</div>
+
+<div class="card">知らないまま不安でいるよりも</div>
+<div class="card">知って安心できる方が</div>
+<div class="card">良いと思いませんか？</div>
+<div class="card">小さな一歩が</div>
+<div class="card">これからの大きな安心につながります</div>
+<div class="card">※金融商品の販売・勧誘など</div>
+<div class="card">一切行っておりません</div>
+
 </div>
 
 <a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
