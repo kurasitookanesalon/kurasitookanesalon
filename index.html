@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>くらしとお金サロン 小倉南校</title>
+<title>くらしとお金サロン 小倉南校 | 平松広大</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -13,49 +13,54 @@
   --sub-blue: #163E7A;
   --gold: #D4AF37;
   --alert-red: #e74c3c;
-  --bg-gray: #f8f9fa;
 }
 
-body{
+body {
   margin:0; font-family:"Noto Sans JP",sans-serif;
   background: var(--main-blue); color:#fff;
-  padding-bottom:120px; line-height: 1.8;
+  padding-bottom:120px; line-height: 1.7;
 }
 
+/* ヘッダーを看板として強化 */
 header {
-  background:#fff; padding:12px 0; position:fixed; top:0; left:0; width:100%;
-  z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.15);
+  background:#fff; position:fixed; top:0; left:0; width:100%;
+  z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.2);
 }
-header nav { display:flex; justify-content:space-around; max-width:600px; margin:0 auto; }
+.header-top {
+  padding: 10px 15px; border-bottom: 1px solid #eee; text-align: center;
+}
+.brand-name {
+  color: var(--main-blue); font-size: 18px; font-weight: bold; letter-spacing: 1px;
+}
+header nav { display:flex; justify-content:space-around; max-width:600px; margin:0 auto; padding: 10px 0; }
 header a { color:var(--main-blue); text-decoration:none; font-size:11px; text-align:center; font-weight:bold; }
 header i { display:block; font-size:18px; margin-bottom:3px; }
 
-.container { padding-top: 80px; }
-.section{ padding:40px 20px; text-align:center; max-width:600px; margin:0 auto; }
-.section h2{ font-family: 'Noto Serif JP', serif; font-size:22px; margin-bottom:25px; position:relative; display:inline-block; padding-bottom:10px; }
+.container { padding-top: 110px; }
+.section { padding:40px 20px; text-align:center; max-width:600px; margin:0 auto; }
+.section h2 { font-family: 'Noto Serif JP', serif; font-size:24px; margin-bottom:25px; position:relative; display:inline-block; padding-bottom:10px; }
 .section h2::after { content:""; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:40px; height:3px; background:var(--gold); }
 
-/* 比較用スタイル */
-.compare-box { background:#fff; color:#333; border-radius:15px; overflow:hidden; margin:20px 0; display:flex; box-shadow:0 4px 15px rgba(0,0,0,0.2); }
-.compare-item { flex:1; padding:15px 10px; }
-.item-jp { background:#eee; border-right:1px solid #ddd; }
-.item-world { background:#fff5e6; }
-.compare-label { font-size:12px; font-weight:bold; display:block; margin-bottom:5px; }
-.compare-val { font-size:18px; font-weight:bold; color:var(--main-blue); }
-.compare-val.red { color:var(--alert-red); }
-
-.card{
-  background:#fff; color:#333; border-radius:20px; padding:22px; margin:20px auto;
-  width:95%; font-size:15px; font-weight:500; box-shadow:0 10px 20px rgba(0,0,0,0.2); text-align:left;
+/* ヒーローエリアを看板化 */
+.hero-banner {
+  background: rgba(255,255,255,0.1); padding: 40px 20px; border-radius: 0 0 50px 50px;
+  border-bottom: 4px solid var(--gold);
 }
-.card-alert { border-left: 8px solid var(--alert-red); }
+.hero-banner p { font-size: 14px; margin-bottom: 10px; opacity: 0.9; }
 
-.floating-btn{
+/* 比較・警告パネル */
+.card {
+  background:#fff; color:#333; border-radius:20px; padding:22px; margin:20px auto;
+  width:95%; font-size:15px; font-weight:500; box-shadow:0 10px 25px rgba(0,0,0,0.4); text-align:left;
+}
+.card-alert { border-left: 10px solid var(--alert-red); }
+
+.floating-btn {
   position:fixed; bottom:15px; left:50%; transform:translateX(-50%);
   width:92%; max-width:420px; background:#00C300; color:#fff;
-  padding:16px; border-radius:50px; font-size:16px; font-weight:bold;
+  padding:18px; border-radius:50px; font-size:16px; font-weight:bold;
   text-decoration:none; z-index:999; display:flex; align-items:center; justify-content:center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 </style>
 </head>
@@ -63,89 +68,90 @@ header i { display:block; font-size:18px; margin-bottom:3px; }
 <body>
 
 <header>
+  <div class="header-top">
+    <div class="brand-name">くらしとお金サロン <span style="font-size:12px; font-weight:normal; vertical-align:middle;">小倉南校</span></div>
+  </div>
   <nav>
     <a href="index.html"><i class="fa-solid fa-house"></i>TOP</a>
     <a href="profile.html"><i class="fa-solid fa-user-tie"></i>自己紹介</a>
-    <a href="salon.html"><i class="fa-solid fa-file-invoice-dollar"></i>サロン内容</a>
+    <a href="salon.html"><i class="fa-solid fa-file-invoice-dollar"></i>内容・料金</a>
     <a href="concept.html"><i class="fa-solid fa-lightbulb"></i>サロン理念</a>
   </nav>
 </header>
 
 <div class="container">
 
-  <div class="section" style="padding-bottom:10px;">
-    <h1 style="font-size:22px; line-height:1.6;">
-      日本円を守り、<br>
-      <span style="color:var(--gold);">世界経済で増やす。</span><br>
-      新しい時代の資産防衛術
+  <div class="hero-banner">
+    <p>地域密着型・お金の教育コミュニティ</p>
+    <h1 style="font-size:26px; line-height:1.4; margin:0;">
+      <span style="color:var(--gold);">「守る」</span>知恵と<br>
+      <span style="color:var(--gold);">「増やす」</span>知識で、<br>
+      人生に確かな安心を。
     </h1>
+    <p style="margin-top:20px; font-size:13px;">代表：平松 広大</p>
   </div>
 
-  <div class="section" style="background:rgba(255,255,255,0.05); border-radius:30px; margin-top:20px;">
-    <h2>「縮む日本」と「増える世界」</h2>
-    <p style="font-size:14px; margin-bottom:20px; text-align:left;">
-      私たちが生きているのは、過去30年とは全く違うフェーズです。数字で現実を直視しましょう。
-    </p>
+  <div class="section">
+    <h2 style="color:var(--gold);">1日単位で進む「日本の現実」</h2>
+    
+    <div class="card card-alert">
+      <strong style="color:var(--alert-red);">【資産凍結】毎日 約1,200人が認知症に</strong><br>
+      判断能力が不十分とみなされれば、**銀行口座は即座に凍結**。生活費や介護費を本人も家族も引き出せなくなります。
+    </div>
 
-    <div style="font-size:14px; text-align:left; margin-bottom:5px;">▼ 人口推移（2070年推計）</div>
-    <div class="compare-box">
-      <div class="compare-item item-jp">
-        <span class="compare-label">日本</span>
-        <span class="compare-val red">30%減少</span>
+    <div class="card card-alert">
+      <strong style="color:var(--alert-red);">【負担増】高齢者1人を1.2人で支える未来</strong><br>
+      現役世代の税金・社会保険料は上がり続け、手取りは減る一方。世界がインフレで値上げを続ける中、日本円の預金だけで立ち向かうのは「穴の空いたバケツ」で水を汲むのと同じです。
+    </div>
+
+    <div class="card card-alert">
+      <strong style="color:var(--alert-red);">【強奪】毎日 約1.2億円が詐欺で消失</strong><br>
+      最新のSNS型投資詐欺は、あなたの「老後の不安」につけ込み、一生懸命貯めた資産を海外犯罪組織へ送金させます。
+    </div>
+  </div>
+
+  <div class="section" style="background:rgba(0,0,0,0.2); padding:40px 20px;">
+    <h2>縮む日本、膨らむ世界</h2>
+    <div style="background:#fff; color:#333; border-radius:20px; padding:20px; text-align:left;">
+      <div style="border-bottom:1px solid #eee; padding:10px 0; display:flex; justify-content:space-between;">
+        <span style="font-weight:bold;">人口推移(2070年)</span>
+        <span style="color:var(--alert-red); font-weight:bold;">日本：30%減 / 世界：25%増</span>
       </div>
-      <div class="compare-item item-world">
-        <span class="compare-label">世界</span>
-        <span class="compare-val">25%増加</span>
+      <div style="border-bottom:1px solid #eee; padding:10px 0; display:flex; justify-content:space-between;">
+        <span style="font-weight:bold;">家計資産(過去20年)</span>
+        <span style="color:var(--alert-red); font-weight:bold;">日本：1.6倍 / 米国：3.4倍</span>
       </div>
     </div>
-    <p style="font-size:13px; text-align:left; color:rgba(255,255,255,0.8); margin-bottom:25px;">
-      人口が増える世界ではモノが奪い合いになり、物価は上がります。日本にいても「外からの値上げ」からは逃げられません。
-    </p>
-
-    <div style="font-size:14px; text-align:left; margin-bottom:5px;">▼ 過去20年の家計資産の伸び</div>
-    <div class="compare-box">
-      <div class="compare-item item-jp">
-        <span class="compare-label">日本（現金中心）</span>
-        <span class="compare-val">1.6倍</span>
-      </div>
-      <div class="compare-item item-world">
-        <span class="compare-label">米国（投資中心）</span>
-        <span class="compare-val">3.4倍</span>
-      </div>
-    </div>
-    <p style="font-size:13px; text-align:left; color:rgba(255,255,255,0.8);">
-      「投資＝ギャンブル」と考えた日本と、「経済成長に乗る手段」とした世界。この知識の差が、老後の格差に直結しています。
+    <p style="text-align:left; font-size:14px; margin-top:20px;">
+      日本が沈んでも、あなたの資産を沈ませてはいけない。人口が増え続ける「世界経済（インデックス）」の成長を味方につける。それが本当の資産防衛です。
     </p>
   </div>
 
   <div class="section">
-    <h2 style="color:var(--gold);">1日単位で迫るリスク</h2>
-    <div class="card card-alert">
-      <strong style="color:var(--alert-red);">【資産凍結】毎日約1,200人が認知症に</strong><br>
-      診断され判断能力がなくなると口座は凍結。生活費も家族は引き出せなくなります。
+    <h2>当サロンの3つの解決策</h2>
+    <div class="card">
+      <i class="fa-solid fa-chart-line" style="color:var(--main-blue); font-size:24px;"></i><br>
+      <strong>① インデックスで「増やす知識」</strong><br>
+      新NISAを活用し、世界経済の成長に乗る正しい資産形成。日本円だけに頼らない二刀流の強さを身につけます。
     </div>
-    <div class="card card-alert">
-      <strong style="color:var(--alert-red);">【増税】高齢者1人を1.2人で支える未来</strong><br>
-      現役世代の負担増は避けられません。国や子供に頼らない「自立した資産」が必要です。
+    <div class="card">
+      <i class="fa-solid fa-shield-halved" style="color:var(--main-blue); font-size:24px;"></i><br>
+      <strong>② 最新手口から「守る知恵」</strong><br>
+      詐欺・インフレ・口座凍結。日々悪化する情勢に対し、最新の防御策を地域の仲間と共有します。
     </div>
-    <div class="card card-alert">
-      <strong style="color:var(--alert-red);">【詐欺】毎日約1.2億円が奪われる</strong><br>
-      最新のSNS投資詐欺は、あなたの「増やしたい」という善意を根こそぎ奪います。
+    <div class="card">
+      <i class="fa-solid fa-users-rays" style="color:var(--main-blue); font-size:24px;"></i><br>
+      <strong>③ 「地域の仲間」との繋がり</strong><br>
+      孤独は最大の隙。小倉南区で顔を合わせる仲間こそが、精神的な安心と防犯の最強の盾になります。
     </div>
   </div>
 
-  <div class="section" style="background:#fff; color:#333; border-radius:30px;">
-    <h2 style="color:var(--main-blue);">当サロンの解決策</h2>
-    <p style="text-align:left; font-size:14px;">
-      日本で働き・暮らしながら、資産の半分を「世界の成長」に置く。これが最強の防衛策です。
-    </p>
-    <div style="text-align:left; margin-top:20px;">
-      <p><strong>① インデックス投資：</strong><br>新NISAを活用し、世界中の優良企業に丸ごと投資します。</p>
-      <p><strong>② 情報のアップデート：</strong><br>最新の詐欺手口や法改正を地域の仲間と共有します。</p>
-      <p><strong>③ 家族を守る準備：</strong><br>口座凍結や相続に備えた「正しい管理」を学びます。</p>
-    </div>
-    <a href="salon.html" style="display:block; background:var(--gold); color:#fff; text-decoration:none; padding:15px; border-radius:10px; margin-top:20px; font-weight:bold;">
-      具体的な内容・料金はこちら
+  <div class="section">
+    <a href="profile.html" class="card" style="text-decoration:none; display:block; border-left:8px solid var(--gold); text-align:center;">
+      <strong style="color:var(--main-blue);">代表プロフィールを見る</strong>
+    </a>
+    <a href="salon.html" class="card" style="text-decoration:none; display:block; border-left:8px solid var(--gold); text-align:center;">
+      <strong style="color:var(--main-blue);">開催スケジュール・料金を見る</strong>
     </a>
   </div>
 
@@ -153,7 +159,7 @@ header i { display:block; font-size:18px; margin-bottom:3px; }
 
 <a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
   <i class="fa-brands fa-line" style="font-size:22px; margin-right:10px;"></i>
-  LINEで無料体験・質問はこちら
+  LINEで無料相談・体験はこちら
 </a>
 
 </body>
