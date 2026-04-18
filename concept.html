@@ -1,246 +1,239 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>サロン理念｜くらしとお金サロン</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>サロン理念｜くらしとお金サロン</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-blue: #1E5BB8;
+            --sub-blue: #163E7A;
+            --gold: #D4AF37;
+            --bg-white: #FFFFFF;
+        }
 
-<style>
-body{
-  margin:0;
-  font-family:"Noto Sans JP",sans-serif;
-  background:#1E5BB8;
-  color:#fff;
-  padding-bottom:120px;
-}
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-.hero{
-  text-align:center;
-  padding:60px 20px 40px;
-}
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--main-blue);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+            padding-bottom: 120px;
+        }
 
-.hero h1{
-  font-size:28px;
-  line-height:1.5;
-  font-weight:bold;
-}
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-.section{
-  padding:60px 20px;
-  text-align:center;
-}
+        /* ヒーローエリア */
+        .hero { 
+            padding: 80px 24px 40px; 
+            text-align: center; 
+            background: #fff;
+            color: var(--sub-blue);
+            border-radius: 0 0 40px 40px;
+        }
+        .top-logo { width: 80px; height: auto; margin-bottom: 20px; }
+        .hero h1 { 
+            font-family: 'Noto Serif JP', serif; 
+            font-size: 26px; 
+            line-height: 1.5; 
+            margin: 0;
+        }
+        .highlight { color: var(--gold); font-weight: 900; }
 
-.section h2{
-  font-size:26px;
-  margin-bottom:30px;
-}
+        /* セクション設定 */
+        .section { padding: 40px 20px 20px; max-width: 600px; margin: 0 auto; }
+        .section h2 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section h2::before, .section h2::after {
+            content: ""; width: 20px; height: 1px; background: var(--gold); margin: 0 15px;
+        }
 
-/* 共通 */
-.card{
-  background:#fff;
-  color:#1E5BB8;
-  border-radius:20px;
-  padding:22px;
-  margin:20px auto;
-  width:90%;
-  max-width:500px;
-  font-size:17px;
-  line-height:1.85;
-  font-weight:500;
+        /* カードデザイン */
+        .card {
+            background: #fff;
+            color: var(--sub-blue);
+            border-radius: 20px;
+            padding: 30px 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--gold);
+        }
 
-  word-break:keep-all;
-  line-break:strict;
-}
+        .card-center { text-align: center; }
+        .card-text { text-align: left; }
+        
+        .card-main {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--main-blue);
+            line-height: 1.6;
+        }
 
-/* 中央 */
-.card-center{
-  text-align:center;
-}
+        .highlight-blue { color: var(--main-blue); font-weight: 700; }
 
-/* 文章 */
-.card-text{
-  text-align:left;
-}
+        /* 戻るボタン */
+        .btn-back {
+            display: flex;
+            width: 90%;
+            max-width: 300px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 15px;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; color: var(--main-blue); }
 
-.card-main{
-  font-size:19px;
-  font-weight:bold;
-}
-
-.highlight{
-  color:#D4AF37;
-  font-weight:bold;
-}
-
-.btn{
-  display:flex;
-  width:90%;
-  max-width:420px;
-  margin:30px auto;
-  background:#555;
-  color:#fff;
-  padding:16px;
-  border-radius:40px;
-  font-size:16px;
-  font-weight:bold;
-  text-decoration:none;
-  align-items:center;
-  justify-content:center;
-}
-
-.floating-btn{
-  position:fixed;
-  bottom:15px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  max-width:420px;
-  background:#00C300;
-  color:#fff;
-  padding:16px;
-  border-radius:50px;
-  font-size:16px;
-  font-weight:bold;
-  text-decoration:none;
-  z-index:999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-</style>
+        /* 下部固定LINEボタン */
+        .btn-line {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff;
+            border-radius: 34px; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-weight: 700; font-size: 18px; z-index: 5000;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="hero">
-  <h1>
-    増やす知識と守る知恵で、
-    <span class="highlight">人生に安心を。</span>
-  </h1>
+    <img src="ロゴ浮き.png" alt="logo" class="top-logo">
+    <h1>増やす知識と守る知恵で、<br><span class="highlight">人生に安心を。</span></h1>
 </div>
 
-<div class="section">
+<div class="section reveal">
+    <div class="card card-center card-main">
+        人生の安心を土台に、<br>前向きに生きていくためのコミュニティです
+    </div>
 
-  <div class="card card-center card-main">
-    人生を安心を土台に、
-    前向きに生きていくためのコミュニティです
-  </div>
+    <div class="card card-text">
+        今の日本では、孤独死やセルフネグレクトが珍しくない時代です。<br><br>
+        「まだ大丈夫」「自分は関係ない」と思っているうちに、一人で抱え込んでしまうことも少なくありません。
+    </div>
 
-  <div class="card card-text">
-    今の日本では、
-    孤独死やセルフネグレクトが珍しくない時代です。
+    <div class="card card-text">
+        年齢を重ねるほど、お金や暮らしの不安は増えていきます。
+        しかし、相談できる相手は少なくなります。
+    </div>
 
-    「まだ大丈夫」「自分は関係ない」と思っているうちに、
-    一人で抱え込んでしまうことも少なくありません。
-  </div>
+    <div class="card card-center card-main" style="font-size: 18px;">
+        所属できる場所<br>
+        いつでも相談できる人<br>
+        同じ地域の仲間
+    </div>
 
-  <div class="card card-text">
-    年齢を重ねるほど、
-    お金や暮らしの不安は増えていきます。
+    <div class="card card-center highlight-blue">
+        それが必要だと考えています
+    </div>
 
-    しかし、
-    相談できる相手は少なくなります。
-  </div>
+    <div class="card card-text">
+        不安を放置するのではなく、向き合い、整理し、備える。
+    </div>
 
-  <div class="card card-center">
-    所属できる場所<br>
-    いつでも相談できる人<br>
-    同じ地域の仲間
-  </div>
-
-  <div class="card card-center">
-    それが必要だと考えています
-  </div>
-
-  <div class="card card-text">
-    不安を放置するのではなく、
-    向き合い、整理し、備える。
-  </div>
-
-  <div class="card card-center">
-    それを支える場所が
-    くらしとお金サロンです
-  </div>
-
+    <div class="card card-center card-main">
+        それを支える場所が<br>くらしとお金サロンです
+    </div>
 </div>
 
-<div class="section">
-  <h2>よくある不安</h2>
+<div class="section reveal">
+    <h2>よくある不安</h2>
 
-  <div class="card card-text">
-    老後のお金は足りるのか、
-    年金だけで大丈夫なのか。
+    <div class="card card-text">
+        老後のお金は足りるのか、年金だけで大丈夫なのか。<br><br>
+        投資は気になるけれど怖い、詐欺にあわないか不安です。
+    </div>
 
-    投資は気になるけれど怖い、
-    詐欺にあわないか不安です。
-  </div>
+    <div class="card card-center card-main" style="font-size: 18px; color: var(--gold); background: var(--sub-blue);">
+        「何から始めればいいか分からない」<br>という悩みが多くあります
+    </div>
 
-  <div class="card card-center">
-    「何から始めればいいか分からない」
-    という悩みが多くあります
-  </div>
-
-  <div class="card card-text">
-    住まいはこのままで大丈夫か、
-    家族に負担をかけていないか。
-
-    将来の問題も、
-    一人で抱えるには大きすぎます。
-  </div>
-
+    <div class="card card-text">
+        住まいはこのままで大丈夫か、家族に負担をかけていないか。<br><br>
+        将来の問題も、一人で抱えるには大きすぎます。
+    </div>
 </div>
 
-<div class="section">
-  <h2>このサロンを作った理由</h2>
+<div class="section reveal">
+    <h2>このサロンを作った理由</h2>
 
-  <div class="card card-center card-main">
-    父の孤独死がきっかけでした
-  </div>
+    <div class="card card-center card-main" style="border: 2px solid var(--gold);">
+        父の孤独死がきっかけでした
+    </div>
 
-  <div class="card card-text">
-    「まだ大丈夫」と言いながら、
-    誰にも頼らず生活していました。
+    <div class="card card-text">
+        「まだ大丈夫」と言いながら、誰にも頼らず生活していました。<br><br>
+        しかしある日、一人で亡くなっていました。
+    </div>
 
-    しかしある日、
-    一人で亡くなっていました。
-  </div>
+    <div class="card card-text">
+        もっと早く相談できる場所があれば、もっと早くつながれる場所があればと感じました。
+    </div>
 
-  <div class="card card-text">
-    もっと早く相談できる場所があれば、
-    もっと早くつながれる場所があればと感じました。
-  </div>
+    <div class="card card-center card-main">
+        一人で抱えなくていい
+    </div>
 
-  <div class="card card-center">
-    一人で抱えなくていい
-  </div>
-
-  <div class="card card-center">
-    そう思える場所を作りたい
-  </div>
-
+    <div class="card card-center highlight-blue">
+        そう思える場所を作りたい
+    </div>
 </div>
 
-<div class="section">
-  <h2>最後に</h2>
-
-  <div class="card card-center card-main">
-    小さな一歩が、
-    これからの大きな安心につながります
-  </div>
-
+<div class="section reveal">
+    <h2>最後に</h2>
+    <div class="card card-center card-main">
+        小さな一歩が、<br>これからの大きな安心につながります
+    </div>
 </div>
 
-<div class="section">
-  <a href="index.html" class="btn">
-    トップページへ戻る
-  </a>
+<div class="section reveal">
+    <a href="index.html" class="btn-back">
+        <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> トップページへ戻る
+    </a>
 </div>
 
-<a href="https://lin.ee/n37s4pB" class="floating-btn" target="_blank">
-  友だち追加して無料体験・質問もこちら
+<a href="https://lin.ee/n37s4pB" class="btn-line" target="_blank">
+    <i class="fa-brands fa-line" style="font-size:28px; margin-right:10px;"></i> 無料体験・質問はこちら
 </a>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
