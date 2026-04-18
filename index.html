@@ -35,7 +35,7 @@
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* ヒーロー */
+        /* ヒーロー（ヘッダーなし） */
         .hero { padding: 100px 24px 40px; text-align: center; }
         .hero-title { font-family: 'Noto Serif JP', serif; font-size: 56px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
         .hero-title span { color: var(--gold); display: block; font-size: 1.1em; }
@@ -59,23 +59,23 @@
         .info-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--main-blue); }
         .card-num { font-size: 52px; font-weight: 900; color: var(--red); line-height: 1; }
 
-        /* 料金画像 */
+        /* 料金画像巨大化 */
         .price-box { background: var(--main-blue); color: #fff; padding: 60px 0 0; border-radius: 40px 40px 0 0; text-align: center; }
         .price-main { font-size: 52px; font-weight: 700; color: var(--gold); }
         .price-imgs { display: flex; flex-direction: column; margin-top: 40px; }
         .price-imgs img { width: 100%; height: auto; display: block; border-bottom: 1px solid rgba(255,255,255,0.2); }
 
-        /* 地図：守恒みらいホールにピン */
+        /* 地図：守恒みらいホールにピンをセット */
         .access { padding: 80px 24px; text-align: center; }
         .map { width: 100%; height: 350px; border-radius: 20px; overflow: hidden; border: 5px solid var(--sub-blue); margin-top: 30px; }
 
-        /* QRコード：四角く大きく、バグなし */
+        /* 代表・QR：バグ要素を全削除 */
         .rep-msg { padding: 80px 24px 140px; text-align: center; }
         .rep-img { width: 140px; height: 140px; border-radius: 50%; border: 5px solid var(--gold); margin-bottom: 25px; object-fit: cover; }
         .qr-area { margin: 40px auto; width: 220px; }
         .qr-area img { width: 100%; height: auto; display: block; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; }
 
-        /* 下固定LINEボタン */
+        /* LINEボタン */
         .btn-line {
             position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
             width: 90%; max-width: 360px; height: 68px; background: #06C755; color: #fff;
@@ -131,7 +131,7 @@
         <p style="font-weight:700; font-size:20px; color:var(--sub-blue);">守恒みらいホール</p>
         <p style="font-size:14px; color:#666;">北九州市小倉南区守恒2-1-40</p>
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.123281144043!2d130.879105!3d33.834928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf4202359d99%3A0xc6657c91350a4d5b!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1713428000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.542261545648!2d130.88090887625126!3d33.82410312911293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf494ec90b2d%3A0x6d903f6959955e8c!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712822400000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
