@@ -11,7 +11,6 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.5; overflow-x: hidden; }
 
-        /* 背景画像設定：文字の邪魔をしないよう不透明度を調整 */
         .bg-overlay-section { 
             position: relative; width: 100%; min-height: 380px; 
             display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -19,7 +18,7 @@
         }
         .bg-image { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; opacity: 0.2; z-index: 1; 
+            object-fit: cover; opacity: 0.18; z-index: 1; 
         }
         .content-on-bg { position: relative; z-index: 2; width: 100%; text-align: center; padding: 40px 24px; }
 
@@ -40,7 +39,6 @@
         .section { padding: 45px 24px; max-width: 650px; margin: 0 auto; border-bottom: 1px solid #f2f2f2; }
         .section-title { text-align: center; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin-bottom: 25px; font-family: 'Noto Serif JP', serif; }
 
-        /* 不安フェーズ：1日換算のリアルな数字 */
         .reality-card { border: 2.5px solid var(--red); background: #fff; border-radius: 10px; padding: 16px; margin-bottom: 12px; text-align: center; }
         .stat-val { font-size: 18px; font-weight: 900; color: var(--red); display: block; line-height: 1.4; }
         .stat-desc { font-size: 12px; font-weight: 700; color: #555; margin-top: 5px; }
@@ -84,15 +82,13 @@
         <div class="slideshow-track">
             <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png"><img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
             <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png"><img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
-            <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png"><img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
-            <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png"><img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
         </div>
     </div>
 
     <section class="section">
         <h2 class="reveal section-title">知らないだけで起きている現実</h2>
         <div class="reveal reality-card">
-            <span class="stat-val">【インフレ】1日あたり 〇〇円の目減り</span>
+            <span class="stat-val">【インフレ】1日あたり 約500円の目減り</span>
             <p class="stat-desc">猛烈な勢いで、あなたのお金の価値が毎日静かに失われています。</p>
         </div>
         <div class="reveal reality-card">
@@ -104,12 +100,12 @@
             <p class="stat-desc">明日は我が身。資産が凍結され、誰にも動かせなくなるリスクです。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【相続裁判】1日あたり 約〇〇件の争い</span>
+            <span class="stat-val">【相続裁判】1日あたり 約40件</span>
             <p class="stat-desc">仲の良かった家族が、お金をきっかけにバラバラになる悲劇。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【孤独死】1日あたり 約80人</span>
-            <p class="stat-desc">誰とも繋がらず、独りで最期を迎える。地域の繋がりの欠如が招く現実。</p>
+            <span class="stat-val">【孤独死】1日あたり 約200人</span>
+            <p class="stat-desc">地域の繋がりの欠如が招く、あまりに過酷な現実です。</p>
         </div>
     </section>
 
@@ -123,6 +119,10 @@
             <span class="solution-title"><i class="fa-solid fa-chart-line"></i> 資産を増やす「攻めの知識」</span>
             <p class="solution-text">流行りに流されない、本質的な資産運用の知識を専門家と一緒にゼロから身につけます。</p>
         </div>
+        <div class="reveal solution-box">
+            <span class="solution-title"><i class="fa-solid fa-users"></i> 地域の繋がり</span>
+            <p class="solution-text">同じ想いを持つ地域の仲間と繋がり、孤独のリスクを解消します。</p>
+        </div>
     </section>
 
     <section class="section">
@@ -131,7 +131,6 @@
             <span class="price-main">月額 22,000円</span>
             <p class="price-detail">週1回120分 ＋ 個別相談し放題</p>
             <div class="comp-phase">
-                <p style="font-size: 13px; font-weight: 900; color: var(--sub-blue); margin: 0;">この「22,000円」をどう捉えるか</p>
                 <div class="comp-grid">
                     <div class="comp-item" style="background:#fdfaf0; border-color:var(--gold);">
                         <b style="color:var(--gold);">成長する世界</b><br>人口年8,000万増。<br>資産が増えるフェーズ。
@@ -154,29 +153,34 @@
 
     <section class="section reveal">
         <h2 class="section-title">開催場所</h2>
-        <p style="text-align:center; font-size: 20px; font-weight: 900; color: var(--sub-blue); margin: 0;">守恒みらいホール</p>
+        <p style="text-align:center; font-size: 20px; font-weight: 900; color: var(--sub-blue); margin: 0;">守恒みらいホール 3階または4階</p>
+        <p style="text-align:center; color: #444; font-weight: 700; margin-top: 5px;">モノレール守恒駅より徒歩3分</p>
+        <p style="text-align:center; font-size: 13px; color: #666; margin-top: 3px;">※駐車場をご利用の場合は近隣の駐車場をご利用ください</p>
         <p style="text-align:center; color: var(--red); font-weight: 900; margin-top: 5px;">＼ サンリブもりつねの目の前です ／</p>
         <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.156553259858!2d130.87569141151664!3d33.83404457312952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf4202279769%3A0xc6657c9a997d26b4!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1711202450000!5m2!1sja!2sjp" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="http://googleusercontent.com/maps.google.com/9" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <section class="section reveal">
         <div class="qr-section">
-            <h2 class="section-title">ご参加方法</h2>
-            <p style="font-weight: 900; font-size: 16px; margin: 0;">公式LINEからのお申し込み</p>
-            <p style="font-size: 14px; font-weight: 700; color: #666; margin-top: 5px;">QRコード読み込みで友だち登録</p>
+            <h2 class="section-title">公式LINE</h2>
+            <p style="font-size: 14px; font-weight: 700; color: #333; margin: 0;">下のQRコードを読み取っていただき<br>友達追加をお願いします</p>
             <img src="IMG_2124.png" class="qr-img">
-            <p style="font-size: 15px; font-weight: 900; margin-top: 5px; color: #333;">追加後、トーク画面で<br><span style="color:var(--red); font-size: 1.3em;">「体験」</span>とお送りください</p>
+            <p style="font-size: 14px; font-weight: 700; color: #333; margin-top: 10px;">もしくは、下の友達追加ボタンより<br>友達追加していただき</p>
+            <p style="font-size: 16px; font-weight: 900; color: var(--red); margin-top: 5px;">「体験」または「質問」</p>
+            <p style="font-size: 14px; font-weight: 700; color: #333; margin-top: 0;">とお送りください</p>
         </div>
     </section>
 
-    <div class="bg-overlay-section" style="min-height: 300px;">
+    <div class="bg-overlay-section" style="min-height: 350px;">
         <img src="IMG_4224.png" class="bg-image">
-        <div class="content-on-bg" style="padding: 60px 24px;">
-            <p style="font-size: 17px; font-weight: 900; color: #222; line-height: 2.2; margin: 0;">
-                身近には感じにくいかもしれません。<br>ですが、数字ははっきりと表れています。<br><br>
-                <span style="color: var(--red); font-size: 1.1em; border-bottom: 2px solid var(--red); font-weight: 900;">ただ、まだ順番がきていないだけなのです。</span>
+        <div class="content-on-bg" style="padding: 40px 24px;">
+            <p style="font-size: 16px; font-weight: 900; color: #222; line-height: 2; margin: 0; text-align: left;">
+                身近にはまだ感じにくい問題かも知れません。<br>ですが数字は証明しています。<br><br>
+                身近ではないと感じるのは、まだ順番が回ってきていないだけです。<br><br>
+                <span style="color: var(--red); font-size: 1.1em; border-bottom: 2px solid var(--red);">何かある前に準備をしましょう。</span><br>
+                それは、増やす知識と守る知恵です。
             </p>
         </div>
     </div>
