@@ -8,19 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* --- デザインシステム（Gemini Premium Navy & Gold） --- */
+/* --- 正式ブランドカラーの厳密な定義 --- */
 :root {
-  --main-blue: #001F3F;       /* 深みのあるサファイアブルー */
-  --accent-gold: #C5A059;     /* 上品なシャンパンゴールド */
-  --premium-white: #FAF9F6;   /* 質感のある白 */
-  --text-dark: #333333;       /* 可読性を重視したグレー */
+  --main-blue: #1E5BB8;      /* メイン：全体の軸 */
+  --sub-blue: #163E7A;       /* サブ：高級感・締め・濃淡 */
+  --accent-gold: #D4AF37;    /* ゴールド：枠・強調・信頼感 */
+  --text-dark: #333333;
 }
 
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  background: var(--main-blue);
-  background: linear-gradient(180deg, #001A35 0%, var(--main-blue) 100%);
+  background-color: var(--main-blue);
+  /* メインブルーからサブブルーへのグラデーションで高級感を演出 */
+  background: linear-gradient(180deg, var(--main-blue) 0%, var(--sub-blue) 100%);
   color: #fff;
   padding-bottom: 100px;
   line-height: 1.8;
@@ -31,7 +32,6 @@ body {
 .hero {
   text-align: center;
   padding: 80px 20px 60px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 100%);
 }
 
 .hero-header {
@@ -50,7 +50,6 @@ body {
   font-size: 26px;
   font-weight: bold;
   letter-spacing: 0.08em;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .formula {
@@ -63,28 +62,26 @@ body {
   font-size: 46px;
   color: var(--accent-gold);
   margin-top: 15px;
-  text-shadow: 0 0 12px rgba(197, 160, 89, 0.5);
-  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
-/* ボタン */
+/* ボタン（サブブルー背景 × ゴールド枠） */
 .btn-common {
   display: flex;
-  background: linear-gradient(135deg, #003366 0%, var(--main-blue) 100%);
+  background-color: var(--sub-blue);
   color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
+  border: 2px solid var(--accent-gold);
   border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  letter-spacing: 0.05em;
 }
 
 .btn-common:active {
-  transform: scale(0.96) translateY(2px);
+  transform: scale(0.96);
 }
 
 .btn {
@@ -95,13 +92,13 @@ body {
   font-size: 18px;
 }
 
-/* スライダー */
+/* スライダー（ゴールドの上下枠） */
 .slider {
   width: 100%;
   overflow: hidden;
   background: #fff;
-  border-top: 2px solid var(--accent-gold);
-  border-bottom: 2px solid var(--accent-gold);
+  border-top: 3px solid var(--accent-gold);
+  border-bottom: 3px solid var(--accent-gold);
 }
 
 .slide-track {
@@ -116,19 +113,19 @@ body {
   flex-shrink: 0;
 }
 
-/* セクション設定 */
+/* セクション */
 .section {
   padding: 80px 20px;
   text-align: center;
 }
 
 .section-alt {
-  background: rgba(255,255,255,0.04);
+  background: rgba(22, 62, 122, 0.5); /* サブブルーを活用した背景 */
 }
 
 .section h2 {
   font-size: 28px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   position: relative;
   display: inline-block;
 }
@@ -137,26 +134,38 @@ body {
   content: "";
   display: block;
   width: 60px;
-  height: 2px;
+  height: 3px;
   background: var(--accent-gold);
   margin: 15px auto 0;
 }
 
-/* 洗練されたカードデザイン */
+/* カード（白背景・ゴールド左枠） */
 .card {
   background: #fff;
   color: var(--text-dark);
-  border-radius: 15px;
+  border-radius: 12px;
   padding: 35px 25px;
   margin: 25px auto;
   width: 90%;
   max-width: 550px;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  border-left: 6px solid var(--accent-gold);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  border-left: 8px solid var(--accent-gold);
   box-sizing: border-box;
-  text-align: center;
+}
+
+/* 案内用カード（マンション・エレベーター強調） */
+.guide-card {
+  background: var(--sub-blue);
+  color: #fff;
+  border: 2px solid var(--accent-gold);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 550px;
+  font-size: 18px;
 }
 
 .card-highlight {
@@ -164,30 +173,20 @@ body {
   font-size: 26px;
   display: block;
   margin-top: 10px;
-  letter-spacing: 0.05em;
 }
 
-/* 画像と地図 */
-.compare-img {
-  width: 90%;
-  max-width: 550px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
+/* 地図 */
 .map-container {
   width: 90%;
   max-width: 550px;
   margin: 30px auto;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border: 2px solid var(--accent-gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border: 3px solid var(--accent-gold);
 }
 
-/* フローティングLINEボタン */
+/* フローティングボタン */
 .floating-btn {
   position: fixed;
   bottom: 20px;
@@ -198,18 +197,12 @@ body {
   padding: 20px;
   font-size: 18px;
   z-index: 9999;
-  animation: floaty 3s ease-in-out infinite, shine 3s infinite;
+  animation: floaty 3s ease-in-out infinite;
 }
 
 @keyframes floaty {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
-}
-
-@keyframes shine {
-  0% { box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4); }
-  50% { box-shadow: 0 6px 30px rgba(197, 160, 89, 0.7); }
-  100% { box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4); }
+  0%, 100% { transform: translateX(-50%) translateY(0); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); }
+  50% { transform: translateX(-50%) translateY(-10px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6); }
 }
 </style>
 </head>
@@ -258,41 +251,24 @@ body {
 </div>
 
 <div class="section">
-  <h2>運営について</h2>
-  <div class="card">金融機関の営業ではありません<br>販売や勧誘は一切ありません</div>
-  <div class="card">投資の判断は<br>必ずご自身でしていただきます</div>
-</div>
-
-<div class="section section-alt">
-  <h2>料金について</h2>
-  <div class="card">
-    <span style="font-size: 16px; color: #666; font-weight: normal;">週1回 ＋ 相談し放題</span><br>
-    月額 22,000円
-  </div>
-  <div class="card" style="font-size: 18px;">
-    一般的な講座は1回で終了ですが…<br><br>
-    当サロンは毎週継続して学べ、<br>
-    <span style="color: #e64a19; font-weight: bold;">いつでも何度でも相談可能！</span><br>
-    1回あたり約5,500円で<br>
-    安心して続けられます。
-  </div>
-  <img src="IMG_4157.png" class="compare-img">
-  <img src="IMG_4156.png" class="compare-img">
-</div>
-
-<div class="section">
   <h2>開催場所</h2>
   <div class="card">
     守恒みらいホール<br>
-    <span style="font-size: 17px; font-weight: normal; color: #666; display: block; margin-top: 10px;">
+    <span style="font-size: 16px; font-weight: normal; color: #666; display: block; margin-top: 10px;">
       福岡県北九州市小倉南区守恒本町2丁目2-11 <br>
-      <strong>3〜4階</strong>
+      サン・ラポール守恒 <strong>3〜4階</strong>
     </span>
   </div>
+
+  <div class="guide-card">
+    🏢 <strong>マンション内エレベーター完備</strong><br>
+    エレベーターで直接3階または4階へお越しいただけます。足腰に不安がある方もご安心ください。
+  </div>
+
   <div class="map-container">
     <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.549226532884!2d130.8763076763406!3d33.82396112906801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c6d5b080c13f%3A0xcb77d8d66b776996!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1715000000000!5m2!1sja!2sjp" 
-      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.717647248107!2d130.87522547634423!3d33.821495429315344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c6d5b080c13f%3A0xcb77d8d66b776996!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1715671234567!5m2!1sja!2sjp" 
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
     </iframe>
   </div>
 </div>
@@ -306,8 +282,8 @@ body {
     小さな一歩が、<br>
     これからの大きな安心につながります。
   </div>
-  <img src="IMG_2124.png" style="width:220px; margin:30px auto; display:block; border: 4px solid #fff; border-radius: 15px;">
-  <p style="font-size: 14px; opacity: 0.7; text-align: center;">※金融商品の販売・勧誘は一切ありません</p>
+  <img src="IMG_2124.png" style="width:220px; margin:30px auto; display:block; border: 4px solid #fff; border-radius: 12px;">
+  <p style="font-size: 14px; opacity: 0.8; text-align: center;">※金融商品の販売・勧誘は一切ありません</p>
 </div>
 
 <a href="https://lin.ee/n37s4pB" class="btn-common floating-btn" target="_blank">
