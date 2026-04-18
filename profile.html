@@ -16,6 +16,7 @@ body{
   padding-bottom:120px;
 }
 
+/* ヒーロー */
 .hero{
   text-align:center;
   padding:60px 20px 40px;
@@ -27,11 +28,17 @@ body{
   font-weight:bold;
 }
 
+/* セクション */
 .section{
   padding:60px 20px;
+  text-align:left;
+}
+
+.section h2{
   text-align:center;
 }
 
+/* カード（🔥完全安定版） */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -39,20 +46,22 @@ body{
   padding:22px;
   margin:15px auto;
   width:90%;
-  max-width:22em; /* 🔥ここが核心（折れ位置固定） */
+  max-width:22em;
+
   font-size:18px;
-  line-height:1.9;
+  line-height:1.7;
   font-weight:500;
-  text-wrap:balance; /* 🔥自然改行 */
+
+  text-align:left;
+
+  word-break:keep-all;
+  overflow-wrap:break-word;
 }
 
+/* 強調 */
 .card-main{
   font-size:20px;
   font-weight:bold;
-}
-
-.left{
-  text-align:left;
 }
 
 .highlight{
@@ -60,6 +69,7 @@ body{
   font-weight:bold;
 }
 
+/* 画像 */
 .profile-img{
   width:220px;
   height:auto;
@@ -68,6 +78,7 @@ body{
   border-radius:12px;
 }
 
+/* ボタン */
 .btn{
   display:flex;
   width:90%;
@@ -85,6 +96,17 @@ body{
   justify-content:center;
 }
 
+/* リスト */
+.card ul{
+  padding-left:20px;
+  margin-top:10px;
+}
+
+.card li{
+  margin-bottom:6px;
+}
+
+/* フローティングボタン */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -117,16 +139,6 @@ body{
 @keyframes pulse{
   0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
   50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
-}
-
-/* 🔥リスト整形 */
-.card ul{
-  padding-left:20px;
-  margin-top:10px;
-}
-
-.card li{
-  margin-bottom:6px;
 }
 </style>
 </head>
@@ -188,12 +200,10 @@ body{
     数字だけでなく、<span class="highlight">人の不安や想いに寄り添うこと</span>を大切にしています。
   </div>
 
-  <div class="card left">
-    <p>【バックアップ体制】</p>
+  <div class="card">
+    【バックアップ体制】
 
-    <p>
-      当サロンでは、必要に応じて専門家やスポンサー様、お取引先様と提携しています。
-    </p>
+    当サロンでは、必要に応じて専門家やスポンサー様、お取引先様と提携しています。
 
     <ul>
       <li>税理士法人松本会計（当社顧問税理士事務所）</li>
