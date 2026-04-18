@@ -8,132 +8,129 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* --- デザインの根幹（変数） --- */
+/* --- デザインシステム（Gemini Premium Navy & Gold） --- */
 :root {
-  --main-blue: #001F3F;       /* 深みのあるネイビーブルー */
-  --accent-gold: #C5A059;     /* 上品なメタリックゴールド */
-  --premium-white: #FAF9F6;   /* ほんのり温かい白 */
-  --text-dark: #333333;       /* 可読性の高い濃いグレー */
+  --main-blue: #001F3F;       /* 深みのあるサファイアブルー */
+  --accent-gold: #C5A059;     /* 上品なシャンパンゴールド */
+  --premium-white: #FAF9F6;   /* 質感のある白 */
+  --text-dark: #333333;       /* 可読性を重視したグレー */
 }
 
-body{
-  margin:0;
-  font-family:"Noto Sans JP", sans-serif;
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
   background: var(--main-blue);
   background: linear-gradient(180deg, #001A35 0%, var(--main-blue) 100%);
   color: #fff;
-  padding-bottom: 80px; /* フローティングボタン用の余白 */
+  padding-bottom: 100px;
   line-height: 1.8;
   overflow-x: hidden;
 }
 
-/* --- ヒーローエリア（洗練された導入） --- */
-.hero{
-  text-align:center;
+/* ヒーローエリア */
+.hero {
+  text-align: center;
   padding: 80px 20px 60px;
   background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 100%);
 }
 
-.hero-header{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:40px;
+.hero-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
-.hero-header img{
-  width:60px; /* サイズアップ */
+.hero-header img {
+  width: 65px;
   margin-right: 15px;
 }
 
-.hero-title{
-  font-size: 26px; /* スマホでちょうどいいサイズ */
-  font-weight:bold;
+.hero-title {
+  font-size: 26px;
+  font-weight: bold;
   letter-spacing: 0.08em;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.formula{
-  font-size:20px;
+.formula {
+  font-size: 20px;
   margin-bottom: 40px;
 }
 
-.formula strong{
-  display:block;
-  font-size: 48px; /* 強調 */
+.formula strong {
+  display: block;
+  font-size: 46px;
   color: var(--accent-gold);
-  margin-top:15px;
-  text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
+  margin-top: 15px;
+  text-shadow: 0 0 12px rgba(197, 160, 89, 0.5);
   letter-spacing: 0.05em;
 }
 
-/* --- 共通ボタンスタイル（光沢と立体感） --- */
+/* ボタン */
 .btn-common {
-  display:flex;
+  display: flex;
   background: linear-gradient(135deg, #003366 0%, var(--main-blue) 100%);
-  color: var(--accent-gold); /* 文字をゴールドに */
-  border: 1px solid var(--accent-gold); /* ゴールドの枠線 */
-  border-radius:50px;
-  font-weight:bold;
-  text-decoration:none;
-  align-items:center;
-  justify-content:center;
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3); /* ゴールドの影 */
-  transition: transform 0.2s, box-shadow 0.2s;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  transition: all 0.3s ease;
   letter-spacing: 0.05em;
 }
 
 .btn-common:active {
-  transform: scale(0.97) translateY(2px);
-  box-shadow: 0 2px 8px rgba(197, 160, 89, 0.2);
+  transform: scale(0.96) translateY(2px);
 }
 
-.btn{
-  width:90%;
-  max-width:420px;
-  margin:0 auto;
-  padding:22px;
-  font-size:18px;
+.btn {
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 22px;
+  font-size: 18px;
 }
 
-/* --- スライダー（画面いっぱい） --- */
-.slider{
-  width:100%;
-  overflow:hidden;
+/* スライダー */
+.slider {
+  width: 100%;
+  overflow: hidden;
   background: #fff;
   border-top: 2px solid var(--accent-gold);
   border-bottom: 2px solid var(--accent-gold);
 }
 
-.slide-track{
-  display:flex;
+.slide-track {
+  display: flex;
 }
 
-.slide-track img{
-  width:100vw;
-  height: 56.25vw; /* 16:9の比率 */
+.slide-track img {
+  width: 100vw;
+  height: 56.25vw;
   max-height: 500px;
-  object-fit:cover;
-  flex-shrink:0;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
-/* --- セクション（広い余白） --- */
-.section{
+/* セクション設定 */
+.section {
   padding: 80px 20px;
-  text-align:center;
+  text-align: center;
 }
 
 .section-alt {
-  background: rgba(255,255,255,0.03); /* わずかな変化 */
+  background: rgba(255,255,255,0.04);
 }
 
-.section h2{
+.section h2 {
   font-size: 28px;
   margin-bottom: 50px;
-  color: #fff;
-  display: block;
-  text-align: center;
+  position: relative;
+  display: inline-block;
 }
 
 .section h2::after {
@@ -145,76 +142,74 @@ body{
   margin: 15px auto 0;
 }
 
-/* --- 洗練されたカード --- */
-.card{
+/* 洗練されたカードデザイン */
+.card {
   background: #fff;
   color: var(--text-dark);
-  border-radius: 15px; /* 丸みを少し大きく */
-  padding: 30px 25px; /* 余白を広く */
-  margin: 20px auto;
-  width:90%;
+  border-radius: 15px;
+  padding: 35px 25px;
+  margin: 25px auto;
+  width: 90%;
   max-width: 550px;
   font-size: 20px;
-  font-weight:bold;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* 影を柔らかく */
-  border-left: 6px solid var(--accent-gold); /* ゴールドのアクセント */
+  font-weight: bold;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border-left: 6px solid var(--accent-gold);
   box-sizing: border-box;
-  text-align:center;
+  text-align: center;
 }
 
-/* カード内の強調 */
 .card-highlight {
   color: var(--accent-gold);
-  font-size: 24px;
+  font-size: 26px;
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
   letter-spacing: 0.05em;
 }
 
-/* --- 画像の洗練 --- */
-.compare-img{
-  width:90%;
+/* 画像と地図 */
+.compare-img {
+  width: 90%;
   max-width: 550px;
   margin: 20px auto;
-  display:block;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  border: 1px solid rgba(255,255,255,0.1);
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
-/* --- マップの洗練 --- */
 .map-container {
-  width:90%;
+  width: 90%;
   max-width: 550px;
   margin: 30px auto;
   border-radius: 15px;
-  overflow:hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   border: 2px solid var(--accent-gold);
 }
 
-/* --- フローティングボタン（ z-indexとアニメーション） --- */
-.floating-btn{
-  position:fixed;
-  bottom: 15px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  max-width:420px;
+/* フローティングLINEボタン */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 420px;
   padding: 20px;
-  font-size:17px;
-  z-index: 1000; /* 最前面に */
-  animation: floaty 3s ease-in-out infinite, pulse 3s ease-in-out infinite;
+  font-size: 18px;
+  z-index: 9999;
+  animation: floaty 3s ease-in-out infinite, shine 3s infinite;
 }
 
-@keyframes floaty{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(-8px);}
+@keyframes floaty {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
 }
 
-@keyframes pulse{
-  0%,100%{box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);}
-  50%{box-shadow: 0 6px 25px rgba(197, 160, 89, 0.6);}
+@keyframes shine {
+  0% { box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4); }
+  50% { box-shadow: 0 6px 30px rgba(197, 160, 89, 0.7); }
+  100% { box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4); }
 }
 </style>
 </head>
@@ -224,9 +219,7 @@ body{
 <div class="hero">
   <div class="hero-header">
     <img src="ロゴ浮き.png" alt="ロゴ">
-    <div class="hero-title">
-      くらしとお金サロン<br>（小倉南校）
-    </div>
+    <div class="hero-title">くらしとお金サロン<br>（小倉南校）</div>
   </div>
 
   <div class="formula">
@@ -276,7 +269,7 @@ body{
     <span style="font-size: 16px; color: #666; font-weight: normal;">週1回 ＋ 相談し放題</span><br>
     月額 22,000円
   </div>
-  <div class="card" style="font-size: 18px; line-height: 1.6;">
+  <div class="card" style="font-size: 18px;">
     一般的な講座は1回で終了ですが…<br><br>
     当サロンは毎週継続して学べ、<br>
     <span style="color: #e64a19; font-weight: bold;">いつでも何度でも相談可能！</span><br>
@@ -291,11 +284,16 @@ body{
   <h2>開催場所</h2>
   <div class="card">
     守恒みらいホール<br>
-    <span style="font-size: 16px; font-weight: normal; color: #666;">北九州市小倉南区守恒</span>
+    <span style="font-size: 17px; font-weight: normal; color: #666; display: block; margin-top: 10px;">
+      福岡県北九州市小倉南区守恒本町2丁目2-11 <br>
+      <strong>3〜4階</strong>
+    </span>
   </div>
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.639316109919!2d130.865!3d33.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ5JzQ4LjAiTiAxMzDCsDUxJzU0LjAiRQ!5e0!3m2!1sja!2sjp!4v1610000000000!5m2!1sja!2sjp" 
-    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.549226532884!2d130.8763076763406!3d33.82396112906801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c6d5b080c13f%3A0xcb77d8d66b776996!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1715000000000!5m2!1sja!2sjp" 
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
   </div>
 </div>
 
@@ -308,7 +306,7 @@ body{
     小さな一歩が、<br>
     これからの大きな安心につながります。
   </div>
-  <img src="IMG_2124.png" style="width:200px; margin:30px auto; display:block; border: 4px solid #fff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+  <img src="IMG_2124.png" style="width:220px; margin:30px auto; display:block; border: 4px solid #fff; border-radius: 15px;">
   <p style="font-size: 14px; opacity: 0.7; text-align: center;">※金融商品の販売・勧誘は一切ありません</p>
 </div>
 
@@ -317,15 +315,14 @@ body{
 </a>
 
 <script>
-const track=document.getElementById("slideTrack");
-// 画像の読み込み完了を待ってからクローンを作成
+const track = document.getElementById("slideTrack");
 window.addEventListener('load', () => {
-  track.innerHTML+=track.innerHTML;
-  let x=0;
-  function slide(){
-    x+=0.7; // スピード
-    if(x>=track.scrollWidth/2){x=0;}
-    track.style.transform=`translateX(-${x}px)`;
+  track.innerHTML += track.innerHTML;
+  let x = 0;
+  function slide() {
+    x += 0.8;
+    if (x >= track.scrollWidth / 2) { x = 0; }
+    track.style.transform = `translateX(-${x}px)`;
     requestAnimationFrame(slide);
   }
   slide();
