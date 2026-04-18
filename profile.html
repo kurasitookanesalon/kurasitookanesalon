@@ -16,7 +16,6 @@ body{
   padding-bottom:120px;
 }
 
-/* ヒーロー */
 .hero{
   text-align:center;
   padding:60px 20px 40px;
@@ -28,17 +27,11 @@ body{
   font-weight:bold;
 }
 
-/* セクション */
 .section{
   padding:60px 20px;
-  text-align:left;
-}
-
-.section h2{
   text-align:center;
 }
 
-/* カード */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -47,24 +40,22 @@ body{
   margin:20px auto;
   width:90%;
   max-width:500px;
-
   font-size:17px;
   line-height:1.85;
   font-weight:500;
 
-  text-align:left;
-
   word-break:keep-all;
   line-break:strict;
-  overflow-wrap:break-word;
 }
 
-/* 固定 */
-.nowrap{
-  white-space:nowrap;
+.card-center{
+  text-align:center;
 }
 
-/* 強調 */
+.card-text{
+  text-align:left;
+}
+
 .card-main{
   font-size:19px;
   font-weight:bold;
@@ -75,16 +66,17 @@ body{
   font-weight:bold;
 }
 
-/* 画像 */
+.nowrap{
+  white-space:nowrap;
+}
+
 .profile-img{
   width:220px;
-  height:auto;
   margin:0 auto 20px;
   display:block;
   border-radius:12px;
 }
 
-/* ボタン */
 .btn{
   display:flex;
   width:90%;
@@ -92,7 +84,6 @@ body{
   margin:30px auto;
   background:#555;
   color:#fff;
-  text-align:center;
   padding:16px;
   border-radius:40px;
   font-size:16px;
@@ -102,17 +93,6 @@ body{
   justify-content:center;
 }
 
-/* リスト */
-.card ul{
-  padding-left:20px;
-  margin-top:12px;
-}
-
-.card li{
-  margin-bottom:8px;
-}
-
-/* フローティングボタン */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -131,20 +111,6 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-
-  animation:floaty 2.5s ease-in-out infinite,
-             pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes floaty{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(-6px);}
-}
-
-@keyframes pulse{
-  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
-  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
 }
 </style>
 </head>
@@ -162,62 +128,94 @@ body{
 
   <img src="IMG_3616.png" class="profile-img">
 
-  <div class="card card-main">
-    平松 広大（36歳）くらしとお金サロン代表
+  <div class="card card-center card-main">
+    平松 広大（36歳）<br>
+    くらしとお金サロン代表
   </div>
 
-  <div class="card">
-    福岡県北九州市小倉南区出身。地元で生まれ育ち、今もこの地域で活動しています。
+  <div class="card card-text">
+    福岡県北九州市小倉南区出身。地元で生まれ育ち、
+    今もこの地域で活動しています。
   </div>
 
-  <div class="card">
-    約15年間、飲食業界にて店長・エリア管理職・営業部長補佐・広報・商品開発・人事・マーケティングなどを経験しました。
+  <div class="card card-center">
+    約15年間、飲食業界で経験を積んできました
   </div>
 
-  <div class="card">
-    <span class="highlight">約<span class="nowrap">200店舗</span>・年商<span class="nowrap">約200億円</span>規模の西日本エリア</span>を営業部長補佐として統括・管理してきました。
+  <div class="card card-text">
+    店長・エリア管理職・営業部長補佐など、
+    幅広い役割を担当してきました。
   </div>
 
-  <div class="card">
-    これまでに関わってきた人数は、<span class="highlight">延べ<span class="nowrap">10,000名以上</span>のマネジメントを経験</span>しています。
+  <div class="card card-text">
+    広報・商品開発・人事・マーケティングにも
+    関わってきました。
   </div>
 
-  <div class="card">
-    人と向き合い、数字と向き合い、現場の課題を一つずつ解決してきました。
+  <div class="card card-center">
+    <span class="highlight">
+      約<span class="nowrap">200店舗</span><br>
+      年商<span class="nowrap">約200億円</span>規模
+    </span>
   </div>
 
-  <div class="card">
-    その後独立し、<span class="highlight">年商<span class="nowrap">約4億円</span>規模の店舗経営</span>を経験しました。
+  <div class="card card-text">
+    西日本エリアを営業部長補佐として、
+    統括・管理してきました。
   </div>
 
-  <div class="card">
-    金融業界出身ではなく、<span class="highlight">自身で学び、実践してきた立場</span>です。
+  <div class="card card-center">
+    <span class="highlight">
+      延べ<span class="nowrap">10,000名以上</span>
+    </span><br>
+    のマネジメントを経験
   </div>
 
-  <div class="card">
-    同じように悩み、考えてきた経験があるからこそ、皆様に寄り添えると考えています。
+  <div class="card card-text">
+    人と向き合い、数字と向き合い、
+    現場の課題を一つずつ解決してきました。
   </div>
 
-  <div class="card">
-    現在はFP3級技能士として、投資・事業を行いながらサロンを運営しています。
+  <div class="card card-center">
+    独立後、年商<span class="nowrap">約4億円</span>規模の
+    店舗経営を経験
   </div>
 
-  <div class="card">
-    数字だけでなく、<span class="highlight">人の不安や想いに寄り添うこと</span>を大切にしています。
+  <div class="card card-text">
+    金融業界出身ではなく、
+    自身で学び、実践してきた立場です。
   </div>
 
-  <div class="card">
-    【バックアップ体制】
+  <div class="card card-text">
+    同じように悩み、考えてきた経験があるからこそ、
+    皆様に寄り添えると考えています。
+  </div>
 
-    当サロンでは、必要に応じて専門家やスポンサー様、お取引先様と提携しています。
+  <div class="card card-center">
+    FP3級技能士として、
+    投資・事業を行いながら運営
+  </div>
 
-    <ul>
-      <li>税理士法人松本会計（当社顧問税理士事務所）</li>
-      <li>日本FP協会</li>
-      <li>山口フィナンシャルグループ 北九州銀行 守恒支店</li>
-      <li>北九州商工会議所 所属</li>
-      <li>日本政策金融公庫 北九州支店</li>
-    </ul>
+  <div class="card card-text">
+    数字だけでなく、
+    人の不安や想いに寄り添うことを大切にしています。
+  </div>
+
+  <div class="card card-center">
+    バックアップ体制
+  </div>
+
+  <div class="card card-text">
+    必要に応じて専門家・スポンサー様・
+    お取引先様と提携しています。
+  </div>
+
+  <div class="card card-text">
+    ・税理士法人松本会計<br>
+    ・日本FP協会<br>
+    ・北九州銀行 守恒支店<br>
+    ・北九州商工会議所<br>
+    ・日本政策金融公庫
   </div>
 
 </div>
