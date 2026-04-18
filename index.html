@@ -13,7 +13,7 @@ body{
   font-family:"Noto Sans JP",sans-serif;
   background:#1E5BB8;
   color:#fff;
-  padding-bottom:80px; /* ←ボタン分だけ確保 */
+  padding-bottom:0;
 }
 
 /* ヒーロー */
@@ -112,6 +112,7 @@ body{
   line-height:1.6;
 
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
@@ -119,9 +120,9 @@ body{
   white-space:pre-line;
 }
 
-/* 最後の余白詰め */
+/* 最後の余白 */
 .section:last-of-type{
-  padding-bottom:10px;
+  padding-bottom:40px;
 }
 
 /* 画像 */
