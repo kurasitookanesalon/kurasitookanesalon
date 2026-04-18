@@ -33,36 +33,35 @@ body{
 }
 
 .section h2{
-  text-align:center;
   font-size:26px;
   margin-bottom:30px;
 }
 
-/* 🔥改行制御 */
+/* カード共通 */
 .card{
   background:#fff;
   color:#1E5BB8;
   border-radius:20px;
   padding:22px;
   margin:20px auto;
-
   width:90%;
   max-width:500px;
-
   font-size:17px;
   line-height:1.85;
   font-weight:500;
 
-  text-align:left;
-
   word-break:keep-all;
   line-break:strict;
-  overflow-wrap:break-word;
 }
 
-/* 🔥単語固定 */
-.nowrap{
-  white-space:nowrap;
+/* 中央 */
+.card-center{
+  text-align:center;
+}
+
+/* 文章 */
+.card-text{
+  text-align:left;
 }
 
 .card-main{
@@ -75,6 +74,10 @@ body{
   font-weight:bold;
 }
 
+.nowrap{
+  white-space:nowrap;
+}
+
 .btn{
   display:flex;
   width:90%;
@@ -82,7 +85,6 @@ body{
   margin:30px auto;
   background:#555;
   color:#fff;
-  text-align:center;
   padding:16px;
   border-radius:40px;
   font-size:16px;
@@ -110,31 +112,6 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-
-  animation:floaty 2.5s ease-in-out infinite,
-             pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes floaty{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(-6px);}
-}
-
-@keyframes pulse{
-  0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.25);}
-  50%{box-shadow:0 12px 30px rgba(0,0,0,0.4);}
-}
-
-/* リスト */
-.card ul{
-  padding-left:20px;
-  margin-top:10px;
-  text-align:left;
-}
-
-.card li{
-  margin-bottom:8px;
 }
 </style>
 </head>
@@ -150,23 +127,29 @@ body{
 
 <div class="section">
 
-  <div class="card card-main">
-    <span class="highlight">お金と暮らしの不安を減らすための場所</span>です。
+  <div class="card card-center card-main">
+    お金と暮らしの不安を減らすための場所です
   </div>
 
-  <div class="card">
-    将来のお金や生活に不安を感じていませんか。日々の暮らしに関わる知識を整理しながら、これからの生活に向けた考え方を学びます。
+  <div class="card card-text">
+    将来のお金や生活に、不安を感じていませんか。
   </div>
 
-  <div class="card">
-    難しい言葉を使わず、ゆっくり丁寧に理解することで、不安を減らし、安心して考えられる力を身につけます。
+  <div class="card card-text">
+    日々の暮らしに関わる知識を整理しながら、
+    これからの生活に向けた考え方を学びます。
   </div>
 
-  <div class="card">
-    <span class="highlight">少人数で安心して話せる環境</span>を大切にしています。
+  <div class="card card-text">
+    難しい言葉を使わず、ゆっくり丁寧に理解することで、
+    安心して考えられる力を身につけます。
   </div>
 
-  <div class="card">
+  <div class="card card-center">
+    少人数で安心して話せる環境です
+  </div>
+
+  <div class="card card-center">
     ※金融商品の販売・勧誘は一切行っておりません
   </div>
 
@@ -175,16 +158,22 @@ body{
 <div class="section">
   <h2>開催内容</h2>
 
-  <div class="card">
-    週1回（120分）守恒みらいホールで開催しています。
+  <div class="card card-center">
+    週1回（120分）開催
   </div>
 
-  <div class="card">
-    前半は講義（60分）、後半は座談会（60分）です。
+  <div class="card card-text">
+    守恒みらいホールで実施しています。
   </div>
 
-  <div class="card">
-    基礎から順番に学び、分からないことを共有しながら理解を深めます。
+  <div class="card card-text">
+    前半は講義（60分）、
+    後半は座談会（60分）です。
+  </div>
+
+  <div class="card card-text">
+    基礎から順番に学び、
+    分からないことを共有しながら理解を深めます。
   </div>
 
 </div>
@@ -192,35 +181,36 @@ body{
 <div class="section">
   <h2>学べる内容</h2>
 
-  <div class="card">
-    <ul>
-      <li>生活に関わる基礎知識</li>
-      <li>家計の考え方</li>
-      <li>将来への備え</li>
-      <li>詐欺対策</li>
-      <li>安心して暮らすための知識</li>
-    </ul>
+  <div class="card card-center">
+    生活・家計・将来・詐欺対策など
   </div>
+
 </div>
 
 <div class="section">
   <h2>特徴</h2>
 
-  <div class="card">
-    <ul>
-      <li>少人数制</li>
-      <li>地域コミュニティ</li>
-      <li>安心して話せる環境</li>
-    </ul>
+  <div class="card card-center">
+    少人数制
   </div>
+
+  <div class="card card-center">
+    地域コミュニティ
+  </div>
+
+  <div class="card card-center">
+    安心して話せる環境
+  </div>
+
 </div>
 
 <div class="section">
   <h2>料金</h2>
 
-  <div class="card card-main">
+  <div class="card card-center card-main">
     月額 <span class="nowrap">22,000円（税込）</span>
   </div>
+
 </div>
 
 <div class="section">
