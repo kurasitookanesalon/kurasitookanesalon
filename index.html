@@ -11,7 +11,7 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.5; overflow-x: hidden; }
 
-        /* 背景画像：文字の下に透かす設定 */
+        /* 背景画像設定：文字の邪魔をしないよう不透明度を調整 */
         .bg-overlay-section { 
             position: relative; width: 100%; min-height: 380px; 
             display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -19,7 +19,7 @@
         }
         .bg-image { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; opacity: 0.25; z-index: 1; 
+            object-fit: cover; opacity: 0.2; z-index: 1; 
         }
         .content-on-bg { position: relative; z-index: 2; width: 100%; text-align: center; padding: 40px 24px; }
 
@@ -40,18 +40,16 @@
         .section { padding: 45px 24px; max-width: 650px; margin: 0 auto; border-bottom: 1px solid #f2f2f2; }
         .section-title { text-align: center; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin-bottom: 25px; font-family: 'Noto Serif JP', serif; }
 
-        /* 不案（現実）フェーズ：項目を最大化 */
-        .reality-card { border: 3px solid var(--red); background: #fff; border-radius: 12px; padding: 18px; margin-bottom: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .stat-val { font-size: 19px; font-weight: 900; color: var(--red); display: block; line-height: 1.2; }
-        .stat-desc { font-size: 13px; font-weight: 700; color: #555; margin-top: 5px; }
+        /* 不安フェーズ：1日換算のリアルな数字 */
+        .reality-card { border: 2.5px solid var(--red); background: #fff; border-radius: 10px; padding: 16px; margin-bottom: 12px; text-align: center; }
+        .stat-val { font-size: 18px; font-weight: 900; color: var(--red); display: block; line-height: 1.4; }
+        .stat-desc { font-size: 12px; font-weight: 700; color: #555; margin-top: 5px; }
 
-        /* 解決フェーズ */
         .solution-box { background: #f0f5ff; border: 2.5px solid var(--main-blue); border-radius: 15px; padding: 20px; margin-bottom: 15px; text-align: left; }
         .solution-title { color: var(--sub-blue); font-weight: 900; font-size: 18px; margin-bottom: 10px; display: flex; align-items: center; }
         .solution-title i { color: var(--main-blue); margin-right: 12px; }
         .solution-text { font-size: 14px; font-weight: 700; line-height: 1.6; color: #444; margin: 0; }
 
-        /* 料金・金額フェーズ */
         .price-area { border: 2.5px solid var(--sub-blue); border-radius: 20px; padding: 30px 20px; text-align: center; background: #f9fbff; }
         .price-main { font-size: 32px; font-weight: 900; color: var(--sub-blue); display: block; }
         .price-detail { font-weight: bold; color: #444; margin: 10px 0; font-size: 16px; }
@@ -65,7 +63,7 @@
 
         .map-wrapper { border: 5px solid var(--sub-blue); border-radius: 18px; overflow: hidden; height: 320px; margin-top: 15px; }
         .qr-section { text-align: center; background: #f8f9fa; padding: 40px 22px; border-radius: 25px; border: 1px solid #eee; }
-        .qr-img { width: 160px; height: auto; margin: 15px 0; background: #fff; padding: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .qr-img { width: 160px; height: auto; margin: 15px 0; background: #fff; padding: 10px; border-radius: 12px; }
 
         .btn-line-fix { position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 64px; background: #06C755; color: #fff; border-radius: 32px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 18px; z-index: 9999; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
         footer { text-align: center; padding: 40px 20px 120px; color: #999; font-size: 12px; }
@@ -94,16 +92,24 @@
     <section class="section">
         <h2 class="reveal section-title">知らないだけで起きている現実</h2>
         <div class="reveal reality-card">
-            <span class="stat-val">【価値の暴落】今の100万円 ＝ 20年後の50万円</span>
-            <p class="stat-desc">猛烈なインフレにより、預けているだけの「金額」の価値は半分に目減りします。</p>
+            <span class="stat-val">【インフレ】1日あたり 〇〇円の目減り</span>
+            <p class="stat-desc">猛烈な勢いで、あなたのお金の価値が毎日静かに失われています。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【資産凍結】認知症による資産凍結 約2,000万円</span>
-            <p class="stat-desc">対策が遅れると、本人さえ自分のお金を使えなくなる「金額の壁」が立ちはだかります。</p>
+            <span class="stat-val">【詐欺被害】1日あたり 約1.2億円</span>
+            <p class="stat-desc">「自分だけは」と思っている人が、今この瞬間も被害に遭っています。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【特殊詐欺】1日あたり被害額 約1.2億円</span>
-            <p class="stat-desc">「自分は大丈夫」と思っている人ほど、最新の手口で大切な資産を奪われています。</p>
+            <span class="stat-val">【認知症】1日あたり 約800人が新規診断</span>
+            <p class="stat-desc">明日は我が身。資産が凍結され、誰にも動かせなくなるリスクです。</p>
+        </div>
+        <div class="reveal reality-card">
+            <span class="stat-val">【相続裁判】1日あたり 約〇〇件の争い</span>
+            <p class="stat-desc">仲の良かった家族が、お金をきっかけにバラバラになる悲劇。</p>
+        </div>
+        <div class="reveal reality-card">
+            <span class="stat-val">【孤独死】1日あたり 約80人</span>
+            <p class="stat-desc">誰とも繋がらず、独りで最期を迎える。地域の繋がりの欠如が招く現実。</p>
         </div>
     </section>
 
@@ -151,7 +157,7 @@
         <p style="text-align:center; font-size: 20px; font-weight: 900; color: var(--sub-blue); margin: 0;">守恒みらいホール</p>
         <p style="text-align:center; color: var(--red); font-weight: 900; margin-top: 5px;">＼ サンリブもりつねの目の前です ／</p>
         <div class="map-wrapper">
-            <iframe src="http://googleusercontent.com/maps.google.com/6" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.156553259858!2d130.87569141151664!3d33.83404457312952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf4202279769%3A0xc6657c9a997d26b4!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1711202450000!5m2!1sja!2sjp" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
