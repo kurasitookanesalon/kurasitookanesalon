@@ -25,8 +25,8 @@
             color: #fff;
             line-height: 1.8;
             overflow-x: hidden;
-            /* ボタン被り防止のための大きな余白 */
-            padding-bottom: 220px;
+            /* 余計なスクロールを防ぐため、LINEボタン分のみ確保 */
+            padding-bottom: 120px; 
         }
 
         .reveal {
@@ -105,7 +105,7 @@
             display: flex;
             width: 90%;
             max-width: 300px;
-            margin: 40px auto;
+            margin: 40px auto 20px;
             background: rgba(255,255,255,0.1);
             color: #fff;
             padding: 16px;
@@ -128,9 +128,10 @@
 
         footer { 
             text-align: center; 
-            padding: 20px 20px 100px; /* 下側にしっかり余白 */
+            padding: 20px 20px 20px; 
             color: rgba(255,255,255,0.6); 
             font-size: 12px; 
+            position: relative;
         }
     </style>
 </head>
@@ -148,7 +149,10 @@
     </div>
 
     <div class="card card-text">
-        将来のお金や生活に、不安を感じていませんか。<br><br>
+        将来のお金や生活に、不安を感じていませんか。
+    </div>
+
+    <div class="card card-text">
         日々の暮らしに関わる知識を整理しながら、これからの生活に向けた考え方を学びます。
     </div>
 
@@ -160,7 +164,7 @@
         少人数で安心して話せる環境です
     </div>
 
-    <div class="card card-center" style="font-size: 14px; color: #888; background: #f9f9f9; border-radius: 10px;">
+    <div class="card card-center" style="font-size: 14px; color: #888; padding: 15px; background: #f9f9f9; border-radius: 10px;">
         ※金融商品の販売・勧誘は一切行っておりません
     </div>
 </div>
@@ -171,7 +175,9 @@
         週1回（120分）開催
     </div>
     <div class="card card-text">
-        守恒みらいホールで開催しています。<br><br>
+        守恒みらいホールで開催しています。
+    </div>
+    <div class="card card-text">
         前半は講義（60分）、後半は座談会（60分）です。
     </div>
     <div class="card card-text">
@@ -217,11 +223,11 @@
     </a>
 </div>
 
+<footer>© くらしとお金サロン All Rights Reserved.</footer>
+
 <a href="https://lin.ee/n37s4pB" class="btn-line" target="_blank">
     <i class="fa-brands fa-line" style="font-size:28px; margin-right:10px;"></i> 無料体験・質問はこちら
 </a>
-
-<footer>© くらしとお金サロン All Rights Reserved.</footer>
 
 <script>
     const observer = new IntersectionObserver((entries) => {
