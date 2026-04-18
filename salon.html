@@ -7,14 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-pale: #f8fafc; }
+        :root { --main-blue: #1E5BB8; --sub-blue: #163E7A; --gold: #B89436; --red: #E50012; --bg-pale: #f0f4f9; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: #fff; color: #333; line-height: 1.9; overflow-x: hidden; }
 
-        /* 背景装飾：信頼感のある抽象シェイプ */
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 90% 10%, rgba(30,91,184,0.03) 0%, transparent 40%), radial-gradient(circle at 10% 90%, rgba(184,148,54,0.03) 0%, transparent 40%); z-index: -1; }
-
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 1.0s ease-out; }
+        .reveal { opacity: 0; transform: translateY(15px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         header { padding: 30px 0 10px; text-align: center; }
@@ -22,43 +19,38 @@
 
         .container { max-width: 650px; margin: 0 auto; padding: 0 24px 180px; }
         
-        /* 導入文：危機感とベネフィット */
-        .intro-section { text-align: center; margin-top: 40px; margin-bottom: 60px; }
-        .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); margin-bottom: 20px; font-weight: 900; }
-        .intro-p { font-size: 17px; font-weight: 700; color: #444; line-height: 1.7; }
+        .page-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--sub-blue); text-align: center; margin: 40px 0 30px; font-weight: 900; }
 
-        /* 信頼の証：場所と実績 */
-        .trust-box { background: var(--bg-pale); border-radius: 15px; padding: 30px; margin-bottom: 50px; border: 1.5px solid #e2e8f0; }
-        .trust-item { display: flex; align-items: flex-start; margin-bottom: 20px; }
-        .trust-item i { color: var(--main-blue); font-size: 20px; width: 30px; margin-top: 5px; }
-        .trust-item div { font-weight: 700; font-size: 16px; }
-        .red-note { color: var(--red); font-size: 13px; font-weight: 700; display: block; margin-top: 8px; }
+        /* 信頼の基本情報 */
+        .trust-box { border: 1.5px solid #e0e6ed; border-radius: 12px; padding: 25px; margin-bottom: 50px; background: #fff; }
+        .trust-item { display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 15px; }
+        .trust-item i { color: var(--main-blue); width: 28px; margin-top: 5px; }
+        .trust-item div { font-weight: 700; }
+        .red-note { color: var(--red); font-size: 13px; font-weight: 700; display: block; margin-top: 5px; }
 
-        /* 安心のカリキュラム：スクショ内容を完全強化 */
-        .section-h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; color: var(--sub-blue); text-align: center; margin-bottom: 35px; font-weight: 900; position: relative; padding-bottom: 15px; }
-        .section-h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--gold); }
-
-        .curriculum-card { background: #fff; border: 2px solid var(--gold); border-radius: 20px; padding: 35px 25px; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(184,148,54,0.1); }
+        /* カリキュラム：情報の復元と整理 */
+        .section-h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--sub-blue); text-align: center; margin: 60px 0 30px; font-weight: 900; }
+        
+        .curriculum-card { border: 2.5px solid var(--gold); border-radius: 15px; padding: 30px 20px; margin-bottom: 60px; }
         .curriculum-list { list-style: none; padding: 0; margin: 0; }
-        .curriculum-list li { position: relative; padding-left: 45px; margin-bottom: 30px; }
-        .curriculum-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 0; color: var(--gold); font-size: 26px; }
-        .curriculum-list b { display: block; font-size: 18px; color: var(--sub-blue); margin-bottom: 5px; letter-spacing: 0.02em; }
-        .curriculum-list p { font-size: 15px; margin: 0; color: #555; line-height: 1.6; }
+        .curriculum-list li { position: relative; padding-left: 35px; margin-bottom: 25px; }
+        .curriculum-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 0; color: var(--red); font-size: 20px; }
+        .curriculum-list b { display: block; font-size: 17px; color: #333; margin-bottom: 4px; }
+        .curriculum-list p { font-size: 14px; margin: 0; color: #666; line-height: 1.6; }
 
-        /* なぜ当サロンなのか（他との違い） */
-        .value-box { background: var(--sub-blue); color: #fff; border-radius: 20px; padding: 40px 25px; margin-bottom: 60px; }
-        .value-box h3 { font-family: 'Noto Serif JP', serif; font-size: 22px; text-align: center; margin-bottom: 30px; color: #fff; }
-        .value-item { border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px; margin-bottom: 20px; }
-        .value-item:last-child { border-bottom: none; }
-        .value-item b { font-size: 18px; color: #dcfd8b; display: block; margin-bottom: 10px; }
-        .value-item p { font-size: 15px; margin: 0; opacity: 0.9; }
+        /* 当サロンの強み：誠実な表現へ */
+        .strength-box { background: var(--bg-pale); border-radius: 15px; padding: 35px 25px; margin-bottom: 60px; }
+        .strength-item { margin-bottom: 25px; }
+        .strength-item:last-child { margin-bottom: 0; }
+        .strength-item b { font-size: 17px; color: var(--sub-blue); display: block; margin-bottom: 8px; border-left: 4px solid var(--gold); padding-left: 12px; }
+        .strength-item p { font-size: 14px; margin: 0; color: #444; padding-left: 16px; }
 
-        /* 会費と納得感 */
-        .price-area { text-align: center; border: 3px solid var(--sub-blue); border-radius: 20px; padding: 40px 20px; margin-bottom: 60px; }
-        .price-label { font-size: 16px; font-weight: 900; color: var(--sub-blue); margin-bottom: 10px; display: block; }
-        .price-main { font-size: 42px; font-weight: 900; color: var(--sub-blue); font-family: 'Noto Sans JP', sans-serif; }
-        .price-sub { font-size: 18px; color: var(--sub-blue); }
-        .price-reason { font-size: 14px; font-weight: 700; color: #666; margin-top: 20px; line-height: 1.6; text-align: left; background: #f0f4f9; padding: 15px; border-radius: 10px; }
+        /* 会費と補足 */
+        .price-area { text-align: center; border: 2px solid var(--sub-blue); border-radius: 15px; padding: 40px 20px; margin-bottom: 60px; }
+        .price-label { font-size: 15px; font-weight: 700; color: var(--sub-blue); margin-bottom: 5px; display: block; }
+        .price-main { font-size: 36px; font-weight: 900; color: var(--sub-blue); }
+        .price-sub { font-size: 16px; color: var(--sub-blue); }
+        .disclaimer-box { font-size: 13px; color: #666; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px; line-height: 1.7; }
 
         /* LINEボタン：ふわふわ浮遊 */
         @keyframes fuwafuwa {
@@ -89,7 +81,7 @@
         }
         .line-float-btn i { font-size: 28px; margin-right: 12px; }
 
-        .btn-back { display: block; width: 100%; max-width: 280px; margin: 80px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
+        .btn-back { display: block; width: 100%; max-width: 280px; margin: 60px auto 0; padding: 16px; border: 1.5px solid var(--sub-blue); color: var(--sub-blue); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -97,102 +89,86 @@
     <header><img src="ロゴ浮き.png" class="top-logo"></header>
 
     <div class="container">
-        
-        <div class="reveal intro-section">
-            <h1 class="page-title">サロンの内容</h1>
-            <p class="intro-p">
-                「なんとかなる」を「大丈夫」に変える。<br>
-                一生、お金と孤独に困らないための<br>
-                特別な120分を、共に過ごしませんか？
-            </p>
-        </div>
+        <h1 class="reveal page-title">サロンの内容</h1>
 
         <section class="reveal trust-box">
             <div class="trust-item">
                 <i class="fa-solid fa-location-dot"></i>
                 <div>
-                    北九州市小倉南区守恒本町2-2-11<br>
                     守恒みらいホール（サンリブ守恒 目の前）<br>
-                    <span style="font-size: 14px; font-weight: 500;">モノレール守恒駅から 徒歩3分</span>
+                    小倉南区守恒本町2-2-11<br>
+                    <span style="font-weight:500;">モノレール守恒駅から 徒歩3分</span>
                     <span class="red-note">※予約状況によりフロアが変更になる場合があります。</span>
                 </div>
             </div>
             <div class="trust-item">
-                <i class="fa-solid fa-clock"></i>
+                <i class="fa-solid fa-calendar-days"></i>
                 <div>毎週月曜日 9:00 〜 11:00</div>
             </div>
             <div class="trust-item" style="margin-bottom: 0;">
-                <i class="fa-solid fa-user-shield"></i>
-                <div>主宰：平松 広大（国家資格FP技能士）<br><span style="font-size: 14px; font-weight: 500;">金融商品の販売を一切行わない完全中立な立場</span></div>
+                <i class="fa-solid fa-user-check"></i>
+                <div>主宰：3級ファイナンシャル・プランニング技能士</div>
             </div>
         </section>
 
         <h2 class="reveal section-h2">安心のカリキュラム</h2>
         <section class="reveal curriculum-card">
-            <p style="font-size:15px; margin-bottom:30px; font-weight:700; text-align:center; color:var(--gold);">流行りの情報に惑わされず、本質を身につける</p>
             <ul class="curriculum-list">
                 <li>
-                    <b>家計の守り方：物価高を「知恵」で跳ね返す</b>
-                    <p>銀行に預けるだけでは資産が減る時代。<br>インフレに負けない、鉄壁の家計防衛術を伝授。</p>
+                    <b>家計の守り方：物価高に負けない資産の防御力</b>
+                    <p>インフレ時代の家計管理と、資産を減らさないための基礎知識を学びます。</p>
                 </li>
                 <li>
-                    <b>攻めの投資術：新NISAを「自分専用」の武器に</b>
-                    <p>流行りの銘柄ではなく、あなたの人生プランに最適な<br>新NISA・iDeCoの活用法を基礎から学びます。</p>
+                    <b>攻めの投資術：新NISA・iDeCoの活用法</b>
+                    <p>制度の仕組みを正しく理解し、ご自身に合った活用方法を検討します。</p>
                 </li>
                 <li>
-                    <b>防犯リテラシー：警察も教えない、資産を守る壁</b>
-                    <p>巧妙化する特殊詐欺。あなたと家族の大切な資産を<br>奪わせないための、情報の目利きを養います。</p>
+                    <b>防犯リテラシー：巧妙な詐欺から資産を守る知恵</b>
+                    <p>最新の詐欺手口を知り、被害を未然に防ぐための判断力を養います。</p>
                 </li>
                 <li>
-                    <b>将来の備え：後悔しない「終活」の正しい順序</b>
-                    <p>介護、施設、住まい。元気なうちに知っておくべき、<br>家族に負担をかけないための具体的な備え。</p>
+                    <b>将来の備え：介護・施設・終活の知識</b>
+                    <p>ご自身やご家族が将来困らないための、具体的な備えと選択肢を整理します。</p>
                 </li>
                 <li>
-                    <b>相続と家族：争いを防ぎ、想いを繋ぐ整理術</b>
-                    <p>トラブルを未然に防ぎ、大切な想いと資産を<br>円満に次世代へ繋ぐための本質的なコツ。</p>
+                    <b>相続と家族：円満に想いを繋ぐ整理術</b>
+                    <p>将来のトラブルを未然に防ぎ、大切な資産と想いを繋ぐコツを学びます。</p>
                 </li>
             </ul>
         </section>
 
-        <h2 class="reveal section-h2">なぜ、今入るべきなのか？</h2>
-        <section class="reveal value-box">
-            <div class="value-item">
-                <b>1. 100%中立。あなただけの「味方」です</b>
-                <p>銀行や証券会社と違い、商品の販売はしません。<br>平松広大は「本当のこと」しか言いません。</p>
+        <h2 class="reveal section-h2">当サロンの特長</h2>
+        <section class="reveal strength-box">
+            <div class="strength-item">
+                <b>1. いつでも、どんなことでも相談できる安心</b>
+                <p>日々の生活の中での疑問や不安を、その場ですぐに相談いただけます。継続的に関わるからこそできる、お一人おひとりに寄り添ったサポートが強みです。</p>
             </div>
-            <div class="value-item">
-                <b>2. 「地域の顧問FP」を月額で雇う安心</b>
-                <p>個人的な悩みも、いつでもその場で直接相談可能。<br>ネットにはない、あなた専用の答えが出ます。</p>
+            <div class="strength-item">
+                <b>2. 中立・公正な立場を徹底</b>
+                <p>金融商品の販売や特定の投資勧誘は一切行いません。利害関係のない第三者の立場から、客観的な情報を提供いたします。</p>
             </div>
-            <div class="value-item">
-                <b>3. 孤独を防ぐ「一生モノ」の繋がり</b>
-                <p>同じ地域の仲間と顔の見える関係を築くこと。<br>それ自体が、将来に対する最大のリスク管理です。</p>
+            <div class="strength-item">
+                <b>3. 専門外の課題にも誠実に対応</b>
+                <p>税務や法務など、私共の対応範囲を超える専門的な課題については、信頼できる士業の方々を適切にご紹介し、解決への道筋を共に考えます。</p>
             </div>
         </section>
 
         <section class="reveal price-area">
-            <span class="price-label">入会金なし・サロン月会費</span>
-            <div>
-                <span class="price-main">22,000</span>
-                <span class="price-sub">円（税込）</span>
-            </div>
-            <div class="price-reason">
-                <b>この22,000円は、未来への投資です。</b><br>
-                ・1回の投資の失敗や詐欺で失う「数百万円」を防ぐ。<br>
-                ・本来1回数万円する個別相談が、何度でも可能。<br>
-                ・「明日、何が起きても大丈夫」という、ぐっすり眠れる安心感。<br>
-                <b>まずは無料体験で、その価値を体感してください。</b>
+            <span class="price-label">サロン月会費</span>
+            <div><span class="price-main">22,000</span><span class="price-sub">円（税込）</span></div>
+            <div class="disclaimer-box">
+                ※入会金・教材費などは不要です。<br>
+                ※当サロンは教育とコミュニティを目的としており、投資の最終判断はご自身で行っていただきます。<br>
+                ※「地域の顧問FP」として、生活全般の安心をサポートいたします。
             </div>
         </section>
 
-        <div class="reveal">
-            <a href="index.html" class="btn-back">トップページへ戻る</a>
-        </div>
+        <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る</a></div>
     </div>
 
     <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
-        <span>LINEで無料体験・入会申込</span>
+        <span>LINEで無料体験・ご相談</span>
     </a>
 
     <script>
