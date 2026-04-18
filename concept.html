@@ -38,7 +38,7 @@ body{
   margin-bottom:30px;
 }
 
-/* 🔥完全安定 */
+/* 🔥改行制御のみ修正 */
 .card{
   background:#fff;
   color:#1E5BB8;
@@ -54,8 +54,14 @@ body{
 
   text-align:left;
 
-  word-break:normal;
+  word-break:keep-all;
+  line-break:strict;
   overflow-wrap:break-word;
+}
+
+/* 固定（今回は未使用だが統一） */
+.nowrap{
+  white-space:nowrap;
 }
 
 .card-main{
