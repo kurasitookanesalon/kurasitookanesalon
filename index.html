@@ -15,24 +15,19 @@
             position: relative; width: 100%; min-height: 380px; 
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             overflow: hidden;
-            background-color: #000; /* 文字の視認性確保の土台 */
         }
         
-        /* 背景画像の修正：
-           1. opacityを0.85にアップしてお城をはっきり見せる
-           2. object-positionを左寄りに調整し、お城をメインに、橋をサブ（右側へ）に配置
-        */
+        /* 修正1：お城の濃度を0.85 -> 0.6へ少し薄く */
         .bg-image { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             object-fit: cover; 
-            object-position: 20% center; 
-            opacity: 0.85; 
+            object-position: 20% center; /* お城メイン、橋をサブの配置を維持 */
+            opacity: 0.6; 
             z-index: 1; 
         }
 
         .content-on-bg { 
             position: relative; z-index: 2; width: 100%; text-align: center; padding: 40px 24px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.5); /* 画像が濃いため文字の可読性を保持 */
         }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
@@ -75,8 +70,11 @@
         .qr-section { text-align: center; background: #f8f9fa; padding: 40px 22px; border-radius: 25px; border: 1px solid #eee; }
         .qr-img { width: 180px; height: auto; margin: 15px 0; background: #fff; padding: 12px; border-radius: 15px; border: 1px solid #ddd; }
 
-        .final-card { background: rgba(255, 255, 255, 0.9); border: 3px solid var(--sub-blue); border-radius: 15px; padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .final-text { font-size: 18px; font-weight: 900; color: #111; line-height: 1.8; margin: 0; }
+        /* 最後のテキストスタイル：お城の上で直接読むための調整 */
+        .final-text { 
+            font-size: 18px; font-weight: 900; color: #111; line-height: 1.8; margin: 0;
+            text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.8); /* 可読性確保 */
+        }
 
         .btn-line-fix { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff; border-radius: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 19px; z-index: 9999; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
         footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; }
@@ -131,7 +129,7 @@
             <p class="stat-desc">一件あたり<span class="stat-highlight">数百万円の裁判費用</span>と長い年月、そして壊れた家族仲。仲の良い家族が、お金でバラバラになる悲劇です。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【孤独死】1日 約200人が孤独死。</span>
+            <span class="stat-val">【孤独死】1日 約200人が孤独死.</span>
             <p class="stat-desc">誰にも気づかれず最期を迎える。地域の繋がりの欠如が招く、あまりに過酷な現実が今この瞬間も起きています。</p>
         </div>
     </section>
@@ -192,7 +190,7 @@
     <div class="bg-overlay-section" style="min-height: 500px;">
         <img src="IMG_4224.png" class="bg-image">
         <div class="content-on-bg">
-            <div class="reveal final-card">
+            <div class="reveal">
                 <p class="final-text">
                     身近にはまだ感じにくい問題かも知れません。<br>
                     ですが、<span style="color: var(--red); border-bottom: 3px solid var(--red);">数字は残酷なまでに証明しています。</span><br><br>
