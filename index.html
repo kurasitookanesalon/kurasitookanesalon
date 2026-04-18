@@ -43,7 +43,9 @@
         .price-detail { font-weight: bold; color: #444; margin: 10px 0 15px; font-size: 15px; line-height: 1.6; }
         .compare-img { width: 100%; border-radius: 8px; border: 1px solid #ddd; margin: 8px 0; }
         
-        .nav-link { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2px solid var(--sub-blue); border-radius: 12px; margin-bottom: 10px; font-size: 17px; }
+        /* ナビゲーションリンク：文字中央・矢印右寄り */
+        .nav-link { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2px solid var(--sub-blue); border-radius: 12px; margin-bottom: 10px; font-size: 17px; }
+        .nav-link i { position: absolute; right: 22px; }
 
         .map-wrapper { border: 5px solid var(--sub-blue); border-radius: 18px; overflow: hidden; height: 320px; margin-top: 15px; }
         .location-hint { font-size: 16px; font-weight: 900; color: var(--red); margin-top: 8px; display: block; }
@@ -92,11 +94,11 @@
 
     <section class="section">
         <h2 class="reveal section-title">知らないだけで起きている現実</h2>
-        <div class="reveal reality-card"><span class="stat-val">物価上昇：1世帯あたり月平均1万円増</span><span class="stat-sub">何もせず預けているだけでは、資産価値が目減りします。</span></div>
-        <div class="reveal reality-card"><span class="stat-val">特殊詐欺：1日あたり被害額 約1.2億円</span><span class="stat-sub">25分に1件、誰かが資産を奪われている計算です。</span></div>
-        <div class="reveal reality-card"><span class="stat-val">認知症：1日あたり約800人が新規診断</span><span class="stat-sub">元気なうちに対策しないと、1人あたり平均2,000万円の資産が凍結。</span></div>
-        <div class="reveal reality-card"><span class="stat-val">相続トラブル：1日あたり約35件の審判</span><span class="stat-sub">「うちは大丈夫」と思っていた家族ほど、お金で決裂しています。</span></div>
-        <div class="reveal reality-card"><span class="stat-val">孤立：高齢者の4人に1人が「相談相手なし」</span><span class="stat-sub">一人の不確かな判断が、取り返しのつかない損失を招きます。</span></div>
+        <div class="reveal reality-card"><span class="stat-val">猛烈なインフレ：今の100万円は20年後には50万円の価値に</span><span class="stat-sub">何もせず預けているだけでは、資産価値が目減りし続けます。</span></div>
+        <div class="reveal reality-card"><span class="stat-val">特殊詐欺：1日あたり被害額 約1.2億円</span><span class="stat-sub">25分に1件、誰かが大切な老後資金を奪われています。</span></div>
+        <div class="reveal reality-card"><span class="stat-val">認知症：1日あたり約800人が新規診断</span><span class="stat-sub">対策が遅れると、1人あたり平均2,000万円の資産が凍結されます。</span></div>
+        <div class="reveal reality-card"><span class="stat-val">相続トラブル：1日あたり約40件が家庭裁判所へ提訴</span><span class="stat-sub">「うちは大丈夫」と思っていた家族ほど、お金で決裂しています。</span></div>
+        <div class="reveal reality-card"><span class="stat-val">孤独：毎日約200人が誰にも看取られず「孤独死」</span><span class="stat-sub">一人の不確かな判断が、取り返しのつかない損失と後悔を招きます。</span></div>
     </section>
 
     <section class="section">
@@ -139,7 +141,7 @@
         
         <div class="map-wrapper">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.1557345638536!2d130.87192737570716!3d33.83407987323924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf420235b91b%3A0xc68e3d09a0662d5e!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1713583569421!5m2!1sja!2sjp"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.502941549488!2d130.8778846764516!3d33.82512682902306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543950b71946359%3A0x867332305541604a!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712497800000!5m2!1sja!2sjp"
                 style="border:0; width:100%; height:320px;"
                 allowfullscreen="" 
                 loading="lazy">
