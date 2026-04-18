@@ -17,11 +17,12 @@
             overflow: hidden;
         }
         
+        /* お城の透明度を0.73に設定 */
         .bg-image { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             object-fit: cover; 
             object-position: 20% center;
-            opacity: 0.72; 
+            opacity: 0.73; 
             z-index: 1; 
         }
 
@@ -66,6 +67,7 @@
         .nav-link i { position: absolute; right: 22px; }
 
         .map-wrapper { border: 5px solid var(--sub-blue); border-radius: 18px; overflow: hidden; height: 320px; margin-top: 20px; }
+        
         .qr-section { text-align: center; background: #f8f9fa; padding: 40px 22px; border-radius: 25px; border: 1px solid #eee; }
         .qr-img { width: 180px; height: auto; margin: 15px 0; background: #fff; padding: 12px; border-radius: 15px; border: 1px solid #ddd; }
 
@@ -74,7 +76,22 @@
             text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.8);
         }
 
-        .btn-line-fix { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff; border-radius: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 19px; z-index: 9999; box-shadow: 0 8px 25px rgba(0,0,0,0.25); }
+        /* LINEボタンのシャマーライト（光るアニメーション） */
+        .btn-line-fix { 
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); 
+            width: 92%; max-width: 380px; height: 68px; background: #06C755; color: #fff; 
+            border-radius: 34px; display: flex; align-items: center; justify-content: center; 
+            text-decoration: none; font-weight: 900; font-size: 19px; z-index: 9999; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25); 
+            overflow: hidden;
+        }
+        .btn-line-fix::after {
+            content: ""; position: absolute; top: -50%; left: -60%; width: 20%; height: 200%;
+            background: rgba(255, 255, 255, 0.3); transform: rotate(30deg);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer { 0% { left: -60%; } 100% { left: 130%; } }
+
         footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; }
     </style>
 </head>
@@ -171,7 +188,13 @@
         <p style="text-align:center; font-size: 14px; color: #666; margin-top: 5px;">※近隣のコインパーキングをご利用ください</p>
         <p style="text-align:center; color: var(--red); font-weight: 900; margin-top: 8px; font-size: 18px;">＼ サンリブもりつねの目の前です ／</p>
         <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps?q=守恒みらいホール&output=embed" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe 
+                src="https://www.google.com/maps?q=福岡県北九州市小倉南区守恒本町2丁目2-11&output=embed"
+                style="border:0; width:100%; height:320px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
