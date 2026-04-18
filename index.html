@@ -11,60 +11,61 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: #333; line-height: 1.5; overflow-x: hidden; }
 
-        /* ★上下の固定画像（お城が見えるように濃度アップ） */
-        .bg-view-container { 
-            width: 100%; 
-            height: 300px; 
-            overflow: hidden; 
-            position: relative; 
-            background: #fff; /* 背景を白にして画像を目立たせる */
+        /* 背景画像：文字の下に透かす設定 */
+        .bg-overlay-section { 
+            position: relative; width: 100%; min-height: 380px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            overflow: hidden;
         }
-        .bg-view-img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            opacity: 0.8; /* お城が見えるよう濃度を0.5から0.8に上げました */
-            display: block;
+        .bg-image { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            object-fit: cover; opacity: 0.25; z-index: 1; 
         }
+        .content-on-bg { position: relative; z-index: 2; width: 100%; text-align: center; padding: 40px 24px; }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        header { padding: 30px 0 10px; text-align: center; }
+        header { padding: 20px 0 10px; text-align: center; }
         .top-logo { width: 100px; height: auto; margin: 0 auto; display: block; }
 
-        .hero { padding: 0 24px 20px; text-align: center; }
         .hero-title { font-family: 'Noto Serif JP', serif; font-size: 36px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
         .hero-sub { font-size: 17px; font-weight: 700; color: var(--gold); margin-top: 8px; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
 
-        .slideshow-container { width: 100%; overflow: hidden; padding-bottom: 30px; }
+        .slideshow-container { width: 100%; overflow: hidden; padding: 20px 0; border-bottom: 1px solid #f2f2f2; }
         .slideshow-track { display: flex; width: calc(280px * 8); animation: scroll 30s linear infinite; }
         .slideshow-track img { width: 280px; border-radius: 12px; margin: 0 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-280px * 4 - 64px)); } }
 
-        .section { padding: 35px 24px; max-width: 650px; margin: 0 auto; border-bottom: 1px solid #f2f2f2; }
-        .section-title { text-align: center; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin-bottom: 20px; font-family: 'Noto Serif JP', serif; }
+        .section { padding: 45px 24px; max-width: 650px; margin: 0 auto; border-bottom: 1px solid #f2f2f2; }
+        .section-title { text-align: center; font-size: 24px; font-weight: 900; color: var(--sub-blue); margin-bottom: 25px; font-family: 'Noto Serif JP', serif; }
 
-        .reality-card { border: 3px solid var(--red); background: #fff; border-radius: 12px; padding: 18px; margin-bottom: 12px; text-align: center; }
+        /* 不案（現実）フェーズ：項目を最大化 */
+        .reality-card { border: 3px solid var(--red); background: #fff; border-radius: 12px; padding: 18px; margin-bottom: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .stat-val { font-size: 19px; font-weight: 900; color: var(--red); display: block; line-height: 1.2; }
+        .stat-desc { font-size: 13px; font-weight: 700; color: #555; margin-top: 5px; }
 
-        .solution-box { background: #f0f5ff; border: 2.5px solid var(--main-blue); border-radius: 15px; padding: 18px; margin-bottom: 10px; }
-        .solution-title { color: var(--sub-blue); font-weight: 900; font-size: 17px; margin-bottom: 8px; display: flex; align-items: center; }
-        .solution-title i { color: var(--main-blue); margin-right: 10px; }
+        /* 解決フェーズ */
+        .solution-box { background: #f0f5ff; border: 2.5px solid var(--main-blue); border-radius: 15px; padding: 20px; margin-bottom: 15px; text-align: left; }
+        .solution-title { color: var(--sub-blue); font-weight: 900; font-size: 18px; margin-bottom: 10px; display: flex; align-items: center; }
+        .solution-title i { color: var(--main-blue); margin-right: 12px; }
+        .solution-text { font-size: 14px; font-weight: 700; line-height: 1.6; color: #444; margin: 0; }
 
-        .price-area { border: 2.5px solid var(--sub-blue); border-radius: 20px; padding: 25px 18px; text-align: center; background: #f9fbff; }
-        .price-main { font-size: 30px; font-weight: 900; color: var(--sub-blue); display: block; }
-        .price-detail { font-weight: bold; color: #444; margin: 10px 0 15px; }
-        .compare-img { width: 100%; border-radius: 8px; border: 1px solid #ddd; margin: 8px 0; }
+        /* 料金・金額フェーズ */
+        .price-area { border: 2.5px solid var(--sub-blue); border-radius: 20px; padding: 30px 20px; text-align: center; background: #f9fbff; }
+        .price-main { font-size: 32px; font-weight: 900; color: var(--sub-blue); display: block; }
+        .price-detail { font-weight: bold; color: #444; margin: 10px 0; font-size: 16px; }
+        .comp-phase { margin: 25px 0; text-align: left; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #ddd; }
+        .comp-grid { display: flex; gap: 10px; margin-top: 10px; }
+        .comp-item { flex: 1; padding: 12px; border-radius: 6px; font-size: 11px; line-height: 1.5; font-weight: 700; border: 1px solid #eee; }
+        .compare-img { width: 100%; border-radius: 8px; border: 1px solid #ddd; margin: 10px 0; }
         
-        .nav-link { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2px solid var(--sub-blue); border-radius: 12px; margin-bottom: 10px; font-size: 17px; }
+        .nav-link { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 22px; background: #fff; color: var(--sub-blue); text-decoration: none; font-weight: 900; border: 2px solid var(--sub-blue); border-radius: 12px; margin-bottom: 12px; }
         .nav-link i { position: absolute; right: 22px; }
 
         .map-wrapper { border: 5px solid var(--sub-blue); border-radius: 18px; overflow: hidden; height: 320px; margin-top: 15px; }
-        .location-hint { font-size: 16px; font-weight: 900; color: var(--red); margin-top: 8px; display: block; text-align: center; }
-
-        .qr-section { text-align: center; background: #f8f9fa; padding: 35px 22px; border-radius: 25px; border: 1px solid #eee; }
-        .qr-img { width: 150px; height: auto; margin-top: 12px; background: #fff; padding: 10px; border-radius: 12px; }
+        .qr-section { text-align: center; background: #f8f9fa; padding: 40px 22px; border-radius: 25px; border: 1px solid #eee; }
+        .qr-img { width: 160px; height: auto; margin: 15px 0; background: #fff; padding: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
         .btn-line-fix { position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 380px; height: 64px; background: #06C755; color: #fff; border-radius: 32px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 18px; z-index: 9999; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
         footer { text-align: center; padding: 40px 20px 120px; color: #999; font-size: 12px; }
@@ -72,16 +73,14 @@
 </head>
 <body>
 
-    <div class="bg-view-container">
-        <img src="IMG_4224.png" class="bg-view-img" alt="お城の景色">
+    <div class="bg-overlay-section">
+        <img src="IMG_4224.png" class="bg-image">
+        <div class="content-on-bg">
+            <header><img src="ロゴ浮き.png" class="top-logo"></header>
+            <h1 class="hero-title">くらしとお金サロン<br><span style="font-size: 0.6em;">小倉南校</span></h1>
+            <p class="hero-sub">増やす知識 × 守る知恵 ＋ 地域の仲間</p>
+        </div>
     </div>
-
-    <header><img src="ロゴ浮き.png" class="top-logo"></header>
-
-    <section class="hero">
-        <h1 class="reveal hero-title">くらしとお金サロン<br><span style="font-size: 0.6em;">小倉南校</span></h1>
-        <p class="reveal hero-sub">増やす知識 × 守る知恵 ＋ 地域の仲間</p>
-    </section>
 
     <div class="slideshow-container reveal">
         <div class="slideshow-track">
@@ -94,9 +93,30 @@
 
     <section class="section">
         <h2 class="reveal section-title">知らないだけで起きている現実</h2>
-        <div class="reveal reality-card"><span class="stat-val">猛烈なインフレ：今の100万円は20年後には50万円の価値に</span></div>
-        <div class="reveal reality-card"><span class="stat-val">特殊詐欺：1日あたり被害額 約1.2億円</span></div>
-        <div class="reveal reality-card"><span class="stat-val">認知症：1日あたり約800人が新規診断</span></div>
+        <div class="reveal reality-card">
+            <span class="stat-val">【価値の暴落】今の100万円 ＝ 20年後の50万円</span>
+            <p class="stat-desc">猛烈なインフレにより、預けているだけの「金額」の価値は半分に目減りします。</p>
+        </div>
+        <div class="reveal reality-card">
+            <span class="stat-val">【資産凍結】認知症による資産凍結 約2,000万円</span>
+            <p class="stat-desc">対策が遅れると、本人さえ自分のお金を使えなくなる「金額の壁」が立ちはだかります。</p>
+        </div>
+        <div class="reveal reality-card">
+            <span class="stat-val">【特殊詐欺】1日あたり被害額 約1.2億円</span>
+            <p class="stat-desc">「自分は大丈夫」と思っている人ほど、最新の手口で大切な資産を奪われています。</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="reveal section-title">サロンで得られる「安心」</h2>
+        <div class="reveal solution-box">
+            <span class="solution-title"><i class="fa-solid fa-shield-halved"></i> 資産を守る「防御の知恵」</span>
+            <p class="solution-text">詐欺の手口やインフレのリスクを学び、自分と家族の資産を「守り抜く力」を養います。</p>
+        </div>
+        <div class="reveal solution-box">
+            <span class="solution-title"><i class="fa-solid fa-chart-line"></i> 資産を増やす「攻めの知識」</span>
+            <p class="solution-text">流行りに流されない、本質的な資産運用の知識を専門家と一緒にゼロから身につけます。</p>
+        </div>
     </section>
 
     <section class="section">
@@ -104,19 +124,17 @@
         <div class="reveal price-area">
             <span class="price-main">月額 22,000円</span>
             <p class="price-detail">週1回120分 ＋ 個別相談し放題</p>
-            
-            <div style="margin: 20px 0; text-align: left; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #ddd;">
-                <p style="font-size: 13px; font-weight: 900; color: var(--sub-blue); margin-bottom: 8px;">この2.2万円をどう捉えるか</p>
-                <div style="display: flex; gap: 8px; margin-bottom: 8px;">
-                    <div style="flex: 1; background: #fdfaf0; padding: 8px; border-radius: 5px; font-size: 11px; line-height: 1.4;">
-                        <b style="color:var(--gold);">成長する世界</b><br>人口年8,000万増。資産が増えるフェーズ。
+            <div class="comp-phase">
+                <p style="font-size: 13px; font-weight: 900; color: var(--sub-blue); margin: 0;">この「22,000円」をどう捉えるか</p>
+                <div class="comp-grid">
+                    <div class="comp-item" style="background:#fdfaf0; border-color:var(--gold);">
+                        <b style="color:var(--gold);">成長する世界</b><br>人口年8,000万増。<br>資産が増えるフェーズ。
                     </div>
-                    <div style="flex: 1; background: #f0f5ff; padding: 8px; border-radius: 5px; font-size: 11px; line-height: 1.4;">
-                        <b style="color:var(--sub-blue);">衰退する日本</b><br>人口年80万減。預金が減るフェーズ。
+                    <div class="comp-item" style="background:#f0f5ff; border-color:var(--sub-blue);">
+                        <b style="color:var(--sub-blue);">衰退する日本</b><br>人口年80万減。<br>預金が減るフェーズ。
                     </div>
                 </div>
             </div>
-
             <img src="IMG_4157.png" class="compare-img">
             <img src="IMG_4156.png" class="compare-img">
         </div>
@@ -131,29 +149,30 @@
     <section class="section reveal">
         <h2 class="section-title">開催場所</h2>
         <p style="text-align:center; font-size: 20px; font-weight: 900; color: var(--sub-blue); margin: 0;">守恒みらいホール</p>
-        <span class="location-hint">＼ サンリブもりつねの目の前です ／</span>
+        <p style="text-align:center; color: var(--red); font-weight: 900; margin-top: 5px;">＼ サンリブもりつねの目の前です ／</p>
         <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.245781363613!2d130.8741369!3d33.8317765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543be2823a073c1%3A0x6a084687d7f7e912!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712345678901!5m2!1sja!2sjp" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="http://googleusercontent.com/maps.google.com/6" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <section class="section reveal">
         <div class="qr-section">
             <h2 class="section-title">ご参加方法</h2>
-            <p style="font-weight: 900; font-size: 15px;">QRコード読み込みで友だち登録</p>
+            <p style="font-weight: 900; font-size: 16px; margin: 0;">公式LINEからのお申し込み</p>
+            <p style="font-size: 14px; font-weight: 700; color: #666; margin-top: 5px;">QRコード読み込みで友だち登録</p>
             <img src="IMG_2124.png" class="qr-img">
-            <p style="font-size: 13px; font-weight: 700; margin-top: 15px; color: #666;">追加後、<span style="color:var(--red);">「体験」</span>とお送りください</p>
+            <p style="font-size: 15px; font-weight: 900; margin-top: 5px; color: #333;">追加後、トーク画面で<br><span style="color:var(--red); font-size: 1.3em;">「体験」</span>とお送りください</p>
         </div>
     </section>
 
-    <section class="reveal section" style="border:none; text-align:center;">
-        <p style="font-size: 16px; font-weight: 700; color: #444; line-height: 2.2;">
-            <span style="color: var(--red); font-size: 1.1em; border-bottom: 2px solid var(--red); font-weight: 900;">ただ、まだ順番がきていないだけなのです。</span>
-        </p>
-    </section>
-
-    <div class="bg-view-container">
-        <img src="IMG_4224.png" class="bg-view-img" alt="お城の景色">
+    <div class="bg-overlay-section" style="min-height: 300px;">
+        <img src="IMG_4224.png" class="bg-image">
+        <div class="content-on-bg" style="padding: 60px 24px;">
+            <p style="font-size: 17px; font-weight: 900; color: #222; line-height: 2.2; margin: 0;">
+                身近には感じにくいかもしれません。<br>ですが、数字ははっきりと表れています。<br><br>
+                <span style="color: var(--red); font-size: 1.1em; border-bottom: 2px solid var(--red); font-weight: 900;">ただ、まだ順番がきていないだけなのです。</span>
+            </p>
+        </div>
     </div>
 
     <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
