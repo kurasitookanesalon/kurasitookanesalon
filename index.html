@@ -78,6 +78,7 @@ body{
   text-align:center;
 }
 
+/* スライダー */
 .slider{
   width:100%;
   overflow:hidden;
@@ -96,17 +97,18 @@ body{
   flex-shrink:0;
 }
 
+/* セクション */
 .section{
   padding:60px 20px;
-  text-align:left;
+  text-align:center;
 }
 
 .section h2{
   font-size:28px;
   margin-bottom:30px;
-  text-align:center;
 }
 
+/* カード */
 .card{
   background:#fff;
   color:#D4AF37;
@@ -119,11 +121,21 @@ body{
   font-weight:bold;
   line-height:1.6;
 
-  text-align:left;
-
   word-break:keep-all;
   line-break:strict;
-  overflow-wrap:break-word;
+}
+
+/* 中央 */
+.card-center{
+  text-align:center;
+}
+
+/* 説明文 */
+.card-text{
+  text-align:left;
+  font-size:18px;
+  font-weight:500;
+  color:#1E5BB8;
 }
 
 .nowrap{
@@ -138,6 +150,7 @@ body{
   border-radius:20px;
 }
 
+/* リンクボタン */
 .notion-btn{
   display:block;
   width:90%;
@@ -150,20 +163,12 @@ body{
   background:linear-gradient(180deg,#ffffff 0%,#f0f3f8 100%);
   color:#1E5BB8;
   border:3px solid #1E5BB8;
-  box-shadow:0 6px 0 #163E7A,0 16px 30px rgba(0,0,0,0.45);
   font-size:24px;
   font-weight:bold;
   line-height:1.4;
-  opacity:0;
-  transform:translateY(60px);
-  transition:0.6s;
 }
 
-.notion-btn.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
+/* フローティング */
 .floating-btn{
   position:fixed;
   bottom:15px;
@@ -183,11 +188,9 @@ body{
   align-items:center;
   justify-content:center;
   gap:8px;
-
-  animation:floaty 2.5s ease-in-out infinite,
-             pulse 2.5s ease-in-out infinite;
 }
 
+/* アニメーション */
 @keyframes floaty{
   0%,100%{transform:translateX(-50%) translateY(0);}
   50%{transform:translateX(-50%) translateY(-6px);}
@@ -237,49 +240,58 @@ body{
 </div>
 
 <div class="section">
-  <h2>知らないだけでこんな現実が起きています</h2>
-  <div class="card">詐欺被害は毎日 <span class="nowrap">約50件</span>、<span class="nowrap">約1.2億円</span></div>
-  <div class="card">認知症診断は、毎日 <span class="nowrap">約800人</span></div>
-  <div class="card">相続トラブルで裁判 毎日 <span class="nowrap">約30件</span></div>
+  <h2>知らないだけで起きている現実</h2>
+
+  <div class="card card-center">詐欺被害 毎日 約50件<br>約1.2億円</div>
+  <div class="card card-center">認知症診断 毎日 約800人</div>
+  <div class="card card-center">相続トラブル 毎日 約30件</div>
 </div>
 
 <div class="section">
   <h2>ですが、ご安心ください</h2>
-  <div class="card">将来起こりうる問題に備えることができます</div>
-  <div class="card">大切なお金を守る知恵も学べます</div>
-  <div class="card">大切なお金を増やす知識も学べます</div>
-  <div class="card">繰り返し学びながら理解を深めていきます</div>
+
+  <div class="card card-center">将来の問題に備えることができます</div>
+  <div class="card card-center">大切なお金を守る知恵も学べます</div>
+  <div class="card card-center">大切なお金を増やす知識も学べます</div>
+  <div class="card card-center">繰り返し学びながら理解を深めていきます</div>
 </div>
 
 <div class="section">
   <h2>運営について</h2>
-  <div class="card">金融機関の営業ではありません</div>
-  <div class="card">販売や勧誘は一切ありません</div>
-  <div class="card">投資の判断は必ずご自身でしていただきます</div>
+
+  <div class="card card-center">金融機関の営業ではありません</div>
+  <div class="card card-center">販売や勧誘は一切ありません</div>
+  <div class="card card-center">投資の判断は必ずご自身でしていただきます</div>
 </div>
 
 <div class="section">
   <h2>料金について</h2>
 
-  <div class="card">
-    月額 <span class="nowrap">22,000円</span>（週1回＋相談し放題）
+  <div class="card card-center">
+    月額 <span class="nowrap">22,000円</span><br>
+    （週1回＋相談し放題）
   </div>
 
   <img src="IMG_4157.png" class="compare-img">
   <img src="IMG_4156.png" class="compare-img">
 
-  <div class="card">
-    一般的な講座は1回参加して終わることが多いですが、くらしとお金サロンは毎週継続して学び、相談できる環境です
+  <div class="card card-text">
+    一般的な講座は1回参加して終わることが多いですが、
+    くらしとお金サロンは毎週継続して学び、相談できる環境です。
   </div>
 
-  <div class="card">
-    1回あたり約<span class="nowrap">5,500円</span>。いつでも相談できる環境です
+  <div class="card card-text">
+    1回あたり約<span class="nowrap">5,500円</span>で、
+    いつでも相談できる環境です。
   </div>
 </div>
 
 <div class="section">
   <h2>このサロンで得られること</h2>
-  <div class="card">一人で悩まず、地域の仲間と一緒に学べる場所です</div>
+
+  <div class="card card-center">
+    一人で悩まず、地域の仲間と一緒に学べる場所です
+  </div>
 
   <img src="BB39BDA6-B7C0-48F8-ABFA-FAE043FAE08E.png"
        style="width:90%;max-width:500px;border-radius:20px;margin:20px auto;display:block;">
@@ -288,50 +300,51 @@ body{
 <div class="section">
   <h2>詳しく知りたい方はこちら</h2>
 
-  <a href="profile.html" class="notion-btn">→講師のプロフィールを見る</a>
-  <a href="salon.html" class="notion-btn">→サロン内容を見る</a>
-  <a href="concept.html" class="notion-btn">→サロン理念を見る</a>
+  <a href="profile.html" class="notion-btn">講師プロフィール</a>
+  <a href="salon.html" class="notion-btn">サロン内容</a>
+  <a href="concept.html" class="notion-btn">サロン理念</a>
 </div>
 
 <div class="section">
   <h2>開催場所</h2>
 
-  <div class="card">守恒みらいホール</div>
+  <div class="card card-center">守恒みらいホール</div>
 
   <div style="width:90%;max-width:500px;margin:20px auto;border-radius:20px;overflow:hidden;">
     <iframe src="https://www.google.com/maps?q=北九州市小倉南区守恒本町2-2-11&output=embed"
       width="100%" height="300" style="border:0;"></iframe>
   </div>
 
-  <div class="card">北九州市小倉南区守恒周辺</div>
+  <div class="card card-center">北九州市小倉南区守恒</div>
 </div>
 
 <div class="section">
   <h2>こちらからご参加いただけます</h2>
 
-  <div class="card">
-    QRコードをカメラで読み取るか、下のボタンからご参加いただけます
+  <div class="card card-center">
+    QRコードを読み取るか、下のボタンからご参加ください
   </div>
 
   <img src="IMG_2124.png" style="width:220px;margin:20px auto;display:block;">
 
-  <div class="card">
-    友だち追加後「体験」または「質問」とお気軽にお送りください
+  <div class="card card-center">
+    「体験」または「質問」とお気軽にお送りください
   </div>
 </div>
 
 <div class="section">
   <h2>一歩踏み出してみませんか？</h2>
 
-  <div class="card">
-    知らないまま不安でいるよりも、知って安心できる方が良いと思いませんか？
+  <div class="card card-center">
+    知らないまま不安でいるよりも、
+    知って安心できる方が良いと思いませんか？
   </div>
 
-  <div class="card">
-    小さな一歩が、これからの大きな安心につながります。
+  <div class="card card-center">
+    小さな一歩が、これからの大きな安心につながります
   </div>
 
-  <div class="card">
+  <div class="card card-center">
     ※金融商品の販売・勧誘は一切行っておりません
   </div>
 </div>
@@ -352,16 +365,6 @@ function slide(){
   requestAnimationFrame(slide);
 }
 slide();
-
-const targets=document.querySelectorAll('.notion-btn');
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-    entry.target.classList.add('show');
-  }
- });
-},{threshold:0.2});
-targets.forEach(t=>observer.observe(t));
 </script>
 
 </body>
