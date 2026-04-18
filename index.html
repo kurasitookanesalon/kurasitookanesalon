@@ -18,7 +18,7 @@
         }
         .bg-image { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; opacity: 0.15; z-index: 1; 
+            object-fit: cover; opacity: 0.3; z-index: 1; 
         }
         .content-on-bg { position: relative; z-index: 2; width: 100%; text-align: center; padding: 40px 24px; }
 
@@ -31,11 +31,11 @@
         .hero-title { font-family: 'Noto Serif JP', serif; font-size: 36px; color: var(--sub-blue); line-height: 1.2; margin: 0; }
         .hero-sub { font-size: 18px; font-weight: 700; color: var(--gold); margin-top: 8px; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
 
-        /* スライドショーの滑らかな無限ループ設定 */
+        /* スライドショー：7枚が滑らかにループするように調整 */
         .slideshow-container { width: 100%; overflow: hidden; padding: 20px 0; border-bottom: 1px solid #f2f2f2; }
-        .slideshow-track { display: flex; width: calc(280px * 8 + 128px); animation: scroll 40s linear infinite; }
+        .slideshow-track { display: flex; width: calc(280px * 14 + 224px); animation: scroll 50s linear infinite; }
         .slideshow-track img { width: 280px; height: auto; border-radius: 12px; margin: 0 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); flex-shrink: 0; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-280px * 4 - 64px)); } }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-280px * 7 - 112px)); } }
 
         .section { padding: 50px 24px; max-width: 650px; margin: 0 auto; border-bottom: 1px solid #f2f2f2; }
         .section-title { text-align: center; font-size: 26px; font-weight: 900; color: var(--sub-blue); margin-bottom: 30px; font-family: 'Noto Serif JP', serif; position: relative; }
@@ -87,10 +87,16 @@
             <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
             <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
             <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+            <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+            <img src="BB39BDA6-B7C0-48F8-ABFA-FAE043FAE08E.png">
+            <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
             <img src="480EA703-74CE-4342-9595-AB8F5ABDD83D.png">
             <img src="6648FF22-7681-4F3D-8A69-FF57A9D10207.png">
             <img src="89804053-68C8-4E48-A98F-6E56CD01A26C.png">
             <img src="DEA53687-842A-4E25-9838-AE0A1C0C0C49.png">
+            <img src="41604837-5C3A-4DF9-B10F-E837EC243D5B.png">
+            <img src="BB39BDA6-B7C0-48F8-ABFA-FAE043FAE08E.png">
+            <img src="DEB3CB95-790F-4F78-AED3-B2B77C169FCF.png">
         </div>
     </div>
 
@@ -113,7 +119,7 @@
             <p class="stat-desc">一件あたり<span class="stat-highlight">数百万円の裁判費用</span>と長い年月、そして壊れた家族仲。仲の良い家族が、お金でバラバラになる悲劇です。</p>
         </div>
         <div class="reveal reality-card">
-            <span class="stat-val">【孤独死】1日 約200人の孤立。</span>
+            <span class="stat-val">【孤独死】1日 約200人が孤独死。</span>
             <p class="stat-desc">誰にも気づかれず最期を迎える。地域の繋がりの欠如が招く、あまりに過酷な現実が今この瞬間も起きています。</p>
         </div>
     </section>
@@ -139,8 +145,8 @@
         <div class="reveal price-area">
             <span class="price-main">月額 22,000円</span>
             <p class="price-detail">週1回120分 ＋ 個別相談し放題</p>
-            <img src="IMG_4157.png" class="compare-img">
             <img src="IMG_4156.png" class="compare-img">
+            <img src="IMG_4157.png" class="compare-img">
         </div>
     </section>
 
@@ -157,7 +163,7 @@
         <p style="text-align:center; font-size: 14px; color: #666; margin-top: 5px;">※近隣のコインパーキングをご利用ください</p>
         <p style="text-align:center; color: var(--red); font-weight: 900; margin-top: 8px; font-size: 18px;">＼ サンリブもりつねの目の前です ／</p>
         <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.155823902315!2d130.8718874119339!3d33.83404472914757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf4202330f87%3A0xc6c7694f79624838!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712415000000!5m2!1sja!2sjp" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.155829983177!2d130.8718617762629!3d33.83411492853273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543bf420235378d%3A0x644265691079d2b2!2z5a6I5oGS44G_44KJ44GE44Ob44O844Or!5e0!3m2!1sja!2sjp!4v1712815000000!5m2!1sja!2sjp" style="border:0; width:100%; height:320px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -166,9 +172,8 @@
             <h2 class="section-title">公式LINE</h2>
             <p style="font-size: 15px; font-weight: 700; color: #333; margin: 0; line-height: 1.6;">カメラでQRコードを読み取って<br>友達追加をお願いします</p>
             <img src="IMG_2124.png" class="qr-img">
-            <p style="font-size: 14px; font-weight: 700; color: #333; margin-top: 10px;">もしくは、下の友達追加ボタンより<br>友達追加していただき</p>
-            <p style="font-size: 16px; font-weight: 900; color: #333; margin-top: 5px;"><span style="color: var(--red);">体験</span> または <span style="color: var(--red);">質問</span></p>
-            <p style="font-size: 14px; font-weight: 700; color: #333; margin-top: 0;">とトークメッセージをお送りください</p>
+            <p style="font-size: 16px; font-weight: 900; color: #333; margin-top: 10px;">「<span style="color: var(--red);">体験</span>」 または 「<span style="color: var(--red);">質問</span>」</p>
+            <p style="font-size: 15px; font-weight: 700; color: #333; margin-top: 5px;">とトークメッセージをお送り下さい</p>
         </div>
     </section>
 
