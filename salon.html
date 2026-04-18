@@ -17,11 +17,11 @@
         header { padding: 30px 0 10px; text-align: center; }
         .top-logo { width: 110px; height: auto; }
 
-        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 180px; }
+        .container { max-width: 650px; margin: 0 auto; padding: 0 24px 100px; }
         
         .page-title { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--sub-blue); text-align: center; margin: 40px 0 30px; font-weight: 900; }
 
-        /* 基本情報 */
+        /* 基本情報（移動後用） */
         .trust-box { border: 1.5px solid #e0e6ed; border-radius: 12px; padding: 25px; margin-bottom: 50px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .trust-item { display: flex; align-items: flex-start; margin-bottom: 20px; font-size: 16px; }
         .trust-item i { color: var(--main-blue); width: 30px; margin-top: 5px; font-size: 18px; }
@@ -60,6 +60,8 @@
         
         .disclaimer-box { font-size: 14px; color: #555; text-align: left; background: #fff; padding: 20px; border-top: 1px solid #e0e6ed; line-height: 1.8; }
 
+        footer { text-align: center; padding: 40px 20px 140px; color: #888; font-size: 13px; border-top: 1px solid #f2f2f2; margin-top: 60px; }
+
         /* ふわふわLINEボタン */
         @keyframes fuwafuwa {
             0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -84,24 +86,6 @@
     <div class="container">
         <h1 class="reveal page-title">サロンの内容</h1>
 
-        <section class="reveal trust-box">
-            <div class="trust-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <div>
-                    守恒みらいホール<br>
-                    <span style="font-size: 0.9em; color: #666;">（サンリブ守恒 目の前）</span><br>
-                    小倉南区守恒本町2-2-11<br>
-                    <span style="font-weight:500; font-size: 0.9em;">モノレール守恒駅から 徒歩3分</span>
-                    <span class="red-note">※駐車場をご利用の場合は近隣の駐車場をご利用ください。</span>
-                    <span class="red-note">※予約状況によりフロアが変更になる場合があります。</span>
-                </div>
-            </div>
-            <div class="trust-item" style="margin-bottom: 0;">
-                <i class="fa-solid fa-calendar-days"></i>
-                <div>毎週月曜日 9:00 〜 11:00</div>
-            </div>
-        </section>
-
         <h2 class="reveal section-h2">「なんでも」ご相談ください</h2>
         <div class="reveal consult-grid">
             <div class="consult-tag">保険料見直し</div>
@@ -111,6 +95,7 @@
             <div class="consult-tag">不動産売却</div>
             <div class="consult-tag">介護ホーム紹介</div>
             <div class="consult-tag">遺言作成</div>
+            <div class="consult-tag">成年後見制度問題</div>
             <div class="consult-tag">実家・お墓じまい</div>
             <div class="consult-tag">相続・節税相談</div>
             <div class="consult-tag">将来の年金計算</div>
@@ -161,6 +146,24 @@
             </div>
         </section>
 
+        <section class="reveal trust-box">
+            <div class="trust-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    守恒みらいホール<br>
+                    <span style="font-size: 0.9em; color: #666;">（サンリブ守恒 目の前）</span><br>
+                    小倉南区守恒本町2-2-11<br>
+                    <span style="font-weight:500; font-size: 0.9em;">モノレール守恒駅から 徒歩3分</span>
+                    <span class="red-note">※駐車場をご利用の場合は近隣の駐車場をご利用ください。</span>
+                    <span class="red-note">※予約状況によりフロアが変更になる場合があります。</span>
+                </div>
+            </div>
+            <div class="trust-item" style="margin-bottom: 0;">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div>毎週月曜日 9:00 〜 11:00</div>
+            </div>
+        </section>
+
         <section class="reveal price-area">
             <div class="price-header">会費のご案内</div>
             <div class="price-body">
@@ -184,6 +187,8 @@
 
         <div class="reveal"><a href="index.html" class="btn-back">トップページへ戻る</a></div>
     </div>
+
+    <footer><p>© くらしとお金サロン All Rights Reserved.</p></footer>
 
     <a href="https://lin.ee/n37s4pB" class="line-float-btn">
         <i class="fa-brands fa-line"></i>
